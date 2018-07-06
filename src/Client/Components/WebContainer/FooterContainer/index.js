@@ -25,19 +25,19 @@ class FooterContainer extends Component {
             
                 <Footer__title>CONTACT US</Footer__title>
                 <div>
-                    <span>0800 EASY FORMS</span>
-                    <span>0800 3279 36767</span>
-                    <span>office@easyforms.co.nz</span>
-                    <span>4a Te Kea Place, Rosedale, Auckland</span>
+                    <Footer__text>0800 EASY FORMS</Footer__text>
+                    <Footer__text>0800 3279 36767</Footer__text>
+                    <Footer__text>office@easyforms.co.nz</Footer__text>
+                    <Footer__text>4a Te Kea Place, Rosedale, Auckland</Footer__text>
                 </div>
             
                 <Footer__title>SITEMAP</Footer__title>
                 <div>
-                    <span>Home</span>
-                    <span>About Us</span>
-                    <span>Support</span>
-                    <span>Blog</span>
-                    <span>Contact Us</span>
+                    <Footer__text>Home</Footer__text>
+                    <Footer__text>About Us</Footer__text>
+                    <Footer__text>Support</Footer__text>
+                    <Footer__text>Blog</Footer__text>
+                    <Footer__text>Contact Us</Footer__text>
                 </div>
 
             </FooterTop>
@@ -55,7 +55,8 @@ class FooterContainer extends Component {
 const Footer = styled.div`
 display: flex;
 flex-direction: column;
-background: linear-gradient(red, yellow);
+font-family: Lato;
+background: linear-gradient(${Themes.colors.blueLight}, ${Themes.colors.blue});
 `;
 
 const FooterTop = styled.div`
@@ -71,7 +72,13 @@ flex-direction: column;
 const Footer__title = styled.span`
 font-size: 1em;
 text-align: center;
-color: ${Themes.colors.blue};
+color: ${Themes.colors.white};
 `;
 
+const Footer__text = styled.span`
+font-size: 1em;
+text-align: center;
+display:block;
+color: ${Themes.colors.lightGrey};
+`;
   export default FooterContainer;

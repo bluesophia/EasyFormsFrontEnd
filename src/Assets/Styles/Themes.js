@@ -10,6 +10,7 @@ const Themes = {
         orange:'#f77b39',
         black:'#333333',
         grey:'#707070',
+        lightGrey: '#ccc',
         white: '#fff'
     },
     fontsize: {
