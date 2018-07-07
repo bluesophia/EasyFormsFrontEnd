@@ -67,9 +67,7 @@ const Shadow = css`
     box-shadow : 0 0 8px rgba(50, 50, 93, 0.23);
 `
 
-class HomeContainer extends Component {
-    render(){
-        return (
+const HomeContainer =() => (
             <ThemeProvider theme={Themes}>
             <Home>
                 <Section01>
@@ -187,9 +185,7 @@ class HomeContainer extends Component {
                 </Section07>
             </Home>
             </ThemeProvider>
-        );
-    }
-}
+        )
 
 const Home = styled.div``
 

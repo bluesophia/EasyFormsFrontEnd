@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Themes from '../../../../Assets/Styles/Themes';
 import breakpoint from 'styled-components-breakpoint';
+import { Link } from 'react-router-dom';
 
 class FooterContainer extends Component {
     render() {
@@ -38,11 +39,11 @@ class FooterContainer extends Component {
               <FooterBox2>
                 <Footer__title>SITEMAP</Footer__title>
                 <FooterRightContainer>
-                    <Nav>Home</Nav>
-                    <Nav>About Us</Nav>
-                    <Nav>Support</Nav>
-                    <Nav>Blog</Nav>
-                    <Nav>Contact Us</Nav>
+                    <Link to='/'><Nav>Home</Nav></Link>
+                    <Link to='/about'><Nav>About</Nav></Link>
+                    <Link to='/support'><Nav>Support</Nav></Link>
+                    <Link to='/blog'><Nav>Blog</Nav></Link>
+                    <Link to='/contact'><Nav>Contact Us</Nav></Link>
                 </FooterRightContainer>
               </FooterBox2>
 
@@ -157,6 +158,7 @@ color: ${Themes.colors.lightGrey};
 font-size: 1em;
 display:block;
 padding: 0.125em;
+text-decoration: none;
 `;
 
 //footer bottom css
