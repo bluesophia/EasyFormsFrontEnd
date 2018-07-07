@@ -5,6 +5,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import 'normalize.css';
 import Header from './Client/Components/WebContainer/HeaderContainer';
 import Footer from './Client/Components/WebContainer/FooterContainer';
+import HomeContainer from './Client/Components/WebContainer/HomeContainer';
 
 library.add(fab)
 
@@ -14,6 +15,7 @@ class App extends Component {
     return (
       <div className="App">
        <Header />
+        <HomeContainer />
        <Footer />
       </div>
     );

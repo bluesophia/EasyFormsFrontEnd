@@ -11,6 +11,7 @@ const Themes = {
         black:'#333333',
         grey:'#707070',
         lightGrey: '#ccc',
+        veryLightGrey: '#eee',
         white: '#fff'
     },
     fontsize: {
@@ -19,12 +20,24 @@ const Themes = {
         h3: "20px",
         p1: "20px",
         p2: "18px",
-        p3: "11px" 
+        p3: "16px",
+        p4: "11px"
+    },
+    fontWeight: {
+        regular: "400",
+        bold:"700",
+        black:"900"
     },
     EBFont: {
         p1: "18px"
-    }
-    
+    },
+    breakpoints: { 
+        xs: 0,
+        sm: 375,
+        md: 768,
+        lg: 992,
+        xl: 1200
+      }
 }
 
 export default Themes;
