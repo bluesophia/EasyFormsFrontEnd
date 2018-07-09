@@ -21,7 +21,8 @@ import WhyUs02 from '../../../../Assets/Images/whyus_2.png';
 import WhyUs03 from '../../../../Assets/Images/whyus_3.png';
 import CustomerStoriesBg from '../../../../Assets/Images/customer-stories.jpg';
 import DoubleQuatationMark from '../../../../Assets/Images/double-quatation-mark.png';
-import Section06Bg from '../../../../Assets/Images/easyform-functions_mobile.png';
+import Section06BgSm from '../../../../Assets/Images/easyform-functions_mobile.png';
+import Section06BgLg from '../../../../Assets/Images/easyform-functions_web.png';
 import Section07Icon01 from '../../../../Assets/Images/in-the-office.png';
 import Section07Icon02 from '../../../../Assets/Images/on-the-go.png';
 import Section07Icon03 from '../../../../Assets/Images/for-management.png';
@@ -152,7 +153,7 @@ const HomeContainer =() => (
                         <HeaderLine />
                     </Section05__TitleDiv>
                     <Section05__CardDiv>
-                    <Section05__Card>
+                    <Section05__Card className="cardDisplay">
                         <Section05__CardCircle>
                         </Section05__CardCircle>
                         <Section05__CardTitle>Replace Paper Forms and Processes</Section05__CardTitle>
@@ -163,7 +164,7 @@ const HomeContainer =() => (
                         while mobilising your business effortlessly.</Section05__CardText>
                     </Section05__Card> 
 
-                    {/* <Section05__Card>
+                    {/* <Section05__Card className="cardDisplay">
                         <Section05__CardCircle>
                         </Section05__CardCircle>
                         <Section05__CardTitle>Replace Paper Forms and Processes</Section05__CardTitle>
@@ -174,7 +175,7 @@ const HomeContainer =() => (
                         while mobilising your business effortlessly.</Section05__CardText>
                     </Section05__Card> 
 
-                    <Section05__Card>
+                    <Section05__Card className="cardDisplay">
                         <Section05__CardCircle>
                         </Section05__CardCircle>
                         <Section05__CardTitle>Replace Paper Forms and Processes</Section05__CardTitle>
@@ -185,7 +186,7 @@ const HomeContainer =() => (
                         while mobilising your business effortlessly.</Section05__CardText>
                     </Section05__Card> 
 
-                    <Section05__Card>
+                    <Section05__Card className="cardDisplay">
                         <Section05__CardCircle>
                         </Section05__CardCircle>
                         <Section05__CardTitle>Replace Paper Forms and Processes</Section05__CardTitle>
@@ -194,7 +195,8 @@ const HomeContainer =() => (
                         EasyForms can automate your paper forms and processes into an easy-to-use app-based 
                         solution, streamlining your existing processes 
                         while mobilising your business effortlessly.</Section05__CardText>
-                    </Section05__Card>  */}
+                    </Section05__Card> 
+                     */}
                     </Section05__CardDiv>
                 </Section05>
                 <Section06>
@@ -205,19 +207,22 @@ const HomeContainer =() => (
                     <div>
                     <Section07__Title>We work in all business environments</Section07__Title>
                     <HeaderLine />
+                    <Section07__Text>EasyForms can offer solutions to a wide range of businesses and industries.</Section07__Text>
                     </div>
-                    <Section07__ContentDiv>
-                        <Section07__Icon src={Section07Icon01} />
-                        <Section07__SubTitle>In The Office</Section07__SubTitle>
-                    </Section07__ContentDiv>
-                    <Section07__ContentDiv>
-                        <Section07__Icon src={Section07Icon02} />
-                        <Section07__SubTitle>On The Go</Section07__SubTitle> 
-                    </Section07__ContentDiv> 
-                    <Section07__ContentDiv>                     
-                        <Section07__Icon src={Section07Icon03} />    
-                        <Section07__SubTitle>For Management</Section07__SubTitle> 
-                    </Section07__ContentDiv>                                       
+                    <Section07__Contents>
+                        <Section07__ContentDiv>
+                            <Section07__Icon src={Section07Icon01} />
+                            <Section07__SubTitle>In The Office</Section07__SubTitle>
+                        </Section07__ContentDiv>
+                        <Section07__ContentDiv>
+                            <Section07__Icon src={Section07Icon02} />
+                            <Section07__SubTitle>On The Go</Section07__SubTitle> 
+                        </Section07__ContentDiv> 
+                        <Section07__ContentDiv>                     
+                            <Section07__Icon src={Section07Icon03} />    
+                            <Section07__SubTitle>For Management</Section07__SubTitle> 
+                        </Section07__ContentDiv>    
+                    </Section07__Contents>                                   
                 </Section07>
             </Home>
             </ThemeProvider>
@@ -479,7 +484,15 @@ const Section05__Title = styled.div`
     ${Title};
 `
 const Section05__CardDiv = styled.div`
-
+        display:
+    ${breakpoint('md')`
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    `}
+    ${breakpoint('lg')`
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+    `}
 `
 const Section05__Card = styled.div`
     width:264px;
@@ -516,8 +529,14 @@ const Section05__CardText = styled.p`
 
 const Section06 = styled.div`
     padding: 0 37px;
-    background: url('${Section06Bg}') no-repeat;
+    background: url('${Section06BgSm}') no-repeat center;
     height:983px;
+    ${breakpoint('lg')`
+     background: url('${Section06BgLg}') no-repeat
+     background-position: center bottom;
+     background-size:100% auto;
+     height:100vh;
+    `}
 `
 const Section06__Title = styled.p`
     padding-top:60px;
@@ -527,23 +546,56 @@ const Section06__Title = styled.p`
 /**** Section 07 ****/
 
 const Section07 = styled.div`
-    padding: 60px 37px; 
-    ${LightGreyBg};      
+    padding: 60px 8%; 
+    box-sizing: border-box;
+    ${LightGreyBg};
+        ${breakpoint('lg')`
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+    `}   
 `
 const Section07__Title = styled.p`
     ${Title};
+`
+const Section07__Text = styled.div`  
+    display:none;
+        ${breakpoint('md')`
+            display:block;
+            font-size:${Themes.fontsize.h2};
+            color:${Themes.colors.black};
+            text-align:center;
+        `}   
+`
+const Section07__Contents = styled.div`
+    margin:0 auto;
+        ${breakpoint('md')`
+        display:flex;
+        justify-content:space-around;
+        align-item:center;
+        margin-top:10vh;
+        `} 
+`
+const Section07__ContentDiv = styled.div`
+    margin:50px auto 0 auto;
+    ${breakpoint('md')`
+      width:240px;
+    `} 
 `
 const Section07__Icon = styled.img`
     width:120px;
     height:auto;
     display:block;
-    margin:auto;
+    margin:0 auto;
+        ${breakpoint('md')`
+         width:160px;
+    `} 
 `
 const Section07__SubTitle = styled.p`
     ${Title};
     letter-spacing:normal;
 `
-const Section07__ContentDiv = styled.div`
-    margin-top:50px;
-`
+
 export default HomeContainer;

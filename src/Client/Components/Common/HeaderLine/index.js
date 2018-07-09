@@ -15,7 +15,8 @@ class HeaderLine extends Component {
 
 const Line = styled.hr`
     width:120px;
-    margin-top:30px;
+    margin-top:35px;
+    margin-bottom:35px;
     border-top:0;
     border-left:0;
     border-right:0;
