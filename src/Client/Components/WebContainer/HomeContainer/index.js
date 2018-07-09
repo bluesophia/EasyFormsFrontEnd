@@ -11,7 +11,7 @@ import HeaderLine from '../../Common/HeaderLine';
 /** Images **/
 import HomeSection01BgSm from '../../../../Assets/Images/HomeSection01BgSm.png';
 import HomeSection01BgMd from '../../../../Assets/Images/HomeSection01BgMd.png';
-import HomeSection0102Bg from '../../../../Assets/Images/HomeSection0102Bg.png';
+import HomeSection02BgMd from '../../../../Assets/Images/HomeSection02BgMd.png';
 import ClusterImg from '../../../../Assets/Images/cluster.png';
 import FacebookIcon from '../../../../Assets/Images/facebook.png';
 import TwitterIcon from '../../../../Assets/Images/twitter.png';
@@ -59,7 +59,7 @@ const Text = css`
     line-height:20px;
 `
 const LightGreyBg = css`
-  background-color:${Themes.colors.veryLightGrey};
+  background-color:rgba(238,238,238,0.6);
 `
 const IconCircle = css`
   border-radius:50%;
@@ -74,19 +74,19 @@ const HomeContainer =() => (
             <Home>
             <Section0102>
                 <Section01>
-                    <div><Cluster src={ClusterImg}/></div>
+                    <Section01__Image><Cluster src={ClusterImg}/></Section01__Image>
                     <Section01__TitleDiv>
                         <BigTitle>Finish your working process in one application</BigTitle>
                         <Section01__Text>Our forms can be accessed through both iOS and Android devices. 
                             Our Easy WorkFlow Management System/web portal can be accessed 
                             via your PC, laptop or tablet/iPad.</Section01__Text>
                         <ButtonDiv><Button value={'contact us'}/></ButtonDiv>
-                    <SubTitle>Follow Us On Social Network</SubTitle>
-                    <SnsIcons>
-                        <Facebook />
-                        <Twitter />
-                        <Linkedin />
-                    </SnsIcons>
+                        <SubTitle>Follow Us On Social Network</SubTitle>
+                        <SnsIcons>
+                            <Facebook />
+                            <Twitter />
+                            <Linkedin />
+                        </SnsIcons>
                     </Section01__TitleDiv>
                 </Section01>
                 <Section02>
@@ -231,9 +231,7 @@ const HomeContainer =() => (
 const Home = styled.div``
 
 const Section0102 = styled.div`
-    ${breakpoint('lg')`
-        background-color:rgba(238,238,238,0.6);
-    `}
+        background-color:#E2E2E2;
 `
 
 /**** Section 01 ****/
@@ -248,13 +246,16 @@ const Section01 = styled.div`
     background-size:100% 100%;
     ${breakpoint('lg')`
         padding:100px 8%;
-        justify-content:space-between;
+        justify-content:flex-end;
         flex-direction:row;
         background: url('${HomeSection01BgMd}');
         background-position:center top;
         background-repeat:no-repeat;
         background-size:100% 100%;
     `}
+`
+const Section01__Image = styled.div`
+    text-align:center;
 `
 const Cluster = styled.img`
     width:100%;
@@ -264,7 +265,7 @@ const Cluster = styled.img`
 `
 const Section01__TitleDiv = styled.div`
     ${breakpoint('lg')`
-        margin-left:6%;
+        margin-left:50px;
     `}
 `;
 
@@ -286,7 +287,7 @@ const Section01__Text = styled.div`
             line-height:28px;
             color:white;
             font-weight:${Themes.fontWeight.regular};
-            text-align: right;
+            text-align:right;
             margin-top:15px;
             margin-bottom:30px;
             width:445px;
@@ -342,8 +343,17 @@ const Linkedin = styled.div`
 
 const Section02 = styled.div`
     padding: 80px 8% 60px 8%;
+    ${breakpoint('md')`
+        height:100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background:url(${HomeSection02BgMd}) no-repeat center bottom;
+        background-size:contain;
+    `}
 `
 const Section02__TitleDiv = styled.div`
+        
 `
 const Section02__Title = styled.p`
     ${Title};
@@ -353,6 +363,7 @@ const Section02__Contents = styled.div`
     ${breakpoint('md')`
         display:grid;
         grid-template-columns:1fr 1fr 1fr;
+        grid-column-gap:10px;
     `}
 `
 const Section02__ContentDiv = styled.div`
@@ -392,20 +403,20 @@ const Section0304 = styled.div`
 /**** Section 03 ****/
 
 const Section03 = styled.div`
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    box-sizing:border-box;
     background: 
         linear-gradient(
             rgba(8,39,90,0.8), rgba(8,39,90,0.8)
         ),
-        url(${CustomerStoriesBg}), center;
-    padding: 70px 8% 40px 8%;
-        ${breakpoint('md')`
-            padding: 70px 10% 40px 10%;
-        `}
+        url(${CustomerStoriesBg});
+    padding: 70px 0 40px 0;
         ${breakpoint('lg')`
-        padding: 70px 20% 40px 20%;
+            padding: 70px 20% 40px 20%;
         `}
-
-`;
+`
 const Section03__Title = styled.p`
     ${Title};
     color:white;
@@ -447,10 +458,6 @@ const Section03__CardText = styled.div`
 
 const Section04 = styled.div`
     padding: 70px 8% 20px 8%;
-
-        ${breakpoint('lg')`
-       
-        `}
 `
 const Section04__Title = styled.p`  
     color:${Themes.colors.blue};
@@ -458,14 +465,16 @@ const Section04__Title = styled.p`
     font-weight:${Themes.fontWeight.black};
     text-align:center;
     line-height:30px;
+    margin-bottom:30px;
 `
 const Section04__Logos = styled.div`
     display:grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap:5%;
     margin:40px auto 0 auto;
 `
 const Section04__Logo = styled.img`
-    width:146px;
+    max-width:146px;
     height:auto;
     margin:20px auto 40px auto;
 `
