@@ -11,6 +11,7 @@ import HeaderLine from '../../Common/HeaderLine';
 /** Images **/
 import HomeSection01BgSm from '../../../../Assets/Images/HomeSection01BgSm.png';
 import HomeSection01BgMd from '../../../../Assets/Images/HomeSection01BgMd.png';
+import HomeSection0102Bg from '../../../../Assets/Images/HomeSection0102Bg.png';
 import ClusterImg from '../../../../Assets/Images/cluster.png';
 import FacebookIcon from '../../../../Assets/Images/facebook.png';
 import TwitterIcon from '../../../../Assets/Images/twitter.png';
@@ -70,6 +71,7 @@ const Shadow = css`
 const HomeContainer =() => (
             <ThemeProvider theme={Themes}>
             <Home>
+            <Section0102>
                 <Section01>
                     <div><Cluster src={ClusterImg}/></div>
                     <Section01__TitleDiv>
@@ -77,7 +79,7 @@ const HomeContainer =() => (
                         <Section01__Text>Our forms can be accessed through both iOS and Android devices. 
                             Our Easy WorkFlow Management System/web portal can be accessed 
                             via your PC, laptop or tablet/iPad.</Section01__Text>
-                        <Button />
+                        <ButtonDiv><Button value={'contact us'}/></ButtonDiv>
                     <SubTitle>Follow Us On Social Network</SubTitle>
                     <SnsIcons>
                         <Facebook />
@@ -112,6 +114,7 @@ const HomeContainer =() => (
                         </Section02__ContentDiv>
                     </Section02__Contents>
                 </Section02>
+            </Section0102>
                 <Section0304>
                     <Section03>
                         <Section03__Title>Customer Stories</Section03__Title>
@@ -148,10 +151,9 @@ const HomeContainer =() => (
                         <Section05__Title>Easyforms Features</Section05__Title>
                         <HeaderLine />
                     </Section05__TitleDiv>
+                    <Section05__CardDiv>
                     <Section05__Card>
                         <Section05__CardCircle>
-                            {/* <FontAwesomeIcon icon={['fab', 'facebook-f']} size={46}/> */}
-                            {/* <FontAwesomeIcon icon={['far','fa-paper-plane']}/> */}
                         </Section05__CardCircle>
                         <Section05__CardTitle>Replace Paper Forms and Processes</Section05__CardTitle>
                         <Section05__CardText>Eliminate stacks of paper, double handling and errors. 
@@ -160,6 +162,40 @@ const HomeContainer =() => (
                         solution, streamlining your existing processes 
                         while mobilising your business effortlessly.</Section05__CardText>
                     </Section05__Card> 
+
+                    {/* <Section05__Card>
+                        <Section05__CardCircle>
+                        </Section05__CardCircle>
+                        <Section05__CardTitle>Replace Paper Forms and Processes</Section05__CardTitle>
+                        <Section05__CardText>Eliminate stacks of paper, double handling and errors. 
+                            <br /><br />
+                        EasyForms can automate your paper forms and processes into an easy-to-use app-based 
+                        solution, streamlining your existing processes 
+                        while mobilising your business effortlessly.</Section05__CardText>
+                    </Section05__Card> 
+
+                    <Section05__Card>
+                        <Section05__CardCircle>
+                        </Section05__CardCircle>
+                        <Section05__CardTitle>Replace Paper Forms and Processes</Section05__CardTitle>
+                        <Section05__CardText>Eliminate stacks of paper, double handling and errors. 
+                            <br /><br />
+                        EasyForms can automate your paper forms and processes into an easy-to-use app-based 
+                        solution, streamlining your existing processes 
+                        while mobilising your business effortlessly.</Section05__CardText>
+                    </Section05__Card> 
+
+                    <Section05__Card>
+                        <Section05__CardCircle>
+                        </Section05__CardCircle>
+                        <Section05__CardTitle>Replace Paper Forms and Processes</Section05__CardTitle>
+                        <Section05__CardText>Eliminate stacks of paper, double handling and errors. 
+                            <br /><br />
+                        EasyForms can automate your paper forms and processes into an easy-to-use app-based 
+                        solution, streamlining your existing processes 
+                        while mobilising your business effortlessly.</Section05__CardText>
+                    </Section05__Card>  */}
+                    </Section05__CardDiv>
                 </Section05>
                 <Section06>
                     <Section06__Title>Easyforms Function</Section06__Title>
@@ -189,55 +225,95 @@ const HomeContainer =() => (
 
 const Home = styled.div``
 
+const Section0102 = styled.div`
+    ${breakpoint('lg')`
+        background-color:rgba(238,238,238,0.6);
+    `}
+`
+
 /**** Section 01 ****/
 
 const Section01 = styled.div`
     display:flex;
-    background-image:url(${HomeSection01BgSm});
-    padding:95px 37px;
+    padding:100px 8%;
     flex-direction:column;
-        ${breakpoint('md')`
-        background-image:url(${HomeSection01BgMd});
+    background: url('${HomeSection01BgSm}');
+    background-position:center top;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    ${breakpoint('lg')`
+        padding:100px 8%;
         justify-content:space-between;
         flex-direction:row;
-        `}
-
-    background-repeat:no-repeat;
-    background-size:cover;
+        background: url('${HomeSection01BgMd}');
+        background-position:center top;
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+    `}
 `
 const Cluster = styled.img`
     width:100%;
-    ${breakpoint('lg')`
-    width:560px;
-    `}
+        ${breakpoint('lg')`
+        `}
     height:auto;
 `
-const Section01__TitleDiv = styled.div``;
-    const BigTitle = styled.p`
+const Section01__TitleDiv = styled.div`
+    ${breakpoint('lg')`
+        margin-left:6%;
+    `}
+`;
+
+const BigTitle = styled.div`
         font-size:38px;
-        ${breakpoint('md')`
-        font-size:${Themes.fontsize.h1};
-        `}
+        margin:40px 0;
         color:${Themes.colors.white};
         text-align:center;
+            ${breakpoint('lg')`
+                text-align:right;
+                margin:0;
+            `}
     `
-    const SubTitle = styled.p`
+const Section01__Text = styled.div`
+    display:none;
+        ${breakpoint('lg')`
+            display:block;
+            font-size:${Themes.fontsize.p1};
+            line-height:28px;
+            color:white;
+            font-weight:${Themes.fontWeight.regular};
+            text-align: right;
+            margin-top:15px;
+            margin-bottom:30px;
+            width:445px;
+        `}
+`
+const ButtonDiv = styled.div`
+        width:100%;
+        margin:0 auto;
+            ${breakpoint('lg')`
+                width:75%;
+                margin-right:0;
+            `}
+`
+const SubTitle = styled.p`
         font-size:${Themes.fontsize.h3};
         color:${Themes.colors.white};
         text-align:center;
         font-weight:${Themes.fontWeight.bold};
         margin-top:60px;
-    `
-    const Section01__Text = styled.div`
-        display:none;
-        ${breakpoint('md')`
-        display:block;
-        font-size:${Themes.fontsize.p1};
+            ${breakpoint('lg')`
+            text-align:right;
         `}
     `
+
 const SnsIcons = styled.div`
     display:flex;
     justify-content: center;
+        ${breakpoint('lg')`
+        margin-right:0;
+        text-align:right;
+        justify-content: flex-end;
+    `}
 `
 const Facebook = styled.div`
     background-image:url(${FacebookIcon});
@@ -260,9 +336,7 @@ const Linkedin = styled.div`
 /**** Section 02 ****/
 
 const Section02 = styled.div`
-    padding: 80px 37px 60px 37px;
-    ${LightGreyBg};
-    displey:flex;
+    padding: 80px 8% 60px 8%;
 `
 const Section02__TitleDiv = styled.div`
 `
@@ -271,13 +345,22 @@ const Section02__Title = styled.p`
 `
 
 const Section02__Contents = styled.div`
- 
+    ${breakpoint('md')`
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+    `}
 `
 const Section02__ContentDiv = styled.div`
-    margin-top:60px;
+    margin:60px auto 0 auto;
+    width:100%;
+    ${breakpoint('lg')`
+    width:300px;
+    margin:60px auto 0 auto;
+`}
+
 `
 const Section02__Image = styled.img`
-    width:300px;
+    width:100%;
 `
 const Section02__Subtitle = styled.p`
     margin-top:37px;
@@ -293,16 +376,30 @@ const Section02__Text = styled.div`
     ${Text};
 `
 
-const Section0304 = styled.div``
+const Section0304 = styled.div`
+    ${breakpoint('md')`
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    `}
+`
 
 
 /**** Section 03 ****/
 
 const Section03 = styled.div`
     background: 
-        rgba(8,39,90,0.8) 
-        url(${CustomerStoriesBg});
-    padding: 70px 0 40px 0;
+        linear-gradient(
+            rgba(8,39,90,0.8), rgba(8,39,90,0.8)
+        ),
+        url(${CustomerStoriesBg}), center;
+    padding: 70px 8% 40px 8%;
+        ${breakpoint('md')`
+            padding: 70px 10% 40px 10%;
+        `}
+        ${breakpoint('lg')`
+        padding: 70px 20% 40px 20%;
+        `}
+
 `;
 const Section03__Title = styled.p`
     ${Title};
@@ -344,7 +441,11 @@ const Section03__CardText = styled.div`
 /**** Section 04 ****/
 
 const Section04 = styled.div`
-    padding: 60px 37px 20px 37px;
+    padding: 70px 8% 20px 8%;
+
+        ${breakpoint('lg')`
+       
+        `}
 `
 const Section04__Title = styled.p`  
     color:${Themes.colors.blue};
@@ -356,12 +457,12 @@ const Section04__Title = styled.p`
 const Section04__Logos = styled.div`
     display:grid;
     grid-template-columns: 1fr 1fr;
-    margin-top:40px;
+    margin:40px auto 0 auto;
 `
 const Section04__Logo = styled.img`
     width:146px;
     height:auto;
-    margin-bottom:40px;
+    margin:20px auto 40px auto;
 `
 
 
@@ -377,6 +478,9 @@ const Section05__TitleDiv = styled.div`
 const Section05__Title = styled.div`
     ${Title};
 `
+const Section05__CardDiv = styled.div`
+
+`
 const Section05__Card = styled.div`
     width:264px;
     height:400px;
@@ -385,13 +489,13 @@ const Section05__Card = styled.div`
     margin-top:20px;
     padding: 35px 20px;
     box-sizing: border-box;
-    ${Shadow}
+    ${Shadow};
 `
 const Section05__CardCircle = styled.div`
     width:87px;
     height:87px;
     ${IconCircle};
-    margin:auto;    
+    margin:auto; 
 `
 const Section05__CardTitle = styled.p`
     color:${Themes.colors.blue};

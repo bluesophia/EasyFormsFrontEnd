@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
+import PropTypes from 'prop-types';
 import Themes from '../../../../Assets/Styles/Themes';
 
 
@@ -7,11 +8,15 @@ class Button extends Component {
     render(){
         return (
             <ThemeProvider theme={Themes}>
-                <ButtonStyle>contact us</ButtonStyle>
+                <ButtonStyle>{this.props.value}</ButtonStyle>
             </ThemeProvider>
         );
     }
 }
+
+Button.propTypes = {
+    value: PropTypes.string
+  };
 
 const ButtonStyle = styled.button`
     background: linear-gradient(${Themes.colors.yellow}, ${Themes.colors.orange});
