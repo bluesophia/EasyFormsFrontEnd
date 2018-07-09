@@ -4,7 +4,7 @@ import HomeContainer from '../../Components/WebContainer/HomeContainer';
 import AboutUsScreen from '../../Screen/Web/AboutUsScreen';
 import SupportScreen from '../../Screen/Web/SupportScreen';
 import BlogScreen from '../../Screen/Web/BlogScreen';
-import ContactUsScreen from '../../Screen/Web/ContactUsScreen';
+// import ContactUsScreen from '../../Screen/Web/ContactUsScreen';
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -18,7 +18,7 @@ const Web = () => (
       <Route path='/about' component={AboutUsScreen}/>
       <Route path='/support' component={SupportScreen}/>
       <Route path='/blog' component={BlogScreen}/>
-      <Route path='/contact' component={ContactUsScreen}/>
+      {/* <Route path='/contact' component={ContactUsScreen}/> */}
     </Switch>
   </main>
 )

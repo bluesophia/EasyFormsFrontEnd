@@ -14,6 +14,9 @@ const Themes = {
         veryLightGrey: '#eee',
         white: '#fff'
     },
+    background:{
+        blue:'linear-gradient(blueLight,blue)'
+    },
     fontsize: {
         h1: "40px",
         h2: "25px",
