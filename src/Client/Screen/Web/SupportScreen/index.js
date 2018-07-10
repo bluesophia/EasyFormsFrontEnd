@@ -35,19 +35,20 @@ const SupportScreen = () => (
 )
 
 const Section01 = styled.div`
-  background-color:rgba(238,238,238,0.6);
+  position:absolute;
+  top:120;
+  position:relative;
   height:135vh;
-  display: flex;
+  display:flex;
   justify-content: center;
   ${breakpoint('md')`
     width:100vw;
     height:180vh;
   `}
-
 `
 const BgImage = styled.div`
-  position:absolute;
-  top:120;
+  z-index:-1;
+  top:0;
   left:0;
   background:linear-gradient(rgba(8,39,90), rgba(8,39,90,0.4)), url(${Section01Bg});
   background-size:cover;
@@ -62,7 +63,6 @@ const Section01__Contents = styled.div`
   box-sizing:border-box;
   position:absolute;
   top: 0;
-  z-index:1;
   margin:60px auto 0 auto;
     ${breakpoint('md')`
     padding:100px 10% 0 10%;

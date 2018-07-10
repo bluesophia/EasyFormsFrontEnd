@@ -13,17 +13,17 @@ class FooterContainer extends Component {
             <FooterTop>
               <FooterBox3>
                 <Footer__title__display>SOCIAL MEDIA</Footer__title__display>
-                <FooterRightContainer>
-                    <Footer__sns href="https://www.facebook.com/EasyFormsNZ/?ref=aymt_homepage_panel">
-                        <FontAwesomeIcon icon={['fab', 'facebook-f']} />
-                    </Footer__sns>
-                    <Footer__sns href="https://twitter.com/EasyFormsNZ">
-                        <FontAwesomeIcon icon={['fab', 'twitter']} />
-                    </Footer__sns>
-                    <Footer__sns href="https://www.linkedin.com/company/easy-forms/">
-                        <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
-                    </Footer__sns>
-                </FooterRightContainer>
+                <Box>
+                <Sns href="https://www.facebook.com/EasyFormsNZ/?ref=aymt_homepage_panel">
+                    <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+                </Sns>
+                <Sns href="https://twitter.com/EasyFormsNZ">
+                    <FontAwesomeIcon icon={['fab', 'twitter']} />
+                </Sns>
+                <Sns href="https://www.linkedin.com/company/easy-forms/">
+                    <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
+                </Sns>
+            </Box>
               </FooterBox3>
 
               <FooterBox1>
@@ -39,11 +39,11 @@ class FooterContainer extends Component {
               <FooterBox2>
                 <Footer__title>SITEMAP</Footer__title>
                 <FooterRightContainer>
-                    <Link to='/'><Nav>Home</Nav></Link>
-                    <Link to='/about'><Nav>About</Nav></Link>
-                    <Link to='/support'><Nav>Support</Nav></Link>
-                    <Link to='/blog'><Nav>Blog</Nav></Link>
-                    <Link to='/contact'><Nav>Contact Us</Nav></Link>
+                    <StyledLink to='/'>Home</StyledLink>
+						        <StyledLink to='/about'>About</StyledLink>
+						        <StyledLink to='/support'>Support</StyledLink>
+						        <StyledLink to='/blog'>Blog</StyledLink>
+						        <StyledLink to='/contact'>Contact Us</StyledLink>
                 </FooterRightContainer>
               </FooterBox2>
 
@@ -58,6 +58,21 @@ class FooterContainer extends Component {
       );
     }
   }
+  
+  const Box = styled.div`
+      display: flex;
+      justify-content: center;
+  `;
+  
+  const Sns = styled.a`
+  color: ${Themes.colors.white};
+  font-size: 1.5em;
+  padding: 0 1em;
+  
+  ${breakpoint('md')`
+  padding: 0 0.5em;
+  `};
+  `;
 
 const Footer = styled.div`
 display: flex;
@@ -143,17 +158,7 @@ const Footer__text_address = Footer__text.extend`
 padding-top: 1.25em;
 `;
 
-const Footer__sns = styled.a`
-color: ${Themes.colors.white};
-font-size: 1.5em;
-padding: 0 1em;
-
-${breakpoint('md')`
-padding: 0 0.5em;
-`};
-`;
-
-const Nav = styled.a`
+const StyledLink = styled(Link)`
 color: ${Themes.colors.lightGrey};
 font-size: 1em;
 display:block;
