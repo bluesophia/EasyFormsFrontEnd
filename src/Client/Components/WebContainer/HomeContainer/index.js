@@ -4,7 +4,6 @@ import breakpoint from 'styled-components-breakpoint';
 import { Carousel } from 'react-responsive-carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Themes from '../../../../Assets/Styles/Themes';
-
 import Button from '../../Common/Button/'
 import HeaderLine from '../../Common/HeaderLine';
 
@@ -33,6 +32,7 @@ import Logo04 from '../../../../Assets/Images/sharp.gif';
 import Logo05 from '../../../../Assets/Images/ncc.gif';
 import Logo06 from '../../../../Assets/Images/uoa.gif';
 import Logo07 from '../../../../Assets/Images/asb.gif';
+
 
 injectGlobal`
   body{
@@ -91,7 +91,6 @@ class HomeContainer extends Component {
                 <Section02>
                     <Section02__TitleDiv>
                         <Section02__Title>Why Easyforms?</Section02__Title>
-                        <HeaderLine />
                     </Section02__TitleDiv>
                     <Section02__Contents>
                         <Section02__ContentDiv>

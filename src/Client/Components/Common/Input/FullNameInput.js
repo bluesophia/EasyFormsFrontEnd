@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import styled, { ThemeProvider } from 'styled-components';
 import Themes from '../../../../Assets/Styles/Themes';
-import InputField from 'react-input-forms'
 
 export default class FullNameInput extends Component {
   state = {
-    value: '',
+    value: 'John Doe',
   }
 
   handleUpdateValue = (value) => {
@@ -15,17 +14,35 @@ export default class FullNameInput extends Component {
   render() {
     const { value } = this.state;
     return (
-      <div className="container">
       <ThemeProvider theme={Themes}>
-        <InputField
+      <div className="container">
+      <Label>Full Name </Label><br />
+        <Input
           type="text"
           value={value}
           name="input-text"
-          label="label"
+          label="Full Name "
           onChange={this.handleUpdateValue}
         />
-        </ThemeProvider>
       </div>
+      </ThemeProvider>
     )
   }
 }
+const Label = styled.label`
+  font-size: ${Themes.fontsize.p2}
+  font-weight: ${Themes.fontWeight.bold}
+  color: ${Themes.colors.blueLight};
+  `;
+
+const Input = styled.input`
+  padding: 0.5em;
+  margin: 0;
+  color: ${Themes.colors.formGrey};
+  border: none;
+  background: none;
+  border-bottom: 1px solid ${Themes.colors.formGrey}
+  &:focus {
+    outline: none;
+  }
+`;
