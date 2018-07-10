@@ -15,20 +15,26 @@ export default class FullNameInput extends Component {
     const { value } = this.state;
     return (
       <ThemeProvider theme={Themes}>
-      <div className="container">
+      <Container>
       <Label>Full Name </Label><br />
         <Input
           type="text"
           value={value}
           name="input-text"
-          label="Full Name "
+          label="Full Name"
           onChange={this.handleUpdateValue}
+          required
         />
-      </div>
+      </Container>
       </ThemeProvider>
     )
   }
 }
+
+const Container = styled.div`
+  padding-left: 0.5em;
+`
+
 const Label = styled.label`
   font-size: ${Themes.fontsize.p2}
   font-weight: ${Themes.fontWeight.bold}
@@ -38,6 +44,7 @@ const Label = styled.label`
 const Input = styled.input`
   padding: 0.5em;
   margin: 0;
+  width: 80%;
   color: ${Themes.colors.formGrey};
   border: none;
   background: none;

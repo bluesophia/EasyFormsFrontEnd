@@ -6,6 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Themes from '../../../../Assets/Styles/Themes';
 import Button from '../../Common/Button/'
 import HeaderLine from '../../Common/HeaderLine';
+import FullNameInput from '../../Common/Input/FullNameInput'
+import CompanyNameInput from '../../Common/Input/CompanyNameInput'
+import EmailInput from '../../Common/Input/EmailInput'
+import PhoneNumberInput from '../../Common/Input/PhoneNumberInput'
 
 /** Images **/
 import HomeSection01BgSm from '../../../../Assets/Images/HomeSection01BgSm.png';
@@ -85,6 +89,7 @@ class HomeContainer extends Component {
                         <Facebook />
                         <Twitter />
                         <Linkedin />
+                        
                     </SnsIcons>
                     </Section01__TitleDiv>
                 </Section01>
@@ -93,6 +98,13 @@ class HomeContainer extends Component {
                         <Section02__Title>Why Easyforms?</Section02__Title>
                     </Section02__TitleDiv>
                     <Section02__Contents>
+                        {/* input */}
+                    <Input__Div>
+                    <FullNameInput />
+                    <CompanyNameInput />
+                    <EmailInput />
+                    <PhoneNumberInput />
+                    </Input__Div>
                         <Section02__ContentDiv>
                             <Section02__Image src={WhyUs01} />
                             <Section02__Subtitle>Customised to your needs</Section02__Subtitle>
@@ -193,6 +205,12 @@ class HomeContainer extends Component {
 const Home = styled.div``
 
 /**** Section 01 ****/
+
+
+const Input__Div = styled.div`
+    // display:flex;
+    margin-left:3px;
+`
 
 const Section01 = styled.div`
     display:flex;
