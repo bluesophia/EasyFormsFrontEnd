@@ -139,7 +139,12 @@ const Section__Title = styled.div`
   ${Title}
 `
 const Section__Text = styled.div`
-  ${Text}
+  ${Text};
+  font-size:${Themes.fontsize.p3};
+  line-height:23px;
+    ${breakpoint('lg')`
+    ${Text};
+    `}
 `
 
 export default AboutUsScreen;
