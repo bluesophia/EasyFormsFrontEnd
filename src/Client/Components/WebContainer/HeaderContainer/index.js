@@ -21,7 +21,7 @@ import logo from '../../../../Assets/Images/logo.png';
 							<Link to='/'><img src={logo} width="120" style={styledLogo}/></Link>
               <NavWide>
                 <WideDiv>
-										<StyledLink to='/'>Home</StyledLink>
+					<StyledLink to='/'>Home</StyledLink>
                     <StyledLink to='/about'>About</StyledLink>
                     <StyledLink to='/support'>Support</StyledLink>
                     <StyledLink to='/blog'>Blog</StyledLink>
@@ -32,7 +32,7 @@ import logo from '../../../../Assets/Images/logo.png';
               <NavNarrow>
                <FontAwesomeIcon style={icon} icon='bars' onClick={this.burgerToggle} size="2x"/>
                 <NarrowLinks className="narrowLinks">
-										<NarrowStyledLink onClick={this.burgerToggle} to='/'>Home</NarrowStyledLink>
+					<NarrowStyledLink onClick={this.burgerToggle} to='/'>Home</NarrowStyledLink>
                     <NarrowStyledLink onClick={this.burgerToggle} to='/about'>About</NarrowStyledLink>
                     <NarrowStyledLink onClick={this.burgerToggle} to='/support'>Support</NarrowStyledLink>
                     <NarrowStyledLink onClick={this.burgerToggle} to='/blog'>Blog</NarrowStyledLink>
