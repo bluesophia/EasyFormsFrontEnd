@@ -3,7 +3,7 @@ import styled, { css, ThemeProvider } from 'styled-components';
 import Themes from '../../../../Assets/Styles/Themes';
 
 export default Text = css`
-    font-size:${Themes.fontsize.p1};
+    font-size:${Themes.fontsize.p2};
     font-weight:${Themes.fontWeight.regular};
     text-align:center;
     line-height:28px;

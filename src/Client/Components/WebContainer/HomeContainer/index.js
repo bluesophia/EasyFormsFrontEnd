@@ -76,11 +76,12 @@ const HomeContainer =() => (
                 <Section01>
                     <Section01__Image><Cluster src={ClusterImg}/></Section01__Image>
                     <Section01__TitleDiv>
-                        <BigTitle>Finish your working process in one application</BigTitle>
-                        <Section01__Text>Our forms can be accessed through both iOS and Android devices. 
-                            Our Easy WorkFlow Management System/web portal can be accessed 
-                            via your PC, laptop or tablet/iPad.</Section01__Text>
-                        <ButtonDiv><Button value={'contact us'}/></ButtonDiv>
+                        <BigTitle>Job Management and WorkFlow Processes Made Easy</BigTitle>
+                        <Section01__Text>We are a cloud-based solution offering end-to-end job 
+                            and workflow management software industry standard 
+                            health and safety management and much more.
+                        </Section01__Text>
+                        <ButtonDiv><Button value={'contact our software experts'}/></ButtonDiv>
                         <SubTitle>Follow Us On Social Network</SubTitle>
                         <SnsIcons>
                             <Facebook />
@@ -245,8 +246,8 @@ const Section01 = styled.div`
     background-repeat:no-repeat;
     background-size:100% 100%;
     ${breakpoint('lg')`
-        padding:100px 8%;
-        justify-content:flex-end;
+        padding:100px 10% 80px 8%;
+        justify-content:space-between;
         flex-direction:row;
         background: url('${HomeSection01BgMd}');
         background-position:center top;
@@ -255,22 +256,25 @@ const Section01 = styled.div`
     `}
 `
 const Section01__Image = styled.div`
-    text-align:center;
+    margin:0 auto;
+        ${breakpoint('lg')`
+            margin-left:0;
+            width:90%;
+        `}
 `
 const Cluster = styled.img`
     width:100%;
-        ${breakpoint('lg')`
-        `}
     height:auto;
 `
 const Section01__TitleDiv = styled.div`
     ${breakpoint('lg')`
-        margin-left:50px;
+        margin-left:60px;
+        width:85%;
     `}
 `;
 
 const BigTitle = styled.div`
-        font-size:38px;
+        font-size:35px;
         margin:40px 0;
         color:${Themes.colors.white};
         text-align:center;
@@ -283,21 +287,20 @@ const Section01__Text = styled.div`
     display:none;
         ${breakpoint('lg')`
             display:block;
-            font-size:${Themes.fontsize.p1};
-            line-height:28px;
-            color:white;
-            font-weight:${Themes.fontWeight.regular};
+            color:#E2E2E2;
+            font-size:${Themes.fontsize.p2};
+            line-height:25px;
             text-align:right;
             margin-top:15px;
-            margin-bottom:30px;
-            width:445px;
+            margin-bottom:20px;
+            font-weight:300;
         `}
 `
 const ButtonDiv = styled.div`
         width:100%;
         margin:0 auto;
             ${breakpoint('lg')`
-                width:75%;
+                width:80%;
                 margin-right:0;
             `}
 `
@@ -305,7 +308,7 @@ const SubTitle = styled.p`
         font-size:${Themes.fontsize.h3};
         color:${Themes.colors.white};
         text-align:center;
-        font-weight:${Themes.fontWeight.bold};
+        font-weight:${Themes.fontWeight.regular};
         margin-top:60px;
             ${breakpoint('lg')`
             text-align:right;
@@ -377,13 +380,14 @@ const Section02__ContentDiv = styled.div`
 `
 const Section02__Image = styled.img`
     width:100%;
+    ${Shadow};
 `
 const Section02__Subtitle = styled.p`
     margin-top:37px;
     margin-bottom:0;
     color:${Themes.colors.blue};
     font-size:${Themes.fontsize.h2};
-    font-weight:${Themes.fontWeight.black};
+    font-weight:${Themes.fontWeight.bold};
     text-align:center;
     line-height:30px;
 `
@@ -415,6 +419,7 @@ const Section03 = styled.div`
     padding: 70px 0 40px 0;
         ${breakpoint('lg')`
             padding: 70px 20% 40px 20%;
+            height:100vh;
         `}
 `
 const Section03__Title = styled.p`
@@ -483,8 +488,17 @@ const Section04__Logo = styled.img`
 /**** Section 05 ****/
 
 const Section05 = styled.div`
-    padding: 60px 37px;
+    padding: 60px 8%;
     ${LightGreyBg};
+        ${breakpoint('md')`
+        padding: 60px 15%;
+        `}
+        ${breakpoint('lg')`
+        height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+`}
 `
 const Section05__TitleDiv = styled.div`
 
@@ -493,7 +507,6 @@ const Section05__Title = styled.div`
     ${Title};
 `
 const Section05__CardDiv = styled.div`
-        display:
     ${breakpoint('md')`
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -512,6 +525,9 @@ const Section05__Card = styled.div`
     padding: 35px 20px;
     box-sizing: border-box;
     ${Shadow};
+        ${breakpoint('lg')`
+            margin-top:55px;
+        `}
 `
 const Section05__CardCircle = styled.div`
     width:87px;
@@ -541,7 +557,7 @@ const Section06 = styled.div`
     background: url('${Section06BgSm}') no-repeat center;
     height:983px;
     ${breakpoint('lg')`
-     background: url('${Section06BgLg}') no-repeat
+     background: url('${Section06BgLg}') no-repeat;
      background-position: center bottom;
      background-size:100% auto;
      height:100vh;
@@ -573,7 +589,7 @@ const Section07__Text = styled.div`
     display:none;
         ${breakpoint('md')`
             display:block;
-            font-size:${Themes.fontsize.h2};
+            font-size:${Themes.fontsize.p1};
             color:${Themes.colors.black};
             text-align:center;
         `}   
@@ -598,12 +614,11 @@ const Section07__Icon = styled.img`
     height:auto;
     display:block;
     margin:0 auto;
-        ${breakpoint('md')`
-         width:160px;
-    `} 
 `
 const Section07__SubTitle = styled.p`
     ${Title};
+    font-size:${Themes.fontsize.h3}; 
+    font-weight:${Themes.fontsize.bold};
     letter-spacing:normal;
 `
 

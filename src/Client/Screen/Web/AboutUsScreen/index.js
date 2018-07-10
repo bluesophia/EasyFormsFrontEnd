@@ -102,10 +102,14 @@ const Section01 = styled.div`
     padding:100px 15% 70px 15%;
   `}
 `
-const Section01__TitleDiv = styled.div``
+const Section01__TitleDiv = styled.div`
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+`
 const Section01__Title = styled.div`
   ${BigTitle};
-  margin:40px 0;
+  margin:40px 0 0 0;
 `
 const Section01__Text = styled.div`
   display:none;
@@ -113,6 +117,8 @@ const Section01__Text = styled.div`
       display:block;
       ${Text};
       color:white;
+      width:90%
+      font-weight:300;
     `}
 `
 const Section02 = styled.div`

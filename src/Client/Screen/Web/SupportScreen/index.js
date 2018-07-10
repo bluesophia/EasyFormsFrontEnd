@@ -47,7 +47,7 @@ const Section01 = styled.div`
 `
 const BgImage = styled.div`
   position:absolute;
-  top:0;
+  top:120;
   left:0;
   background:linear-gradient(rgba(8,39,90), rgba(8,39,90,0.4)), url(${Section01Bg});
   background-size:cover;
@@ -83,6 +83,7 @@ const Section01__Text = styled.div`
     ${breakpoint('md')`
       display:block;
       ${Text};
+      font-weight:300;
       color:white;
     `}
 `

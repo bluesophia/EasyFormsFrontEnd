@@ -27,7 +27,7 @@ const Themes = {
         p4: "11px"
     },
     fontWeight: {
-        regular: "400",
+        regular:"400",
         bold:"700",
         black:"900"
     },

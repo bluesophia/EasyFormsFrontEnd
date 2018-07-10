@@ -12,9 +12,11 @@ const BlogScreen = () => (
   <ThemeProvider theme={Themes}>
     <Container>
       <BlogToggleContainer 
-        title={'Is Timesheet Theft Giving You a Constant Headache?'}/>   
+        title={'Is Timesheet Theft Giving You a Constant Headache?'}
+        bg={'../../../../Assets/Images/blog_1.jpg'}/>   
       <BlogToggleContainer 
-        title={'Are Mountains of Paperwork Dragging Your Business Down?'}/>   
+        title={'Are Mountains of Paperwork Dragging Your Business Down?'}
+        bg={'../../../../Assets/Images/blog_2.jpg'}/>   
     </Container>
   </ThemeProvider>
 )

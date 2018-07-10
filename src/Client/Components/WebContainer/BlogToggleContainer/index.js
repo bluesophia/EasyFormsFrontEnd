@@ -16,25 +16,26 @@ class BlogToggleContainer extends Component{
             <ThemeProvider theme={Themes}>
             <Container>
               <Section01>
-                <BgImage></BgImage>
-                <Section01__Contents>
+                <Section01__Header>
                   <Section01__TitleDiv>
                     <Section01__Title>{this.props.title}</Section01__Title>
                     <HeaderLine />
                   </Section01__TitleDiv>
-                  <Section01__Blogs>
-                      <BlogToggle 
-                        question={'Would you like to eliminate timesheet ambiguity?'}/>
-                      <BlogToggle 
-                        question={'So, What is Timesheet Theft Costing You?'}/>
-                      <BlogToggle 
-                        question={'Timesheet Theft Is Not Always Deliberate'}/>
-                      <BlogToggle 
-                        question={'How We Can Help'}/>
-                      <BlogToggle 
-                        question={'We can help your business :'}/>
-                  </Section01__Blogs>
-                </Section01__Contents>
+                  <Section01__FirstBlog>
+                    <BlogToggle 
+                      question={'Would you like to eliminate timesheet ambiguity?'}/>
+                  </Section01__FirstBlog>
+                </Section01__Header>
+                  <Section01__Contents>
+                        <BlogToggle 
+                          question={'So, What is Timesheet Theft Costing You?'}/>
+                        <BlogToggle 
+                          question={'Timesheet Theft Is Not Always Deliberate'}/>
+                        <BlogToggle 
+                          question={'How We Can Help'}/>
+                        <BlogToggle 
+                          question={'We can help your business :'}/>
+                  </Section01__Contents>
               </Section01>
             </Container>
           </ThemeProvider>
@@ -49,72 +50,61 @@ BlogToggleContainer.propTypes = {
 const Container = styled.div`
     position:relative;
 `
-
 const Section01 = styled.div`
-  background-color:rgba(238,238,238,0.6);
-  height:135vh;
-  display: flex;
-  justify-content: center;
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
   ${breakpoint('md')`
-    width:100vw;
-    height:180vh;
   `}
-
 `
-const BgImage = styled.div`
-  position:absolute;
-  top:0;
-  left:0;
+const Section01__Header = styled.div`
+  display:flex;
+  justify-content:center;
+  flex-direaction:coulmn;
   background:linear-gradient(rgba(8,39,90), rgba(8,39,90,0.4)), url(${Section01Bg});
   background-size:cover;
-  width:100%;
-  height:50%;
+  padding-top:100px;
+  padding-bottom:80px;
+  position:relative;
   ${breakpoint('md')`
-    width:100vw;
-    height:100vh;
+    padding-top:180px;
+    width:100%;
+    background-position:center-top;
   `}
 `
-const Section01__Contents = styled.div`
-  box-sizing:border-box;
-  position:absolute;
-  top: 0;
-  z-index:1;
-  margin:60px auto 0 auto;
-    ${breakpoint('md')`
-    padding:100px 10% 0 10%;
-    top:230;
-    `}
-`
 const Section01__TitleDiv = styled.div`
-  padding:0 8%;
-  margin:0 auto 40px auto;
-  ${breakpoint('md')``}
+  padding-right:8%;
+  padding-left:8%;
+  ${breakpoint('md')`
+    margin-bottom:40px;
+  `}
 `
 const Section01__Title = styled.div`
   ${BigTitle};
   font-size:30px;
   ${breakpoint('md')`
     ${BigTitle};
+    font-size:35px;
   `}
 `
-const Section01__Text = styled.div`
-  display:none;
-    ${breakpoint('md')`
-      display:block;
-      ${Text};
-      color:white;
-    `}
-`
-const Section01__Blogs = styled.div`
-  background-color:white;
+const Section01__FirstBlog = styled.div`
   width:100%;
-  height:100vh;
-  box-shadow : 0 0 25px rgba(50, 50, 93, 0.2);
-  margin:0 auto 85px auto;
-  ${breakpoint('md')`
-    width:80%;
+  padding:0;
+  margin-bottom:-4px;
+  position:absolute;
+  bottom:0;
+    ${breakpoint('md')`
+    padding:0 20%;
+    width:60%;
   `}
-
+`
+const Section01__Contents = styled.div`
+  box-sizing:border-box;
+  width:100%;
+  margin:4px auto 0 auto;
+    ${breakpoint('md')`
+    padding:0 20% 100px 20%;
+    `}
 `
 const Section02 = styled.div`
 `
