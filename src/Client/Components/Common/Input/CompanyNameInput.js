@@ -42,7 +42,11 @@ const Label = styled.label`
 const Input = styled.input`
   padding: 0.5em;
   margin: 0;
+<<<<<<< HEAD
   width: 10%
+=======
+  width: 80%
+>>>>>>> 7ba9af1c49fe95395b13c4ff663a5bf7677e583f
   color: ${Themes.colors.formGrey};
   border: none;
   background: none;
