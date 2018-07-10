@@ -73,16 +73,24 @@ import Logo from '../../../../Assets/Images/logo.png';
 const Box = styled.div`
     display: flex;
 	justify-content:center;
+
 	${breakpoint('md')`
 	align-items: flex-end;
-	padding:1em;
+	padding:0;
 		`}
+		${breakpoint('lg')`
+		align-items: flex-end;
+		padding: 1em;
+	`}
 `;
 
 const Sns = styled.a`
 color: ${Themes.colors.white};
 font-size: 1em;
 padding: 1em;
+${breakpoint('md')`
+padding: 1em 0.5em;
+	`}
 ${breakpoint('lg')`
 padding: 0 1em;
 	`}
@@ -100,6 +108,7 @@ const LogoImg = styled.img`
 const LinkedLogo = styled(Link)`
 height:32px;
 `;
+
 const Nav = styled.div`
 	background-color: ${Themes.colors.blue};
 	overflow: hidden;
@@ -159,6 +168,11 @@ color: ${Themes.colors.lightGrey};
 font-size: 1em;
 padding: 1em;
 text-transform: uppercase;
+font-weight: ${Themes.fontWeight.regular};
+
+${breakpoint('md')`
+padding: 1em 0.5em;
+	`}
 }
 `;
 
@@ -172,6 +186,7 @@ const NarrowStyledLink = styled(Link)`
 text-decoration: none;
 color: ${Themes.colors.lightGrey};
 font-size: 1em;
+font-weight: ${Themes.fontWeight.regular};
 padding: 1em;
 display:block;
 text-align: center;

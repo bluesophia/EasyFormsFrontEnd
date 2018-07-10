@@ -13,16 +13,16 @@ class FooterContainer extends Component {
             <FooterTop>
               <FooterBox3>
                 <Footer__title__display>SOCIAL MEDIA</Footer__title__display>
-                <Box>
-                <Sns href="https://www.facebook.com/EasyFormsNZ/?ref=aymt_homepage_panel">
-                    <FontAwesomeIcon icon={['fab', 'facebook-f']} />
-                </Sns>
-                <Sns href="https://twitter.com/EasyFormsNZ">
-                    <FontAwesomeIcon icon={['fab', 'twitter']} />
-                </Sns>
-                <Sns href="https://www.linkedin.com/company/easy-forms/">
-                    <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
-                </Sns>
+                    <Box>
+                      <Sns href="https://www.facebook.com/EasyFormsNZ/?ref=aymt_homepage_panel">
+                          <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+                      </Sns>
+                      <Sns href="https://twitter.com/EasyFormsNZ">
+                          <FontAwesomeIcon icon={['fab', 'twitter']} />
+                      </Sns>
+                      <Sns href="https://www.linkedin.com/company/easy-forms/">
+                          <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
+                    </Sns>
             </Box>
               </FooterBox3>
 
@@ -62,6 +62,9 @@ class FooterContainer extends Component {
   const Box = styled.div`
       display: flex;
       justify-content: center;
+      ${breakpoint('md')`
+      justify-content: flex-start;
+  `};
   `;
   
   const Sns = styled.a`
@@ -80,7 +83,7 @@ flex-direction: column;
 justify-content: center;
 font-family: Lato;
 background: linear-gradient(${Themes.colors.blueLight}, ${Themes.colors.blue});
-
+padding: 0 10%;
 ${breakpoint('md')`
 
 `};
@@ -93,7 +96,7 @@ padding: 2.5em 0;
   ${breakpoint('md')`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   `};
 `;
 
@@ -131,11 +134,17 @@ text-align:left;
 
 const Footer__title = styled.span`
 font-size: 1em;
-margin: 2.75em auto 1.5em;
+text-align:center;
+margin: 2.75em 0 1.5em;
 color: ${Themes.colors.white};
 
 ${breakpoint('md')`
+margin: 0 0.5em 0 0;
+text-align:left;
+  `};
+${breakpoint('lg')`
 margin: 0 1em 0 0;
+text-align:left;
   `};
 `;
 
@@ -150,7 +159,7 @@ display: block;
 const Footer__text = styled.span`
 font-size: 1em;
 display:block;
-padding:0.125em;
+padding:0.125em 0;
 color: ${Themes.colors.lightGrey};
 `;
 
@@ -173,11 +182,9 @@ display: flex;
 flex-direction: column;
 padding-bottom: 2.5em;
 
-${breakpoint('lg')`
+${breakpoint('md')`
 flex-direction: row;
 justify-content: space-between;
-width: 1100px;
-margin: auto;
 `};
 `;
 
