@@ -33,8 +33,8 @@ export default class PhoneNumberInput extends Component {
 }
 const Container = styled.div`
   padding-left: 0.5em;
+  margin-top: 3em;
 `
-
 const Label = styled.label`
   font-size: ${Themes.fontsize.p2}
   font-weight: ${Themes.fontWeight.bold}

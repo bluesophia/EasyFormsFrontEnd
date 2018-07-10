@@ -16,12 +16,12 @@ export default class CompanyNameInput extends Component {
     return (
       <ThemeProvider theme={Themes}>
       <Container>
-      <Label>Company Name </Label><br />
+      <Label>Company Name</Label><br />
         <Input
           type="text"
           value={value}
           name="input-text"
-          label="Company Name "
+          label="Company Name"
           onChange={this.handleUpdateValue}
         />
       </Container>
@@ -31,8 +31,8 @@ export default class CompanyNameInput extends Component {
 }
 const Container = styled.div`
   padding-left: 0.5em;
+  margin-top: 3em;
 `
-
 const Label = styled.label`
   font-size: ${Themes.fontsize.p2}
   font-weight: ${Themes.fontWeight.bold}
@@ -42,11 +42,7 @@ const Label = styled.label`
 const Input = styled.input`
   padding: 0.5em;
   margin: 0;
-<<<<<<< HEAD
-  width: 10%
-=======
-  width: 80%
->>>>>>> 7ba9af1c49fe95395b13c4ff663a5bf7677e583f
+  width: 92%
   color: ${Themes.colors.formGrey};
   border: none;
   background: none;

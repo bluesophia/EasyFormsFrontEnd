@@ -6,10 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Themes from '../../../../Assets/Styles/Themes';
 import Button from '../../Common/Button/'
 import HeaderLine from '../../Common/HeaderLine';
-import FullNameInput from '../../Common/Input/FullNameInput'
-import CompanyNameInput from '../../Common/Input/CompanyNameInput'
-import EmailInput from '../../Common/Input/EmailInput'
-import PhoneNumberInput from '../../Common/Input/PhoneNumberInput'
 
 /** Images **/
 import HomeSection01BgSm from '../../../../Assets/Images/HomeSection01BgSm.png';
@@ -80,7 +76,6 @@ const HomeContainer =() => (
                 <Section01>
                     <Section01__Image><Cluster src={ClusterImg}/></Section01__Image>
                     <Section01__TitleDiv>
-<<<<<<< HEAD
                         <BigTitle>Job Management and WorkFlow Processes Made Easy</BigTitle>
                         <Section01__Text>We are a cloud-based solution offering end-to-end job 
                             and workflow management software industry standard 
@@ -93,20 +88,6 @@ const HomeContainer =() => (
                             <Twitter />
                             <Linkedin />
                         </SnsIcons>
-=======
-                        <BigTitle>Finish your working process in one application</BigTitle>
-                        <Section01__Text>Our forms can be accessed through both iOS and Android devices. 
-                            Our Easy WorkFlow Management System/web portal can be accessed 
-                            via your PC, laptop or tablet/iPad.</Section01__Text>
-                        <Button />
-                    <SubTitle>Follow Us On Social Network</SubTitle>
-                    <SnsIcons>
-                        <Facebook />
-                        <Twitter />
-                        <Linkedin />
-                        
-                    </SnsIcons>
->>>>>>> 7ba9af1c49fe95395b13c4ff663a5bf7677e583f
                     </Section01__TitleDiv>
                 </Section01>
                 <Section02>
@@ -114,13 +95,6 @@ const HomeContainer =() => (
                         <Section02__Title>Why Easyforms?</Section02__Title>
                     </Section02__TitleDiv>
                     <Section02__Contents>
-                        {/* input */}
-                    <Input__Div>
-                    <FullNameInput />
-                    <CompanyNameInput />
-                    <EmailInput />
-                    <PhoneNumberInput />
-                    </Input__Div>
                         <Section02__ContentDiv>
                             <Section02__Image src={WhyUs01} />
                             <Section02__Subtitle>Customised to your needs</Section02__Subtitle>
@@ -261,12 +235,6 @@ const Section0102 = styled.div`
 `
 
 /**** Section 01 ****/
-
-
-const Input__Div = styled.div`
-    // display:flex;
-    margin-left:3px;
-`
 
 const Section01 = styled.div`
     display:flex;

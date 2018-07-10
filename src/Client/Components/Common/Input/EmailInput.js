@@ -33,22 +33,19 @@ export default class EmailInput extends Component {
 }
 const Container = styled.div`
   padding-left: 0.5em;
+  margin-top: 3em;
 `
 
 const Label = styled.label`
   font-size: ${Themes.fontsize.p2}
   font-weight: ${Themes.fontWeight.bold}
-  color: ${Themes.colors.blueLight};
+  color: ${Themes.colors.blueLight}
   `;
 
 const Input = styled.input`
   padding: 0.5em;
   margin: 0;
-<<<<<<< HEAD
-  width: 14%;
-=======
-  width: 383px;
->>>>>>> 7ba9af1c49fe95395b13c4ff663a5bf7677e583f
+  width: 100%;
   color: ${Themes.colors.formGrey};
   border: none;
   background: none;
