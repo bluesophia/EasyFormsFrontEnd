@@ -5,22 +5,14 @@ import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
 import { Link } from 'react-router-dom';
 import Logo from '../../../../Assets/Images/logo.png';
-// class HeaderContainer extends Component {
-//     render() {
-//       return (
-//         <div className="HeaderContainer">
-//           <p>hello</p>
-//         </div>
-//       );
-//     }
-//   }
+
   const HeaderContainer = () => ({
           render: function() {
             return (
 			<ThemeProvider theme={Themes}>
 				<Nav>
-				<Link to='/'><LogoImg src={Logo}/></Link>
-				{/* <Link to='/'><img src={logo} width="120" style={styledLogo}/></Link> */}
+				<LinkedLogo to='/'><LogoImg src={Logo}/></LinkedLogo>
+
 				<NavWide>
 					<WideDiv>
 						<StyledLink to='/'>Home</StyledLink>
@@ -28,6 +20,19 @@ import Logo from '../../../../Assets/Images/logo.png';
 						<StyledLink to='/support'>Support</StyledLink>
 						<StyledLink to='/blog'>Blog</StyledLink>
 						<StyledLink to='/contact'>Contact Us</StyledLink>
+
+						<Box>
+                           <Sns href="https://www.facebook.com/EasyFormsNZ/?ref=aymt_homepage_panel">
+                               <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+                           </Sns>
+                           <Sns href="https://twitter.com/EasyFormsNZ">
+                               <FontAwesomeIcon icon={['fab', 'twitter']} />
+                           </Sns>
+                           <Sns href="https://www.linkedin.com/company/easy-forms/">
+                               <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
+                           </Sns>
+                       </Box>
+
 					</WideDiv>
 				</NavWide>
 				<NavNarrow>
@@ -38,6 +43,19 @@ import Logo from '../../../../Assets/Images/logo.png';
 						<NarrowStyledLink onClick={this.burgerToggle} to='/support'>Support</NarrowStyledLink>
 						<NarrowStyledLink onClick={this.burgerToggle} to='/blog'>Blog</NarrowStyledLink>
 						<NarrowStyledLink onClick={this.burgerToggle} to='/contact'>Contact Us</NarrowStyledLink>
+
+						<Box>
+                           <Sns href="https://www.facebook.com/EasyFormsNZ/?ref=aymt_homepage_panel">
+                               <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+                           </Sns>
+                           <Sns href="https://twitter.com/EasyFormsNZ">
+                               <FontAwesomeIcon icon={['fab', 'twitter']} />
+                           </Sns>
+                           <Sns href="https://www.linkedin.com/company/easy-forms/">
+                               <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
+                           </Sns>
+                       </Box>
+
 					</NarrowLinks>
 				</NavNarrow>
 
@@ -47,33 +65,56 @@ import Logo from '../../../../Assets/Images/logo.png';
 					},
 					burgerToggle: function() {
 						let linksEl = document.querySelector('.narrowLinks');
-						if (linksEl.style.display === 'block') {
+						if (linksEl.style.display === 'flex') {
 							linksEl.style.display = 'none';
 						} else {
-							linksEl.style.display = 'block';
+							linksEl.style.display = 'flex';
+							linksEl.style.justifyContent = 'center';
+							linksEl.style.flexDirection = 'column';
 						}
 					}
 });
-// const styledLogo = {
-// 	float:'left',
-// };
+
+const Box = styled.div`
+    display: flex;
+	justify-content:center;
+
+	${breakpoint('md')`
+	align-items: flex-end;
+	padding:1em;
+		`}
+`;
+
+const Sns = styled.a`
+color: ${Themes.colors.white};
+font-size: 1em;
+padding: 1em;
+
+${breakpoint('lg')`
+padding: 0 1em;
+	`}
+`;
 
 const LogoImg = styled.img`
 	width:120px;
 	float:left;
+	position:absolute;
 	${breakpoint('lg')`
 		width:160px;
+		
 	`}
 `
+const LinkedLogo = styled(Link)`
+height:32px;
+`;
+
 const Nav = styled.div`
+
 	background-color: ${Themes.colors.blue};
 	overflow: hidden;
-	padding: 1em;
-	display:block;
 	display:flex;
 	justify-content:space-between;
-	 
-	padding: 3.25em 10% 0.625em 10%;
+	padding: 1.25em 10% 0.625em;
 
 	a {
 		color: #FFF;
@@ -82,7 +123,7 @@ const Nav = styled.div`
 		color: #FFF;
 	}
 		${breakpoint('md')`
-			padding: 3.25em 10% 0.625em 10%;
+			padding: 3.25em 10% 0.625em;
 			display:flex;
 			justify-content:space-between;
 			align-items:center;
@@ -92,28 +133,34 @@ const Nav = styled.div`
 
 const NavNarrow = styled.div`
 		display: block;
-		@media (min-width: 46.0625em) {
+		position:relative;
+		top: 100;
+		width:100%;
+		margin:0;
+		@media (min-width: 768px) {
   		display: none;
 		}
 `;
 
  const NavWide = styled.div`
-    display: none;
-		@media (min-width: 46.0625em) {
+	display: none;
+		@media (min-width: 768px) {
 			display: flex;
 			justify-content:flex-end;
 		}
  `;
 
 const WideDiv = styled.div`
+display:flex;
+align-items: flex-end;
 `;
 
 const icon = {
 	float:'right',
 	clear: 'right',
-	// display: 'inline-block',
 	cursor: 'pointer',
 	color: '#FFF',
+	height: 'auto',
 };
 
 const StyledLink = styled(Link)`
@@ -121,16 +168,14 @@ text-decoration: none;
 color: ${Themes.colors.lightGrey};
 font-size: 1em;
 padding: 1em;
+text-transform: uppercase;
 }
 `;
 
 const NarrowLinks = styled.div`
-		position: relative;
-		top: 40px;
-		text-align: center;
+		position: static;
 		display: none;
-		margin:0 auto;
-		height: 293px;
+		margin: 3.5em 0 0;
 `;
 
 const NarrowStyledLink = styled(Link)`
@@ -140,96 +185,8 @@ font-size: 1em;
 padding: 1em;
 display:block;
 text-align: center;
+text-transform: uppercase;
+border-bottom: 0.1px solid ${Themes.colors.lightGrey};
 `;
-// const Nav = styled.div`
-// 	background-color: ${Themes.colors.blue};
-// 	overflow:hidden;
-// 	position:relative;
-// 	display:flex;
-// 	justify-content:space-between;
-// 	align-items:center;
-// 	a {
-// 		color: #FFF;
-// 	};
-// 	a:visited {
-// 		color: #FFF;
-// 	};
-// 	padding: 3.25em 8% 0.625em 8%;
-// 		${breakpoint('md')`
-// 			padding: 3.25em 10% 0.625em 10%;
-// 			display:flex;
-// 			justify-content:space-between;
-// 			align-items:center;
-// 			flex-direction:row;
-// 		`}
-// 	`
 
-// const LogoImg = styled.img`
-// 	width:120px;
-// 	float:left;
-// 	${breakpoint('lg')`
-// 		width:160px;
-// 	`}
-// `
-// // const NavNarrow = styled.div`
-// // 	display: block;
-// // 	@media (min-width: 46.0625em) {
-// // 	display: none;
-// // 	}
-// // `;
-// const NavNarrow = styled.div`
-// 	display:block;
-// 	width:100%;
-// 		${breakpoint('md')`
-// 			display:none;
-// 		`}
-// 	`;
-
-// const NavWide = styled.div`
-//     display: none;
-// 		@media (min-width: 46.0625em) {
-// 			display: flex;
-// 			justify-content:flex-end;
-// 		}
-//  `;
-
-// const WideDiv = styled.div`
-// `;
-
-// const icon = {
-// 	float:'right',
-// 	clear: 'right',
-// 	// display: 'inline-block',
-// 	cursor: 'pointer',
-// 	color: '#FFF'
-// };
-
-// const StyledLink = styled(Link)`
-// text-decoration: none;
-// color: ${Themes.colors.lightGrey};
-// font-size: 1em;
-// padding: 1em;
-// }
-// `;
-
-// const NarrowLinks = styled.div`
-// 	display: none;
-// 	position: relative;
-// 	top: 30px;
-// 	text-align:center;
-// 	@media (min-width: 46.0625em) {		
-// 		display:flex;
-// 		align-items:center;
-// 		}
-// `;
-
-// const NarrowStyledLink = styled(Link)`
-// 	text-decoration: none;
-// 	color: ${Themes.colors.lightGrey};
-// 	font-size: 1em;
-// 	padding: 1em;
-// 	display:block;
-// 	text-align: center;
-// 	width:100%;
-// `;
   export default HeaderContainer;
