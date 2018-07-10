@@ -1,10 +1,9 @@
-import React, { Component } from "react";
-import styled, { ThemeProvider } from 'styled-components';
-import Themes from '../../../../Assets/Styles/Themes';
+import React, { Component } from 'react'
+import InputField from 'react-input-forms'
 
-export default class PhoneNumberInput extends Component {
+export default class SupportTypeInput extends Component {
   state = {
-    value: '000-000-0000',
+    value: {},
   }
 
   handleUpdateValue = (value) => {
@@ -13,43 +12,25 @@ export default class PhoneNumberInput extends Component {
 
   render() {
     const { value } = this.state;
+    const optionList = [
+      { label: 'select ...', value: '' },
+      { label: 'one', value: '1' },
+      { label: 'two', value: '2' },
+      { label: 'three', value: '3' },
+      { label: 'four', value: '4' },
+      { label: 'five', value: '5' },
+    ];
     return (
-      <ThemeProvider theme={Themes}>
-      <Container>
-      <Label>Support Type</Label><br />
+      <div className="container">
         <Input
-          type="tel"
+          type="select"
           value={value}
-          name="phone"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]"
-          label="Phone Number"
+          options={optionList}
+          name="input-select"
+          label="label"
           onChange={this.handleUpdateValue}
-          required
         />
-      </Container>
-      </ThemeProvider>
+      </div>
     )
   }
 }
-const Container = styled.div`
-  padding-left: 0.5em;
-`
-
-const Label = styled.label`
-  font-size: ${Themes.fontsize.p2}
-  font-weight: ${Themes.fontWeight.bold}
-  color: ${Themes.colors.blueLight};
-  `;
-
-const Input = styled.input`
-  padding: 0.5em;
-  margin: 0;
-  width: 383px;
-  color: ${Themes.colors.formGrey};
-  border: none;
-  background: none;
-  border-bottom: 1px solid ${Themes.colors.formGrey}
-  &:focus {
-    outline: none;
-  }
-`;
