@@ -23,10 +23,12 @@ class BlogToggleContainer extends Component{
                   </Section01__TitleDiv>
                   <Section01__FirstBlog>
                     <BlogToggle 
-                      question={'Would you like to eliminate timesheet ambiguity?'}/>
+                      question={'Would you like to eliminate timesheet ambiguity?'}
+                      answer={'test01'}/>
                   </Section01__FirstBlog>
                 </Section01__Header>
                   <Section01__Contents>
+                    {/* <BlogToggle qna={this.props.qna}/>  */}
                         <BlogToggle 
                           question={'So, What is Timesheet Theft Costing You?'}/>
                         <BlogToggle 
@@ -34,7 +36,7 @@ class BlogToggleContainer extends Component{
                         <BlogToggle 
                           question={'How We Can Help'}/>
                         <BlogToggle 
-                          question={'We can help your business :'}/>
+                          question={'We can help your business:'}/>
                   </Section01__Contents>
               </Section01>
             </Container>
@@ -44,7 +46,8 @@ class BlogToggleContainer extends Component{
 }
 
 BlogToggleContainer.propTypes = {
-    title: PropTypes.string
+    title: PropTypes.string,
+    qna: PropTypes.array
   };
 
 const Container = styled.div`
