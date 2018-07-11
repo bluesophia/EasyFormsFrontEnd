@@ -7,11 +7,6 @@ import Text from '../../../Components/Common/Text';
 import BigTitle from '../../../Components/Common/Title/BigTitle.js';
 import Section01Bg from '../../../../Assets/Images/support.jpg';
 
-import FullNameInput from '../../../Components/Common/Input/FullNameInput'
-import CompanyNameInput from '../../../Components/Common/Input/CompanyNameInput'
-import EmailInput from '../../../Components/Common/Input/EmailInput'
-import PhoneNumberInput from '../../../Components/Common/Input/PhoneNumberInput'
-
 const BlueBg = css`
   background:linear-gradient(${Themes.colors.blue},${Themes.colors.blueLight});
 `
@@ -33,15 +28,6 @@ const SupportScreen = () => (
             </Section01__Text>
           </Section01__TitleDiv>
           <Input>
-            {/* input */}
-            <Input__Div>
-              <FullNameInput />
-              <CompanyNameInput />
-            </Input__Div>
-            <Input__Div>
-              <PhoneNumberInput />
-              <EmailInput />
-            </Input__Div>
           </Input>
         </Section01__Contents>
       </Section01>
