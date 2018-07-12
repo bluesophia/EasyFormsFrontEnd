@@ -1,4 +1,4 @@
-import React, { Component } from '../../../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
+import React, { Component } from "react";
 import styled, { css, ThemeProvider } from 'styled-components';
 import Themes from '../../../../Assets/Styles/Themes';
 
