@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { Component } from 'react';
-=======
-import React, { Component } from "react";
->>>>>>> master
 import styled, { ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';

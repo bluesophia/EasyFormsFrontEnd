@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { Component } from 'react';
-=======
-import React, { Component } from 'react'
->>>>>>> master
 import styled, { ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
@@ -21,13 +17,9 @@ export default class CompanyNameInput extends Component {
     return (
       <ThemeProvider theme={Themes}>
       <Container>
-<<<<<<< HEAD
       <Label_Div>  
       <Label>Your Company Name</Label><P>( Required )</P><br />
       </Label_Div> 
-=======
-      <Label>Your Company Name</Label><br />
->>>>>>> master
         <Input
           value={value}
           name="input-text"
@@ -56,7 +48,6 @@ const Label = styled.label`
   color: ${Themes.colors.blueLight};
   `;
 
-<<<<<<< HEAD
 const P = styled.p`
   font-size: ${Themes.fontsize.p4}
   font-weight: ${Themes.fontWeight.light}
@@ -70,14 +61,6 @@ const Input = styled.input.attrs({
 })`
   width:100%;
   height:100vh;
-=======
-const Input = styled.input`
-  padding: 0.5em;
-  margin: 0;
-  width: 92%;
-  color: ${Themes.colors.formGrey};
-  border: none;
->>>>>>> master
   background: none;
   border: 0px;
   border-bottom: 1px solid ${Themes.colors.formGrey};
