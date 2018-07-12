@@ -16,7 +16,9 @@ const Themes = {
         white: '#fff'
     },
     background:{
-        blue:'linear-gradient(blueLight,blue)'
+        blueToBlueLight:'linear-gradient(#08275a,#1d4b93)',
+        blueLightToBlue:'linear-gradient(#1d4b93,#08275a)',
+        yellowToOrange:'linear-gradient(#ffa91f,#f77b39)'
     },
     fontsize: {
         h1: "40px",
