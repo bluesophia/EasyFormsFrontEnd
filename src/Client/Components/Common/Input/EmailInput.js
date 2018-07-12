@@ -17,7 +17,9 @@ export default class EmailInput extends Component {
     return (
       <ThemeProvider theme={Themes}>
       <Container>
-      <Label>Your Contact Email</Label><br />
+      <Label_Div>  
+      <Label>Your Contact Email</Label><P>( Required )</P><br />
+      </Label_Div> 
         <Input
           value={value}
           name="email"
@@ -37,11 +39,23 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
 `
+const Label_Div = styled.div`
+  display: flex;
+  align-items: center;
+`
 const Label = styled.label`
   font-size: ${Themes.fontsize.p2}
   font-weight: ${Themes.fontWeight.bold}
   color: ${Themes.colors.blueLight};
   `;
+
+const P = styled.p`
+  font-size: ${Themes.fontsize.p4}
+  font-weight: ${Themes.fontWeight.light}
+  color: ${Themes.colors.LightGrey};
+  margin: 0;
+  margin-left: 10px;
+`;
 
 const Input = styled.input.attrs({
   type: 'Email',
@@ -49,8 +63,8 @@ const Input = styled.input.attrs({
   width:100%;
   height:100vh;
   background: none;
-  border-radius: 5px;
-  border: 1px solid ${Themes.colors.formGrey};
+  border: 0px;
+  border-bottom: 1px solid ${Themes.colors.formGrey};
   color: ${Themes.colors.formGrey};
   //padding: ${props => props.padding}
   padding: 0.5em;
