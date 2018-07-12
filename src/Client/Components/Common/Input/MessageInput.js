@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled, { ThemeProvider } from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
 
 export default class MessageInput extends Component {
@@ -16,7 +17,7 @@ export default class MessageInput extends Component {
     return (
       <ThemeProvider theme={Themes}>
       <Container>
-      <Label>Message</Label><br />
+      <Label>Let us know how we can help</Label><br />
       <Input
         value={value}
         name="text"
@@ -32,6 +33,8 @@ export default class MessageInput extends Component {
 const Container = styled.div`
   padding-left: 0.5em;
   margin-top: 3em;
+  width: 100%;
+  height: 100%;
 `
 const Label = styled.label`
   font-size: ${Themes.fontsize.p2}
@@ -41,8 +44,9 @@ const Label = styled.label`
 
 const Input = styled.input.attrs({
   type: 'text',
-  size: props => props.small ? 3 : 8
 })`
+  width:100%;
+  height:100vh;
   background: none;
   border-radius: 5px;
   border: 1px solid ${Themes.colors.formGrey};
@@ -50,9 +54,27 @@ const Input = styled.input.attrs({
   //padding: ${props => props.padding}
   padding: 0.5em;
   margin-top: 10px;
-  width: 600px;
-  height: 200px;
   &:focus {
     outline: none;
   }
-`;
+  ${breakpoint('xs')`
+    width:87vw;
+    height:50vw;
+  `}
+  ${breakpoint('sm')`
+    width:87vw;
+    height:50vw;
+  `}
+  ${breakpoint('md')`
+    width:59vw;
+    height:25vw;
+  `}
+  ${breakpoint('lg')`
+    width:50vw;
+    height:10vw;
+  `}
+  ${breakpoint('xl')`
+    width:42vw;
+    height:15wv;
+  `}
+`
