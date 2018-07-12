@@ -300,7 +300,7 @@ const ButtonDiv = styled(Link)`
         width:100%;
         margin:0 auto;
             ${breakpoint('lg')`
-                width:80%;
+                width:60%;
                 margin-right:0;
             `}
 `
@@ -475,7 +475,6 @@ const Section04__Title = styled.p`
 const Section04__Logos = styled.div`
     display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap:5%;
     margin:40px auto 0 auto;
 `
 const Section04__Logo = styled.img`
