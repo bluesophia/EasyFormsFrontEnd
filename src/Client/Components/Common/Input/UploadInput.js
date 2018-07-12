@@ -45,7 +45,7 @@ const Input = styled.input.attrs({
   type: 'text',
 })`
   width:100%;
-  height:100vh;
+  height:auto;
   background: none;
   border-radius: 5px;
   border: 1px solid ${Themes.colors.formGrey};
@@ -56,6 +56,7 @@ const Input = styled.input.attrs({
   &:focus {
     outline: none;
   }
+  /*
   ${breakpoint('xs')`
     width:87vw;
     height:20px;
@@ -76,4 +77,5 @@ const Input = styled.input.attrs({
     width:42vw;
     height:30px;
   `}
+  */
 `

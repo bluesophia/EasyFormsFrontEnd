@@ -35,7 +35,7 @@ const Container = styled.div`
   padding-left: 0.5em;
   margin-top: 1.5vw;
   width: 100%;
-  height: 100%;
+  height: auto;
 `
 const Label_Div = styled.div`
   display: flex;
@@ -59,7 +59,7 @@ const Input = styled.input.attrs({
   type: 'text',
 })`
   width:100%;
-  height:100vh;
+  height:auto;
   background: none;
   border: 0px;
   border-bottom: 1px solid ${Themes.colors.formGrey};
@@ -70,6 +70,7 @@ const Input = styled.input.attrs({
   &:focus {
     outline: none;
   }
+  /*
   ${breakpoint('xs')`
     width:87vw;
     height:20px;
@@ -90,4 +91,5 @@ const Input = styled.input.attrs({
   width:25vw;
   height:30px;
   `}
+  */
 `
