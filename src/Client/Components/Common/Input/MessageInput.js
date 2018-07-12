@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { Component } from 'react'
+=======
+import React, { Component } from 'react';
+>>>>>>> 86dba1c46e876b74db75b46b132801fe491fee0e
 import styled, { ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
@@ -17,7 +21,9 @@ export default class MessageInput extends Component {
     return (
       <ThemeProvider theme={Themes}>
       <Container>
-      <Label>Let us know how we can help</Label><br />
+      <Label_Div>  
+      <Label>Let us know how we can help</Label><P>( Required )</P><br />
+      </Label_Div>
       <Input
         value={value}
         name="text"
@@ -36,11 +42,23 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
 `
+const Label_Div = styled.div`
+  display: flex;
+  align-items: center;
+`
 const Label = styled.label`
   font-size: ${Themes.fontsize.p2}
   font-weight: ${Themes.fontWeight.bold}
   color: ${Themes.colors.blueLight};
   `;
+
+const P = styled.p`
+  font-size: ${Themes.fontsize.p4}
+  font-weight: ${Themes.fontWeight.light}
+  color: ${Themes.colors.LightGrey};
+  margin: 0;
+  margin-left: 10px;
+`;
 
 const Input = styled.input.attrs({
   type: 'text',

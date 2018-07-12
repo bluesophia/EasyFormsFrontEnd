@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { Component } from 'react'
+=======
+import React, { Component } from 'react';
+>>>>>>> 86dba1c46e876b74db75b46b132801fe491fee0e
 import styled, { ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
@@ -17,7 +21,9 @@ export default class CompanyNameInput extends Component {
     return (
       <ThemeProvider theme={Themes}>
       <Container>
-      <Label>Your Company Name</Label><br />
+      <Label_Div>  
+      <Label>Your Company Name</Label><P>( Required )</P><br />
+      </Label_Div> 
         <Input
           value={value}
           name="input-text"
@@ -36,21 +42,32 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
 `
+const Label_Div = styled.div`
+  display: flex;
+  align-items: center;
+`
 const Label = styled.label`
   font-size: ${Themes.fontsize.p2}
   font-weight: ${Themes.fontWeight.bold}
   color: ${Themes.colors.blueLight};
   `;
 
-const Input = styled.input`
-  padding: 0.5em;
+const P = styled.p`
+  font-size: ${Themes.fontsize.p4}
+  font-weight: ${Themes.fontWeight.light}
+  color: ${Themes.colors.LightGrey};
   margin: 0;
-  width: 92%;
-  color: ${Themes.colors.formGrey};
-  border: none;
+  margin-left: 10px;
+`;
+
+const Input = styled.input.attrs({
+  type: 'text',
+})`
+  width:100%;
+  height:100vh;
   background: none;
-  border-radius: 5px;
-  border: 1px solid ${Themes.colors.formGrey};
+  border: 0px;
+  border-bottom: 1px solid ${Themes.colors.formGrey};
   color: ${Themes.colors.formGrey};
   //padding: ${props => props.padding}
   padding: 0.5em;
