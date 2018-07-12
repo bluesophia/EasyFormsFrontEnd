@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { Component } from '../../../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react'
 import styled, { ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
 
 export default class CompanyNameInput extends Component {
   state = {
-    value: 'EasyForms',
+    value: {},
   }
 
   handleUpdateValue = (value) => {
@@ -17,6 +17,7 @@ export default class CompanyNameInput extends Component {
     return (
       <ThemeProvider theme={Themes}>
       <Container>
+<<<<<<< HEAD
       <Label>Your Company Name</Label><br />
         <Input
           value={value}
@@ -24,11 +25,21 @@ export default class CompanyNameInput extends Component {
           label="Company Name"
           onChange={this.handleUpdateValue}
         />
+=======
+      <Label>Your name</Label><br />
+      <Input
+        value={value}
+        label="name"
+        onChange={this.handleUpdateValue}
+        required
+      />
+>>>>>>> 347a3a9c7f5fd62af1211ed6425fa636c9b49393
       </Container>
       </ThemeProvider>
     )
   }
 }
+
 const Container = styled.div`
   padding-left: 0.5em;
   margin-top: 3em;
@@ -56,10 +67,14 @@ const Input = styled.input.attrs({
   &:focus {
     outline: none;
   }
+<<<<<<< HEAD
   ${breakpoint('xs')`
     width:87vw;
     height:20px;
   `}
+=======
+  
+>>>>>>> 347a3a9c7f5fd62af1211ed6425fa636c9b49393
   ${breakpoint('sm')`
     width:87vw;
     height:20px;
@@ -69,6 +84,7 @@ const Input = styled.input.attrs({
   height:25px;
   `}
   ${breakpoint('lg')`
+<<<<<<< HEAD
   width:25vw;
   height:30px;
   `}
@@ -77,3 +93,14 @@ const Input = styled.input.attrs({
   height:30px;
   `}
 `
+=======
+  width:59vw;
+  height:30px;
+  `}
+  ${breakpoint('xl')`
+  width:61vw;
+  height:30px;
+  `}
+
+`;
+>>>>>>> 347a3a9c7f5fd62af1211ed6425fa636c9b49393

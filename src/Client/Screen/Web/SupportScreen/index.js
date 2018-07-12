@@ -114,7 +114,6 @@ const Input = styled.div`
   ${breakpoint('md')`
     width:80%;
   `}
-
 `
 const Section02 = styled.div`
 `
