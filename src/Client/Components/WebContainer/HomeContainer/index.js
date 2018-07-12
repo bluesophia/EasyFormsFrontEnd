@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled, { injectGlobal, css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
+import { Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Themes from '../../../../Assets/Styles/Themes';
@@ -81,12 +82,12 @@ const HomeContainer =() => (
                             and workflow management software industry standard 
                             health and safety management and much more.
                         </Section01__Text>
-                        <ButtonDiv><Button value={'contact our software experts'}/></ButtonDiv>
+                        <ButtonDiv to='/contact'><Button value={'contact our software experts'}/></ButtonDiv>
                         <SubTitle>Follow Us On Social Network</SubTitle>
                         <SnsIcons>
-                            <Facebook />
-                            <Twitter />
-                            <Linkedin />
+                            <Facebook href="https://www.facebook.com/EasyFormsNZ/?ref=aymt_homepage_panel" />
+                            <Twitter href="https://twitter.com/EasyFormsNZ"/>
+                            <Linkedin href="https://www.linkedin.com/company/easy-forms/"/>
                         </SnsIcons>
                     </Section01__TitleDiv>
                 </Section01>
@@ -295,7 +296,7 @@ const Section01__Text = styled.div`
             font-weight:300;
         `}
 `
-const ButtonDiv = styled.div`
+const ButtonDiv = styled(Link)`
         width:100%;
         margin:0 auto;
             ${breakpoint('lg')`
@@ -314,7 +315,7 @@ const SubTitle = styled.p`
         `}
     `
 
-const SnsIcons = styled.div`
+const SnsIcons = styled.a`
     display:flex;
     justify-content: center;
         ${breakpoint('lg')`
@@ -323,19 +324,19 @@ const SnsIcons = styled.div`
         justify-content: flex-end;
     `}
 `
-const Facebook = styled.div`
+const Facebook = styled.a`
     background-image:url(${FacebookIcon});
     width:58px;
     height:58px;
     margin-right:15px;
 `
-const Twitter = styled.div`
+const Twitter = styled.a`
     background-image:url(${TwitterIcon});  
     width:58px;
     height:58px;  
     margin-right:15px; 
 `
-const Linkedin = styled.div`
+const Linkedin = styled.a`
     background-image:url(${LinkedinIcon});   
     width:58px;
     height:58px;   

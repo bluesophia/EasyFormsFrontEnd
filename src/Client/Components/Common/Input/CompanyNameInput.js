@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import styled, { ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
@@ -60,11 +60,7 @@ const Input = styled.input.attrs({
   type: 'text',
 })`
   width:100%;
-<<<<<<< HEAD
   height:auto;
-=======
-  height:100%;
->>>>>>> input
   background: none;
   border: 0px;
   border-bottom: 1px solid ${Themes.colors.formGrey};
