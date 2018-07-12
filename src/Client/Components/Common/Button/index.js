@@ -10,16 +10,19 @@ class Button extends Component {
     render(){
         return (
             <ThemeProvider theme={Themes}>
-                <ButtonStyle>
-                    <Text>{this.props.value}</Text>
-                </ButtonStyle>
+                {/* <Link href={this.props.link}> */}
+                    <ButtonStyle>
+                        <Text>{this.props.value}</Text>
+                    </ButtonStyle>
+                {/* </Link> */}
             </ThemeProvider>
         );
     }
 }
 
 Button.propTypes = {
-    value: PropTypes.string
+    value: PropTypes.string,
+    // link: PropTypes.link
   };
 const ButtonStyle = styled.button`
     background:${Themes.background.yellowToOrange};

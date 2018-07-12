@@ -1,4 +1,4 @@
-import React, { Component } from '../../../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react'
+import React, { Component } from 'react'
 import styled, { ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';

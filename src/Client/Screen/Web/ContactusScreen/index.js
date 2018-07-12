@@ -189,7 +189,7 @@ const ButtonDiv = styled.div`
   flex-direction:column;
   align-items:center;
   ${breakpoint('lg')`
-    width:50%;
+    width:60%;
   `}
 `
 const Form__Text = styled.div`
