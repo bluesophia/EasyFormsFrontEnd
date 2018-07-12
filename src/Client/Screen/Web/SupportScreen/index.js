@@ -10,7 +10,7 @@ import { UploadInput,
           CompanyNameInput,
           EmailInput,
           MessageInput,
-          FullNameInput}from '../../../Components/Common/Input';
+          FullNameInput }from '../../../Components/Common/Input';
 
 const BlueBg = css`
   background:linear-gradient(${Themes.colors.blue},${Themes.colors.blueLight});
