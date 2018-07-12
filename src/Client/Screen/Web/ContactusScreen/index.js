@@ -7,8 +7,14 @@ import Text from '../../../Components/Common/Text';
 import BigTitle from '../../../Components/Common/Title/BigTitle.js';
 import TopBg from '../../../../Assets/Images/contactUsBg.png';
 import CallUsIcon from '../../../../Assets/Images/phone.png';
-import MapWeb from '../../../../Assets/Images/map_web.png';
-import MapAddress from '../../../../Assets/Images/map_address.png';
+import CompanyNameInput from '../../../Components/Common/Input/CompanyNameInput';
+import FullNameInput from '../../../Components/Common/Input/FullNameInput';
+import EmailInput from '../../../Components/Common/Input/EmailInput';
+import MessageInput from '../../../Components/Common/Input/MessageInput';
+import Button from '../../../Components/Common/Button';
+import BlueButton from '../../../Components/Common/Button/BlueButton';
+import MyMapComponent from './map';
+
 
 const Title = css`
     color:${Themes.colors.blue};
@@ -33,7 +39,7 @@ const ContactUsScreen = () => (
         <Header> 
           <TitleDiv>
             <TitleDiv__Title>Get In Touch</TitleDiv__Title>
-            <HeaderLine />
+            <TitleDiv__Line><HeaderLine /></TitleDiv__Line>
             <TitleDiv__Text>Get in touch with us today to find out how we can help your business
               work smarter and more efficiently.</TitleDiv__Text>
           </TitleDiv>
@@ -46,11 +52,28 @@ const ContactUsScreen = () => (
         
         <Contents>
           <MapDiv>
-            <MapDiv__Map src={MapWeb}/>
-            <MapDiv__MapAddress src={MapAddress}/>
+            <MyMapComponent
+              isMarkerShown
+              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
+              loadingElement={<div style={{ height: `100%` }} />}
+              containerElement={<div style={{ height: `100%` }} />}
+              mapElement={<div style={{ height: `100%` }} />}
+            />
           </MapDiv>
           <FormDiv>
-            <Form></Form>
+            <Form>
+              <InputDiv>
+                <CompanyNameInput />
+                <FullNameInput />
+                <EmailInput />
+                <MessageInput />
+              </InputDiv>
+              <ButtonDiv>
+                <Button value={'Contact Our Software Experts'}/>
+                <Form__Text>Or Try Our Software For Free</Form__Text>
+                <BlueButton value={'Experience EasyForms for yourself'}/>        
+              </ButtonDiv>      
+            </Form>
           </FormDiv>
         </Contents>
       </Container>
@@ -67,6 +90,11 @@ const Header = styled.div`
   ${BlueBg};
     ${breakpoint('lg')`
     background:none;
+    display:flex;
+    justify-content:space-between;
+    flex-direction:row;
+    align-items:flex-end;
+    padding:110px 10% 70px 10%;
     `}
 `
 const TopBgImg = styled.img`
@@ -81,6 +109,9 @@ const TopBgImg = styled.img`
 `
 const TitleDiv = styled.div`
   ${breakpoint('lg')`
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
   `}
 `
 const TitleDiv__Title = styled.div`
@@ -90,23 +121,42 @@ const TitleDiv__Title = styled.div`
     font-size:35px;
   `}
 `
+const TitleDiv__Line = styled.div`
+`
 const TitleDiv__Text = styled.div`
   display:none;
+  ${breakpoint('lg')`
+    display:block;
+    color:white;
+    font-size:${Themes.fontsize.p2};
+    line-height:25px;
+    font-weight:${Themes.fontWeight.light};
+    width:470px;
+  `}
 `
 const CallUsDiv = styled.div`
   display:flex;
   align-items:center;
   flex-direction:row;
+
 `
-const Icon = styled.img``
+const Icon = styled.img`
+  margin-right:10px;
+`
 const CallUs = styled.span`
   font-size:${Themes.fontsize.h3};
   color:white;
   margin-right:10px;
+    ${breakpoint('lg')`
+    font-size:${Themes.fontsize.h2};
+  `}
 `
 const PhoneNo = styled.span`
   font-size:${Themes.fontsize.h3};
   color:${Themes.colors.yellow};
+    ${breakpoint('lg')`
+    font-size:${Themes.fontsize.h2};
+  `}
 `
 const Contents = styled.div`
   display:flex;
@@ -118,27 +168,41 @@ const Contents = styled.div`
 const FormDiv = styled.div`
 `
 const Form = styled.div`
-  width:100%;
-  height:700px;
+  height:auto;
   background-color:white;
+  box-shadow:0 0 20px rgba(0,0,0,0.2);
+  padding:60px 8%;
     ${breakpoint('lg')`
-      width:75%;
-      margin:0 auto 100px auto;
+      margin:0 10% 100px 10%;
       z-index:1;
+      padding:75px 8%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
   `}
+`
+const InputDiv = styled.div`
+  margin-bottom:50px;
+`
+const ButtonDiv = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  ${breakpoint('lg')`
+    width:50%;
+  `}
+`
+const Form__Text = styled.div`
+  margin:25px auto 10px auto;
+  color:${Themes.colors.blue};
+  font-size:${Themes.fontsize.p2};
+  font-weight:${Themes.fontWeight.black};
 `
 const MapDiv = styled.div`
   position:relative;
+  height:300px;
+  ${breakpoint('lg')`
+   height:500px;
+  `}
 `
-const MapDiv__Map = styled.img`
-  width:100vw;
-  height:auto;
-  text-align:center;
-`
-const MapDiv__MapAddress = styled.img`
-  position:absolute;
-  top:70px;
-  left:70px;
-`
-
 export default ContactUsScreen;
