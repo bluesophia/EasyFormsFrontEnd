@@ -59,8 +59,13 @@ const P = styled.p`
 const Input = styled.input.attrs({
   type: 'text',
 })`
+<<<<<<< HEAD
   width:100%;
   height:auto;
+=======
+  width: 100%;
+  height: auto;
+>>>>>>> input
   background: none;
   border-radius: 5px;
   border: 1px solid ${Themes.colors.formGrey};

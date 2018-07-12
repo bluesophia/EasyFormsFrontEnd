@@ -61,7 +61,11 @@ const Input = styled.input.attrs({
   type: 'Email',
 })`
   width:100%;
+<<<<<<< HEAD
   height:auto;
+=======
+  height: auto;
+>>>>>>> input
   background: none;
   border: 0px;
   border-bottom: 1px solid ${Themes.colors.formGrey};

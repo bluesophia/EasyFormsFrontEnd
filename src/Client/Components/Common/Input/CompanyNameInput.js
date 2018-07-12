@@ -60,7 +60,11 @@ const Input = styled.input.attrs({
   type: 'text',
 })`
   width:100%;
+<<<<<<< HEAD
   height:auto;
+=======
+  height:100%;
+>>>>>>> input
   background: none;
   border: 0px;
   border-bottom: 1px solid ${Themes.colors.formGrey};
