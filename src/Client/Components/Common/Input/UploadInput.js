@@ -31,7 +31,7 @@ export default class UploadInput extends Component {
 }
 const Container = styled.div`
   padding-left: 0.5em;
-  margin-top: 1.5vw;
+  margin-top: 0;
   width: 100%;
   height: 100%;
 `
@@ -44,8 +44,9 @@ const Label = styled.label`
 const Input = styled.input.attrs({
   type: 'text',
 })`
+  box-sizing:border-box;
   width:100%;
-  height:auto;
+  height:30px;
   background: none;
   border-radius: 5px;
   border: 1px solid ${Themes.colors.formGrey};

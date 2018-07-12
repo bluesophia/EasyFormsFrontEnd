@@ -18,7 +18,7 @@ export default class CompanyNameInput extends Component {
       <ThemeProvider theme={Themes}>
       <Container>
       <Label_Div>  
-      <Label>Your Company Name</Label><P>( Required )</P><br />
+      <Label>Your Company Name</Label><P>Required</P><br />
       </Label_Div> 
         <Input
           value={value}
@@ -33,14 +33,15 @@ export default class CompanyNameInput extends Component {
 }
 
 const Container = styled.div`
-  padding-left: 0.5em;
-  margin-top: 3em;
+  padding-left: 0;
+  margin-top: 0;
   width: 100%;
   height: 100%;
+  margin-bottom:50px;
 `
 const Label_Div = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 `
 const Label = styled.label`
   font-size: ${Themes.fontsize.p2}
@@ -59,14 +60,15 @@ const P = styled.p`
 const Input = styled.input.attrs({
   type: 'text',
 })`
+  box-sizing:border-box;
   width:100%;
-  height:auto;
+  height:30px;
   background: none;
   border: 0px;
   border-bottom: 1px solid ${Themes.colors.formGrey};
   color: ${Themes.colors.formGrey};
   //padding: ${props => props.padding}
-  padding: 0.5em;
+  padding-left:0.5em;
   margin-top: 10px;
   &:focus {
     outline: none;

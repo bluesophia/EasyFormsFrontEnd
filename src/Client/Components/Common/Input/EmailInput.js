@@ -18,7 +18,7 @@ export default class EmailInput extends Component {
       <ThemeProvider theme={Themes}>
       <Container>
       <Label_Div>  
-      <Label>Your Contact Email</Label><P>( Required )</P><br />
+      <Label>Your Contact Email</Label><P>Required</P><br />
       </Label_Div> 
         <Input
           value={value}
@@ -34,14 +34,15 @@ export default class EmailInput extends Component {
   }
 }
 const Container = styled.div`
-  padding-left: 0.5em;
-  margin-top: 3em;
+  padding-left: 0;
+  margin-top: 0;
   width: 100%;
   height: 100%;
+  margin-bottom:50px
 `
 const Label_Div = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 `
 const Label = styled.label`
   font-size: ${Themes.fontsize.p2}
@@ -60,12 +61,9 @@ const P = styled.p`
 const Input = styled.input.attrs({
   type: 'Email',
 })`
+  box-sizing:border-box;
   width:100%;
-<<<<<<< HEAD
-  height:auto;
-=======
-  height: auto;
->>>>>>> input
+  height:30px;
   background: none;
   border: 0px;
   border-bottom: 1px solid ${Themes.colors.formGrey};

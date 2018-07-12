@@ -18,13 +18,14 @@ export default class MessageInput extends Component {
       <ThemeProvider theme={Themes}>
       <Container>
       <Label_Div>  
-      <Label>Let us know how we can help</Label><P>( Required )</P><br />
+      <Label>Let us know how we can help</Label><P>Required</P><br />
       </Label_Div>
       <Input
         value={value}
         name="text"
         label="label"
         onChange={this.handleUpdateValue}
+        style={{height:this.props.height}}
       />
       </Container>
       </ThemeProvider>
@@ -33,14 +34,14 @@ export default class MessageInput extends Component {
 }
 
 const Container = styled.div`
-  padding-left: 0.5em;
-  margin-top: 3em;
+  padding-left: 0;
+  margin-top: 0;
   width: 100%;
   height: 100%;
 `
 const Label_Div = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 `
 const Label = styled.label`
   font-size: ${Themes.fontsize.p2}
@@ -59,19 +60,15 @@ const P = styled.p`
 const Input = styled.input.attrs({
   type: 'text',
 })`
-<<<<<<< HEAD
+  box-sizing:border-box;
   width:100%;
   height:auto;
-=======
-  width: 100%;
-  height: auto;
->>>>>>> input
   background: none;
   border-radius: 5px;
   border: 1px solid ${Themes.colors.formGrey};
   color: ${Themes.colors.formGrey};
-  //padding: ${props => props.padding}
-  padding: 0.5em;
+  //padding: ${props => props.padding};
+  padding:0.5em;
   margin-top: 10px;
   &:focus {
     outline: none;

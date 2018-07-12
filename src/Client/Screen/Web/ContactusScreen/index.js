@@ -63,10 +63,14 @@ const ContactUsScreen = () => (
           <FormDiv>
             <Form>
               <InputDiv>
-                <CompanyNameInput />
-                <FullNameInput />
-                <EmailInput />
-                <MessageInput />
+                <InputDiv__Left>
+                  <CompanyNameInput />
+                  <FullNameInput />
+                  <EmailInput />
+                </InputDiv__Left>
+                <InputDiv__Right>
+                  <MessageInput height='250px'/>
+                </InputDiv__Right>
               </InputDiv>
               <ButtonDiv>
                 <Button value={'Contact Our Software Experts'}/>
@@ -165,7 +169,7 @@ const Contents = styled.div`
       flex-direction:column-reverse;
     `}
 `
-const FormDiv = styled.div`
+const FormDiv = styled.div` 
 `
 const Form = styled.div`
   height:auto;
@@ -175,26 +179,38 @@ const Form = styled.div`
     ${breakpoint('lg')`
       margin:0 10% 100px 10%;
       z-index:1;
-      padding:75px 8%;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
   `}
 `
 const InputDiv = styled.div`
   margin-bottom:50px;
+  display:flex;
+  flex-direction:column;
+  ${breakpoint('lg')`
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-column-gap:4em;
+    margin-bottom:0;
+  `}
 `
+const InputDiv__Left = styled.div`
+  display:flex;
+  flex-direction:column;
+  ${breakpoint('lg')`
+`}
+`
+const InputDiv__Right = styled.div``
 const ButtonDiv = styled.div`
   display:flex;
   flex-direction:column;
   align-items:center;
   ${breakpoint('lg')`
-    width:60%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+    width:60%;  
+    margin:0 auto;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
   `}
 `
 const Form__Text = styled.div`
   margin:25px auto 10px auto;
-  color:${Themes.colors.blue};
+  color:${Themes.colors.blueLight};
   font-size:${Themes.fontsize.p2};
   font-weight:${Themes.fontWeight.black};
 `
