@@ -11,6 +11,8 @@ import { UploadInput,
           EmailInput,
           MessageInput,
           FullNameInput }from '../../../Components/Common/Input';
+import Button from '../../../Components/Common/Button';
+
 
 const BlueBg = css`
   background:linear-gradient(${Themes.colors.blue},${Themes.colors.blueLight});
@@ -18,7 +20,7 @@ const BlueBg = css`
 const SupportScreen = () => (
   <ThemeProvider theme={Themes}>
     <div>
-      <Section01>
+      <Container>
         <BgImage></BgImage>
         <Section01__Contents>
           <Section01__TitleDiv>
@@ -32,17 +34,24 @@ const SupportScreen = () => (
               depending on the scale of your request this could take slightly longer.
             </Section01__Text>
           </Section01__TitleDiv>
-          <Input>
-          <Input__Div>
-          <CompanyNameInput />
-          <FullNameInput />
-          <EmailInput />
-          <MessageInput />
-          <UploadInput />
-          </Input__Div>
-          </Input>
+          <Form>
+            <InputDiv>
+              <InputDiv__Left>
+                  <CompanyNameInput />
+                  <FullNameInput />
+                  <EmailInput />
+              </InputDiv__Left>
+              <InputDiv__Right>
+                <MessageInput__Div><MessageInput /></MessageInput__Div>
+                <UploadInput />
+              </InputDiv__Right>
+            </InputDiv>
+            <ButtonDiv>
+              <Button value="Tell us about Issue"/>
+            </ButtonDiv>
+          </Form>
         </Section01__Contents>
-      </Section01>
+      </Container>
     </div>
   </ThemeProvider>
 )
@@ -52,22 +61,29 @@ const Input__Div = styled.div`
     margin-left:3px;
 `
 
-const Section01 = styled.div`
-  position:absolute;
-  top:120;
+const Container = styled.div`
+  // position:absolute;
+  // top:120;
   position:relative;
-  height:135vh;
+  height:auto;
   display:flex;
   justify-content: center;
+  background-color:#eee;
   ${breakpoint('md')`
     width:100vw;
-    height:180vh;
+    height:auto;
+
   `}
+  ${breakpoint('lg')`
+  width:100vw;
+  height:auto;
+
+`}
 `
 const BgImage = styled.div`
-  z-index:-1;
-  top:0;
-  left:0;
+  // z-index:-1;
+  // top:0;
+  // left:0;
   background:linear-gradient(rgba(8,39,90), rgba(8,39,90,0.4)), url(${Section01Bg});
   background-size:cover;
   width:100%;
@@ -79,12 +95,13 @@ const BgImage = styled.div`
 `
 const Section01__Contents = styled.div`
   box-sizing:border-box;
-  position:absolute;
-  top: 0;
+  // position:absolute;
+  // top: 0;
+  z-index:1;
   margin:60px auto 0 auto;
     ${breakpoint('md')`
     padding:100px 10% 0 10%;
-    top:230;
+    // top:230;
     `}
 `
 const Section01__TitleDiv = styled.div`
@@ -105,14 +122,61 @@ const Section01__Text = styled.div`
       color:white;
     `}
 `
-const Input = styled.div`
+
+const FormDiv = styled.div` 
+`
+const Form = styled.div`
+  height:auto;
   background-color:white;
-  width:100%;
-  height:100vh;
-  box-shadow : 0 0 25px rgba(50, 50, 93, 0.2);
-  margin:0 auto 85px auto;
-  ${breakpoint('md')`
-    width:80%;
+  padding:60px 8%;
+  box-shadow:0 0 20px rgba(0,0,0,0.2);
+      ${breakpoint('md')`
+      `}
+      ${breakpoint('lg')`
+      // margin:0 10% 100px 10%;
+      z-index:1;
+  `}
+`
+const InputDiv = styled.div`
+  margin-bottom:50px;
+  display:flex;
+  flex-direction:column;
+  ${breakpoint('lg')`
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-column-gap:4em;
+    margin-bottom:50px;
+  `}
+`
+const MessageInput__Div = styled.div`
+  height:200px;
+  margin-bottom:50px;
+  ${breakpoint('lg')`
+    height:180px;
+  `}
+`
+const InputDiv__Left = styled.div`
+  display:flex;
+  flex-direction:column;
+    ${breakpoint('lg')`
+      justify-content:space-between;
+    `}
+  
+`
+const InputDiv__Right = styled.div`
+  display:flex;
+  flex-direction:column;
+    ${breakpoint('lg')`
+     justify-content:space-between;
+    `}
+`
+const ButtonDiv = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  ${breakpoint('lg')`
+    width:60%;  
+    margin:0 auto;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
   `}
 `
 const Section02 = styled.div`

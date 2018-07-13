@@ -38,6 +38,7 @@ const Container = styled.div`
   margin-top: 0;
   width: 100%;
   height: 100%;
+  margin-bottom:inherit;
 `
 const Label_Div = styled.div`
   display: flex;
@@ -62,7 +63,7 @@ const Input = styled.input.attrs({
 })`
   box-sizing:border-box;
   width:100%;
-  height:auto;
+  height:inherit;
   background: none;
   border-radius: 5px;
   border: 1px solid ${Themes.colors.formGrey};

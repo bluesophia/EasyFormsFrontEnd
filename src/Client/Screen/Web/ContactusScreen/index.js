@@ -189,7 +189,7 @@ const InputDiv = styled.div`
     display:grid;
     grid-template-columns:1fr 1fr;
     grid-column-gap:4em;
-    margin-bottom:0;
+    margin-bottom:50px;
   `}
 `
 const InputDiv__Left = styled.div`

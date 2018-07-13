@@ -30,8 +30,7 @@ export default class UploadInput extends Component {
   }
 }
 const Container = styled.div`
-  padding-left: 0.5em;
-  margin-top: 0;
+  padding-left: 0em;
   width: 100%;
   height: 100%;
 `

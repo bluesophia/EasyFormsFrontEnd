@@ -38,7 +38,10 @@ const Container = styled.div`
   margin-top: 0;
   width: 100%;
   height: 100%;
-  margin-bottom:50px
+  margin-bottom:50px;
+  ${breakpoint('lg')`
+   margin-bottom:0px;
+  `}
 `
 const Label_Div = styled.div`
   display: flex;
