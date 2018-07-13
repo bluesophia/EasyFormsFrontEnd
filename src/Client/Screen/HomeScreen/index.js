@@ -52,13 +52,6 @@ const Text = css`
 const LightGreyBg = css`
   background-color:rgba(238,238,238,0.6);
 `
-const IconCircle = css`
-  border-radius:50%;
-  background:linear-gradient(${Themes.colors.blueLight},${Themes.colors.blue});
-`
-const Shadow = css`
-    box-shadow : 0 0 8px rgba(50, 50, 93, 0.23);
-`
 
 const HomeContainer =() => (
             <ThemeProvider theme={Themes}>
