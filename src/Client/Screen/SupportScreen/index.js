@@ -6,20 +6,27 @@ import Themes from '../../../Assets/Styles/Themes';
 import HeaderLine from '../../Components/Common/HeaderLine';
 import Text from '../../Components/Common/Text';
 import BigTitle from '../../Components/Common/Title/BigTitle.js';
-import Section01Bg from '../../../Assets/Images/support.jpg';
+import Section01Bg from '../../../Assets/Images/support.png';
 
 import { UploadInput,
           CompanyNameInput,
           EmailInput,
           MessageInput,
-<<<<<<< HEAD:src/Client/Screen/Web/SupportScreen/index.js
-          FullNameInput }from '../../../Components/Common/Input';
-import Button from '../../../Components/Common/Button';
-
-=======
           FullNameInput }from '../../Components/Common/Input';
->>>>>>> d6e0414f8fda4f39d242ae9567fdcee8b6d799e9:src/Client/Screen/SupportScreen/index.js
+import Button from '../../Components/Common/Button';
 
+const Title = css`
+    color:${Themes.colors.blue};
+    font-size:${Themes.fontsize.h2};
+    font-weight:${Themes.fontWeight.black};
+    text-align:center;
+    line-height:30px;
+    text-transform:uppercase;
+    letter-spacing:5px;
+`
+const LightGreyBg = css`
+  background-color:rgba(238,238,238,0.6);
+`
 const BlueBg = css`
   background:linear-gradient(${Themes.colors.blue},${Themes.colors.blueLight});
 `
@@ -27,119 +34,138 @@ const SupportScreen = () => (
   <ThemeProvider theme={Themes}>
     <div>
       <Container>
-        <BgImage></BgImage>
-        <Section01__Contents>
-          <Section01__TitleDiv>
-            <Section01__Title>Submit a support ticket</Section01__Title>
-            <HeaderLine />
-            <Section01__Text>
-              Please complete the form below which will direct your request to the appropriate member of the team. 
+        <TopBgImg src={Section01Bg}/>
+        <Header> 
+          <TitleDiv>
+            <TitleDiv__Title>Submit a support ticket</TitleDiv__Title>
+            <TitleDiv__Line><HeaderLine /></TitleDiv__Line>
+            <TitleDiv__Text>Please complete the form below which will direct your request to the appropriate member of the team. 
               This ensures greater efficiency around response times and also ensures processes are followed.
               <br /><br />
               We aim to respond to support requests within 24 hours on regular business days, however, 
-              depending on the scale of your request this could take slightly longer.
-            </Section01__Text>
-          </Section01__TitleDiv>
-          <Form>
-            <InputDiv>
-              <InputDiv__Left>
+              depending on the scale of your request this could take slightly longer.</TitleDiv__Text>
+          </TitleDiv>
+        </Header>
+        <Contents>
+          <FormDiv>
+            <Form>
+              <InputDiv>
+                <InputDiv__Left>
                   <CompanyNameInput />
                   <FullNameInput />
                   <EmailInput />
-              </InputDiv__Left>
-              <InputDiv__Right>
-                <MessageInput__Div><MessageInput /></MessageInput__Div>
-                <UploadInput />
-              </InputDiv__Right>
-            </InputDiv>
-            <ButtonDiv>
-              <Button value="Tell us about Issue"/>
-            </ButtonDiv>
-          </Form>
-        </Section01__Contents>
+                </InputDiv__Left>
+                <InputDiv__Right>
+                  <MessageInput__Div><MessageInput /></MessageInput__Div>
+                  <UploadInput />
+                </InputDiv__Right>
+              </InputDiv>
+              <ButtonDiv>
+                <Button value="Tell us about Issue"/>
+              </ButtonDiv>      
+            </Form>
+          </FormDiv>
+        </Contents>
       </Container>
     </div>
   </ThemeProvider>
 )
-
-const Input__Div = styled.div`
-    //display:flex;
-    margin-left:3px;
-`
-
 const Container = styled.div`
-  // position:absolute;
-  // top:120;
-  position:relative;
-  height:auto;
+`
+const Header = styled.div`
+  padding:60px 8% 40px 8%;
   display:flex;
-  justify-content: center;
-  background-color:#eee;
-  ${breakpoint('md')`
-    width:100vw;
-    height:auto;
-
-  `}
-  ${breakpoint('lg')`
-  width:100vw;
-  height:auto;
-
-`}
-`
-const BgImage = styled.div`
-  // z-index:-1;
-  // top:0;
-  // left:0;
-  background:linear-gradient(rgba(8,39,90), rgba(8,39,90,0.4)), url(${Section01Bg});
-  background-size:cover;
-  width:100%;
-  height:50%;
-  ${breakpoint('md')`
-    width:100vw;
-    height:100vh;
-  `}
-`
-const Section01__Contents = styled.div`
-  box-sizing:border-box;
-  // position:absolute;
-  // top: 0;
-  z-index:1;
-  margin:60px auto 0 auto;
-    ${breakpoint('md')`
-    padding:100px 10% 0 10%;
-    // top:230;
+  align-items:center;
+  flex-direction:column;
+  ${BlueBg};
+    ${breakpoint('lg')`
+    background:none;
+    display:flex;
+    // justify-content:space-between;
+    // flex-direction:row;
+    // align-items:flex-end;
+    padding:110px 10% 70px 10%;
     `}
 `
-const Section01__TitleDiv = styled.div`
-  padding:0 8%;
-  margin:0 auto 40px auto;
-  ${breakpoint('md')`
-  `}
-`
-const Section01__Title = styled.div`
-  ${BigTitle};
-`
-const Section01__Text = styled.div`
+const TopBgImg = styled.img`
   display:none;
-    ${breakpoint('md')`
+    ${breakpoint('lg')`
       display:block;
-      ${Text};
-      font-weight:300;
-      color:white;
+      width:100vw;
+      height:auto;
+      position:absolute;
+      top:120;
+      z-index:-1;
     `}
 `
+const TitleDiv = styled.div`
+  ${breakpoint('lg')`
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  `}
+`
+const TitleDiv__Title = styled.div`
+  ${BigTitle};
+  ${breakpoint('md')`
+    ${BigTitle};
+    font-size:35px;
+  `}
+`
+const TitleDiv__Line = styled.div`
+`
+const TitleDiv__Text = styled.div`
+  display:none;
+  ${breakpoint('lg')`
+    display:block;
+    color:white;
+    font-size:${Themes.fontsize.p2};
+    line-height:25px;
+    font-weight:${Themes.fontWeight.light};
+    width:80%;
+    text-align:center;
+  `}
+`
+const CallUsDiv = styled.div`
+  display:flex;
+  align-items:center;
+  flex-direction:row;
 
+`
+const Icon = styled.img`
+  margin-right:10px;
+`
+const CallUs = styled.span`
+  font-size:${Themes.fontsize.h3};
+  color:white;
+  margin-right:10px;
+    ${breakpoint('lg')`
+    font-size:${Themes.fontsize.h2};
+  `}
+`
+const PhoneNo = styled.span`
+  font-size:${Themes.fontsize.h3};
+  color:${Themes.colors.yellow};
+    ${breakpoint('lg')`
+    font-size:${Themes.fontsize.h2};
+  `}
+`
+const Contents = styled.div`
+  display:flex;
+  flex-direction:column;
+    ${breakpoint('lg')`
+      flex-direction:column-reverse;
+    `}
+`
 const FormDiv = styled.div` 
 `
 const Form = styled.div`
   height:auto;
   background-color:white;
-  padding:60px 8%;
   box-shadow:0 0 20px rgba(0,0,0,0.2);
-      ${breakpoint('md')`
-      `}
-      ${breakpoint('lg')`
-      // margin:0 10% 100px 10%;
+  padding:60px 8%;
+    ${breakpoint('lg')`
+      margin:0 10% 200px 10%;
       z-index:1;
   `}
 `
@@ -154,27 +180,20 @@ const InputDiv = styled.div`
     margin-bottom:50px;
   `}
 `
+const InputDiv__Left = styled.div`
+  display:flex;
+  flex-direction:column;
+  ${breakpoint('lg')`
+`}
+`
+const InputDiv__Right = styled.div``
+
 const MessageInput__Div = styled.div`
   height:200px;
   margin-bottom:50px;
   ${breakpoint('lg')`
     height:180px;
   `}
-`
-const InputDiv__Left = styled.div`
-  display:flex;
-  flex-direction:column;
-    ${breakpoint('lg')`
-      justify-content:space-between;
-    `}
-  
-`
-const InputDiv__Right = styled.div`
-  display:flex;
-  flex-direction:column;
-    ${breakpoint('lg')`
-     justify-content:space-between;
-    `}
 `
 const ButtonDiv = styled.div`
   display:flex;
@@ -185,7 +204,11 @@ const ButtonDiv = styled.div`
     margin:0 auto;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
   `}
 `
-const Section02 = styled.div`
+const Form__Text = styled.div`
+  margin:25px auto 10px auto;
+  color:${Themes.colors.blueLight};
+  font-size:${Themes.fontsize.p2};
+  font-weight:${Themes.fontWeight.black};
 `
 
 export default SupportScreen;
