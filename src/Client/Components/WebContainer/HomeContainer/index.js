@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled, { injectGlobal, css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
-import { Carousel } from 'react-responsive-carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Themes from '../../../../Assets/Styles/Themes';
 import Button from '../../Common/Button/'
@@ -35,6 +34,7 @@ import Logo05 from '../../../../Assets/Images/ncc.gif';
 import Logo06 from '../../../../Assets/Images/uoa.gif';
 import Logo07 from '../../../../Assets/Images/asb.gif';
 
+import CardCarousel from '../../../Components/Common/CardCarousel';
 
 injectGlobal`
   body{
@@ -119,19 +119,7 @@ const HomeContainer =() => (
                 <Section0304>
                     <Section03>
                         <Section03__Title>Customer Stories</Section03__Title>
-                            <Section03__Card>
-                                    <Section03__CardLogo src={Logo01}></Section03__CardLogo>
-                                    <Section03__CardName>Daniel Hadfield</Section03__CardName>
-                                    <Section03__CardCompanyName>Licensing & Compliance Division, Auckland Council</Section03__CardCompanyName>
-                                    <Section03__CardQuatation src={DoubleQuatationMark}/>
-                                    <Section03__CardText>
-                                        EasyForms have been a key factor in helping us 
-                                        to become a smarter, more mobile workforce and 
-                                        have worked alongside us to help move from 
-                                        a manual, paper based process, to an intelligent 
-                                        digital process.
-                                    </Section03__CardText>
-                            </Section03__Card>
+                            <CardCarousel />
                     </Section03>
                     <Section04>
                         <Section04__Title>Here Are Just a Few of the Clients We Work With:
@@ -164,7 +152,7 @@ const HomeContainer =() => (
                         while mobilising your business effortlessly.</Section05__CardText>
                     </Section05__Card> 
 
-                    {/* <Section05__Card className="cardDisplay">
+                     <Section05__Card className="cardDisplay">
                         <Section05__CardCircle>
                         </Section05__CardCircle>
                         <Section05__CardTitle>Replace Paper Forms and Processes</Section05__CardTitle>
@@ -196,7 +184,7 @@ const HomeContainer =() => (
                         solution, streamlining your existing processes 
                         while mobilising your business effortlessly.</Section05__CardText>
                     </Section05__Card> 
-                     */}
+                     
                     </Section05__CardDiv>
                 </Section05>
                 <Section06>
@@ -426,62 +414,7 @@ const Section03__Title = styled.p`
     color:white;
     padding: 0 37px;
 `
-const Section03__Card = styled.div`
-    background-color: white;
-    width:100%;
-    padding:60px 0;
-    text-align:center;
-`
 
-const Section03__CardLogo = styled.img`
-`
-
-const Section03__CardName = styled.p`
-    font-size:${Themes.fontsize.h3};
-    font-weight:${Themes.fontWeight.black};
-    color:${Themes.colors.blue};
-    margin-bottom:0;
-`
-const Section03__CardCompanyName = styled.p`
-    font-size:${Themes.fontsize.p2};
-    color:${Themes.colors.grey};
-    line-height:20px;
-    margin:6px 0 0 0;
-    padding:0 55px;
-`
-const Section03__CardQuatation = styled.img`
-    margin: 30px 0 18px 0;
-`
-const Section03__CardText = styled.div`
-    ${Text};
-    padding:0 55px;
-    color:${Themes.colors.grey};    
-`
-
-/**** Section 04 ****/
-
-const Section04 = styled.div`
-    padding: 70px 8% 20px 8%;
-`
-const Section04__Title = styled.p`  
-    color:${Themes.colors.blue};
-    font-size:${Themes.fontsize.h2};
-    font-weight:${Themes.fontWeight.black};
-    text-align:center;
-    line-height:30px;
-    margin-bottom:30px;
-`
-const Section04__Logos = styled.div`
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap:5%;
-    margin:40px auto 0 auto;
-`
-const Section04__Logo = styled.img`
-    max-width:146px;
-    height:auto;
-    margin:20px auto 40px auto;
-`
 
 
 /**** Section 05 ****/

@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faAngleLeft, faAngleRight, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+// import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import 'normalize.css';
 import Header from './Client/Components/WebContainer/HeaderContainer';
 import Footer from './Client/Components/WebContainer/FooterContainer';
-import Web from './Client/Routes/Web';
+import Routes from './Client/Routes/index';
 
-library.add(fab, faBars)
+library.add(fab, faBars, faAngleLeft, faAngleRight, faPaperPlane)
 
 const App = () => (
   <div>
     <Header />
-    <Web />
+    <Routes />
     <Footer />
   </div>
 );
