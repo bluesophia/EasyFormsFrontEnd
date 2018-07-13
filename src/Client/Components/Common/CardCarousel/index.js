@@ -6,6 +6,8 @@ import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Themes from '../../../../Assets/Styles/Themes';
+import arrowLeftImg from '../../../../Assets/Images/arrowLeft.png';
+import arrowRightImg from '../../../../Assets/Images/arrowRight.png';
 
 class CardCarousel extends Component {
 render () {
@@ -14,8 +16,11 @@ render () {
         <Carousel
         infinite
         autoPlay={3000}
-        arrowLeft={<FontAwesomeIcon icon='angle-left' size='4x' style={{ color:'#ffa91f' }}/>}
-        arrowRight={<FontAwesomeIcon icon='angle-right'size='4x'style={{ color:'#ffa91f'}}/>}
+        arrows
+        // arrowLeft={<arrowLeftImg />}
+        // arrowRight={<arrowRightImg />}
+        // arrowLeft={<FontAwesomeIcon icon='angle-left' size='4x' style={{ color:'#ffa91f' }}/>}
+        // arrowRight={<FontAwesomeIcon icon='angle-right'size='4x'style={{ color:'#ffa91f'}}/>}
         addArrowClickHandler
         >
             <Card 

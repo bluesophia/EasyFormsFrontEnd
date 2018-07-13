@@ -7,8 +7,6 @@ import Text from '../../Components/Common/Text';
 import BigTitle from '../../Components/Common/Title/BigTitle.js';
 import TopBg from '../../../Assets/Images/contactUsBg.png';
 import CallUsIcon from '../../../Assets/Images/phone.png';
-import MapWeb from '../../../Assets/Images/map_web.png';
-import MapAddress from '../../../Assets/Images/map_address.png';
 
 import CompanyNameInput from '../../Components/Common/Input/CompanyNameInput';
 import FullNameInput from '../../Components/Common/Input/FullNameInput';

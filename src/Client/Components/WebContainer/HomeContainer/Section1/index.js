@@ -6,7 +6,7 @@ import Themes from '../../../../../Assets/Styles/Themes';
 import Button from '../../../Common/Button'
 
 /** Images **/
-import HomeSection01BgSm from '../../../../../Assets/Images/HomeSection01BgMd.png';
+import HomeSection01BgSm from '../../../../../Assets/Images/HomeSection01BgSm.png';
 import HomeSection01BgMd from '../../../../../Assets/Images/HomeSection01BgMd.png';
 import ClusterImg from '../../../../../Assets/Images/cluster.png';
 import FacebookIcon from '../../../../../Assets/Images/facebook.png';
