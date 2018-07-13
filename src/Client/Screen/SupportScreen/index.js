@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import styled, { css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
+
 import Themes from '../../../Assets/Styles/Themes';
 import HeaderLine from '../../Components/Common/HeaderLine';
 import Text from '../../Components/Common/Text';
 import BigTitle from '../../Components/Common/Title/BigTitle.js';
 import Section01Bg from '../../../Assets/Images/support.jpg';
+
+import { UploadInput,
+          CompanyNameInput,
+          EmailInput,
+          MessageInput,
+          FullNameInput }from '../../Components/Common/Input';
 
 const BlueBg = css`
   background:linear-gradient(${Themes.colors.blue},${Themes.colors.blueLight});
@@ -28,6 +35,13 @@ const SupportScreen = () => (
             </Section01__Text>
           </Section01__TitleDiv>
           <Input>
+          <Input__Div>
+          <CompanyNameInput />
+          <FullNameInput />
+          <EmailInput />
+          <MessageInput />
+          <UploadInput />
+          </Input__Div>
           </Input>
         </Section01__Contents>
       </Section01>
@@ -36,7 +50,7 @@ const SupportScreen = () => (
 )
 
 const Input__Div = styled.div`
-    display:flex;
+    //display:flex;
     margin-left:3px;
 `
 
@@ -102,7 +116,6 @@ const Input = styled.div`
   ${breakpoint('md')`
     width:80%;
   `}
-
 `
 const Section02 = styled.div`
 `

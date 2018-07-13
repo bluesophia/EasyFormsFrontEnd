@@ -1,8 +1,6 @@
-
-export { CompanyNameInput } from './CompanyNameInput'
-export { EmailInput } from './EmailInput'
-export { FullNameInput } from './FullNameInput'
-export { MessageInput } from './MessageInput'
-export { PhoneNumberInput } from './PhoneNumberInput'
-export { SupportTypeInput } from './SupportTypeInput'
+export { default as CompanyNameInput } from './CompanyNameInput'
+export { default as FullNameInput } from './FullNameInput'
+export { default as EmailInput } from './EmailInput'
+export { default as MessageInput } from './MessageInput'
+export { default as UploadInput } from './UploadInput'
 

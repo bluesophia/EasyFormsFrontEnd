@@ -6,26 +6,23 @@ import Themes from '../../../../Assets/Styles/Themes';
 const Shadow = css`
     box-shadow : 0 0 8px rgba(50, 50, 93, 0.23);
 `
-class Button extends Component {
+class BlueButton extends Component {
     render(){
         return (
             <ThemeProvider theme={Themes}>
-                {/* <Link href={this.props.link}> */}
-                    <ButtonStyle>
-                        <Text>{this.props.value}</Text>
-                    </ButtonStyle>
-                {/* </Link> */}
+                <ButtonStyle>
+                    <Text>{this.props.value}</Text>
+                </ButtonStyle>
             </ThemeProvider>
         );
     }
 }
 
-Button.propTypes = {
-    value: PropTypes.string,
-    // link: PropTypes.link
+BlueButton.propTypes = {
+    value: PropTypes.string
   };
 const ButtonStyle = styled.button`
-    background:${Themes.background.yellowToOrange};
+    background:${Themes.background.blueLightToBlue};
     width:100%;
     height:auto;
     color:white;
@@ -43,4 +40,4 @@ const Text = styled.p`
     text-shadow:0 0 8px rgba(50, 50, 93, 0.23);
 `
 
-export default Button;
+export default BlueButton;
