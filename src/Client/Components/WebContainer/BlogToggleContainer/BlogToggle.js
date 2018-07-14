@@ -19,10 +19,10 @@ const BlogToggle = () => ({
             <ThemeProvider theme={Themes}>
                 <Container>
                     <QuestionDiv02>
-                        <Question02>{this.props.question}</Question02>
-                        <ArrowDiv02 onClick={this.toggle} className="arrowFlip02"><Arrow src={ToggleButton}/></ArrowDiv02>
+                        <Question02 onClick={this.toggle}>{this.props.question}</Question02>
+                        <ArrowDiv02 className="arrowFlip02"><Arrow src={ToggleButton}/></ArrowDiv02>
                     </QuestionDiv02>
-                    <AnswerDiv02 className="toggle02">
+                    <AnswerDiv02 className={this.props.className}>
                         {this.props.answer}
                     </AnswerDiv02>
                 </Container>
@@ -30,21 +30,22 @@ const BlogToggle = () => ({
         )
     },
     toggle: function(){
-        let answerToggle02 = document.querySelector('.toggle02');
-        let arrowFlip02 = document.querySelector('.arrowFlip02');
-          if (answerToggle02.style.display === 'none' && arrowFlip02.style.transform === 'rotateX(0deg)') {
-            answerToggle02.style.display = 'block';
-            arrowFlip02.style.transform = 'rotateX(180deg)';
+        let Blog01Answer02 = document.querySelector('.Blog01Answer02');   
+        let arrowFlip = document.querySelector('.arrowFlip02');
+          if (Blog01Answer02.style.display === 'none' && arrowFlip.style.transform === 'rotateX(0deg)') {
+            Blog01Answer02.style.display = 'block';
+            arrowFlip.style.transform = 'rotateX(180deg)';
           } else {
-            answerToggle02.style.display = 'none';
-            arrowFlip02.style.transform = 'rotateX(0deg)';
-          }
+            Blog01Answer02.style.display = 'none';
+            arrowFlip.style.transform = 'rotateX(0deg)';
+          };
        }
 })
 
 BlogToggle.propTypes = {
     question: PropTypes.string,
-    answer: PropTypes.string
+    answer: PropTypes.string,
+    className: PropTypes.string
   };
 
 const Container = styled.div`
@@ -73,8 +74,8 @@ const Question = styled.div`
     `}
 `
 const ArrowDiv = styled.div`
-    width:20px;
-    height:auto;
+    width:40px;
+    height:40px;
 `
 const Arrow = styled.img`
     width:20px;

@@ -5,7 +5,7 @@ import Themes from '../../../Assets/Styles/Themes';
 import HeaderLine from '../../Components/Common/HeaderLine';
 import Text from '../../Components/Common/Text';
 import BigTitle from '../../Components/Common/Title/BigTitle.js';
-import Section01Bg from '../../../Assets/Images/blog_1.jpg';
+import SectionBg from '../../../Assets/Images/blog_1.jpg';
 // import BlogToggleContainer from '../../../Components/WebContainer/BlogToggleContainer';
 import BlogToggle from '../../Components/WebContainer/BlogToggleContainer/BlogToggle';
 import ToggleButton from '../../../Assets/Images/arrow.png';
@@ -128,49 +128,53 @@ const BlogScreen = () => ({
     return(
       <ThemeProvider theme={Themes}>
       <Container>
-        <Section01>
-          <Section01__Header>
-            <Section01__TitleDiv>
-              <Section01__Title>Is Timesheet Theft Giving You a Constant Headache?</Section01__Title>
+        <Section>
+          <Section__Header>
+            <Section__TitleDiv>
+              <Section__Title>Is Timesheet Theft Giving You a Constant Headache?</Section__Title>
               <HeaderLine />
-            </Section01__TitleDiv>
-            <Section01__FirstBlog>
-              <QuestionDiv>
+            </Section__TitleDiv>
+            <Section__FirstBlog>
+              <QuestionDiv onClick={this.toggle}>
                   <Question>Would you like to eliminate timesheet ambiguity?</Question>
-                  <ArrowDiv onClick={this.toggle} className="arrowFlip" ><Arrow src={ToggleButton}/></ArrowDiv>
+                  <ArrowDiv className="arrowFlip" ><Arrow src={ToggleButton}/></ArrowDiv>
               </QuestionDiv>
-            </Section01__FirstBlog>
-          </Section01__Header>
-            <Section01__Contents>
+            </Section__FirstBlog>
+          </Section__Header>
+            <Section__Contents>
                   <AnswerDiv className="toggle">{Blog01Answer01}</AnswerDiv>
                   <BlogToggle 
                     question={'So, What is Timesheet Theft Costing You?'}
-                    answer={Blog01Answer02}/>
+                    answer={Blog01Answer02}
+                    className="Blog01Answer02"/>
                   <BlogToggle 
                     question={'Timesheet Theft Is Not Always Deliberate'}
-                    answer={Blog01Answer03}/>
+                    answer={Blog01Answer03}
+                    className="Blog01Answer03"/>
                   <BlogToggle 
                     question={'How We Can Help'}
-                    answer={Blog01Answer04}/>
+                    answer={Blog01Answer04}
+                    className="Blog01Answer04"/>
                   <BlogToggle 
                     question={'We can help your business:'}
-                    answer={Blog01Answer05}/>
-            </Section01__Contents>
-        </Section01>
-        <Section01>
-          <Section01__Header>
-            <Section01__TitleDiv>
-              <Section01__Title>Are Mountains of Paperwork Dragging Your Business Down?</Section01__Title>
+                    answer={Blog01Answer05}
+                    className="Blog01Answer05"/>
+            </Section__Contents>
+        </Section>
+        <Section>
+          <Section__Header>
+            <Section__TitleDiv>
+              <Section__Title>Are Mountains of Paperwork Dragging Your Business Down?</Section__Title>
               <HeaderLine />
-            </Section01__TitleDiv>
-            <Section01__FirstBlog>
+            </Section__TitleDiv>
+            <Section__FirstBlog>
               <QuestionDiv>
-                  <Question>Do any of these words and phrases ring true for your business?'</Question>
-                  <ArrowDiv onClick={this.toggle} className="arrowFlip" ><Arrow src={ToggleButton}/></ArrowDiv>
+                  <Question onClick={this.toggle} >Do any of these words and phrases ring true for your business?'</Question>
+                  <ArrowDiv className="arrowFlip" ><Arrow src={ToggleButton}/></ArrowDiv>
               </QuestionDiv>
-            </Section01__FirstBlog>
-          </Section01__Header>
-            <Section01__Contents>
+            </Section__FirstBlog>
+          </Section__Header>
+            <Section__Contents>
              <AnswerDiv className="toggle">{Blog02Answer01}</AnswerDiv>
                   <BlogToggle 
                     question={'Well then, perhaps these words and phrases sound more appealing to you?'}
@@ -187,8 +191,8 @@ const BlogScreen = () => ({
                   <BlogToggle 
                     question={'Here’s a “portion” of how we can help your business:'}
                     answer={Blog02Answer06}/>
-            </Section01__Contents>
-        </Section01>
+            </Section__Contents>
+        </Section>
       </Container>
     </ThemeProvider>
     )
@@ -211,18 +215,18 @@ const BlogScreen = () => ({
 const Container = styled.div`
     position:relative;
 `
-const Section01 = styled.div`
+const Section = styled.div`
   display:flex;
   justify-content:center;
   flex-direction:column;
   ${breakpoint('md')`
   `}
 `
-const Section01__Header = styled.div`
+const Section__Header = styled.div`
   display:flex;
   justify-content:center;
   flex-direaction:coulmn;
-  background:linear-gradient(rgba(8,39,90), rgba(8,39,90,0.4)), url(${Section01Bg});
+  background:linear-gradient(rgba(8,39,90), rgba(8,39,90,0.4)), url(${SectionBg});
   background-size:cover;
   padding-top:100px;
   padding-bottom:80px;
@@ -233,14 +237,14 @@ const Section01__Header = styled.div`
     background-position:center-top;
   `}
 `
-const Section01__TitleDiv = styled.div`
+const Section__TitleDiv = styled.div`
   padding-right:8%;
   padding-left:8%;
   ${breakpoint('md')`
     margin-bottom:40px;
   `}
 `
-const Section01__Title = styled.div`
+const Section__Title = styled.div`
   ${BigTitle};
   font-size:30px;
   ${breakpoint('md')`
@@ -248,7 +252,7 @@ const Section01__Title = styled.div`
     font-size:35px;
   `}
 `
-const Section01__FirstBlog = styled.div`
+const Section__FirstBlog = styled.div`
   width:100%;
   padding:0;
   margin-bottom:-4px;
@@ -259,7 +263,7 @@ const Section01__FirstBlog = styled.div`
     width:60%;
   `}
 `
-const Section01__Contents = styled.div`
+const Section__Contents = styled.div`
   box-sizing:border-box;
   width:100%;
   margin:4px auto 0 auto;

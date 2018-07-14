@@ -170,7 +170,7 @@ const Section04__Title = styled.div`
     font-weight:${Themes.fontWeight.bold};
     text-align:center;
     line-height:30px;
-    padding-top:100px;
+    padding-top:80px;
     margin-top: 30px;
     ${breakpoint('md')`
     grid-area: b;

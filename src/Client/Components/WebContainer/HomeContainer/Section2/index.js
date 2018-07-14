@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, { injectGlobal, css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../../Assets/Styles/Themes';
+import HeaderLine from '../../../Common/HeaderLine'
 
 /** Images **/
 import HomeSection02BgMd from '../../../../../Assets/Images/HomeSection02BgMd.png';
@@ -33,6 +34,7 @@ const Section2 =() => (
                 <Section02>
                     <Section02__TitleDiv>
                         <Section02__Title>Why Easyforms?</Section02__Title>
+                        <HeaderLine />
                     </Section02__TitleDiv>
                     <Section02__Contents>
                         <Section02__ContentDiv>
