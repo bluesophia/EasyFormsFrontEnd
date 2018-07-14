@@ -3,7 +3,8 @@ import styled, { injectGlobal, css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Themes from '../../../../../Assets/Styles/Themes';
-import Button from '../../../Common/Button'
+import Button from '../../../Common/Button';
+import { Link } from 'react-router-dom';
 
 /** Images **/
 import HomeSection01BgSm from '../../../../../Assets/Images/HomeSection01BgSm.png';
@@ -13,7 +14,7 @@ import FacebookIcon from '../../../../../Assets/Images/facebook.png';
 import TwitterIcon from '../../../../../Assets/Images/twitter.png';
 import LinkedinIcon from '../../../../../Assets/Images/linkedin.png';
 
-const Section1 =() => (
+const Section1 = () => (
             <ThemeProvider theme={Themes}>
                 <Section01>
                     <Section01__Image><Cluster src={ClusterImg}/></Section01__Image>
@@ -23,12 +24,16 @@ const Section1 =() => (
                             and workflow management software industry standard 
                             health and safety management and much more.
                         </Section01__Text>
-                        <ButtonDiv><Button value={'contact our software experts'}/></ButtonDiv>
+                        <ButtonDiv>
+                            <ButtonLink to='/contact'>
+                                <Button value={'contact our software experts'}/>
+                            </ButtonLink>
+                        </ButtonDiv>
                         <SubTitle>Follow Us On Social Network</SubTitle>
                         <SnsIcons>
-                            <Facebook />
-                            <Twitter />
-                            <Linkedin />
+                            <SnsLink href="https://www.facebook.com/EasyFormsNZ/?ref=aymt_homepage_panel"><Facebook /></SnsLink>
+                            <SnsLink href="https://twitter.com/EasyFormsNZ"><Twitter /></SnsLink>
+                            <SnsLink href="https://www.linkedin.com/company/easy-forms/"><Linkedin /></SnsLink>
                         </SnsIcons>
                     </Section01__TitleDiv>
                 </Section01>
@@ -103,6 +108,8 @@ const ButtonDiv = styled.div`
                 margin-right:0;
             `}
 `
+const ButtonLink = styled(Link)`
+`
 const SubTitle = styled.p`
         font-size:${Themes.fontsize.h3};
         color:${Themes.colors.white};
@@ -122,6 +129,8 @@ const SnsIcons = styled.div`
         text-align:right;
         justify-content: flex-end;
     `}
+`
+const SnsLink = styled.a`
 `
 const Facebook = styled.div`
     background-image:url(${FacebookIcon});

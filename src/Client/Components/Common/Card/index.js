@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import DoubleQuatationMark from '../../../../Assets/Images/double-quatation-mark.png';
 import Themes from '../../../../Assets/Styles/Themes';
+import breakpoint from 'styled-components-breakpoint';
 
 class Card extends Component {
             render () {
@@ -19,15 +20,23 @@ class Card extends Component {
         };
 
 const CardContainer = styled.div`
+    box-sizing:border-box;
     background-color: white;
-    width:300px;
-    height: 350px;
-    padding:30px;
+    width:auto;
+    height:440px;
+ //   margin:5% auto;
+    padding:8%;
     text-align:center;
-    border: 1px solid black;
+    ${breakpoint('md')`
+        width:380px;
+        height:440px;
+        // margin:10% 15%;
+        // padding:50px 40px;
+    `}
 `
-
 const CardLogo = styled.img`
+        width:180px;
+        height:auto;
 `
 
 const CardName = styled.p`
@@ -41,13 +50,14 @@ const CardCompanyName = styled.p`
     color:${Themes.colors.grey};
     line-height:20px;
     margin:6px 0 0 0;
-    padding:0 55px;
+    padding:0 10%;
 `
 const CardQuatation = styled.img`
     margin: 30px 0 18px 0;
 `
 const CardText = styled.div`
-    color:${Themes.colors.grey};    
+    color:${Themes.colors.grey};  
+    font-weight:${Themes.fontWeight.light}  
 `
 
 export default Card;

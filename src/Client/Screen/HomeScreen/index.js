@@ -130,11 +130,12 @@ url(${CustomerStoriesBg});
 display:flex;
 flex-direction:column;
     ${breakpoint('md')`
+        height:100vh;
         display:grid;
         grid-gap: 0 20px;
         padding-left: 20px;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 100px 1fr;
+        grid-template-rows: 140px 1fr;
         grid-template-areas: "a b"
                              "c d";
     `}
@@ -142,7 +143,7 @@ flex-direction:column;
 const Section03__Title = styled.p`
     ${Title};
     color:white;
-    padding: 30px 37px;
+    padding: 70px 37px;
     ${breakpoint('md')`
     grid-area: a;
     `}
@@ -156,7 +157,7 @@ const StyledCarousel = styled(CardCarousel)`
 /**** Section 04 ****/
 
 const Section04 = styled.div`
-    padding: 20px 8% 20px 8%;
+    padding: 20px 8% 40px 8%;
     background-color:white;
     ${breakpoint('md')`
     grid-area: d;
@@ -165,11 +166,11 @@ const Section04 = styled.div`
 const Section04__Title = styled.div` 
     background-color:white; 
     color:${Themes.colors.blue};
-    font-size:${Themes.fontsize.h2};
-    font-weight:${Themes.fontWeight.black};
+    font-size:${Themes.fontsize.h3};
+    font-weight:${Themes.fontWeight.bold};
     text-align:center;
     line-height:30px;
-    padding-top:30px;
+    padding-top:100px;
     margin-top: 30px;
     ${breakpoint('md')`
     grid-area: b;
@@ -181,6 +182,7 @@ const Section04__Logos = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 5%;
     margin: auto;
+    padding-top:50px;
     
 `
 const Section04__Logo = styled.img`
@@ -188,8 +190,6 @@ const Section04__Logo = styled.img`
     height:auto;
     margin:20px auto 40px auto;
 `
-
-
 /**** Section 05 ****/
 
 const Section05 = styled.div`
