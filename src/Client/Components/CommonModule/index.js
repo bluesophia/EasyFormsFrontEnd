@@ -5,12 +5,12 @@ import react from 'react';
 //Submit
 
 //Toggle
-const Toggle = (props) => {
-    return(
+// const Toggle = (props) => {
+//     return(
 
-    )
-}
-export default Toggle;
+//     )
+// }
+// export default Toggle;
 
 //Alert Modal
 

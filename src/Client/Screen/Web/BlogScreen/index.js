@@ -7,8 +7,9 @@ import Text from '../../../Components/Common/Text';
 import BigTitle from '../../../Components/Common/Title/BigTitle.js';
 import Section01Bg from '../../../../Assets/Images/blog_1.jpg';
 // import BlogToggleContainer from '../../../Components/WebContainer/BlogToggleContainer';
-import BlogToggle from '../../../Components/WebContainer/BlogToggleContainer/BlogToggle';
+// import BlogToggle from '../../../Components/WebContainer/BlogToggleContainer/BlogToggle';
 import ToggleButton from '../../../../Assets/Images/arrow.png';
+import Accordion from '../../../Components/CommonModule/Toggle';
 
 const Blog01Answer01 = "Whether your business is currently using paper-based timesheets,\
  or a job management system, EasyForms helps you achieve the new \"best practice\”. \
@@ -142,7 +143,7 @@ const BlogScreen = () => ({
             </Section01__FirstBlog>
           </Section01__Header>
             <Section01__Contents>
-                  <AnswerDiv className="toggle">{Blog01Answer01}</AnswerDiv>
+                  {/* <AnswerDiv className="toggle">{Blog01Answer01}</AnswerDiv>
                   <BlogToggle 
                     question={'So, What is Timesheet Theft Costing You?'}
                     answer={Blog01Answer02}/>
@@ -154,7 +155,7 @@ const BlogScreen = () => ({
                     answer={Blog01Answer04}/>
                   <BlogToggle 
                     question={'We can help your business:'}
-                    answer={Blog01Answer05}/>
+                    answer={Blog01Answer05}/> */}
             </Section01__Contents>
         </Section01>
         <Section01>
@@ -172,7 +173,7 @@ const BlogScreen = () => ({
           </Section01__Header>
             <Section01__Contents>
              <AnswerDiv className="toggle">{Blog02Answer01}</AnswerDiv>
-                  <BlogToggle 
+                  {/* <BlogToggle 
                     question={'Well then, perhaps these words and phrases sound more appealing to you?'}
                     answer={Blog02Answer02}/>
                   <BlogToggle 
@@ -186,8 +187,13 @@ const BlogScreen = () => ({
                     answer={Blog02Answer05}/>
                   <BlogToggle 
                     question={'Here’s a “portion” of how we can help your business:'}
-                    answer={Blog02Answer06}/>
+                    answer={Blog02Answer06}/> */}
             </Section01__Contents>
+            {/* Toggle */}
+
+            
+
+            {/* <Toggle /> */}
         </Section01>
       </Container>
     </ThemeProvider>
