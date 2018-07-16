@@ -55,7 +55,7 @@ const Container = styled.div`
     flex-direction:column;
     margin:0 auto;
     ${breakpoint('lg')`
-        max-width: 1366px;
+        max-width: 1200px;
         justify-content:space-between;
         flex-direction:row;
     `}

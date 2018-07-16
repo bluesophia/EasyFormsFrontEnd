@@ -108,7 +108,7 @@ const Section01__TitleDiv = styled.div`
   flex-direction:column;
   margin:0 auto;
     ${breakpoint('lg')`
-        max-width: 1366px;
+        max-width: 1200px;
     `}
 `
 const Section01__Title = styled.div`
@@ -141,7 +141,7 @@ const Section03 = styled.div`
 const Section__Container = styled.div`
   margin:0 auto;
   ${breakpoint('lg')`
-      max-width: 1366px;
+      max-width: 1200px;
   `}
 `
 const Section__Title = styled.div`
