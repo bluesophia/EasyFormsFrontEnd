@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Accordion from '../../CommonModule/Toggle/index'
+import Accordion from '../../CommonModule/Accordion'
 
 export default class BlogToggleSec1 extends Component {  
     constructor (props) {
@@ -93,3 +93,4 @@ export default class BlogToggleSec1 extends Component {
       </div>;
     }
   }
+

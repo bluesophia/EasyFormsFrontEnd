@@ -16,7 +16,7 @@ const QuestionStyle = css`
     color:${Themes.colors.blue};
     font-weight:${Themes.fontWeight.regular};
 `
-const BlogToggle = () => ({
+const BlogToggle2 = () => ({
     render: function(){
         return(
             <ThemeProvider theme={Themes}>
@@ -45,7 +45,7 @@ const BlogToggle = () => ({
        }
 })
 
-BlogToggle.propTypes = {
+BlogToggle2.propTypes = {
     question: PropTypes.string,
     answer: PropTypes.string
   };
@@ -129,4 +129,4 @@ const AnswerDiv02 = styled.div`
   line-height:25px;
   display:none;
 `
-export default BlogToggle;
+export default BlogToggle2;
