@@ -7,13 +7,6 @@ import BigTitle from '../../../Components/Common/Title/BigTitle.js';
 import SectionBg from '../../../../Assets/Images/blog_1.jpg';
 import { BlogToggleSec1, BlogToggleSec2 } from '../../../Components/WebContainer/BlogToggleContainer';
 
-const QuestionStyle = css`
-    font-size:${Themes.fontsize.h3};
-    text-align:left;
-    line-height:25px;
-    color:${Themes.colors.blue};
-    font-weight:${Themes.fontWeight.regular};
-`
 const BlogScreen = () => ({
   render: function(){
     return(

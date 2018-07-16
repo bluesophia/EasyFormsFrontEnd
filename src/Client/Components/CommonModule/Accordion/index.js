@@ -46,10 +46,23 @@ const QuestionDiv = styled.dt`
   align-items:center;
   padding:0 8%;
   margin-bottom:3px;
+    ${breakpoint('xs')`
+    padding:0 5%;
+    `}
+    ${breakpoint('sm')`
+    padding:0 5%;
+    `}
+    ${breakpoint('md')`
+    padding:0 22%;
+    `}
     ${breakpoint('lg')`
     padding:0 5%;
     `}
+    ${breakpoint('xl')`
+    padding:0 5%;
+    `}
 `
+
 const Question = styled.div`
   width:250px;
   ${QuestionStyle};
@@ -93,6 +106,44 @@ const QuestionDiv02 = styled.div`
         ${QuestionStyle};
         text-align:left;
         font-weight:${Themes.fontWeight.bold};
+    `}
+    ${breakpoint('xs')`
+        width:90%;
+        padding:0 5%;
+        ${QuestionStyle};
+        text-align:left;
+        font-weight:${Themes.fontWeight.bold};
+    `}
+    ${breakpoint('sm')`
+        width:90%;
+        padding:0 5%;
+        ${QuestionStyle};
+        text-align:left;
+        font-weight:${Themes.fontWeight.bold};
+    `}
+    ${breakpoint('md')`
+        width:90%;
+        padding:0 5%;
+        ${QuestionStyle};
+        text-align:left;
+        font-weight:${Themes.fontWeight.bold};
+        font-size: ${Themes.fontsize.p3};
+    `}
+    ${breakpoint('lg')`
+        width:90%;
+        padding:0 5%;
+        ${QuestionStyle};
+        text-align:left;
+        font-weight:${Themes.fontWeight.bold};
+        
+    `}
+    ${breakpoint('xl')`
+        width:90%;
+        padding:0 5%;
+        ${QuestionStyle};
+        text-align:left;
+        font-weight:${Themes.fontWeight.bold};
+        font-size: ${Themes.fontsize.p3};
     `}
 `
 
