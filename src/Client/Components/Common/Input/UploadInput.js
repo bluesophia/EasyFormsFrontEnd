@@ -13,19 +13,13 @@ export default class UploadInput extends Component {
   }
 
   render() {
-<<<<<<< HEAD
-=======
     // const { value } = this.state;
->>>>>>> home
     return (
       <ThemeProvider theme={Themes}>
       <Container>
       <Label>Upload a screenshot</Label><br />
         <Input
-<<<<<<< HEAD
-=======
           // value={value}
->>>>>>> home
           name="input-text"
           label="Company Name"
           onChange={this.handleUpdateValue}
