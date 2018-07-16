@@ -13,7 +13,7 @@ export default class EmailInput extends Component {
   }
 
   render() {
-    const { value } = this.state;
+    // const { value } = this.state;
     return (
       <ThemeProvider theme={Themes}>
       <Container>
@@ -21,7 +21,7 @@ export default class EmailInput extends Component {
       <Label>Your Contact Email</Label><P>( Required )</P><br />
       </Label_Div> 
         <Input
-          value={value}
+          // value={value}
           name="email"
           label="Email"
           onChange={this.handleUpdateValue}

@@ -13,7 +13,7 @@ export default class FullNameInput extends Component {
   }
 
   render() {
-    const { value } = this.state;
+    // const { value } = this.state;
     return (
       <ThemeProvider theme={Themes}>
       <Container>
@@ -21,7 +21,7 @@ export default class FullNameInput extends Component {
       <Label>Your Name</Label><P>( Required )</P><br />
       </Label_Div> 
         <Input
-          value={value}
+          // value={value}
           name="input-text"
           label="Company Name"
           onChange={this.handleUpdateValue}
