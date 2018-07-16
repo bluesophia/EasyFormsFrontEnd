@@ -10,6 +10,7 @@ class FooterContainer extends Component {
       return (
         <ThemeProvider theme={Themes}> 
         <Footer>
+          <Container>
             <FooterTop>
               <FooterBox3>
                 <Footer__title__display>SOCIAL MEDIA</Footer__title__display>
@@ -23,7 +24,7 @@ class FooterContainer extends Component {
                       <Sns href="https://www.linkedin.com/company/easy-forms/">
                           <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
                     </Sns>
-            </Box>
+                   </Box>
               </FooterBox3>
 
               <FooterBox1>
@@ -53,6 +54,7 @@ class FooterContainer extends Component {
                 <FooterBottomText>EasyForms complies with ISO 22301 and ISO IEC 27001</FooterBottomText>
                 <FooterBottomText>ⓒ2018 EasyForms.co.nz</FooterBottomText>
             </FooterBottom>
+          </Container>
         </Footer>
         </ThemeProvider> 
       );
@@ -78,16 +80,20 @@ class FooterContainer extends Component {
   `;
 
 const Footer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-font-family: Lato;
-background: linear-gradient(${Themes.colors.blueLight}, ${Themes.colors.blue});
-padding: 0 10%;
-${breakpoint('md')`
-
-`};
+  font-family: Lato;
+  background: linear-gradient(${Themes.colors.blueLight}, ${Themes.colors.blue});
+  padding: 0 10%;
 `;
+
+const Container = styled.div`
+  margin:0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  ${breakpoint('lg')`
+      max-width: 1366px;
+  `}
+`
 
 //footer top css
 const FooterTop = styled.div`

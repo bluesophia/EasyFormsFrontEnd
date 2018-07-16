@@ -24,14 +24,15 @@ const CardContainer = styled.div`
     background-color: white;
     width:auto;
     height:440px;
- //   margin:5% auto;
     padding:8%;
     text-align:center;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    justify-content:center;
     ${breakpoint('md')`
         width:380px;
         height:440px;
-        // margin:10% 15%;
-        // padding:50px 40px;
     `}
 `
 const CardLogo = styled.img`
@@ -50,14 +51,16 @@ const CardCompanyName = styled.p`
     color:${Themes.colors.grey};
     line-height:20px;
     margin:6px 0 0 0;
-    padding:0 10%;
+    padding:0 5%;
 `
 const CardQuatation = styled.img`
-    margin: 30px 0 18px 0;
+    margin: 30px 0 10px 0;
 `
 const CardText = styled.div`
     color:${Themes.colors.grey};  
-    font-weight:${Themes.fontWeight.light}  
+    font-weight:${Themes.fontWeight.light};
+    font-size:${Themes.fontsize.p3}; 
+    padding-bottom:8%;
 `
 
 export default Card;

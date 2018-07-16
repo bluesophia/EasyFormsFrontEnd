@@ -61,35 +61,39 @@ const HomeContainer =() => (
                 <Section2 />
             </Section0102>
                 <Section0304>
-                    <Section03__Title>
-                        Customer Stories
-                    </Section03__Title>
-                    <StyledCarousel/>
-                    <Section04__Title>
-                        Here Are Just a Few of the Clients <br />We Work With:
-                    </Section04__Title>
-                    <Section04>
-                        <Section04__Logos>
-                            <Section04__Logo src={Logo01}/>
-                            <Section04__Logo src={Logo02}/>
-                            <Section04__Logo src={Logo03}/>
-                            <Section04__Logo src={Logo04}/>
-                            <Section04__Logo src={Logo05}/>
-                            <Section04__Logo src={Logo06}/>
-                            <Section04__Logo src={Logo07}/>
-                        </Section04__Logos>
-                    </Section04>
+                        <Section03__Title>
+                            Customer Stories
+                        </Section03__Title>
+                        <StyledCarousel/>
+                        <Section04__TitleDiv>
+                            <Section04__Title>
+                                Here Are Just a Few of the Clients <br />We Work With:
+                            </Section04__Title>
+                        </Section04__TitleDiv>
+                        <Section04>
+                            <Section04__Logos>
+                                <Section04__Logo src={Logo01}/>
+                                <Section04__Logo src={Logo02}/>
+                                <Section04__Logo src={Logo03}/>
+                                <Section04__Logo src={Logo04}/>
+                                <Section04__Logo src={Logo05}/>
+                                <Section04__Logo src={Logo06}/>
+                                <Section04__Logo src={Logo07}/>
+                            </Section04__Logos>
+                        </Section04>
                 </Section0304>
                 <Section05>
-                    <Section05__TitleDiv>
-                        <Section05__Title>Easyforms Features</Section05__Title>
-                        <HeaderLine />
-                    </Section05__TitleDiv>
-                    <FeaturesCarousel />
+                    <Section05__Container>
+                            <Section05__Title>Easyforms Features</Section05__Title>
+                            <HeaderLine />
+                        <FeaturesCarousel />
+                    </Section05__Container>
                 </Section05>
                 <Section06>
-                    <Section06__Title>Easyforms Function</Section06__Title>
-                    <HeaderLine />
+                    <Section06__TitleDiv>
+                        <Section06__Title>Easyforms Function</Section06__Title>
+                        <HeaderLine />
+                    </Section06__TitleDiv>
                 </Section06>
                 <Section07>
                     <div>
@@ -116,21 +120,25 @@ const HomeContainer =() => (
             </ThemeProvider>
         )
 
-const Home = styled.div``
+const Home = styled.div`
+`
 
 const Section0102 = styled.div`
         background-color:#E2E2E2;
 `
 const Section0304 = styled.div`
+border:0;
 background: 
 linear-gradient(
     rgba(8,39,90,0.8), rgba(8,39,90,0.8)
 ),
 url(${CustomerStoriesBg});
+background-size:cover;
+background-repeat:no-repeat;
+background-position:left top;
 display:flex;
 flex-direction:column;
     ${breakpoint('md')`
-        height:100vh;
         display:grid;
         grid-gap: 0 20px;
         padding-left: 20px;
@@ -140,31 +148,32 @@ flex-direction:column;
                              "c d";
     `}
 `
-const Section03__Title = styled.p`
+const Section03__Title = styled.div`
     ${Title};
     color:white;
     padding: 70px 37px;
     ${breakpoint('md')`
     grid-area: a;
+    padding-top:80px;
+    padding-bottom:10px;
+    margin:0;
     `}
 `
 const StyledCarousel = styled(CardCarousel)`
     ${breakpoint('md')`
     grid-area: c;
-
     `}
 `
 /**** Section 04 ****/
 
-const Section04 = styled.div`
-    padding: 20px 8% 40px 8%;
-    background-color:white;
+
+const Section04__TitleDiv = styled.div`
+    background-color:white; 
     ${breakpoint('md')`
-    grid-area: d;
+    grid-area: b;
     `}
 `
 const Section04__Title = styled.div` 
-    background-color:white; 
     color:${Themes.colors.blue};
     font-size:${Themes.fontsize.h3};
     font-weight:${Themes.fontWeight.bold};
@@ -173,8 +182,20 @@ const Section04__Title = styled.div`
     padding-top:80px;
     margin-top: 30px;
     ${breakpoint('md')`
-    grid-area: b;
-    margin-top: 0;
+    margin-top:0;
+    padding-top:80px; 
+    padding-bottom:10px;  
+    `}
+    ${breakpoint('lg')`
+    max-width:400px;
+    margin:0 auto;
+    `}
+`
+const Section04 = styled.div`
+    padding: 20px 8% 40px 8%;
+    background-color:white;
+    ${breakpoint('md')`
+    grid-area: d;
     `}
 `
 const Section04__Logos = styled.div`
@@ -183,7 +204,10 @@ const Section04__Logos = styled.div`
     grid-column-gap: 5%;
     margin: auto;
     padding-top:50px;
-    
+    ${breakpoint('lg')`
+    max-width:400px;
+    margin:0 auto;
+    `}
 `
 const Section04__Logo = styled.img`
     max-width:146px;
@@ -193,20 +217,21 @@ const Section04__Logo = styled.img`
 /**** Section 05 ****/
 
 const Section05 = styled.div`
-    padding: 60px 8%;
     ${LightGreyBg};
-        ${breakpoint('md')`
-        padding: 60px 10%;
-        `}
-        ${breakpoint('lg')`
-        height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-`}
 `
-const Section05__TitleDiv = styled.div`
-
+const Section05__Container = styled.div`
+    margin:0 auto;
+    padding: 60px 8%;
+    ${breakpoint('md')`
+        padding: 60px 10%;
+    `}
+    ${breakpoint('lg')`
+        height:100vh;
+        max-width: 1366px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    `}
 `
 const Section05__Title = styled.div`
     ${Title};
@@ -214,18 +239,29 @@ const Section05__Title = styled.div`
 /**** Section 06 ****/
 
 const Section06 = styled.div`
-    padding: 0 37px;
+    padding: 0 8%;
     background: url('${Section06BgSm}') no-repeat center;
     height:983px;
     ${breakpoint('lg')`
      background: url('${Section06BgLg}') no-repeat;
      background-position: center bottom;
-     background-size:100% auto;
+     background-size:auto;
+     padding:0;
      height:100vh;
     `}
 `
-const Section06__Title = styled.p`
-    padding-top:60px;
+const Section06__TitleDiv = styled.div`
+    ${breakpoint('lg')`
+        background-color: white;
+        height:30%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-end;
+    `}
+`
+const Section06__Title = styled.div`
+    padding-top:2em;
     ${Title};
 `
 

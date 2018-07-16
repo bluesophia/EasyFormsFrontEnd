@@ -60,7 +60,7 @@ const Input = styled.input.attrs({
   type: 'text',
 })`
   box-sizing:border-box;
-  width:100%;
+  width:70%;
   height:30px;
   background: none;
   border: 0px;

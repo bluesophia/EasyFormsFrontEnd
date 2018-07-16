@@ -32,6 +32,7 @@ const Shadow = css`
 const Section2 =() => (
             <ThemeProvider theme={Themes}>
                 <Section02>
+                <Container>
                     <Section02__TitleDiv>
                         <Section02__Title>Why Easyforms?</Section02__Title>
                         <HeaderLine />
@@ -56,6 +57,7 @@ const Section2 =() => (
                             <Section02__Text>Our solutions are easy-to-use and user friendly.</Section02__Text>
                         </Section02__ContentDiv>
                     </Section02__Contents>
+                </Container>
                 </Section02>
             </ThemeProvider>
         )
@@ -64,13 +66,18 @@ const Section2 =() => (
 
 const Section02 = styled.div`
     padding: 80px 8% 60px 8%;
-    ${breakpoint('md')`
-        height:100vh;
+    ${breakpoint('lg')`
+        background:url(${HomeSection02BgMd}) no-repeat center bottom;
+        background-size:100% 100%;
+    `}
+`
+const Container = styled.div`
+    margin:0 auto;
+    ${breakpoint('lg')`
+        max-width: 1366px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background:url(${HomeSection02BgMd}) no-repeat center bottom;
-        background-size:contain;
     `}
 `
 const Section02__TitleDiv = styled.div`

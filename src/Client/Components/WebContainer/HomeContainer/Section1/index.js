@@ -17,46 +17,47 @@ import LinkedinIcon from '../../../../../Assets/Images/linkedin.png';
 const Section1 = () => (
             <ThemeProvider theme={Themes}>
                 <Section01>
-                    <Section01__Image><Cluster src={ClusterImg}/></Section01__Image>
-                    <Section01__TitleDiv>
-                        <BigTitle>Job Management and WorkFlow Processes Made Easy</BigTitle>
-                        <Section01__Text>We are a cloud-based solution offering end-to-end job 
-                            and workflow management software industry standard 
-                            health and safety management and much more.
-                        </Section01__Text>
-                        <ButtonDiv>
-                            <ButtonLink to='/contact'>
-                                <Button value={'contact our software experts'}/>
-                            </ButtonLink>
-                        </ButtonDiv>
-                        <SubTitle>Follow Us On Social Network</SubTitle>
-                        <SnsIcons>
-                            <SnsLink href="https://www.facebook.com/EasyFormsNZ/?ref=aymt_homepage_panel"><Facebook /></SnsLink>
-                            <SnsLink href="https://twitter.com/EasyFormsNZ"><Twitter /></SnsLink>
-                            <SnsLink href="https://www.linkedin.com/company/easy-forms/"><Linkedin /></SnsLink>
-                        </SnsIcons>
-                    </Section01__TitleDiv>
+                    <Container>
+                        <Section01__Image><Cluster src={ClusterImg}/></Section01__Image>
+                        <Section01__TitleDiv>
+                            <BigTitle>Job Management and WorkFlow Processes Made Easy</BigTitle>
+                            <Section01__Text>We are a cloud-based solution offering end-to-end job 
+                                and workflow management software industry standard 
+                                health and safety management and much more.
+                            </Section01__Text>
+                            <ButtonDiv>
+                                <ButtonLink to='/contact'>
+                                    <Button value={'contact our software experts'}/>
+                                </ButtonLink>
+                            </ButtonDiv>
+                        </Section01__TitleDiv>
+                    </Container>
                 </Section01>
             </ThemeProvider>
         )
 /**** Section 01 ****/
 
 const Section01 = styled.div`
-    display:flex;
     padding:100px 8%;
-    flex-direction:column;
     background: url('${HomeSection01BgSm}');
     background-position:center top;
     background-repeat:no-repeat;
     background-size:100% 100%;
     ${breakpoint('lg')`
-        padding:100px 10% 80px 8%;
-        justify-content:space-between;
-        flex-direction:row;
         background: url('${HomeSection01BgMd}');
         background-position:center top;
         background-repeat:no-repeat;
         background-size:100% 100%;
+    `}
+`
+const Container = styled.div`
+    display:flex;
+    flex-direction:column;
+    margin:0 auto;
+    ${breakpoint('lg')`
+        max-width: 1366px;
+        justify-content:space-between;
+        flex-direction:row;
     `}
 `
 const Section01__Image = styled.div`
@@ -72,11 +73,16 @@ const Cluster = styled.img`
 `
 const Section01__TitleDiv = styled.div`
     ${breakpoint('lg')`
-        margin-left:60px;
+        margin-left:4em;
         width:85%;
     `}
+    ${breakpoint('xl')`
+        display:flex;
+        justify-content:space-between;
+        flex-direction:column;
+        height:250px;
+    `}
 `;
-
 const BigTitle = styled.div`
         font-size:35px;
         margin:40px 0;
@@ -96,7 +102,7 @@ const Section01__Text = styled.div`
             line-height:25px;
             text-align:right;
             margin-top:15px;
-            margin-bottom:20px;
+            margin-bottom:15px;
             font-weight:300;
         `}
 `

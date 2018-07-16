@@ -13,7 +13,7 @@ import FullNameInput from '../../Components/Common/Input/FullNameInput';
 import EmailInput from '../../Components/Common/Input/EmailInput';
 import MessageInput from '../../Components/Common/Input/MessageInput';
 import Button from '../../Components/Common/Button';
-import BlueButton from '../../Components/Common/Button/BlueButton';
+import Button02 from '../../Components/Common/Button/Button02';
 import MyMapComponent from './map';
 
 const Title = css`
@@ -36,7 +36,7 @@ const ContactUsScreen = () => (
     <div>
       <Container>
         <TopBgImg src={TopBg}/>
-        <Header> 
+        <Header>
           <TitleDiv>
             <TitleDiv__Title>Get In Touch</TitleDiv__Title>
             <TitleDiv__Line><HeaderLine /></TitleDiv__Line>
@@ -54,7 +54,7 @@ const ContactUsScreen = () => (
           <MapDiv>
             <MyMapComponent
               isMarkerShown
-              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
+              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-p5WQ9NQSErSYZB-U2anOUNKEGzWh-hU&v=3.exp&libraries=geometry,drawing,places"
               loadingElement={<div style={{ height: `100%` }} />}
               containerElement={<div style={{ height: `100%` }} />}
               mapElement={<div style={{ height: `100%` }} />}
@@ -75,7 +75,7 @@ const ContactUsScreen = () => (
               <ButtonDiv>
                 <Button value={'Contact Our Software Experts'}/>
                 <Form__Text>Or Try Our Software For Free</Form__Text>
-                <BlueButton value={'Experience EasyForms for yourself'}/>        
+                <Button02 value={'Experience EasyForms for yourself'}/>        
               </ButtonDiv>      
             </Form>
           </FormDiv>
@@ -98,7 +98,9 @@ const Header = styled.div`
     justify-content:space-between;
     flex-direction:row;
     align-items:flex-end;
-    padding:110px 10% 70px 10%;
+    padding:110px 15% 70px 15%;
+    max-width:1366px;
+    margin:0 auto;
     `}
 `
 const TopBgImg = styled.img`
@@ -163,13 +165,15 @@ const PhoneNo = styled.span`
   `}
 `
 const Contents = styled.div`
-  display:flex;
-  flex-direction:column;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
     ${breakpoint('lg')`
       flex-direction:column-reverse;
     `}
 `
-const FormDiv = styled.div` 
+const FormDiv = styled.div`
+
 `
 const Form = styled.div`
   height:auto;
@@ -177,7 +181,7 @@ const Form = styled.div`
   box-shadow:0 0 20px rgba(0,0,0,0.2);
   padding:60px 8%;
     ${breakpoint('lg')`
-      margin:0 10% 100px 10%;
+      margin:0 15% 100px 15%;
       z-index:1;
   `}
 `
@@ -186,9 +190,9 @@ const InputDiv = styled.div`
   display:flex;
   flex-direction:column;
   ${breakpoint('lg')`
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    grid-column-gap:4em;
+    // display:grid;
+    // grid-template-columns:1fr 1fr;
+    // grid-column-gap:4em;
     margin-bottom:50px;
   `}
 `
@@ -196,6 +200,7 @@ const InputDiv__Left = styled.div`
   display:flex;
   flex-direction:column;
   ${breakpoint('lg')`
+  margin-bottom:50px;  
 `}
 `
 const InputDiv__Right = styled.div``
@@ -210,7 +215,7 @@ const ButtonDiv = styled.div`
 `
 const Form__Text = styled.div`
   margin:25px auto 10px auto;
-  color:${Themes.colors.blueLight};
+  color:${Themes.colors.blue};
   font-size:${Themes.fontsize.p2};
   font-weight:${Themes.fontWeight.black};
 `

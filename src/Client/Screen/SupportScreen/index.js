@@ -46,7 +46,7 @@ const SupportScreen = () => (
               depending on the scale of your request this could take slightly longer.</TitleDiv__Text>
           </TitleDiv>
         </Header>
-        <Contents>
+        {/* <Contents> */}
           <FormDiv>
             <Form>
               <InputDiv>
@@ -65,7 +65,7 @@ const SupportScreen = () => (
               </ButtonDiv>      
             </Form>
           </FormDiv>
-        </Contents>
+        {/* </Contents> */}
       </Container>
     </div>
   </ThemeProvider>
@@ -103,6 +103,8 @@ const TitleDiv = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
+    max-width:1366px;
+    margin:0 auto;
   `}
 `
 const TitleDiv__Title = styled.div`
@@ -126,38 +128,22 @@ const TitleDiv__Text = styled.div`
     text-align:center;
   `}
 `
-const CallUsDiv = styled.div`
-  display:flex;
-  align-items:center;
-  flex-direction:row;
 
-`
-const Icon = styled.img`
-  margin-right:10px;
-`
-const CallUs = styled.span`
-  font-size:${Themes.fontsize.h3};
-  color:white;
-  margin-right:10px;
-    ${breakpoint('lg')`
-    font-size:${Themes.fontsize.h2};
-  `}
-`
-const PhoneNo = styled.span`
-  font-size:${Themes.fontsize.h3};
-  color:${Themes.colors.yellow};
-    ${breakpoint('lg')`
-    font-size:${Themes.fontsize.h2};
-  `}
-`
-const Contents = styled.div`
+// const Contents = styled.div`
+//   display:flex;
+//   flex-direction:column;
+//     ${breakpoint('lg')`
+//       flex-direction:column-reverse;
+//     `}
+// `
+const FormDiv = styled.div` 
   display:flex;
   flex-direction:column;
     ${breakpoint('lg')`
-      flex-direction:column-reverse;
-    `}
-`
-const FormDiv = styled.div` 
+     flex-direction:column-reverse;
+      margin:0 auto;
+      max-width:1366px;
+  `}
 `
 const Form = styled.div`
   height:auto;
@@ -165,7 +151,7 @@ const Form = styled.div`
   box-shadow:0 0 20px rgba(0,0,0,0.2);
   padding:60px 8%;
     ${breakpoint('lg')`
-      margin:0 10% 200px 10%;
+      margin:0 20% 200px 20%;
       z-index:1;
   `}
 `
@@ -174,17 +160,18 @@ const InputDiv = styled.div`
   display:flex;
   flex-direction:column;
   ${breakpoint('lg')`
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    grid-column-gap:4em;
-    margin-bottom:50px;
+    // display:grid;
+    // grid-template-columns:1fr 1fr;
+    // grid-column-gap:4em;
+    // margin-bottom:50px;
   `}
 `
 const InputDiv__Left = styled.div`
-  display:flex;
-  flex-direction:column;
-  ${breakpoint('lg')`
-`}
+//   display:flex;
+//   flex-direction:column;
+   ${breakpoint('lg')`
+        margin-bottom:50px;
+ `}
 `
 const InputDiv__Right = styled.div``
 

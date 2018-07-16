@@ -11,6 +11,7 @@ import Logo from '../../../../Assets/Images/logo.png';
             return (
 			<ThemeProvider theme={Themes}>
 				<Nav>
+				<Container>
 				<LinkedLogo to='/'><LogoImg src={Logo}/></LinkedLogo>
 				<NavWide>
 					<WideDiv>
@@ -53,7 +54,7 @@ import Logo from '../../../../Assets/Images/logo.png';
                        </Box>
 					</NarrowLinks>
 				</NavNarrow>
-
+				</Container>
 				</Nav>
 			</ThemeProvider>
             );
@@ -80,20 +81,27 @@ const Box = styled.div`
 		`}
 		${breakpoint('lg')`
 		align-items: flex-end;
-		padding: 1em;
+		padding: 1em 0 1em 1em;
 	`}
 `;
 
 const Sns = styled.a`
-color: ${Themes.colors.white};
-font-size: 1em;
-padding: 1em;
-${breakpoint('md')`
-padding: 1em 0.5em;
+	color: ${Themes.colors.white};
+	font-size: 1em;
+	padding: 1em;
+	${breakpoint('md')`
+		padding: 1em 0.5em;
+		&:last-child {
+			padding: 1em 0 1em 0.5em;
+		}
+		`}
+	${breakpoint('lg')`
+	padding: 0 1em;
+	&:last-child {
+		padding: 1em 0 0 1em;
+	  }
 	`}
-${breakpoint('lg')`
-padding: 0 1em;
-	`}
+
 `;
 
 const LogoImg = styled.img`
@@ -110,10 +118,11 @@ height:32px;
 `;
 
 const Nav = styled.div`
+	z-index:1;
 	background-color: ${Themes.colors.blue};
 	overflow: hidden;
-	display:flex;
-	justify-content:space-between;
+//	display:flex;
+//	justify-content:space-between;
 	padding: 1.25em 10% 0.625em;
 	a {
 		color: #FFF;
@@ -123,13 +132,26 @@ const Nav = styled.div`
 	}
 		${breakpoint('md')`
 			padding: 3.25em 10% 0.625em;
-			display:flex;
-			justify-content:space-between;
-			align-items:center;
-			flex-direction:row;
+			// display:flex;
+			// justify-content:space-between;
+			// align-items:center;
+			// flex-direction:row;
 		`}
 	`
-
+const Container = styled.div`
+	margin:0 auto;
+	display:flex;
+	justify-content:space-between;
+	${breakpoint('md')`	
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+		flex-direction:row;
+	`}
+    ${breakpoint('lg')`
+		max-width: 1366px;
+    `}
+`
 const NavNarrow = styled.div`
 		display: block;
 		position:relative;

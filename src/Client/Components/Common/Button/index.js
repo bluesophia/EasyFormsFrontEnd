@@ -28,9 +28,9 @@ const ButtonStyle = styled.button`
     background:${Themes.background.yellowToOrange};
     width:100%;
     height:auto;
-    color:white;
+    color:${Themes.colors.blue};
     font-size:20px;
-    font-weight:${Themes.fontWeight.bold};
+    font-weight:${Themes.fontWeight.black};
     border:0;
     border-radius:10px;
     text-transform:uppercase;
@@ -40,7 +40,8 @@ const ButtonStyle = styled.button`
 `
 const Text = styled.p`
     margin:0;
-    text-shadow:0 0 8px rgba(50, 50, 93, 0.23);
+//    text-shadow:0 0 8px rgba(50, 50, 93, 0.23);
+    text-shadow:0 0 8px rgba(255, 255, 255, 0.5);
 `
 
 export default Button;

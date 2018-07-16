@@ -6,7 +6,7 @@ import Themes from '../../../../Assets/Styles/Themes';
 const Shadow = css`
     box-shadow : 0 0 8px rgba(50, 50, 93, 0.23);
 `
-class BlueButton extends Component {
+class Button02 extends Component {
     render(){
         return (
             <ThemeProvider theme={Themes}>
@@ -18,17 +18,17 @@ class BlueButton extends Component {
     }
 }
 
-BlueButton.propTypes = {
+Button02.propTypes = {
     value: PropTypes.string
   };
 const ButtonStyle = styled.button`
-    background:${Themes.background.blueLightToBlue};
+    border:2px solid ${Themes.colors.orange};
+    background:linear-gradient(#ffffff,#F0E0C5);
     width:100%;
     height:auto;
-    color:white;
+    color:${Themes.colors.orange};
     font-size:20px;
     font-weight:${Themes.fontWeight.bold};
-    border:0;
     border-radius:10px;
     text-transform:uppercase;
     padding-top:15px;
@@ -40,4 +40,4 @@ const Text = styled.p`
     text-shadow:0 0 8px rgba(50, 50, 93, 0.23);
 `
 
-export default BlueButton;
+export default Button02;

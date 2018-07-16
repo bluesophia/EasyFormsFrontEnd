@@ -36,7 +36,7 @@ export default class EmailInput extends Component {
 const Container = styled.div`
   padding-left: 0;
   margin-top: 0;
-  width: 100%;
+  width: 70%;
   height: 100%;
   margin-bottom:50px;
   ${breakpoint('lg')`

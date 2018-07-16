@@ -6,6 +6,8 @@ import HeaderLine from '../../Components/Common/HeaderLine';
 import Text from '../../Components/Common/Text';
 import BigTitle from '../../Components/Common/Title/BigTitle.js';
 import SectionBg from '../../../Assets/Images/blog_1.jpg';
+import { Accordion, AccordionItem } from 'react-sanfona';
+
 // import BlogToggleContainer from '../../../Components/WebContainer/BlogToggleContainer';
 import BlogToggle from '../../Components/WebContainer/BlogToggleContainer/BlogToggle';
 import ToggleButton from '../../../Assets/Images/arrow.png';
@@ -176,7 +178,8 @@ const BlogScreen = () => ({
           </Section__Header>
             <Section__Contents>
              <AnswerDiv className="toggle">{Blog02Answer01}</AnswerDiv>
-                  <BlogToggle 
+             <BlogToggle />
+                  {/* <BlogToggle 
                     question={'Well then, perhaps these words and phrases sound more appealing to you?'}
                     answer={Blog02Answer02}/>
                   <BlogToggle 
@@ -190,7 +193,7 @@ const BlogScreen = () => ({
                     answer={Blog02Answer05}/>
                   <BlogToggle 
                     question={'Here’s a “portion” of how we can help your business:'}
-                    answer={Blog02Answer06}/>
+                    answer={Blog02Answer06}/> */}
             </Section__Contents>
         </Section>
       </Container>

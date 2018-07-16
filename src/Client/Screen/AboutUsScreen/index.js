@@ -24,15 +24,15 @@ const BlueBg = css`
 const AboutUsScreen = () => (
     <ThemeProvider theme={Themes}>   
       <div>
-        <Section01>
-            <Section01__TitleDiv>
-                <Section01__Title>Global clients around Us</Section01__Title>
-                <HeaderLine />
-                <Section01__Text>Over 4 years, EasyForms has acquired clients across the globe, in New Zealand, Australia, the Pacific Islands, Canada, The United Kingdom, Ireland and Korea. </Section01__Text>
-            </Section01__TitleDiv>
-        </Section01>
+          <Section01>
+              <Section01__TitleDiv>
+                  <Section01__Title>Global clients around Us</Section01__Title>
+                  <HeaderLine />
+                  <Section01__Text>Over 4 years, EasyForms has acquired clients across the globe, in New Zealand, Australia, the Pacific Islands, Canada, The United Kingdom, Ireland and Korea. </Section01__Text>
+              </Section01__TitleDiv>
+          </Section01>
           <Section02>
-              <Section__TitleDiv>
+              <Section__Container>
                   <Section__Title>About Us</Section__Title>
                   <HeaderLine />
                   <Section__Text>EasyForms is a 100% Kiwi owned and 
@@ -74,10 +74,10 @@ const AboutUsScreen = () => (
                   for workflow management and develops 
                   bespoke web portal and app-based 
                   solutions.</Section__Text>
-              </Section__TitleDiv>
+              </Section__Container>
           </Section02>
           <Section03>
-              <Section__TitleDiv>
+              <Section__Container>
                   <Section__Title>Our Vision</Section__Title>
                   <HeaderLine />
                   <Section__Text>To provide you with better control and 
@@ -89,7 +89,7 @@ const AboutUsScreen = () => (
                   on the things you need to, while giving you 
                   the ability to mobilise your business 
                   effortlessly.</Section__Text>
-              </Section__TitleDiv>
+              </Section__Container>
           </Section03>
       </div>
     </ThemeProvider>
@@ -106,6 +106,10 @@ const Section01__TitleDiv = styled.div`
   display:flex;
   align-items:center;
   flex-direction:column;
+  margin:0 auto;
+    ${breakpoint('lg')`
+        max-width: 1366px;
+    `}
 `
 const Section01__Title = styled.div`
   ${BigTitle};
@@ -134,7 +138,12 @@ const Section03 = styled.div`
     padding:70px 15%;
   `}
 `
-const Section__TitleDiv = styled.div``
+const Section__Container = styled.div`
+  margin:0 auto;
+  ${breakpoint('lg')`
+      max-width: 1366px;
+  `}
+`
 const Section__Title = styled.div`
   ${Title}
 `
