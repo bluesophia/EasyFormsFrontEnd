@@ -143,7 +143,6 @@ const QuestionDiv02 = styled.div`
         ${QuestionStyle};
         text-align:left;
         font-weight:${Themes.fontWeight.bold};
-        font-size: ${Themes.fontsize.p3};
     `}
 `
 
