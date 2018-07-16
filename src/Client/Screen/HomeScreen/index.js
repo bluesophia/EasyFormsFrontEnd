@@ -227,7 +227,7 @@ const Section05__Container = styled.div`
     `}
     ${breakpoint('lg')`
         height:100vh;
-        max-width: 1200px;
+        max-width: 1366px;
         display: flex;
         flex-direction: column;
         justify-content: center;

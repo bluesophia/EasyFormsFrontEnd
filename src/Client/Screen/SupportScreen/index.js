@@ -103,7 +103,7 @@ const TitleDiv = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
-    max-width:1200px;
+    max-width:1366px;
     margin:0 auto;
   `}
 `
@@ -142,7 +142,7 @@ const FormDiv = styled.div`
     ${breakpoint('lg')`
      flex-direction:column-reverse;
       margin:0 auto;
-      max-width:1200px;
+      max-width:1366px;
   `}
 `
 const Form = styled.div`

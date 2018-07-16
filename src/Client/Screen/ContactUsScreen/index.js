@@ -99,7 +99,7 @@ const Header = styled.div`
     flex-direction:row;
     align-items:flex-end;
     padding:110px 15% 70px 15%;
-    max-width:1200px;
+    max-width:1366px;
     margin:0 auto;
     `}
 `

@@ -74,7 +74,7 @@ const Section02 = styled.div`
 const Container = styled.div`
     margin:0 auto;
     ${breakpoint('lg')`
-        max-width: 1200px;
+        max-width: 1366px;
         display: flex;
         flex-direction: column;
         justify-content: center;
