@@ -63,7 +63,11 @@ const Input = styled.input.attrs({
 })`
   box-sizing:border-box;
   width:100%;
+<<<<<<< HEAD
   height:inherit;
+=======
+  height:auto;
+>>>>>>> commonmodule
   background: none;
   border-radius: 5px;
   border: 1px solid ${Themes.colors.formGrey};
