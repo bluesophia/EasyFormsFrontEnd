@@ -12,6 +12,7 @@
     "@fortawesome/react-fontawesome": "0.1.0-11",
     "@material-ui/core": "^1.3.1",
     "@material-ui/icons": "^1.1.0",
+    "express": "^4.16.3",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
@@ -32,5 +33,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluesophia/EasyFormsFrontEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bluesophia/EasyFormsFrontEnd/issues"
+  },
+  "homepage": "https://github.com/bluesophia/EasyFormsFrontEnd#readme"
 }

@@ -23,7 +23,7 @@ import { faBars,
 import 'normalize.css';
 import Header from './Client/Components/WebContainer/HeaderContainer';
 import Footer from './Client/Components/WebContainer/FooterContainer';
-import Routes from './Client/Routes/index';
+import Routes from './routes.js';
 
 library.add(
   fab, 
