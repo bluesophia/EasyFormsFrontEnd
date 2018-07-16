@@ -4,10 +4,7 @@ import PropTypes from 'prop-types';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
 import Text from '../../../Components/Common/Text';
-import ToggleButton from '../../../../Assets/Images/arrow.png';
-
-
-
+import './toggle.css';
 
 const QuestionStyle = css`
     font-size:${Themes.fontsize.h3};
@@ -16,34 +13,6 @@ const QuestionStyle = css`
     color:${Themes.colors.blue};
     font-weight:${Themes.fontWeight.regular};
 `
-// const BlogToggle2 = () => ({
-//     render: function(){
-//         return(
-//             <ThemeProvider theme={Themes}>
-//                 <Container>
-//                     <QuestionDiv02>
-//                         <Question02>{this.props.question}</Question02>
-//                         <ArrowDiv02 onClick={this.toggle} className="arrowFlip02"><Arrow src={ToggleButton}/></ArrowDiv02>
-//                     </QuestionDiv02>
-//                     <AnswerDiv02 className="toggle02">
-//                         {this.props.answer}
-//                     </AnswerDiv02>
-//                 </Container>
-//             </ThemeProvider>            
-//         )
-//     },
-    // toggle: function(){
-    //     let answerToggle02 = document.querySelector('.toggle02');
-    //     let arrowFlip02 = document.querySelector('.arrowFlip02');
-    //       if (answerToggle02.style.display === 'none' && arrowFlip02.style.transform === 'rotateX(0deg)') {
-    //         answerToggle02.style.display = 'block';
-    //         arrowFlip02.style.transform = 'rotateX(180deg)';
-    //       } else {
-    //         answerToggle02.style.display = 'none';
-    //         arrowFlip02.style.transform = 'rotateX(0deg)';
-    //       }
-    //    }
-// })
 
 class Accordion extends Component {
     render() {
@@ -51,27 +20,25 @@ class Accordion extends Component {
       return (
         <ThemeProvider theme={Themes}>
             <Container>
-                <QuestionDiv02>
-                    <p className={expand ? 'title is-expanded' : 'title'} onClick={onClick}>
-                    {title}</p>
-                    <ArrowDiv02 onClick={this.toggle} className="arrowFlip02"><Arrow src={ToggleButton}/></ArrowDiv02>
+                <QuestionDiv02 >
+                <dt className={expand ? 'title is-expanded' : 'title'} onClick={onClick}>
+                    {title}
+                </dt>   
+                <img className={expand ? 'arrowImg after' : 'arrowImg'} src={require('../../../../Assets/Images/arrow.png')} onClick={onClick}/>
                 </QuestionDiv02>
-                <AnswerDiv02 className="toggle02">
-                    <p className={expand ? 'content is-expanded' : 'content'} onClick={onClick}>
-                        {content}
-                    </p>
-                </AnswerDiv02>
+                <dd className={expand ? 'content is-expanded' : 'content'} onClick={onClick}>
+                    <p>{content}</p>
+                </dd>    
             </Container>  
         </ThemeProvider>
       );
     }
   }
 
-
 const Container = styled.div`
   position:relative;
 `
-const QuestionDiv = styled.div`
+const QuestionDiv = styled.dt`
   height:80px;
   background-color:#EEEEEE;
   display:flex;
@@ -108,28 +75,17 @@ const AnswerDiv = styled.div`
   margin-bottom:3px;
   line-height:25px;  
 `
-// const QuestionDiv02 = styled.div`
-//   height:80px;
-//   background-color:#EEEEEE;
-//   display:flex;
-//   justify-content:space-between;
-//   align-items:center;
-//   padding:0 8%;
-//   margin-bottom:3px;
-//     ${breakpoint('lg')`
-//     padding:0 5%;
-//     `}
-// `
 
 const QuestionDiv02 = styled.div`
   height:80px;
   width:250px;
   background-color:#EEEEEE;
   padding:0 8%;
-  margin-bottom:3px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  cursor: pointer;
+  position: relative;
   ${QuestionStyle};
     ${breakpoint('lg')`
         width:90%;
@@ -140,7 +96,6 @@ const QuestionDiv02 = styled.div`
     `}
 `
 
-
 const Question02 = styled.div`
   width:250px;
   ${QuestionStyle};
@@ -150,22 +105,5 @@ const Question02 = styled.div`
         text-align:left;
         font-weight:${Themes.fontWeight.bold};
     `}
-`
-const ArrowDiv02 = styled.div`
-    width:20px;
-    height:auto;
-    transform:rotateX(0deg);
-`
-const Arrow02 = styled.img`
-    width:20px;
-    height:auto;
-`
-const AnswerDiv02 = styled.div`
-  background-color:${Themes.colors.veryLightGrey};
-  padding:30px 90px 30px 40px; 
-  color:${Themes.colors.black};
-  margin-bottom:3px;
-  line-height:25px;
-  display:none;
 `
 export default Accordion;

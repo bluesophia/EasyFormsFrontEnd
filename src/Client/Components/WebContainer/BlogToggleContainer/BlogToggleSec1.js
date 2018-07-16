@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Accordion from '../../CommonModule/Accordion'
+import '../../CommonModule/Accordion/toggle.css'
+
 
 export default class BlogToggleSec1 extends Component {  
     constructor (props) {
@@ -16,17 +18,7 @@ export default class BlogToggleSec1 extends Component {
     toggle = (index) => () => {
       this.setState({ [`block${index}`]: !this.state[`block${index}`] });
     }
-    
-    toggleExpand = (expand = false) => () => {
-      this.setState({
-        block1: expand,
-        block2: expand,
-        block3: expand,
-        block4: expand,
-        block5: expand
-      });
-    }
-    
+   
     render() {
       const accordionList = [
       { id:0,
@@ -86,7 +78,13 @@ export default class BlogToggleSec1 extends Component {
         <dl className="accordion">
           {
             accordionList.map((item, index) => (
-              <Accordion key={accordionList.id} title={item.title} content={item.content} onClick={this.toggle(index + 1)} expand={this.state[`block${index+1}`]} />
+              <Accordion 
+                key={accordionList.id} 
+                title={item.title} 
+                content={item.content} 
+                onClick={this.toggle(index + 1)} 
+                expand={this.state[`block${index+1}`]} 
+              />
             ))
           }
         </dl> 
