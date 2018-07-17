@@ -13,7 +13,7 @@ export default class FullNameInput extends Component {
   }
 
   render() {
-    const { value } = this.state;
+    // const { value } = this.state;
     return (
       <ThemeProvider theme={Themes}>
       <Container>
@@ -21,7 +21,7 @@ export default class FullNameInput extends Component {
       <Label>Your Name</Label><P>Required</P><br />
       </Label_Div> 
         <Input
-          value={value}
+          // value={value}
           name="input-text"
           label="Company Name"
           onChange={this.handleUpdateValue}
@@ -54,13 +54,14 @@ const P = styled.p`
   color: ${Themes.colors.LightGrey};
   margin: 0;
   margin-left: 10px;
+  padding:0;
 `;
 
 const Input = styled.input.attrs({
   type: 'text',
 })`
   box-sizing:border-box;
-  width:70%;
+  width:100%;
   height:30px;
   background: none;
   border: 0px;
@@ -72,6 +73,9 @@ const Input = styled.input.attrs({
   &:focus {
     outline: none;
   }
+  ${breakpoint('lg')`
+  width:70%;
+  `}
   /*
   ${breakpoint('xs')`
     width:87vw;

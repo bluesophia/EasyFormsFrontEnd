@@ -50,6 +50,7 @@ class FeaturesCard extends Component {
         text-align:center;
         margin:20px 0 30px 0;
         line-height:23px;
+        padding:0;
     `
     const Section05__CardText = styled.p`
         color:${Themes.colors.black};

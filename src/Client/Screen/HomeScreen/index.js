@@ -226,11 +226,15 @@ const Section05__Container = styled.div`
         padding: 60px 10%;
     `}
     ${breakpoint('lg')`
+        padding: 100px 10%;
         height:100vh;
         max-width: 1366px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+    `}
+    ${breakpoint('xl')`
+       height:80vh;
     `}
 `
 const Section05__Title = styled.div`
@@ -249,11 +253,14 @@ const Section06 = styled.div`
      padding:0;
      height:100vh;
     `}
+    ${breakpoint('xl')`
+    height:80vh;
+    `}
 `
 const Section06__TitleDiv = styled.div`
     ${breakpoint('lg')`
         background-color: white;
-        height:30%;
+        height:35%;
         display:flex;
         flex-direction:column;
         align-items:center;
@@ -277,7 +284,10 @@ const Section07 = styled.div`
         justify-content:center;
         align-items:center;
         flex-direction:column;
-    `}   
+    `} 
+    ${breakpoint('xl')`
+    height:80vh;
+    `}  
 `
 const Section07__Title = styled.p`
     ${Title};

@@ -68,7 +68,8 @@ const Section02 = styled.div`
     padding: 80px 8% 60px 8%;
     ${breakpoint('lg')`
         background:url(${HomeSection02BgMd}) no-repeat center bottom;
-        background-size:100% 100%;
+        background-size:100% 80%;
+        padding: 100px 8% 200px 8%;
     `}
 `
 const Container = styled.div`
@@ -115,6 +116,7 @@ const Section02__Subtitle = styled.p`
     font-weight:${Themes.fontWeight.bold};
     text-align:center;
     line-height:30px;
+    padding:0;
 `
 const Section02__Text = styled.div`
     margin-top:9px;

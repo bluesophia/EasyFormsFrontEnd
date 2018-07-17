@@ -13,7 +13,7 @@ export default class EmailInput extends Component {
   }
 
   render() {
-    const { value } = this.state;
+    // const { value } = this.state;
     return (
       <ThemeProvider theme={Themes}>
       <Container>
@@ -21,7 +21,7 @@ export default class EmailInput extends Component {
       <Label>Your Contact Email</Label><P>Required</P><br />
       </Label_Div> 
         <Input
-          value={value}
+          // value={value}
           name="email"
           label="Email"
           onChange={this.handleUpdateValue}
@@ -36,7 +36,7 @@ export default class EmailInput extends Component {
 const Container = styled.div`
   padding-left: 0;
   margin-top: 0;
-  width: 70%;
+  width: 100%;
   height: 100%;
   margin-bottom:50px;
   ${breakpoint('lg')`
@@ -59,6 +59,7 @@ const P = styled.p`
   color: ${Themes.colors.LightGrey};
   margin: 0;
   margin-left: 10px;
+  padding:0;
 `;
 
 const Input = styled.input.attrs({
@@ -77,6 +78,9 @@ const Input = styled.input.attrs({
   &:focus {
     outline: none;
   }
+  ${breakpoint('lg')`
+     width:70%;
+  `}
   /*
   ${breakpoint('xs')`
     width:87vw;

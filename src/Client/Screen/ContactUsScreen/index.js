@@ -85,6 +85,7 @@ const ContactUsScreen = () => (
   </ThemeProvider>
 )
 const Container = styled.div`
+  background-color:#eee;
 `
 const Header = styled.div`
   padding:60px 8% 40px 8%;
@@ -108,9 +109,9 @@ const TopBgImg = styled.img`
     ${breakpoint('lg')`
       display:block;
       width:100vw;
+      height:70vh;
       position:absolute;
       top:120;
-      z-index:-1;
     `}
 `
 const TitleDiv = styled.div`
@@ -118,6 +119,7 @@ const TitleDiv = styled.div`
     display:flex;
     flex-direction:column;
     align-items:flex-start;
+    z-index:1;
   `}
 `
 const TitleDiv__Title = styled.div`
@@ -144,7 +146,7 @@ const CallUsDiv = styled.div`
   display:flex;
   align-items:center;
   flex-direction:row;
-
+  z-index:1;
 `
 const Icon = styled.img`
   margin-right:10px;
@@ -173,7 +175,9 @@ const Contents = styled.div`
     `}
 `
 const FormDiv = styled.div`
-
+  ${breakpoint('lg')`
+  z-index:1;
+  `}
 `
 const Form = styled.div`
   height:auto;

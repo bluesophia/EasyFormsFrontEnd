@@ -32,14 +32,14 @@ const CardContainer = styled.div`
     justify-content:center;
     ${breakpoint('md')`
         width:380px;
-        height:440px;
+        height:460px;
+        padding:8%;
     `}
 `
 const CardLogo = styled.img`
         width:180px;
-        height:auto;
+        height:auto;        
 `
-
 const CardName = styled.p`
     font-size:${Themes.fontsize.h3};
     font-weight:${Themes.fontWeight.black};

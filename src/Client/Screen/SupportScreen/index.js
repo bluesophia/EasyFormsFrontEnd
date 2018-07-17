@@ -71,13 +71,15 @@ const SupportScreen = () => (
   </ThemeProvider>
 )
 const Container = styled.div`
+  background-color:#eee;
 `
 const Header = styled.div`
   padding:60px 8% 40px 8%;
   display:flex;
   align-items:center;
   flex-direction:column;
-  ${BlueBg};
+  background-image:url(${Section01Bg});
+  background-size:cover;
     ${breakpoint('lg')`
     background:none;
     display:flex;
@@ -95,7 +97,7 @@ const TopBgImg = styled.img`
       height:auto;
       position:absolute;
       top:120;
-      z-index:-1;
+  //    z-index:-1;
     `}
 `
 const TitleDiv = styled.div`
@@ -105,6 +107,7 @@ const TitleDiv = styled.div`
     align-items:center;
     max-width:1366px;
     margin:0 auto;
+    z-index:1;    
   `}
 `
 const TitleDiv__Title = styled.div`
@@ -143,6 +146,7 @@ const FormDiv = styled.div`
      flex-direction:column-reverse;
       margin:0 auto;
       max-width:1366px;
+      z-index:1;
   `}
 `
 const Form = styled.div`

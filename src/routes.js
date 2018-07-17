@@ -1,10 +1,10 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import HomeScreen from '../Screen/HomeScreen';
-import AboutUsScreen from '../Screen/AboutUsScreen';
-import SupportScreen from '../Screen/SupportScreen';
-import BlogScreen from '../Screen/BlogScreen';
-import ContactUsScreen from '../Screen/ContactUsScreen';
+import HomeScreen from './Client/Screen/HomeScreen';
+import AboutUsScreen from './Client/Screen/AboutUsScreen';
+import SupportScreen from './Client/Screen/SupportScreen';
+import BlogScreen from './Client/Screen/BlogScreen';
+import ContactUsScreen from './Client/Screen/ContactUsScreen';
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -21,6 +21,7 @@ const Web = () => (
       <Route path='/contact' component={ContactUsScreen}/>
     </Switch>
   </main>
+  
 )
 
 export default Web;

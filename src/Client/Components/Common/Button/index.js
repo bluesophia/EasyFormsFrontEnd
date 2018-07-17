@@ -40,6 +40,7 @@ const ButtonStyle = styled.button`
 `
 const Text = styled.p`
     margin:0;
+    padding:0;
 //    text-shadow:0 0 8px rgba(50, 50, 93, 0.23);
     text-shadow:0 0 8px rgba(255, 255, 255, 0.5);
 `

@@ -13,7 +13,7 @@ export default class MessageInput extends Component {
   }
 
   render() {
-    const { value } = this.state;
+    // const { value } = this.state;
     return (
       <ThemeProvider theme={Themes}>
       <Container>
@@ -21,7 +21,7 @@ export default class MessageInput extends Component {
       <Label>Let us know how we can help</Label><P>Required</P><br />
       </Label_Div>
       <Input
-        value={value}
+        // value={value}
         name="text"
         label="label"
         onChange={this.handleUpdateValue}
@@ -56,6 +56,7 @@ const P = styled.p`
   color: ${Themes.colors.LightGrey};
   margin: 0;
   margin-left: 10px;
+  padding:0;
 `;
 
 const Input = styled.input.attrs({

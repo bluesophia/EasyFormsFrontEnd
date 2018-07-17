@@ -13,7 +13,7 @@ export default class CompanyNameInput extends Component {
   }
 
   render() {
-    const { value } = this.state;
+    // const { value } = this.state;
     return (
       <ThemeProvider theme={Themes}>
       <Container>
@@ -21,7 +21,7 @@ export default class CompanyNameInput extends Component {
       <Label>Your Company Name</Label><P>Required</P><br />
       </Label_Div> 
         <Input
-          value={value}
+          // value={value}
           name="input-text"
           label="Company Name"
           onChange={this.handleUpdateValue}
@@ -35,12 +35,12 @@ export default class CompanyNameInput extends Component {
 const Container = styled.div`
   padding-left: 0;
   margin-top: 0;
-  width: 70%;
+  width: 100%;
   height: 100%;
   margin-bottom:50px;
-  // ${breakpoint('lg')`
-  //   margin-bottom:0px;
-  // `}
+  ${breakpoint('lg')`
+  width:70%;
+  `}
 `
 const Label_Div = styled.div`
   display: flex;
@@ -58,6 +58,7 @@ const P = styled.p`
   color: ${Themes.colors.LightGrey};
   margin: 0;
   margin-left: 10px;
+  padding:0;
 `;
 
 const Input = styled.input.attrs({
