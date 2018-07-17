@@ -233,9 +233,9 @@ const Section05__Container = styled.div`
         flex-direction: column;
         justify-content: center;
     `}
-    ${breakpoint('xl')`
-       height:80vh;
-    `}
+    // ${breakpoint('xl')`
+    //    height:80vh;
+    // `}
 `
 const Section05__Title = styled.div`
     ${Title};
@@ -253,9 +253,9 @@ const Section06 = styled.div`
      padding:0;
      height:100vh;
     `}
-    ${breakpoint('xl')`
-    height:80vh;
-    `}
+    // ${breakpoint('xl')`
+    // height:80vh;
+    // `}
 `
 const Section06__TitleDiv = styled.div`
     ${breakpoint('lg')`
@@ -285,9 +285,9 @@ const Section07 = styled.div`
         align-items:center;
         flex-direction:column;
     `} 
-    ${breakpoint('xl')`
-    height:80vh;
-    `}  
+    // ${breakpoint('xl')`
+    // height:80vh;
+    // `}  
 `
 const Section07__Title = styled.p`
     ${Title};
