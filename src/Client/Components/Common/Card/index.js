@@ -33,25 +33,25 @@ const CardContainer = styled.div`
     ${breakpoint('md')`
         width:380px;
         height:460px;
-        padding:8%;
     `}
 `
 const CardLogo = styled.img`
         width:180px;
-        height:auto;        
+        height:auto;     
+        padding:0;
 `
 const CardName = styled.p`
     font-size:${Themes.fontsize.h3};
     font-weight:${Themes.fontWeight.black};
     color:${Themes.colors.blue};
-    margin-bottom:0;
+    padding:20px 0 0 0;
 `
 const CardCompanyName = styled.p`
     font-size:${Themes.fontsize.p3};
     color:${Themes.colors.grey};
     line-height:20px;
     margin:6px 0 0 0;
-    padding:0 5%;
+    padding:0;
 `
 const CardQuatation = styled.img`
     margin: 30px 0 10px 0;

@@ -6,9 +6,9 @@ import HeaderLine from '../../../Common/HeaderLine'
 
 /** Images **/
 import HomeSection02BgMd from '../../../../../Assets/Images/HomeSection02BgMd.png';
-import WhyUs01 from '../../../../../Assets/Images/whyus_1.png';
-import WhyUs02 from '../../../../../Assets/Images/whyus_2.png';
-import WhyUs03 from '../../../../../Assets/Images/whyus_3.png';
+import WhyUs01 from '../../../../../Assets/Images/whyus_1.jpg';
+import WhyUs02 from '../../../../../Assets/Images/whyus_2.jpg';
+import WhyUs03 from '../../../../../Assets/Images/whyus_3.jpg';
 
 const Title = css`
     color:${Themes.colors.blue};

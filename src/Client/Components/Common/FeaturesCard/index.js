@@ -8,9 +8,11 @@ class FeaturesCard extends Component {
             render () {
                 return(
                 <Section05__Card className="cardDisplay">
-                    <Section05__CardCircle>
-                        <FontAwesomeIcon icon={this.props.iconName} style={{color:'white'}} size="2x"/>
-                    </Section05__CardCircle>
+                    <Section05__CardContainer>
+                        <Section05__CardCircle>
+                            <FontAwesomeIcon icon={this.props.iconName} style={{color:'white'}} size="2x"/>
+                        </Section05__CardCircle>
+                    </Section05__CardContainer>
                     <Section05__CardTitle>{this.props.title}</Section05__CardTitle>
                     <Section05__CardText>{this.props.text}</Section05__CardText>
                 </Section05__Card>
@@ -32,6 +34,8 @@ class FeaturesCard extends Component {
             ${breakpoint('lg')`
                 margin-top:55px;
             `}
+    `
+    const Section05__CardContainer = styled.div`
     `
     const Section05__CardCircle = styled.div`
         width:87px;
@@ -57,6 +61,7 @@ class FeaturesCard extends Component {
         font-size:${Themes.fontsize.p4};
         text-align:center;
         line-height:15px;
+        padding:0;        
     `
 
 export default FeaturesCard;

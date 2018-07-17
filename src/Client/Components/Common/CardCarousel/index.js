@@ -20,7 +20,6 @@ render () {
         autoPlay={3000}
         arrowLeft={<ArrowLeftIcon />}
         arrowRight={<ArrowRightIcon />}
-        // arrowRight={<FontAwesomeIcon icon='angle-right' size='4x' style={{ color:'#ffa91f'}}/>}
         addArrowClickHandler
         >
             <Card 
