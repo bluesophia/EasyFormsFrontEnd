@@ -9,6 +9,7 @@ import HomeSection02BgMd from '../../../../../Assets/Images/HomeSection02BgMd.pn
 import WhyUs01 from '../../../../../Assets/Images/whyus_1.jpg';
 import WhyUs02 from '../../../../../Assets/Images/whyus_2.jpg';
 import WhyUs03 from '../../../../../Assets/Images/whyus_3.jpg';
+import { _breakpoint } from 'styled-components-breakpoint/dist/cjs/core';
 
 const Title = css`
     color:${Themes.colors.blue};
@@ -66,10 +67,12 @@ const Section2 =() => (
 
 const Section02 = styled.div`
     padding: 80px 8% 60px 8%;
+    ${breakpoint('md')`
+      padding: 150px 8% 150px 8%;
+    `}
     ${breakpoint('lg')`
         background:url(${HomeSection02BgMd}) no-repeat center bottom;
         background-size:100% 80%;
-        padding: 100px 8% 200px 8%;
     `}
 `
 const Container = styled.div`
@@ -109,14 +112,18 @@ const Section02__Image = styled.img`
     ${Shadow};
 `
 const Section02__Subtitle = styled.p`
-    margin-top:37px;
+    margin-top:20px;
     margin-bottom:0;
     color:${Themes.colors.blue};
-    font-size:${Themes.fontsize.h2};
+    font-size:${Themes.fontsize.h3};
     font-weight:${Themes.fontWeight.bold};
     text-align:center;
-    line-height:30px;
     padding:0;
+    ${breakpoint('lg')`
+      margin-top:37px;
+      font-size:${Themes.fontsize.h2};    
+      line-height:30px;    
+    `}
 `
 const Section02__Text = styled.div`
     margin-top:9px;

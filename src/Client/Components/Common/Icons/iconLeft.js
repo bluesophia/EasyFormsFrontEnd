@@ -12,7 +12,7 @@ const styles = theme => ({
   },
   icon: {
     margin: theme.spacing.unit,
-    fontSize: 32,
+    fontSize: 40,
     color: '#ffa91f'
   },
 });

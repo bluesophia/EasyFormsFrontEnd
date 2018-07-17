@@ -61,7 +61,7 @@ const HomeContainer =() => (
                         <Section03__Title>
                             Customer Stories
                         </Section03__Title>
-                        <StyledCarousel/>
+                        <StyledCarousel />
                         <Section04__TitleDiv>
                             <Section04__Title>
                                 Here Are Just a Few of the Clients <br />We Work With:
@@ -88,7 +88,6 @@ const HomeContainer =() => (
 
 const Home = styled.div`
 `
-
 const Section0102 = styled.div`
         background-color:#E2E2E2;
 `
@@ -113,6 +112,9 @@ flex-direction:column;
         grid-template-areas: "a b"
                              "c d";
     `}
+    ${breakpoint('lg')`
+//        height:768px;
+    `}
 `
 const Section03__Title = styled.div`
     ${Title};
@@ -126,12 +128,12 @@ const Section03__Title = styled.div`
     `}
 `
 const StyledCarousel = styled(CardCarousel)`
+    margin-bottom:30px;
     ${breakpoint('md')`
     grid-area: c;
     `}
 `
 /**** Section 04 ****/
-
 
 const Section04__TitleDiv = styled.div`
     background-color:white; 
@@ -146,7 +148,9 @@ const Section04__Title = styled.div`
     text-align:center;
     line-height:30px;
     padding-top:80px;
-    margin-top: 30px;
+    padding-right:5%;
+    padding-left:5%;
+    margin-top:30px;
     ${breakpoint('md')`
     margin-top:0;
     padding-top:80px; 
@@ -176,9 +180,13 @@ const Section04__Logos = styled.div`
     `}
 `
 const Section04__Logo = styled.img`
-    max-width:146px;
+    width:100px;
     height:auto;
-    margin:20px auto 40px auto;
+    margin:20px auto 40px auto;  
+    ${breakpoint('sm')`
+        width:146px;
+    `}
+
 `
 
 export default HomeContainer;

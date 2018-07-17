@@ -147,23 +147,26 @@ const CallUsDiv = styled.div`
   align-items:center;
   flex-direction:row;
   z-index:1;
+  // ${breakpoint('sm')`
+  //  flex-direction:row;    
+  // `}
 `
 const Icon = styled.img`
-  margin-right:10px;
+    margin-right:1em;
 `
 const CallUs = styled.span`
-  font-size:${Themes.fontsize.h3};
+  font-size:${Themes.fontsize.p3};
   color:white;
-  margin-right:10px;
-    ${breakpoint('lg')`
-    font-size:${Themes.fontsize.h2};
+  margin-right:1em;
+    ${breakpoint('sm')`
+    font-size:${Themes.fontsize.h3};
   `}
 `
 const PhoneNo = styled.span`
-  font-size:${Themes.fontsize.h3};
+  font-size:${Themes.fontsize.p3};
   color:${Themes.colors.yellow};
-    ${breakpoint('lg')`
-    font-size:${Themes.fontsize.h2};
+    ${breakpoint('sm')`
+    font-size:${Themes.fontsize.h3};
   `}
 `
 const Contents = styled.div`

@@ -24,8 +24,8 @@ class Section5 extends Component{
         return(
             <Section05>
                 <Section05__Container>
-                        <Section05__Title>Easyforms Features</Section05__Title>
-                        <HeaderLine />
+                    <Section05__Title>Easyforms Features</Section05__Title>
+                    <HeaderLine />
                     <FeaturesCarousel />
                 </Section05__Container>
             </Section05>
@@ -37,24 +37,28 @@ class Section5 extends Component{
 
 const Section05 = styled.div`
     ${LightGreyBg};
+
 `
 const Section05__Container = styled.div`
     margin:0 auto;
-    padding: 60px 8%;
+    padding: 60px 0;
+    ${breakpoint('sm')`
+        padding: 60px 8%;
+    `}
     ${breakpoint('md')`
         padding: 60px 10%;
     `}
     ${breakpoint('lg')`
         padding: 100px 10%;
-        height:100vh;
+       height:768px;
         max-width: 1366px;
         display: flex;
         flex-direction: column;
         justify-content: center;
     `}
-    // ${breakpoint('xl')`
-    //    height:80vh;
-    // `}
+    ${breakpoint('xl')`
+ //      height:80vh;
+    `}
 `
 const Section05__Title = styled.div`
     ${Title};

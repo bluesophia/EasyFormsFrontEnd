@@ -55,15 +55,16 @@ const Section07 = styled.div`
     box-sizing: border-box;
     ${LightGreyBg};
         ${breakpoint('lg')`
-        height:100vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        flex-direction:column;
+           padding: 100px 20%; 
+           height:768px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
     `} 
-    // ${breakpoint('xl')`
-    // height:80vh;
-    // `}  
+        ${breakpoint('xl')`
+   //     height:80vh;
+        `}  
 `
 const Section07__Title = styled.p`
     ${Title};
@@ -83,7 +84,7 @@ const Section07__Contents = styled.div`
         display:flex;
         justify-content:space-around;
         align-item:center;
-        margin-top:10vh;
+        margin-top:40px;
         `} 
 `
 const Section07__ContentDiv = styled.div`

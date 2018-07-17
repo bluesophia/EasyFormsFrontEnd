@@ -4,7 +4,8 @@ import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../Assets/Styles/Themes';
 import HeaderLine from '../../Components/Common/HeaderLine';
 import BigTitle from '../../Components/Common/Title/BigTitle.js';
-import SectionBg from '../../../Assets/Images/blog_1.jpg';
+import SectionBg01 from '../../../Assets/Images/blog_1.jpg';
+import SectionBg02 from '../../../Assets/Images/blog_2.jpg';
 import { BlogToggleSec1, BlogToggleSec2 } from '../../Components/WebContainer/BlogToggleContainer';
 
 const BlogScreen = () => ({
@@ -15,13 +16,13 @@ const BlogScreen = () => ({
 
         {/* Section1 */}
         <Section>
-          <Section__Header>
+          <Section__Header01>
             {/* Title */}
             <Section__TitleDiv>
               <Section__Title>Is Timesheet Theft Giving You a Constant Headache?</Section__Title>
               <HeaderLine />
             </Section__TitleDiv>
-          </Section__Header>
+          </Section__Header01>
             {/* Contents */}
             <Section__FirstBlog>
             </Section__FirstBlog>
@@ -32,13 +33,13 @@ const BlogScreen = () => ({
 
         {/* Section2 */}
         <Section>
-          <Section__Header>
+          <Section__Header02>
             {/* Title */}
             <Section__TitleDiv>
               <Section__Title>Are Mountains of Paperwork Dragging Your Business Down?</Section__Title>
               <HeaderLine />
             </Section__TitleDiv>
-          </Section__Header>
+          </Section__Header02>
             {/* Contents */}
             <Section__FirstBlog>
             </Section__FirstBlog>
@@ -62,11 +63,26 @@ const Section = styled.div`
   ${breakpoint('md')`
   `}
 `
-const Section__Header = styled.div`
+const Section__Header01 = styled.div`
   display:flex;
   justify-content:center;
   flex-direaction:coulmn;
-  background:linear-gradient(rgba(8,39,90), rgba(8,39,90,0.4)), url(${SectionBg});
+  background:linear-gradient(rgba(8,39,90), rgba(8,39,90,0.4)), url(${SectionBg01});
+  background-size:cover;
+  padding-top:100px;
+  padding-bottom:80px;
+  position:relative;
+  ${breakpoint('md')`
+    padding-top:180px;
+    width:100%;
+    background-position:center-top;
+  `}
+`
+const Section__Header02 = styled.div`
+  display:flex;
+  justify-content:center;
+  flex-direaction:coulmn;
+  background:linear-gradient(rgba(8,39,90), rgba(8,39,90,0.4)), url(${SectionBg02});
   background-size:cover;
   padding-top:100px;
   padding-bottom:80px;

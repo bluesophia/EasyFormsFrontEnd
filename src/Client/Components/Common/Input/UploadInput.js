@@ -18,9 +18,11 @@ export default class UploadInput extends Component {
       <Container>
       <Label>Upload a screenshot</Label><br />
         <Input
-          name="input-text"
-          label="Company Name"
+          name="pic"
+          label="Upload a screenshot"
+          accept="image/*"
           onChange={this.handleUpdateValue}
+          multiple
         />
       </Container>
       </ThemeProvider>
@@ -39,11 +41,10 @@ const Label = styled.label`
   `;
 
 const Input = styled.input.attrs({
-  type: 'text',
+  type: 'file',
 })`
   box-sizing:border-box;
   width:100%;
-  height:30px;
   background: none;
   border-radius: 5px;
   border: 1px solid ${Themes.colors.formGrey};

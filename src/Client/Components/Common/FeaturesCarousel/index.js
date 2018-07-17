@@ -16,11 +16,16 @@ render () {
         infinite
         slidesPerPage={4}
         slidesPerScroll={4}
-        // autoPlay={5000}
+        autoPlay={5000}
         arrowLeft={<ArrowLeftIcon />}
         arrowRight={<ArrowRightIcon />}
         addArrowClickHandler
         breakpoints={{
+            1024: { // these props will be applied when screen width is less than 1000px
+              slidesPerPage: 3,
+              slidesPerScroll: 3,
+              clickToChange: true,
+            },
             1000: { // these props will be applied when screen width is less than 1000px
               slidesPerPage: 2,
               slidesPerScroll: 2,

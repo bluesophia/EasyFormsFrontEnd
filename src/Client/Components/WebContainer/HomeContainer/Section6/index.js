@@ -26,6 +26,7 @@ class Section6 extends Component{
                         <Section06__Title>Easyforms Function</Section06__Title>
                         <HeaderLine />
                     </Section06__TitleDiv>
+                    <Section06__Image />
                 </Section06>
             </ThemeProvider>
         )
@@ -43,15 +44,15 @@ const Section06 = styled.div`
      background-position: center bottom;
      background-size:contain;
      padding:0;
-     height:100vh;
+     height:768px;
     `}
-    // ${breakpoint('xl')`
-    //     height:80vh;
-    // `}
+    ${breakpoint('xl')`
+  //      height:80vh;
+    `}
 `
 const Section06__TitleDiv = styled.div`
     ${breakpoint('lg')`
- //       background-color: white;
+ //     background-color: white;
         height:30%;
         display:flex;
         flex-direction:column;
@@ -63,7 +64,10 @@ const Section06__TitleDiv = styled.div`
     // `}
 `
 const Section06__Title = styled.div`
-    padding-top:2em;
+   padding-top:2.5em;
     ${Title};
+`
+const Section06__Image = styled.div`
+
 `
 export default Section6;

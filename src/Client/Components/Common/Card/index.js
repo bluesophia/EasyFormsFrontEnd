@@ -30,6 +30,7 @@ const CardContainer = styled.div`
     align-items:center;
     flex-direction:column;
     justify-content:center;
+    margin-bottom:30px;
     ${breakpoint('md')`
         width:380px;
         height:460px;
@@ -59,8 +60,11 @@ const CardQuatation = styled.img`
 const CardText = styled.div`
     color:${Themes.colors.grey};  
     font-weight:${Themes.fontWeight.light};
-    font-size:${Themes.fontsize.p3}; 
+    font-size:${Themes.fontsize.p4}; 
     padding-bottom:8%;
+    ${breakpoint('sm')`
+      font-size:${Themes.fontsize.p3}; 
+    `}
 `
 
 export default Card;
