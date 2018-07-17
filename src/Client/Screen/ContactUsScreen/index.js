@@ -31,7 +31,10 @@ const LightGreyBg = css`
 const BlueBg = css`
   background:linear-gradient(${Themes.colors.blue},${Themes.colors.blueLight});
 `
-const ContactUsScreen = () => (
+
+class ContactUsScreen extends Component {
+  render () {
+      return(
   <ThemeProvider theme={Themes}>
     <div>
       <Container>
@@ -84,6 +87,9 @@ const ContactUsScreen = () => (
     </div>
   </ThemeProvider>
 )
+  }
+};
+
 const Container = styled.div`
   background-color:#eee;
 `

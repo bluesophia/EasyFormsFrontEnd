@@ -50,7 +50,10 @@ const LightGreyBg = css`
   background-color:rgba(238,238,238,0.6);
 `
 
-const HomeContainer =() => (
+
+class HomeContainer extends Component {
+    render () {
+        return( 
             <ThemeProvider theme={Themes}>
             <Home>
             <Section0102>
@@ -85,6 +88,8 @@ const HomeContainer =() => (
             </Home>
             </ThemeProvider>
         )
+    }
+};
 
 const Home = styled.div`
 `

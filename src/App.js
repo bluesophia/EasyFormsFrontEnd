@@ -45,13 +45,18 @@ library.add(
   faLocationArrow
 )
 
-const App = () => (
-  <div>
-    <Header />
-    <Routes />
-    <Footer />
-  </div>
-);
+
+class App extends Component {
+  render () {
+      return(
+          <div>
+            <Header />
+            <Routes />
+            <Footer />
+          </div>
+          );
+        }
+      };
 
 export default App;
 

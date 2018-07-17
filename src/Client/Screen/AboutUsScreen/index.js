@@ -21,7 +21,10 @@ const LightGreyBg = css`
 const BlueBg = css`
   background:linear-gradient(${Themes.colors.blue},${Themes.colors.blueLight});
 `
-const AboutUsScreen = () => (
+
+class AboutUsScreen extends Component {
+  render () {
+      return(
     <ThemeProvider theme={Themes}>   
       <div>
           <Section01>
@@ -93,7 +96,9 @@ const AboutUsScreen = () => (
           </Section03>
       </div>
     </ThemeProvider>
-)
+    )
+  }
+};
 
 const Section01 = styled.div`
   ${BlueBg};

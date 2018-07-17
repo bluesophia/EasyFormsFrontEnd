@@ -8,9 +8,10 @@ import SectionBg01 from '../../../Assets/Images/blog_1.jpg';
 import SectionBg02 from '../../../Assets/Images/blog_2.jpg';
 import { BlogToggleSec1, BlogToggleSec2 } from '../../Components/WebContainer/BlogToggleContainer';
 
-const BlogScreen = () => ({
-  render: function(){
-    return(
+
+class BlogScreen extends Component {
+  render () {
+      return(
       <ThemeProvider theme={Themes}>
       <Container>
 
@@ -50,9 +51,9 @@ const BlogScreen = () => ({
       </Container>
     </ThemeProvider>
     )
-  },
+  }
 }
-)
+
 const Container = styled.div`
     position:relative;
 `
