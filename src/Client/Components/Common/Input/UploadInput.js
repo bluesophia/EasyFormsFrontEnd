@@ -5,7 +5,6 @@ import Themes from '../../../../Assets/Styles/Themes';
 
 export default class UploadInput extends Component {
   state = {
-    value: 'John Doe',
   }
 
   handleUpdateValue = (value) => {
