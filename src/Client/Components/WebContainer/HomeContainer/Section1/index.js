@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled, { injectGlobal, css, ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Themes from '../../../../../Assets/Styles/Themes';
@@ -14,7 +14,9 @@ import FacebookIcon from '../../../../../Assets/Images/facebook.png';
 import TwitterIcon from '../../../../../Assets/Images/twitter.png';
 import LinkedinIcon from '../../../../../Assets/Images/linkedin.png';
 
-const Section1 = () => (
+class Section1 extends Component{
+    render(){
+        return(
             <ThemeProvider theme={Themes}>
                 <Section01>
                     <Container>
@@ -35,6 +37,8 @@ const Section1 = () => (
                 </Section01>
             </ThemeProvider>
         )
+    }
+}
 /**** Section 01 ****/
 
 const Section01 = styled.div`
@@ -115,6 +119,7 @@ const ButtonDiv = styled.div`
             `}
 `
 const ButtonLink = styled(Link)`
+        cursor:'pointer';
 `
 const SubTitle = styled.p`
         font-size:${Themes.fontsize.h3};

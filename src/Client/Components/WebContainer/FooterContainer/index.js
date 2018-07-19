@@ -13,7 +13,7 @@ class FooterContainer extends Component {
           <Container>
             <FooterTop>
               <FooterBox3>
-                <Footer__title__display>SOCIAL MEDIA</Footer__title__display>
+                <FooterTitleDisplay>SOCIAL MEDIA</FooterTitleDisplay>
                     <Box>
                       <Sns href="https://www.facebook.com/EasyFormsNZ/?ref=aymt_homepage_panel">
                           <FontAwesomeIcon icon={['fab', 'facebook-f']} />
@@ -28,17 +28,17 @@ class FooterContainer extends Component {
               </FooterBox3>
 
               <FooterBox1>
-                <Footer__title>CONTACT US</Footer__title>
+                <FooterTitle>CONTACT US</FooterTitle>
                 <FooterRightContainer>
-                    <Footer__text>0800 EASY FORMS</Footer__text>
-                    <Footer__text>0800 3279 36767</Footer__text>
-                    <Footer__text>office@easyforms.co.nz</Footer__text>
-                    <Footer__text_address>4a Te Kea Place, <br />Rosedale, Auckland</Footer__text_address>
+                    <FooterText>0800 EASY FORMS</FooterText>
+                    <FooterText>0800 3279 36767</FooterText>
+                    <FooterText>office@easyforms.co.nz</FooterText>
+                    <FooterTextAddress>4a Te Kea Place, <br />Rosedale, Auckland</FooterTextAddress>
                 </FooterRightContainer>
               </FooterBox1>
                 
               <FooterBox2>
-                <Footer__title>SITEMAP</Footer__title>
+                <FooterTitle>SITEMAP</FooterTitle>
                 <FooterRightContainer>
                     <StyledLink to='/'>Home</StyledLink>
 						        <StyledLink to='/about'>About</StyledLink>
@@ -138,7 +138,7 @@ text-align:left;
 `};
 `;
 
-const Footer__title = styled.span`
+const FooterTitle = styled.span`
 font-size: 1em;
 text-align:center;
 margin: 2.75em 0 1.5em;
@@ -154,22 +154,22 @@ text-align:left;
   `};
 `;
 
-const Footer__title__display = Footer__title.extend`
+const FooterTitleDisplay = FooterTitle.extend`
 display:none;
 
 ${breakpoint('md')`
 display: block;
 `};
-`;
+`
 
-const Footer__text = styled.span`
+const FooterText = styled.span`
 font-size: 1em;
 display:block;
 padding:0.125em 0;
 color: ${Themes.colors.lightGrey};
 `;
 
-const Footer__text_address = Footer__text.extend`
+const FooterTextAddress = FooterText.extend`
 padding-top: 1.25em;
 `;
 

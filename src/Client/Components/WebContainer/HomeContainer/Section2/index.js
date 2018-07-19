@@ -29,39 +29,42 @@ const Text = css`
 const Shadow = css`
     box-shadow : 0 0 8px rgba(50, 50, 93, 0.23);
 `
-
-const Section2 =() => (
+class Section2 extends Component{
+    render(){
+        return(
             <ThemeProvider theme={Themes}>
-                <Section02>
-                <Container>
-                    <Section02__TitleDiv>
-                        <Section02__Title>Why Easyforms?</Section02__Title>
-                        <HeaderLine />
-                    </Section02__TitleDiv>
-                    <Section02__Contents>
-                        <Section02__ContentDiv>
-                            <Section02__Image src={WhyUs01} />
-                            <Section02__Subtitle>Customised to your needs</Section02__Subtitle>
-                            <Section02__Text>Our solutions can be designed 
-                            specifically to your business needs. </Section02__Text>
-                        </Section02__ContentDiv>
-                        <Section02__ContentDiv>
-                            <Section02__Image src={WhyUs02} />
-                            <Section02__Subtitle>Streamline your processes</Section02__Subtitle>
-                            <Section02__Text>Our app-based solution means 
-                            you can wave goodbye to stacks of paperwork, 
-                            inefficiencies, double handling + much more.</Section02__Text>
-                        </Section02__ContentDiv>
-                        <Section02__ContentDiv>
-                            <Section02__Image src={WhyUs03} />
-                            <Section02__Subtitle>User friendly designs</Section02__Subtitle>
-                            <Section02__Text>Our solutions are easy-to-use and user friendly.</Section02__Text>
-                        </Section02__ContentDiv>
-                    </Section02__Contents>
-                </Container>
-                </Section02>
-            </ThemeProvider>
+            <Section02>
+            <Container>
+                <Section02__TitleDiv>
+                    <Section02__Title>Why Easyforms?</Section02__Title>
+                    <HeaderLine />
+                </Section02__TitleDiv>
+                <Section02__Contents>
+                    <Section02__ContentDiv>
+                        <Section02__Image src={WhyUs01} />
+                        <Section02__Subtitle>Customised to your needs</Section02__Subtitle>
+                        <Section02__Text>Our solutions can be designed 
+                        specifically to your business needs. </Section02__Text>
+                    </Section02__ContentDiv>
+                    <Section02__ContentDiv>
+                        <Section02__Image src={WhyUs02} />
+                        <Section02__Subtitle>Streamline your processes</Section02__Subtitle>
+                        <Section02__Text>Our app-based solution means 
+                        you can wave goodbye to stacks of paperwork, 
+                        inefficiencies, double handling + much more.</Section02__Text>
+                    </Section02__ContentDiv>
+                    <Section02__ContentDiv>
+                        <Section02__Image src={WhyUs03} />
+                        <Section02__Subtitle>User friendly designs</Section02__Subtitle>
+                        <Section02__Text>Our solutions are easy-to-use and user friendly.</Section02__Text>
+                    </Section02__ContentDiv>
+                </Section02__Contents>
+            </Container>
+            </Section02>
+        </ThemeProvider>
         )
+    }
+}
 
 /**** Section 02 ****/
 

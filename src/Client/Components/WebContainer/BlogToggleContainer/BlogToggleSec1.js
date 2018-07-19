@@ -20,6 +20,22 @@ export default class BlogToggleSec1 extends Component {
     }
    
     render() {
+      const contentList01 = () => {
+        return (
+          <div style={style}>
+            <ul>
+              <li>Capture ACTUAL time spent on jobs - with an auto time stamping capability</li>
+              <li>Capture time spent on individual or multiple jobs and even against segments of a project</li>
+              <li>Capture travel time with location tracking for multiple jobs - GPS verified</li>
+              <li>Capture sick and annual leave (incl. breaks/downtime)</li>
+              <li>Streamline payroll and invoicing - integrates with most payroll solutions</li>
+              <li>Provides clear and concise reporting at a glance (daily, weekly, monthly - you choose)</li>
+              <li>Enhance planning and forecasting</li>
+              <li>Save admin & management resource by working smarter</li>
+            </ul>
+          </div>
+        )
+      }
       const accordionList = [
       { id:0,
         title: 'Would you like to eliminate timesheet ambiguity?',
@@ -69,7 +85,7 @@ export default class BlogToggleSec1 extends Component {
         so you can focus on the things you need to." },
       { id:4,
         title: 'We can help your business:',
-        content: ""
+        content: contentList01()
        },
     ];
       
@@ -92,3 +108,7 @@ export default class BlogToggleSec1 extends Component {
     }
   }
 
+const style = {
+  paddingRight:30,
+  paddingLeft:-30
+}

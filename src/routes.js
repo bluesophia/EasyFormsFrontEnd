@@ -11,6 +11,7 @@ import ContactUsScreen from './Client/Screen/ContactUsScreen';
 // and /schedule routes will match any pathname that starts
 // with /roster or /schedule. The / route will only match
 // when the pathname is exactly the string "/"
+
 const Web = () => (
   <main>
     <Switch>
@@ -21,7 +22,6 @@ const Web = () => (
       <Route path='/contact' component={ContactUsScreen}/>
     </Switch>
   </main>
-  
 )
 
 export default Web;
