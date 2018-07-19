@@ -11,7 +11,7 @@ const styles = theme => ({
     color: theme.palette.text.primary,
   },
   icon: {
-    margin: theme.spacing.unit,
+    margin: 0,
     fontSize: 40,
     color: '#ffa91f'
   },
