@@ -8,11 +8,20 @@ import SectionBg01 from '../../../Assets/Images/blog_1.jpg';
 import SectionBg02 from '../../../Assets/Images/blog_2.jpg';
 import { BlogToggleSec1, BlogToggleSec2 } from '../../Components/WebContainer/BlogToggleContainer';
 
+<<<<<<< HEAD
 class BlogScreen extends Component {
   render(){
     return(
         <ThemeProvider theme={Themes}>
         <Container>
+=======
+
+class BlogScreen extends Component {
+  render () {
+      return(
+      <ThemeProvider theme={Themes}>
+      <Container>
+>>>>>>> cd3b494df0e5edce2b8ed442c26296aaf8c8644c
 
           {/* Section1 */}
           <Section>

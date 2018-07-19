@@ -24,4 +24,4 @@ const Web = () => (
   </main>
 )
 
-export default Web;
+export default Routes;
