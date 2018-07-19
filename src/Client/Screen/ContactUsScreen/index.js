@@ -31,7 +31,6 @@ const LightGreyBg = css`
 const BlueBg = css`
   background:linear-gradient(${Themes.colors.blue},${Themes.colors.blueLight});
 `
-<<<<<<< HEAD
 class ContactUsScreen extends Component {
   render(){
     return(
@@ -89,67 +88,6 @@ class ContactUsScreen extends Component {
     )
   }
 }
-=======
-
-class ContactUsScreen extends Component {
-  render () {
-      return(
-  <ThemeProvider theme={Themes}>
-    <div>
-      <Container>
-        <TopBgImg src={TopBg}/>
-        <Header>
-          <TitleDiv>
-            <TitleDiv__Title>Get In Touch</TitleDiv__Title>
-            <TitleDiv__Line><HeaderLine /></TitleDiv__Line>
-            <TitleDiv__Text>Get in touch with us today to find out how we can help your business
-              work smarter and more efficiently.</TitleDiv__Text>
-          </TitleDiv>
-          <CallUsDiv>
-            <Icon src={CallUsIcon} />
-            <CallUs>Call Us</CallUs>
-            <PhoneNo>0800-3279-36767</PhoneNo>
-          </CallUsDiv> 
-        </Header>
-        
-        <Contents>
-          <MapDiv>
-            <MyMapComponent
-              isMarkerShown
-              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-p5WQ9NQSErSYZB-U2anOUNKEGzWh-hU&v=3.exp&libraries=geometry,drawing,places"
-              loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `100%` }} />}
-              mapElement={<div style={{ height: `100%` }} />}
-            />
-          </MapDiv>
-          <FormDiv>
-            <Form>
-              <InputDiv>
-                <InputDiv__Left>
-                  <CompanyNameInput />
-                  <FullNameInput />
-                  <EmailInput />
-                </InputDiv__Left>
-                <InputDiv__Right>
-                  <MessageInput height='250px'/>
-                </InputDiv__Right>
-              </InputDiv>
-              <ButtonDiv>
-                <Button value={'Contact Our Software Experts'}/>
-                <Form__Text>Or Try Our Software For Free</Form__Text>
-                <Button02 value={'Experience EasyForms for yourself'}/>        
-              </ButtonDiv>      
-            </Form>
-          </FormDiv>
-        </Contents>
-      </Container>
-    </div>
-  </ThemeProvider>
-)
-  }
-};
-
->>>>>>> cd3b494df0e5edce2b8ed442c26296aaf8c8644c
 const Container = styled.div`
   background-color:#eee;
 `

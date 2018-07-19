@@ -31,17 +31,10 @@ const BlueBg = css`
   background:linear-gradient(${Themes.colors.blue},${Themes.colors.blueLight});
 `
 
-<<<<<<< HEAD
 class SupportScreen extends Component{
   render(){
     return(
 <ThemeProvider theme={Themes}>
-=======
-class SupportScreen extends Component {
-  render () {
-      return(
-  <ThemeProvider theme={Themes}>
->>>>>>> cd3b494df0e5edce2b8ed442c26296aaf8c8644c
     <div>
       <Container>
         <TopBgImg src={Section01Bg}/>
@@ -79,15 +72,9 @@ class SupportScreen extends Component {
       </Container>
     </div>
   </ThemeProvider>
-<<<<<<< HEAD
     )
   }
 }
-=======
-)
-  }
-};
->>>>>>> cd3b494df0e5edce2b8ed442c26296aaf8c8644c
 
 const Container = styled.div`
   background-color:#eee;
