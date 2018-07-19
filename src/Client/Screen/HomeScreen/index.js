@@ -32,26 +32,31 @@ injectGlobal`
 `
 const Title = css`
     color:${Themes.colors.blue};
-    font-size:${Themes.fontsize.h2};
+    font-size:${Themes.fontsize.h3};
     font-weight:${Themes.fontWeight.black};
     text-align:center;
     line-height:30px;
     text-transform:uppercase;
     letter-spacing:5px;
+    ${breakpoint('lg')`
+    font-size:${Themes.fontsize.h2};
+    `}
 `
-const Text = css`
-    font-size:${Themes.fontsize.p3};
-    color:${Themes.colors.black};
-    text-align:center;
-    line-height:20px;
-`
-const LightGreyBg = css`
-  background-color:rgba(238,238,238,0.6);
-`
+
+// const Text = css`
+//     font-size:${Themes.fontsize.p3};
+//     color:${Themes.colors.black};
+//     text-align:center;
+//     line-height:20px;
+// `
+// const LightGreyBg = css`
+//   background-color:rgba(238,238,238,0.6);
+// `
 
 class HomeScreen extends Component{  
     render(){
         return(
+
             <ThemeProvider theme={Themes}>
             <Home>
                 <Section0102>
@@ -89,6 +94,7 @@ class HomeScreen extends Component{
     }
 }
 const Home = styled.div`
+
 `
 const Section0102 = styled.div`
         background-color:#E2E2E2;
@@ -121,7 +127,7 @@ flex-direction:column;
 const Section03__Title = styled.div`
     ${Title};
     color:white;
-    padding: 70px 37px;
+    padding: 18% 10% 10%;
     ${breakpoint('md')`
     grid-area: a;
     padding-top:80px;
@@ -149,10 +155,10 @@ const Section04__Title = styled.div`
     font-weight:${Themes.fontWeight.bold};
     text-align:center;
     line-height:30px;
-    padding-top:80px;
+    padding-top:18%;
     padding-right:5%;
     padding-left:5%;
-    margin-top:30px;
+    // margin-top:30px;
     ${breakpoint('md')`
     margin-top:0;
     padding-top:80px; 

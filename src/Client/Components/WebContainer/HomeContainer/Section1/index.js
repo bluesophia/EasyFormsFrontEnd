@@ -10,11 +10,8 @@ import { Link } from 'react-router-dom';
 import HomeSection01BgSm from '../../../../../Assets/Images/HomeSection01BgSm.png';
 import HomeSection01BgMd from '../../../../../Assets/Images/HomeSection01BgMd.png';
 import ClusterImg from '../../../../../Assets/Images/cluster.png';
-import FacebookIcon from '../../../../../Assets/Images/facebook.png';
-import TwitterIcon from '../../../../../Assets/Images/twitter.png';
-import LinkedinIcon from '../../../../../Assets/Images/linkedin.png';
 
-class Section1 extends Component{
+class Section1 extends Component {
     render(){
         return(
             <ThemeProvider theme={Themes}>
@@ -36,17 +33,22 @@ class Section1 extends Component{
                     </Container>
                 </Section01>
             </ThemeProvider>
-        )
+
+        );
     }
 }
+
 /**** Section 01 ****/
 
 const Section01 = styled.div`
-    padding:100px 8%;
+    padding:18% 8%;
     background: url('${HomeSection01BgSm}');
     background-position:center top;
     background-repeat:no-repeat;
     background-size:100% 100%;
+    ${breakpoint('md')`
+    padding: 100px 8%;
+`}
     ${breakpoint('lg')`
         background: url('${HomeSection01BgMd}');
         background-position:center top;
@@ -57,7 +59,7 @@ const Section01 = styled.div`
 const Container = styled.div`
     display:flex;
     flex-direction:column;
-    margin:0 auto;
+    margin:0;
     ${breakpoint('lg')`
         max-width: 1366px;
         justify-content:space-between;
@@ -88,14 +90,17 @@ const Section01__TitleDiv = styled.div`
     `}
 `;
 const BigTitle = styled.div`
-        font-size:35px;
-        margin:40px 0;
+        font-size: 25px;
+        margin: 1.5em 0;
         color:${Themes.colors.white};
         text-align:center;
-            ${breakpoint('lg')`
-                text-align:right;
-                margin:0;
-            `}
+        ${breakpoint('md')`
+            font-size:35px;
+        `}
+        ${breakpoint('lg')`
+            text-align:right;
+            margin:0;
+        `}
     `
 const Section01__Text = styled.div`
     display:none;
@@ -120,45 +125,6 @@ const ButtonDiv = styled.div`
 `
 const ButtonLink = styled(Link)`
         cursor:'pointer';
-`
-const SubTitle = styled.p`
-        font-size:${Themes.fontsize.h3};
-        color:${Themes.colors.white};
-        text-align:center;
-        font-weight:${Themes.fontWeight.regular};
-        margin-top:60px;
-            ${breakpoint('lg')`
-            text-align:right;
-        `}
-    `
-
-const SnsIcons = styled.div`
-    display:flex;
-    justify-content: center;
-        ${breakpoint('lg')`
-        margin-right:0;
-        text-align:right;
-        justify-content: flex-end;
-    `}
-`
-const SnsLink = styled.a`
-`
-const Facebook = styled.div`
-    background-image:url(${FacebookIcon});
-    width:58px;
-    height:58px;
-    margin-right:15px;
-`
-const Twitter = styled.div`
-    background-image:url(${TwitterIcon});  
-    width:58px;
-    height:58px;  
-    margin-right:15px; 
-`
-const Linkedin = styled.div`
-    background-image:url(${LinkedinIcon});   
-    width:58px;
-    height:58px;   
 `
 
 export default Section1;

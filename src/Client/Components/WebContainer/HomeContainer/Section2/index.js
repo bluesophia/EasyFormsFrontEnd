@@ -9,16 +9,20 @@ import HomeSection02BgMd from '../../../../../Assets/Images/HomeSection02BgMd.pn
 import WhyUs01 from '../../../../../Assets/Images/whyus_1.jpg';
 import WhyUs02 from '../../../../../Assets/Images/whyus_2.jpg';
 import WhyUs03 from '../../../../../Assets/Images/whyus_3.jpg';
-import { _breakpoint } from 'styled-components-breakpoint/dist/cjs/core';
 
 const Title = css`
     color:${Themes.colors.blue};
-    font-size:${Themes.fontsize.h2};
+    font-size:${Themes.fontsize.h3};
     font-weight:${Themes.fontWeight.black};
     text-align:center;
     line-height:30px;
     text-transform:uppercase;
     letter-spacing:5px;
+    padding: 0;
+    ${breakpoint('md')`
+    font-size:${Themes.fontsize.h2};
+    padding: 1em;
+`}
 `
 const Text = css`
     font-size:${Themes.fontsize.p3};
@@ -29,51 +33,54 @@ const Text = css`
 const Shadow = css`
     box-shadow : 0 0 8px rgba(50, 50, 93, 0.23);
 `
-class Section2 extends Component{
-    render(){
+
+class Section2 extends Component {
+    render() {
         return(
             <ThemeProvider theme={Themes}>
-            <Section02>
-            <Container>
-                <Section02__TitleDiv>
-                    <Section02__Title>Why Easyforms?</Section02__Title>
-                    <HeaderLine />
-                </Section02__TitleDiv>
-                <Section02__Contents>
-                    <Section02__ContentDiv>
-                        <Section02__Image src={WhyUs01} />
-                        <Section02__Subtitle>Customised to your needs</Section02__Subtitle>
-                        <Section02__Text>Our solutions can be designed 
-                        specifically to your business needs. </Section02__Text>
-                    </Section02__ContentDiv>
-                    <Section02__ContentDiv>
-                        <Section02__Image src={WhyUs02} />
-                        <Section02__Subtitle>Streamline your processes</Section02__Subtitle>
-                        <Section02__Text>Our app-based solution means 
-                        you can wave goodbye to stacks of paperwork, 
-                        inefficiencies, double handling + much more.</Section02__Text>
-                    </Section02__ContentDiv>
-                    <Section02__ContentDiv>
-                        <Section02__Image src={WhyUs03} />
-                        <Section02__Subtitle>User friendly designs</Section02__Subtitle>
-                        <Section02__Text>Our solutions are easy-to-use and user friendly.</Section02__Text>
-                    </Section02__ContentDiv>
-                </Section02__Contents>
-            </Container>
-            </Section02>
-        </ThemeProvider>
-        )
+                <Section02>
+                <Container>
+                    <Section02TitleDiv>
+                        <Section02__Title>Why Easyforms?</Section02__Title>
+                        <HeaderLine />
+                    </Section02TitleDiv>
+                    <Section02__Contents>
+                        <Section02__ContentDiv>
+                            <Section02__Image src={WhyUs01} />
+                            <Section02__Subtitle>Customised to your needs</Section02__Subtitle>
+                            <Section02__Text>Our solutions can be designed 
+                            specifically to your business needs. </Section02__Text>
+                        </Section02__ContentDiv>
+                        <Section02__ContentDiv>
+                            <Section02__Image src={WhyUs02} />
+                            <Section02__Subtitle>Streamline your processes</Section02__Subtitle>
+                            <Section02__Text>Our app-based solution means 
+                            you can wave goodbye to stacks of paperwork, 
+                            inefficiencies, double handling + much more.</Section02__Text>
+                        </Section02__ContentDiv>
+                        <Section02__ContentDiv>
+                            <Section02__Image src={WhyUs03} />
+                            <Section02__Subtitle>User friendly designs</Section02__Subtitle>
+                            <Section02__Text>Our solutions are easy-to-use and user friendly.</Section02__Text>
+                        </Section02__ContentDiv>
+                    </Section02__Contents>
+                </Container>
+                </Section02>
+            </ThemeProvider>
+            
+        );
     }
 }
 
 /**** Section 02 ****/
 
 const Section02 = styled.div`
-    padding: 80px 8% 60px 8%;
+    padding: 18% 8% 60px;
     ${breakpoint('md')`
-      padding: 150px 8% 150px 8%;
+      padding: 60px 8%;
     `}
     ${breakpoint('lg')`
+        padding: 150px 8%;
         background:url(${HomeSection02BgMd}) no-repeat center bottom;
         background-size:100% 80%;
     `}
@@ -87,7 +94,7 @@ const Container = styled.div`
         justify-content: center;
     `}
 `
-const Section02__TitleDiv = styled.div`
+const Section02TitleDiv = styled.div`
         
 `
 const Section02__Title = styled.p`
@@ -102,8 +109,11 @@ const Section02__Contents = styled.div`
     `}
 `
 const Section02__ContentDiv = styled.div`
-    margin:60px auto 0 auto;
+    margin:18% auto 0 auto;
     width:100%;
+    ${breakpoint('md')`
+    margin:10% auto 0 auto; 
+    `}
     ${breakpoint('lg')`
     width:300px;
     margin:60px auto 0 auto;
