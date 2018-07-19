@@ -37,7 +37,7 @@ render () {
             <Card 
             logo = {Logo03}
             companyName = "Service Operations, Toyota"
-            text = "EasyForms took the design of our survey/audit and built this into a user friendly interface. The other solutions that were investigated before using EasyForms often missed core functionality and were not flexible enough in the reporting space.  Many other systems provided some core functionality, but not the bespoke report outputs that we required.  This was the key difference between EasyForms and the rest."
+            text = "EasyForms took the design of our survey/audit and built this into a user friendly interface. The other solutions that were investigated before using EasyForms often missed core functionality and were not flexible enough in the reporting space.  Many other systems provided some core functionality, but not the bespoke report outputs that we required."
             />
         </Carousel>
         </ ThemeProvider>

@@ -24,13 +24,16 @@ class FeaturesCard extends Component {
 `
     const Section05__Card = styled.div`
         width:264px;
-        height:400px;
+        height:370px;
         background-color:white;
         margin:10px;
         margin-top:20px;
         padding: 35px 20px;
         box-sizing: border-box;
         ${Shadow};
+        ${breakpoint('md')`
+        height:400px; 
+            `}
             ${breakpoint('lg')`
                 margin-top:55px;
             `}
@@ -61,7 +64,8 @@ class FeaturesCard extends Component {
         font-size:${Themes.fontsize.p4};
         text-align:center;
         line-height:15px;
-        padding:0;        
+        padding:0;  
+              
     `
 
 export default FeaturesCard;

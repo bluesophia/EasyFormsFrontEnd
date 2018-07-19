@@ -31,7 +31,7 @@ render () {
               slidesPerScroll: 2,
               clickToChange: true,
             },
-            768: {
+            700: {
               slidesPerPage: 1,
               slidesPerScroll: 1,
               clickToChange: true,

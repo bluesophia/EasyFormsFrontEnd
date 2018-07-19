@@ -67,7 +67,9 @@ class HomeScreen extends Component{
                     <Section03__Title>
                         Customer Stories
                     </Section03__Title>
+                    <Box>
                     <StyledCarousel />
+                    </Box>
                     <Section04__TitleDiv>
                         <Section04__Title>
                             Here Are Just a Few of the Clients <br />We Work With:
@@ -120,8 +122,13 @@ flex-direction:column;
         grid-template-areas: "a b"
                              "c d";
     `}
-    ${breakpoint('lg')`
-//        height:768px;
+    ${breakpoint('xl')`
+        grid-template-columns: 1fr 683px 683px 1fr;
+        grid-gap: 0;
+        grid-template-rows: 140px 1fr;
+        grid-template-areas: "e a b f"
+                             "g c d h";
+
     `}
 `
 const Section03__Title = styled.div`
@@ -134,13 +141,29 @@ const Section03__Title = styled.div`
     padding-bottom:10px;
     margin:0;
     `}
+    ${breakpoint('lg')`
+    margin:auto;
+    `}
+    ${breakpoint('xl')`
+    max-width: 683px;
+    `}
 `
 const StyledCarousel = styled(CardCarousel)`
     margin-bottom:30px;
-    ${breakpoint('md')`
+    margin:auto;
+`
+const Box= styled.div`
+${breakpoint('md')`
     grid-area: c;
     `}
-`
+    ${breakpoint('lg')`
+    max-width: 600px;
+    `}
+    ${breakpoint('xl')`
+    max-width: 683px;
+    grid-area: c;
+    `}
+    `
 /**** Section 04 ****/
 
 const Section04__TitleDiv = styled.div`
@@ -161,8 +184,7 @@ const Section04__Title = styled.div`
     // margin-top:30px;
     ${breakpoint('md')`
     margin-top:0;
-    padding-top:80px; 
-    padding-bottom:10px;  
+    padding: 80px 0 10px;
     `}
     ${breakpoint('lg')`
     max-width:400px;

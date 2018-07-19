@@ -9,12 +9,15 @@ import Section06BgLg from '../../../../../Assets/Images/easyform-functions_web.p
 
 const Title = css`
     color:${Themes.colors.blue};
-    font-size:${Themes.fontsize.h2};
+    font-size:${Themes.fontsize.h3};
     font-weight:${Themes.fontWeight.black};
     text-align:center;
     line-height:30px;
     text-transform:uppercase;
     letter-spacing:5px;
+    ${breakpoint('lg')`
+    font-size:${Themes.fontsize.h2};
+    `}
 `
 
 class Section6 extends Component{

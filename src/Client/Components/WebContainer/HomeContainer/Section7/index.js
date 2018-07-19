@@ -10,12 +10,15 @@ import Section07Icon03 from '../../../../../Assets/Images/for-management.png';
 
 const Title = css`
     color:${Themes.colors.blue};
-    font-size:${Themes.fontsize.h2};
+    font-size:${Themes.fontsize.h3};
     font-weight:${Themes.fontWeight.black};
     text-align:center;
     line-height:30px;
     text-transform:uppercase;
     letter-spacing:5px;
+    ${breakpoint('lg')`
+    font-size:${Themes.fontsize.h2};
+    `}
 `
 const LightGreyBg = css`
   background-color:rgba(238,238,238,0.6);
@@ -80,6 +83,9 @@ const Section07__Text = styled.div`
 `
 const Section07__Contents = styled.div`
     margin:0 auto;
+    display: grid;
+    grid-templete-column: 1fr 1fr 1fr;
+    grid-gab: 3px;
         ${breakpoint('md')`
         display:flex;
         justify-content:space-around;
@@ -88,13 +94,13 @@ const Section07__Contents = styled.div`
         `} 
 `
 const Section07__ContentDiv = styled.div`
-    margin:50px auto 0 auto;
-    ${breakpoint('md')`
-      width:240px;
-    `} 
+    // margin:50px auto 0 auto;
+    // ${breakpoint('md')`
+    //   width:240px;
+    // `} 
 `
 const Section07__Icon = styled.img`
-    width:120px;
+    // width:100%;
     height:auto;
     display:block;
     margin:0 auto;

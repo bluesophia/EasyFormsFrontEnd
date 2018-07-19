@@ -8,12 +8,16 @@ import FeaturesCarousel from '../../../Common/FeaturesCarousel';
 
 const Title = css`
     color:${Themes.colors.blue};
-    font-size:${Themes.fontsize.h2};
+    font-size:${Themes.fontsize.h3};
     font-weight:${Themes.fontWeight.black};
     text-align:center;
     line-height:30px;
     text-transform:uppercase;
     letter-spacing:5px;
+    padding: 0 10%;
+    ${breakpoint('lg')`
+    font-size:${Themes.fontsize.h2};
+    `}
 `
 const LightGreyBg = css`
   background-color:rgba(238,238,238,0.6);
@@ -41,7 +45,7 @@ const Section05 = styled.div`
 `
 const Section05__Container = styled.div`
     margin:0 auto;
-    padding: 60px 0;
+    padding: 18% 0 10%;
     ${breakpoint('sm')`
         padding: 60px 8%;
     `}
@@ -50,7 +54,7 @@ const Section05__Container = styled.div`
     `}
     ${breakpoint('lg')`
         padding: 100px 10%;
-       height:768px;
+         height:768px;
         max-width: 1366px;
         display: flex;
         flex-direction: column;

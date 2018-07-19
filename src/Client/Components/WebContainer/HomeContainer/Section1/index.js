@@ -59,7 +59,7 @@ const Section01 = styled.div`
 const Container = styled.div`
     display:flex;
     flex-direction:column;
-    margin:0;
+    margin:0 auto;
     ${breakpoint('lg')`
         max-width: 1366px;
         justify-content:space-between;
