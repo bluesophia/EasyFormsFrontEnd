@@ -4,6 +4,7 @@ import breakpoint from 'styled-components-breakpoint';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Themes from '../../../Assets/Styles/Themes';
 import HeaderLine from '../../Components/Common/HeaderLine';
+import { Link } from 'react-router-dom';
 
 /** Images **/
 import CustomerStoriesBg from '../../../Assets/Images/customer-stories.jpg';
@@ -26,8 +27,6 @@ import Section07 from '../../Components/WebContainer/HomeContainer/Section7';
 
 injectGlobal`
   body{
-    margin:0;
-    padding:0;
     font-family:Lato;
   }
 `
@@ -50,42 +49,45 @@ const LightGreyBg = css`
   background-color:rgba(238,238,238,0.6);
 `
 
-const HomeContainer =() => (
+class HomeScreen extends Component{  
+    render(){
+        return(
             <ThemeProvider theme={Themes}>
             <Home>
-            <Section0102>
-                <Section1 />
-                <Section2 />
-            </Section0102>
+                <Section0102>
+                    <Section1 />
+                    <Section2 />
+                </Section0102>
                 <Section0304>
-                        <Section03__Title>
-                            Customer Stories
-                        </Section03__Title>
-                        <StyledCarousel />
-                        <Section04__TitleDiv>
-                            <Section04__Title>
-                                Here Are Just a Few of the Clients <br />We Work With:
-                            </Section04__Title>
-                        </Section04__TitleDiv>
-                        <Section04>
-                            <Section04__Logos>
-                                <Section04__Logo src={Logo01}/>
-                                <Section04__Logo src={Logo02}/>
-                                <Section04__Logo src={Logo03}/>
-                                <Section04__Logo src={Logo04}/>
-                                <Section04__Logo src={Logo05}/>
-                                <Section04__Logo src={Logo06}/>
-                                <Section04__Logo src={Logo07}/>
-                            </Section04__Logos>
-                        </Section04>
+                    <Section03__Title>
+                        Customer Stories
+                    </Section03__Title>
+                    <StyledCarousel />
+                    <Section04__TitleDiv>
+                        <Section04__Title>
+                            Here Are Just a Few of the Clients <br />We Work With:
+                        </Section04__Title>
+                    </Section04__TitleDiv>
+                    <Section04>
+                        <Section04__Logos>
+                            <Section04__Logo src={Logo01}/>
+                            <Section04__Logo src={Logo02}/>
+                            <Section04__Logo src={Logo03}/>
+                            <Section04__Logo src={Logo04}/>
+                            <Section04__Logo src={Logo05}/>
+                            <Section04__Logo src={Logo06}/>
+                            <Section04__Logo src={Logo07}/>
+                        </Section04__Logos>
+                    </Section04>
                 </Section0304>
                 <Section05 />
                 <Section06 />
                 <Section07 />
             </Home>
-            </ThemeProvider>
+        </ThemeProvider>
         )
-
+    }
+}
 const Home = styled.div`
 `
 const Section0102 = styled.div`
@@ -100,7 +102,7 @@ linear-gradient(
 url(${CustomerStoriesBg});
 background-size:cover;
 background-repeat:no-repeat;
-background-position:left top;
+background-position:center top;
 display:flex;
 flex-direction:column;
     ${breakpoint('md')`
@@ -188,5 +190,4 @@ const Section04__Logo = styled.img`
     `}
 
 `
-
-export default HomeContainer;
+export default HomeScreen;

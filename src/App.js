@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faBars, 
          faPaperPlane, 
@@ -19,7 +18,6 @@ import { faBars,
          faFileInvoice,   
          faLocationArrow          
           } from '@fortawesome/free-solid-svg-icons';
-// import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import 'normalize.css';
 import Header from './Client/Components/WebContainer/HeaderContainer';
 import Footer from './Client/Components/WebContainer/FooterContainer';
@@ -45,13 +43,17 @@ library.add(
   faLocationArrow
 )
 
-const App = () => (
-  <div>
-    <Header />
-    <Routes />
-    <Footer />
-  </div>
-);
+class App extends Component {  
+  render(){
+    return(
+      <div>
+          <Header />
+          <Routes />
+          <Footer />
+      </div>
+    )
+  }
+}
 
 export default App;
 

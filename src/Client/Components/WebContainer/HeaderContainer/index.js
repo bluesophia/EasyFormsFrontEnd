@@ -6,9 +6,20 @@ import Themes from '../../../../Assets/Styles/Themes';
 import { Link } from 'react-router-dom';
 import Logo from '../../../../Assets/Images/logo.png';
 
-  const HeaderContainer = () => ({
-          render: function() {
-            return (
+class HeaderContainer extends Component {
+	
+	burgerToggle = () => {
+		let linksEl = document.querySelector('.narrowLinks');
+		if (linksEl.style.display === 'flex') {
+			linksEl.style.display = 'none';
+		} else {
+			linksEl.style.display = 'flex';
+			linksEl.style.justifyContent = 'center';
+			linksEl.style.flexDirection = 'column';
+		}
+	}
+	render(){
+		return (
 			<ThemeProvider theme={Themes}>
 				<Nav>
 				<Container>
@@ -58,18 +69,8 @@ import Logo from '../../../../Assets/Images/logo.png';
 				</Nav>
 			</ThemeProvider>
             );
-					},
-					burgerToggle: function() {
-						let linksEl = document.querySelector('.narrowLinks');
-						if (linksEl.style.display === 'flex') {
-							linksEl.style.display = 'none';
-						} else {
-							linksEl.style.display = 'flex';
-							linksEl.style.justifyContent = 'center';
-							linksEl.style.flexDirection = 'column';
-						}
-					}
-});
+	}
+}
 
 const Box = styled.div`
     display: flex;
@@ -101,8 +102,7 @@ const Sns = styled.a`
 		padding: 1em 0 0 1em;
 	  }
 	`}
-
-`;
+`
 
 const LogoImg = styled.img`
 	width:120px;
@@ -110,12 +110,23 @@ const LogoImg = styled.img`
 	position:absolute;
 	${breakpoint('lg')`
 		width:160px;
-		
 	`}
 `
 const LinkedLogo = styled(Link)`
-height:32px;
-`;
+	height:32px;
+`
+// const LinkedLogo = styled(Link)`
+// //	height:32px;
+// 	width:120px;
+// 	height:auto;
+// 	cursor:'pointer';
+// 	background-image:url(${Logo});
+// 	background-size:100% auto;
+// 	background-repeat:no-repeat;
+// 	${breakpoint('lg')`
+// 		width:160px;
+// 	`}
+// `
 
 const Nav = styled.div`
 	z-index:1;
@@ -191,7 +202,7 @@ font-size: 1em;
 padding: 1em;
 text-transform: uppercase;
 font-weight: ${Themes.fontWeight.regular};
-
+cursor:'pointer';
 ${breakpoint('md')`
 padding: 1em 0.5em;
 	`}

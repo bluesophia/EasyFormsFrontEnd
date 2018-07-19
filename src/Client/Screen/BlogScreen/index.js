@@ -8,51 +8,51 @@ import SectionBg01 from '../../../Assets/Images/blog_1.jpg';
 import SectionBg02 from '../../../Assets/Images/blog_2.jpg';
 import { BlogToggleSec1, BlogToggleSec2 } from '../../Components/WebContainer/BlogToggleContainer';
 
-const BlogScreen = () => ({
-  render: function(){
+class BlogScreen extends Component {
+  render(){
     return(
-      <ThemeProvider theme={Themes}>
-      <Container>
+        <ThemeProvider theme={Themes}>
+        <Container>
 
-        {/* Section1 */}
-        <Section>
-          <Section__Header01>
-            {/* Title */}
-            <Section__TitleDiv>
-              <Section__Title>Is Timesheet Theft Giving You a Constant Headache?</Section__Title>
-              <HeaderLine />
-            </Section__TitleDiv>
-          </Section__Header01>
-            {/* Contents */}
-            <Section__FirstBlog>
-            </Section__FirstBlog>
-            <Section__Contents>
-              <BlogToggleSec1 /> 
-            </Section__Contents>
-        </Section>
+          {/* Section1 */}
+          <Section>
+            <Section__Header01>
+              {/* Title */}
+              <Section__TitleDiv>
+                <Section__Title>Is Timesheet Theft Giving You a Constant Headache?</Section__Title>
+                <HeaderLine />
+              </Section__TitleDiv>
+            </Section__Header01>
+              {/* Contents */}
+              <Section__FirstBlog>
+              </Section__FirstBlog>
+              <Section__Contents>
+                <BlogToggleSec1 /> 
+              </Section__Contents>
+          </Section>
 
-        {/* Section2 */}
-        <Section>
-          <Section__Header02>
-            {/* Title */}
-            <Section__TitleDiv>
-              <Section__Title>Are Mountains of Paperwork Dragging Your Business Down?</Section__Title>
-              <HeaderLine />
-            </Section__TitleDiv>
-          </Section__Header02>
-            {/* Contents */}
-            <Section__FirstBlog>
-            </Section__FirstBlog>
-            <Section__Contents>
-              <BlogToggleSec2 /> 
-            </Section__Contents>
-        </Section>
-      </Container>
-    </ThemeProvider>
+          {/* Section2 */}
+          <Section>
+            <Section__Header02>
+              {/* Title */}
+              <Section__TitleDiv>
+                <Section__Title>Are Mountains of Paperwork Dragging Your Business Down?</Section__Title>
+                <HeaderLine />
+              </Section__TitleDiv>
+            </Section__Header02>
+              {/* Contents */}
+              <Section__FirstBlog>
+              </Section__FirstBlog>
+              <Section__Contents>
+                <BlogToggleSec2 /> 
+              </Section__Contents>
+          </Section>
+        </Container>
+      </ThemeProvider>
     )
-  },
+  }
 }
-)
+
 const Container = styled.div`
     position:relative;
 `

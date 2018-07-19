@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, { css, ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 import Themes from '../../../../Assets/Styles/Themes';
+import { Link } from 'react-router-dom';
 
 const Shadow = css`
     box-shadow : 0 0 8px rgba(50, 50, 93, 0.23);
@@ -10,19 +11,16 @@ class Button extends Component {
     render(){
         return (
             <ThemeProvider theme={Themes}>
-                {/* <Link href={this.props.link}> */}
                     <ButtonStyle>
                         <Text>{this.props.value}</Text>
                     </ButtonStyle>
-                {/* </Link> */}
             </ThemeProvider>
         );
     }
 }
 
 Button.propTypes = {
-    value: PropTypes.string,
-    // link: PropTypes.link
+    value: PropTypes.string
   };
 const ButtonStyle = styled.button`
     background:${Themes.background.yellowToOrange};

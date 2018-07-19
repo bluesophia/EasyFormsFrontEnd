@@ -28,6 +28,32 @@ export default class BlogToggleSec2 extends Component {
     }
     
     render() {
+      const contentList02 = () => {
+        return (
+          <div style={style}>
+            <ul>
+              <li>Automate paper forms into mobile forms, whether it be: a job or daily worksheet, 
+                H&S inductions or documents, expense forms, SSSP’s, site inspections, vehicle inspections, 
+                checklists, pre-starts, maintenance sheets, near misses -- the list goes on! We can take 
+                almost any form (that you have on paper) and transform it into an app-based form</li>
+              <li>Streamline quoting - don’t let manual quoting take up any more of your valuable time</li>
+              <li>Purchase orders</li>
+              <li>Dockets</li>
+              <li>Timesheets</li>
+              <li>Health & safety processes - we can drive a process that you specify</li>
+              <li>Sales pipelines</li>
+              <li>CRM</li>
+              <li>Job management</li>
+              <li>Project management</li>
+              <li>GPS tracking of your fleets location</li>
+              <li>Reporting - well designed reporting that is available to you in a few simple clicks</li>
+              <li>Invoicing, plus more</li>
+              <li>Save the trees - be an eco-friendly business. Less paper not only means being more efficient, but you can also help save the trees</li>
+              <li>Something else you need? As we are customisable speak to us today about your business requirements</li>
+            </ul>
+          </div>
+        )
+      }
       const accordionList = [
       { id:0,
         title: 'Do any of these words and phrases ring true for your business?',
@@ -102,7 +128,7 @@ export default class BlogToggleSec2 extends Component {
         company, to help you work smarter and more efficiently." },
       { id:5,
         title: 'Here’s a “portion” of how we can help your business:',
-        content: ""
+        content: contentList02()
        },
     ];
       
@@ -117,4 +143,9 @@ export default class BlogToggleSec2 extends Component {
         </dl> 
       </div>;
     }
+  }
+
+  const style = {
+    paddingRight:30,
+    paddingLeft:-30
   }

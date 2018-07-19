@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import styled, { css, ThemeProvider } from 'styled-components';
+import { css } from 'styled-components';
 import Themes from '../../../../Assets/Styles/Themes';
 
 export default Text = css`
