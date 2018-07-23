@@ -110,17 +110,26 @@ linear-gradient(
 url(${CustomerStoriesBg});
 background-size:cover;
 background-repeat:no-repeat;
-background-position:center top;
+background-position:left top;
 display:flex;
 flex-direction:column;
     ${breakpoint('md')`
+    background-size:50% 100%;
         display:grid;
-        grid-gap: 0 20px;
+        grid-gap: 0;
         padding-left: 20px;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 50% 50%;
         grid-template-rows: 140px 1fr;
         grid-template-areas: "a b"
                              "c d";
+    `}
+    ${breakpoint('lg')`
+        grid-template-columns: 1fr 590px 590px 1fr;
+        grid-gap: 0;
+        grid-template-rows: 140px 1fr;
+        grid-template-areas: "e a b f"
+                             "g c d h";
+
     `}
     ${breakpoint('xl')`
         grid-template-columns: 1fr 683px 683px 1fr;
@@ -141,9 +150,6 @@ const Section03__Title = styled.div`
     padding-bottom:10px;
     margin:0;
     `}
-    ${breakpoint('lg')`
-    margin:auto;
-    `}
     ${breakpoint('xl')`
     max-width: 683px;
     `}
@@ -153,14 +159,16 @@ const StyledCarousel = styled(CardCarousel)`
     margin:auto;
 `
 const Box= styled.div`
+//  max-width: 683px;
 ${breakpoint('md')`
+    // max-width: 530px;
     grid-area: c;
     `}
     ${breakpoint('lg')`
-    max-width: 600px;
+    max-width: 590px;
     `}
     ${breakpoint('xl')`
-    max-width: 683px;
+    max-width: 673px;
     grid-area: c;
     `}
     `
@@ -192,7 +200,7 @@ const Section04__Title = styled.div`
     `}
 `
 const Section04 = styled.div`
-    padding: 20px 8% 40px 8%;
+    padding: 2% 8% 40px 8%;
     background-color:white;
     ${breakpoint('md')`
     grid-area: d;
@@ -203,14 +211,14 @@ const Section04__Logos = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 5%;
     margin: auto;
-    padding-top:50px;
+    padding-top:5%;
     ${breakpoint('lg')`
     max-width:400px;
     margin:0 auto;
     `}
 `
 const Section04__Logo = styled.img`
-    width:100px;
+    width:40%;
     height:auto;
     margin:20px auto 40px auto;  
     ${breakpoint('sm')`

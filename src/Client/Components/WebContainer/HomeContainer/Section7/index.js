@@ -94,13 +94,12 @@ const Section07__Contents = styled.div`
         `} 
 `
 const Section07__ContentDiv = styled.div`
-    // margin:50px auto 0 auto;
-    // ${breakpoint('md')`
-    //   width:240px;
-    // `} 
+    margin:50px auto 0 auto;
+    ${breakpoint('md')`
+      width:240px;
+    `} 
 `
 const Section07__Icon = styled.img`
-    // width:100%;
     height:auto;
     display:block;
     margin:0 auto;
