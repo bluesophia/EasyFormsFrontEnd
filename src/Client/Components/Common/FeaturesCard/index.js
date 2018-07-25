@@ -25,7 +25,7 @@ class FeaturesCard extends Component {
         height:400px;
         margin:20px auto;
         background-color:white;
-        padding: 35px 20px;
+        padding: 40px 18px;
         box-sizing: border-box;
         ${Shadow};
     `
@@ -44,7 +44,7 @@ class FeaturesCard extends Component {
         font-size:${Themes.fontsize.p2};
         font-weight:${Themes.fontWeight.black};
         text-align:center;
-        margin:20px 0 30px 0;
+        margin:20px 0 20px 0;
         line-height:23px;
         padding:0;
     `

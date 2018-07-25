@@ -21,7 +21,7 @@ Button.propTypes = {
     value: PropTypes.string
   };
 const ButtonStyle = styled.button`
-    background-color:${Themes.colors.yellow};
+    background:linear-gradient(${Themes.colors.yellow},${Themes.colors.orange});
     width:100%;
     height:auto;
     color:${Themes.colors.blue};

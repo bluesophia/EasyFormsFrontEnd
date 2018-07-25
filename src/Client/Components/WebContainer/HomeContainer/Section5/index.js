@@ -48,6 +48,7 @@ const Section05__Container = styled.div`
 `
 const Section05__Title = styled.div`
     ${Title};
+    padding:0 8%;
 `
 
 export default Section5;
