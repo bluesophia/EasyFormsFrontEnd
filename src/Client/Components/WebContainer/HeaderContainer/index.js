@@ -7,17 +7,6 @@ import { Link } from 'react-router-dom';
 import Logo from '../../../../Assets/Images/logo.png';
 
 class HeaderContainer extends Component {
-	
-	burgerToggle = () => {
-		let linksEl = document.querySelector('.narrowLinks');
-		if (linksEl.style.display === 'flex') {
-			linksEl.style.display = 'none';
-		} else {
-			linksEl.style.display = 'flex';
-			linksEl.style.justifyContent = 'center';
-			linksEl.style.flexDirection = 'column';
-		}
-	}
 	render(){
 		return (
 			<ThemeProvider theme={Themes}>
@@ -69,6 +58,16 @@ class HeaderContainer extends Component {
 				</Nav>
 			</ThemeProvider>
             );
+	}
+	burgerToggle = () => {
+		let linksEl = document.querySelector('.narrowLinks');
+		if (linksEl.style.display === 'flex') {
+			linksEl.style.display = 'none';
+		} else {
+			linksEl.style.display = 'flex';
+			linksEl.style.justifyContent = 'center';
+			linksEl.style.flexDirection = 'column';
+		}
 	}
 }
 
@@ -129,7 +128,7 @@ const LinkedLogo = styled(Link)`
 // `
 
 const Nav = styled.div`
-	z-index:1;
+//	z-index:1;
 	background-color: ${Themes.colors.blue};
 	overflow: hidden;
 //	display:flex;
@@ -192,7 +191,7 @@ const icon = {
 	clear: 'right',
 	cursor: 'pointer',
 	color: '#FFF',
-	height: 'auto',
+	height: 'auto'
 };
 
 const StyledLink = styled(Link)`

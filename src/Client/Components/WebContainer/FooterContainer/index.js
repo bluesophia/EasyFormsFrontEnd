@@ -81,7 +81,7 @@ class FooterContainer extends Component {
 
 const Footer = styled.div`
   font-family: Lato;
-  background: linear-gradient(${Themes.colors.blueLight}, ${Themes.colors.blue});
+  background-color:${Themes.colors.blue};
   padding: 0 10%;
 `;
 
@@ -201,4 +201,4 @@ padding: 0.25em 0;
 color: ${Themes.colors.lightGrey};
 `;
 
-  export default FooterContainer;
+export default FooterContainer;

@@ -2,62 +2,17 @@ import React, { Component } from 'react';
 import styled, { css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import FeaturesCard from '../FeaturesCard';
-// import ArrowLeft from '../Arrows/arrowLeft';
-// import ArrowRight from '../Arrows/arrowRight';
-import ArrowRightIcon from '../../../../Assets/Images/arrowRight.png';
-import ArrowLeftIcon from '../../../../Assets/Images/arrowLeft.png';
-
+import ArrowLeft from '../Arrows/arrowLeft';
+import ArrowRight from '../Arrows/arrowRight';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Themes from '../../../../Assets/Styles/Themes';
 import Slider from "react-slick";
 
-function ArrowRight(props) {
-  const { onClick, className } = props;
-  return (
-    <ArrowStyle
-      src={ArrowRightIcon}
-      onClick={onClick}
-      className={className}
-      right
-    />
-  );
-}
-
-function ArrowLeft(props) {
-  const { onClick, className } = props;
-  return (
-    <ArrowStyle
-      src={ArrowLeftIcon}
-      onClick={onClick}
-      className={className}
-      left
-    />
-  );
-}
-
-const ArrowStyle = styled.img`
-  width:10px;
-  height:20px;
-  margin:10px;
-  left: ${props => props.left ? '-28px' : 'inherit'};  
-  right: ${props => props.right ? '-28px' : 'inherit'};
-  ${breakpoint('sm')`
-  width:14px;
-  height:28px;
-  left: ${props => props.left ? '-20px' : 'inherit'};  
-  right: ${props => props.right ? '-20px' : 'inherit'};
-  `}
-  ${breakpoint('md')`
-  width:14px;
-  height:28px;
-  left: ${props => props.left ? '-50px' : 'inherit'};    
-  right: ${props => props.right ? '-50px' : 'inherit'};
-  `}
-  ${breakpoint('lg')`
-  left: ${props => props.left ? '-70px' : 'inherit'};  
-  right: ${props => props.right ? '-70px' : 'inherit'};
-	`}
-`
+const ArrowPosition = [
+  {sm : '-10px'},
+  {md : '-50px'},
+  {lg : '-70px'}
+]
 
 class FeaturesCarousel extends Component {
 render () {
@@ -67,9 +22,10 @@ render () {
     slidesToShow: 4,
     slidesToScroll: 4,
     initialSlide: 0,
+    dots:true,
     arrows:true,
-    nextArrow: <ArrowRight />,
-    prevArrow: <ArrowLeft />,
+    nextArrow: <ArrowRight position={ArrowPosition}/>,
+    prevArrow: <ArrowLeft position={ArrowPosition}/>,
     responsive: [
       {
         breakpoint: 1200,

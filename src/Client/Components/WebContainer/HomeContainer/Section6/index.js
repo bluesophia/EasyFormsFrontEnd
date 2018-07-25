@@ -3,27 +3,14 @@ import styled, { injectGlobal, css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../../Assets/Styles/Themes';
 import HeaderLine from '../../../Common/HeaderLine';
+import Title from '../../../Common/Title/Title';
 
 import Section06BgSm from '../../../../../Assets/Images/easyform-functions_mobile.png';
 import Section06BgLg from '../../../../../Assets/Images/easyform-functions_web.png';
 
-const Title = css`
-    color:${Themes.colors.blue};
-    font-size:${Themes.fontsize.h3};
-    font-weight:${Themes.fontWeight.black};
-    text-align:center;
-    line-height:30px;
-    text-transform:uppercase;
-    letter-spacing:5px;
-    ${breakpoint('lg')`
-    font-size:${Themes.fontsize.h2};
-    `}
-`
-
 class Section6 extends Component{
     render(){
         return(
-            <ThemeProvider theme={Themes}>
                 <Section06>
                     <Section06__TitleDiv>
                         <Section06__Title>Easyforms Function</Section06__Title>
@@ -31,7 +18,6 @@ class Section6 extends Component{
                     </Section06__TitleDiv>
                     <Section06__Image />
                 </Section06>
-            </ThemeProvider>
         )
     }
 }
@@ -49,26 +35,22 @@ const Section06 = styled.div`
      padding:0;
      height:768px;
     `}
-    ${breakpoint('xl')`
-  //      height:80vh;
-    `}
 `
 const Section06__TitleDiv = styled.div`
     ${breakpoint('lg')`
- //     background-color: white;
         height:30%;
         display:flex;
         flex-direction:column;
         align-items:center;
         justify-content:flex-end;
     `}
-    // ${breakpoint('xl')`
-    //      height:25%;
-    // `}
 `
 const Section06__Title = styled.div`
-   padding-top:2.5em;
-    ${Title};
+   ${Title};
+   margin-top:18%;
+    ${breakpoint('md')`
+        margin-top:60px;
+    `}
 `
 const Section06__Image = styled.div`
 

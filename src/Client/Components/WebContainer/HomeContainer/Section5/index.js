@@ -3,22 +3,10 @@ import styled, { css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../../Assets/Styles/Themes';
 import HeaderLine from '../../../Common/HeaderLine';
+import Title from '../../../Common/Title/Title';
 
 import FeaturesCarousel from '../../../Common/FeaturesCarousel';
 
-const Title = css`
-    color:${Themes.colors.blue};
-    font-size:${Themes.fontsize.h3};
-    font-weight:${Themes.fontWeight.black};
-    text-align:center;
-    line-height:30px;
-    text-transform:uppercase;
-    letter-spacing:5px;
-    padding: 0 10%;
-    ${breakpoint('lg')`
-    font-size:${Themes.fontsize.h2};
-    `}
-`
 const LightGreyBg = css`
   background-color:rgba(238,238,238,0.6);
 `
@@ -37,11 +25,8 @@ class Section5 extends Component{
     }
 }
 
-/**** Section 05 ****/
-
 const Section05 = styled.div`
     ${LightGreyBg};
-
 `
 const Section05__Container = styled.div`
     margin:0 auto;
@@ -54,14 +39,11 @@ const Section05__Container = styled.div`
     `}
     ${breakpoint('lg')`
         padding: 100px 10%;
-         height:768px;
+        height:768px;
         max-width: 1366px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-    `}
-    ${breakpoint('xl')`
- //      height:80vh;
     `}
 `
 const Section05__Title = styled.div`
