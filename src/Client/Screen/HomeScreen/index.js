@@ -51,10 +51,12 @@ class HomeScreen extends Component{
                     </Section0102>
                     <Section0304>
                         <Section03>
-                            <Section03__Title>
-                                Customer Stories
-                            </Section03__Title>
-                            <StyledCarousel />
+                            <Section03__Div>
+                                <Section03__Title>
+                                    Customer Stories
+                                </Section03__Title>
+                                <StyledCarousel />
+                            </Section03__Div>
                         </Section03>
                         <Section04>
                             <Section04__TitleDiv>
@@ -109,7 +111,13 @@ const Section03 = styled.div`
             width:50%;
         `}
 `
-
+const Section03__Div = styled.div`
+    margin:0 auto;
+    max-width:600px;
+    ${breakpoint('xl')`
+        margin-right:50px;
+    `}    
+`
 const Section03__Title = styled.div`
     ${Title};
     color:white;
@@ -132,7 +140,6 @@ const Section04 = styled.div`
     `}
 `
 const Section04__TitleDiv = styled.div`
-
 `
 const Section04__Title = styled.div` 
     color:${Themes.colors.blue};
@@ -153,11 +160,12 @@ const Section04__Title = styled.div`
         max-width:400px;
         margin:0 auto;
         `}
+        ${breakpoint('xl')`
+        margin-left:50px;
+        `} 
 `
 const Section04__LogosDiv = styled.div`
     padding: 20px 8% 40px 8%;
-    ${breakpoint('md')`
-    `}
 `
 const Section04__Logos = styled.div`
     display:grid;
@@ -169,6 +177,9 @@ const Section04__Logos = styled.div`
     max-width:400px;
     margin:0 auto;
     `}
+    ${breakpoint('xl')`
+    margin-left:50px;
+    `} 
 `
 const Section04__Logo = styled.img`
     width:100px;
