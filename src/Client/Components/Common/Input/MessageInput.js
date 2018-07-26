@@ -16,18 +16,18 @@ export default class MessageInput extends Component {
     // const { value } = this.state;
     return (
       <ThemeProvider theme={Themes}>
-      <Container>
-      <Label_Div>  
-      <Label>Let us know how we can help</Label><P>Required</P><br />
-      </Label_Div>
-      <Input
-        // value={value}
-        name="text"
-        label="label"
-        onChange={this.handleUpdateValue}
-        style={{height:this.props.height}}
-      />
-      </Container>
+        <Container>
+          <Label_Div>  
+          <Label>Let us know how we can help</Label><P>Required</P><br />
+          </Label_Div>
+            <Input
+              // value={value}
+              name="text"
+              label="label"
+              onChange={this.handleUpdateValue}
+              style={{height:this.props.height}}
+            />
+        </Container>
       </ThemeProvider>
     )
   }
@@ -38,7 +38,7 @@ const Container = styled.div`
   margin-top: 0;
   width: 100%;
   height: 100%;
-  margin-bottom:inherit;
+  margin-bottom:3em;
 `
 const Label_Div = styled.div`
   display: flex;
@@ -48,8 +48,7 @@ const Label = styled.label`
   font-size: ${Themes.fontsize.p2}
   font-weight: ${Themes.fontWeight.bold}
   color: ${Themes.colors.blueLight};
-  `;
-
+  `
 const P = styled.p`
   font-size: ${Themes.fontsize.p4}
   font-weight: ${Themes.fontWeight.light}
@@ -57,19 +56,18 @@ const P = styled.p`
   margin: 0;
   margin-left: 10px;
   padding:0;
-`;
-
-const Input = styled.input.attrs({
-  type: 'text',
+`
+const Input = styled.textarea.attrs({
+  maxlength: 500,
+  rows:8
 })`
   box-sizing:border-box;
   width:100%;
-  height:inherit;
+  height:auto;
   background: none;
   border-radius: 5px;
   border: 1px solid ${Themes.colors.formGrey};
   color: ${Themes.colors.formGrey};
-  //padding: ${props => props.padding};
   padding:0.5em;
   margin-top: 10px;
   &:focus {

@@ -49,7 +49,6 @@ class SupportScreen extends Component{
               depending on the scale of your request this could take slightly longer.</TitleDiv__Text>
           </TitleDiv>
         </Header>
-        {/* <Contents> */}
           <FormDiv>
             <Form>
               <InputDiv>
@@ -59,7 +58,7 @@ class SupportScreen extends Component{
                   <EmailInput />
                 </InputDiv__Left>
                 <InputDiv__Right>
-                  <MessageInput__Div><MessageInput /></MessageInput__Div>
+                    <MessageInput />
                   <UploadInput />
                 </InputDiv__Right>
               </InputDiv>
@@ -68,7 +67,6 @@ class SupportScreen extends Component{
               </ButtonDiv>      
             </Form>
           </FormDiv>
-        {/* </Contents> */}
       </Container>
     </div>
   </ThemeProvider>
@@ -137,14 +135,6 @@ const TitleDiv__Text = styled.div`
     text-align:center;
   `}
 `
-
-// const Contents = styled.div`
-//   display:flex;
-//   flex-direction:column;
-//     ${breakpoint('lg')`
-//       flex-direction:column-reverse;
-//     `}
-// `
 const FormDiv = styled.div` 
   display:flex;
   flex-direction:column;
@@ -185,13 +175,6 @@ const InputDiv__Left = styled.div`
 `
 const InputDiv__Right = styled.div``
 
-const MessageInput__Div = styled.div`
-  height:200px;
-  margin-bottom:50px;
-  ${breakpoint('lg')`
-    height:180px;
-  `}
-`
 const ButtonDiv = styled.div`
   display:flex;
   flex-direction:column;
