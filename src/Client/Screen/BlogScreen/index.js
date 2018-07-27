@@ -13,34 +13,27 @@ class BlogScreen extends Component {
     return(
         <ThemeProvider theme={Themes}>
         <Container>
-
-          {/* Section1 */}
           <Section>
             <Section__Header01>
-              {/* Title */}
               <Section__TitleDiv>
                 <Section__Title>Is Timesheet Theft Giving You a Constant Headache?</Section__Title>
                 <HeaderLine />
               </Section__TitleDiv>
             </Section__Header01>
-              {/* Contents */}
+             
               <Section__FirstBlog>
               </Section__FirstBlog>
               <Section__Contents>
                 <BlogToggleSec1 /> 
               </Section__Contents>
           </Section>
-
-          {/* Section2 */}
           <Section>
             <Section__Header02>
-              {/* Title */}
               <Section__TitleDiv>
                 <Section__Title>Are Mountains of Paperwork Dragging Your Business Down?</Section__Title>
                 <HeaderLine />
               </Section__TitleDiv>
             </Section__Header02>
-              {/* Contents */}
               <Section__FirstBlog>
               </Section__FirstBlog>
               <Section__Contents>

@@ -22,7 +22,7 @@ export default class BlogToggleSec1 extends Component {
     render() {
       const contentList01 = () => {
         return (
-          <div style={style}>
+          <div style={contentListStyle}>
             <ul>
               <li>Capture ACTUAL time spent on jobs - with an auto time stamping capability</li>
               <li>Capture time spent on individual or multiple jobs and even against segments of a project</li>
@@ -91,7 +91,7 @@ export default class BlogToggleSec1 extends Component {
       
 
       return <div className="container">
-        <dl className="accordion">
+        <dl className="accordion" style={style}>
           {
             accordionList.map((item, index) => (
               <Accordion 
@@ -108,7 +108,11 @@ export default class BlogToggleSec1 extends Component {
     }
   }
 
-const style = {
+const contentListStyle = {
   paddingRight:30,
   paddingLeft:-30
+}
+
+const style = {
+  marginBottom:4
 }

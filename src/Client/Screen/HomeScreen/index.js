@@ -10,7 +10,7 @@ import Title from '../../Components/Common/Title/Title';
 import CustomerStoriesBg from '../../../Assets/Images/customer-stories.jpg';
 
 /** Logos **/
-import Logo01 from '../../../Assets/Images/ak_council.jpg';
+import Logo01 from '../../../Assets/Images/auckland.gif';
 import Logo02 from '../../../Assets/Images/passrite.gif';
 import Logo03 from '../../../Assets/Images/toyota.gif';
 import Logo04 from '../../../Assets/Images/sharp.gif';

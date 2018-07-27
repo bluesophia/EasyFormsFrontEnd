@@ -30,7 +30,7 @@ export default class BlogToggleSec2 extends Component {
     render() {
       const contentList02 = () => {
         return (
-          <div style={style}>
+          <div style={contentListStyle}>
             <ul>
               <li>Automate paper forms into mobile forms, whether it be: a job or daily worksheet, 
                 H&S inductions or documents, expense forms, SSSP’s, site inspections, vehicle inspections, 
@@ -134,7 +134,7 @@ export default class BlogToggleSec2 extends Component {
       
 
       return <div className="container">
-        <dl className="accordion">
+        <dl className="accordion" style={style}>
           {
             accordionList.map((item, index) => (
               <Accordion key={accordionList.id} title={item.title} content={item.content} onClick={this.toggle(index + 1)} expand={this.state[`block${index+1}`]} />
@@ -145,7 +145,11 @@ export default class BlogToggleSec2 extends Component {
     }
   }
 
-  const style = {
+  const contentListStyle = {
     paddingRight:30,
     paddingLeft:-30
+  }
+
+  const style = {
+    marginBottom:4
   }

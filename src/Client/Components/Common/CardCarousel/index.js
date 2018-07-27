@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled, { css, ThemeProvider } from 'styled-components';
-import Logo01 from '../../../../Assets/Images/ak_council.jpg';
+import Logo01 from '../../../../Assets/Images/auckland.gif';
 import Logo02 from '../../../../Assets/Images/passrite.gif';
 import Logo03 from '../../../../Assets/Images/toyota.gif';
 import Card from '../Card';
