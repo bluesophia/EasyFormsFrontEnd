@@ -6,14 +6,14 @@ import Themes from '../../../Assets/Styles/Themes';
 import HeaderLine from '../../Components/Common/HeaderLine';
 import Text from '../../Components/Common/Text';
 import BigTitle from '../../Components/Common/Title/BigTitle.js';
-import Section01Bg from '../../../Assets/Images/support.png';
+import Section01Bg from '../../../Assets/Images/support.jpg';
 
 import { UploadInput,
           CompanyNameInput,
           EmailInput,
           MessageInput,
           FullNameInput }from '../../Components/Common/Input';
-import Button from '../../Components/Common/Button';
+import Button01 from '../../Components/Common/Button/Button01';
 
 const Title = css`
     color:${Themes.colors.blue};
@@ -63,7 +63,7 @@ class SupportScreen extends Component{
                 </InputDiv__Right>
               </InputDiv>
               <ButtonDiv>
-                <Button value="Tell us about Issue"/>
+                <Button01 value="Tell us about Issue"/>
               </ButtonDiv>      
             </Form>
           </FormDiv>

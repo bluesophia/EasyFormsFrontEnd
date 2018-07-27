@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Themes from '../../../../../Assets/Styles/Themes';
-import Button from '../../../Common/Button';
+import Button01 from '../../../Common/Button/Button01';
 import { Link } from 'react-router-dom';
 
 /** Images **/
@@ -29,7 +29,7 @@ class Section1 extends Component{
                             </Section01__Text>
                             <ButtonDiv>
                                 <ButtonLink to='/contact'>
-                                    <Button value={'Contact our Software Experts'}/>
+                                    <Button01 value={'Contact our Software Experts'}/>
                                 </ButtonLink>
                             </ButtonDiv>
                         </Section01__TitleDiv>

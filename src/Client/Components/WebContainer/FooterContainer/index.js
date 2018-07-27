@@ -70,19 +70,22 @@ class FooterContainer extends Component {
   `;
   
   const Sns = styled.a`
-  color: ${Themes.colors.white};
-  font-size: 1.5em;
-  padding: 0 1em;
-  
-  ${breakpoint('md')`
-  padding: 0 0.5em;
-  `};
+    color: ${Themes.colors.lightGrey};
+    font-size: 1em;
+    padding: 0 1em;
+      ${breakpoint('md')`
+      padding: 0 0.5em;
+      `};
+      ${breakpoint('lg')`
+      padding: 0 0.8em;
+      `};
   `;
 
 const Footer = styled.div`
   font-family: Lato;
   background-color:${Themes.colors.blue};
   padding: 0 10%;
+  line-height:1.5em;
 `;
 
 const Container = styled.div`
@@ -145,7 +148,8 @@ margin: 2.75em 0 1.5em;
 color: ${Themes.colors.white};
 
 ${breakpoint('md')`
-margin: 0 0.5em 0 0;
+font-size: 0.8em;
+margin: 0 1em 0 0;
 text-align:left;
   `};
 ${breakpoint('lg')`
@@ -163,10 +167,10 @@ display: block;
 `
 
 const FooterText = styled.span`
-font-size: 1em;
-display:block;
-padding:0.125em 0;
-color: ${Themes.colors.lightGrey};
+  font-size: 1em;
+  display:block;
+  color: ${Themes.colors.lightGrey};
+  font-weight: ${Themes.fontWeight.light};
 `;
 
 const FooterTextAddress = FooterText.extend`
@@ -174,11 +178,11 @@ padding-top: 1.25em;
 `;
 
 const StyledLink = styled(Link)`
-color: ${Themes.colors.lightGrey};
-font-size: 1em;
-display:block;
-padding: 0.125em;
-text-decoration: none;
+  color: ${Themes.colors.lightGrey};
+  font-size: 1em;
+  display:block;
+  text-decoration: none;
+  font-weight: ${Themes.fontWeight.light};
 `;
 
 //footer bottom css
@@ -195,7 +199,7 @@ justify-content: space-between;
 `;
 
 const FooterBottomText = styled.span`
-font-size: 0.55em;
+font-size: ${Themes.fontsize.p4};
 text-align: center;
 padding: 0.25em 0;
 color: ${Themes.colors.lightGrey};

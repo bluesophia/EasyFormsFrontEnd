@@ -17,7 +17,7 @@ class Section7 extends Component{
         return(
             <Section07>
                 <div>
-                <Section07__Title>We work in all business environments</Section07__Title>
+                <Section07__Title>We work in<br/> all business environments</Section07__Title>
                 <HeaderLine />
                 <Section07__Text>EasyForms can offer solutions to a wide range of businesses and industries.</Section07__Text>
                 </div>
@@ -43,11 +43,11 @@ class Section7 extends Component{
 /**** Section 07 ****/
 
 const Section07 = styled.div`
-    padding: 60px 8%; 
+    padding: 18% 8%; 
     box-sizing: border-box;
     ${LightGreyBg};
         ${breakpoint('lg')`
-           padding: 100px 20%; 
+           padding: 80px 20%; 
            height:768px;
             display:flex;
             justify-content:center;
@@ -65,7 +65,7 @@ const Section07__Text = styled.div`
     display:none;
         ${breakpoint('md')`
             display:block;
-            font-size:${Themes.fontsize.p1};
+            font-size:${Themes.fontsize.p2};
             color:${Themes.colors.black};
             text-align:center;
         `}   
@@ -77,6 +77,7 @@ const Section07__Contents = styled.div`
         justify-content:space-around;
         align-item:center;
         margin-top:40px;
+        max-width:700px;
         `} 
 `
 const Section07__ContentDiv = styled.div`
@@ -96,6 +97,7 @@ const Section07__SubTitle = styled.p`
     font-size:${Themes.fontsize.h3}; 
     font-weight:${Themes.fontsize.bold};
     letter-spacing:normal;
+    margin-top:15px;
 `
 
 export default Section7;

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Themes from '../../../../Assets/Styles/Themes';
 import { Link } from 'react-router-dom';
 
-class Button extends Component {
+class Button01 extends Component {
     render(){
         return (
             <ThemeProvider theme={Themes}>
@@ -17,7 +17,7 @@ class Button extends Component {
     }
 }
 
-Button.propTypes = {
+Button01.propTypes = {
     value: PropTypes.string
   };
 const ButtonStyle = styled.button`
@@ -41,8 +41,7 @@ const ButtonStyle = styled.button`
 const Text = styled.p`
     margin:0;
     padding:0;
-//    text-shadow:0 0 8px rgba(50, 50, 93, 0.23);
     text-shadow:0 0 8px rgba(255, 255, 255, 0.5);
 `
 
-export default Button;
+export default Button01;

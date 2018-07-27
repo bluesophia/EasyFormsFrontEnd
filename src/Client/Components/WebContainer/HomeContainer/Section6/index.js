@@ -48,8 +48,8 @@ const Section06__TitleDiv = styled.div`
 const Section06__Title = styled.div`
    ${Title};
    margin-top:18%;
-    ${breakpoint('md')`
-        margin-top:60px;
+    ${breakpoint('lg')`
+        margin-top:80px;
     `}
 `
 const Section06__Image = styled.div`

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import styled, { css, ThemeProvider } from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 import PropTypes from 'prop-types';
 import Themes from '../../../../Assets/Styles/Themes';
 
-const Shadow = css`
-    box-shadow : 0 0 8px rgba(50, 50, 93, 0.23);
-`
 class Button02 extends Component {
     render(){
         return (
@@ -27,7 +25,7 @@ const ButtonStyle = styled.button`
     width:100%;
     height:auto;
     color:${Themes.colors.orange};
-    font-size:20px;
+    font-size:1em;
     font-weight:${Themes.fontWeight.bold};
     border-radius:10px;
     text-transform:uppercase;
@@ -35,6 +33,9 @@ const ButtonStyle = styled.button`
     padding-bottom:15px;
     letter-spacing:1px;
     outline: none;
+    ${breakpoint('md')`
+    font-size:20px;
+    `}
 `
 const Text = styled.p`
     margin:0;

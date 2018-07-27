@@ -164,10 +164,7 @@ const Container = styled.div`
 `
 const NavNarrow = styled.div`
 		display: block;
-		position:relative;
-		top: 100;
 		width:100%;
-		margin:0;
 		@media (min-width: 768px) {
   		display: none;
 		}

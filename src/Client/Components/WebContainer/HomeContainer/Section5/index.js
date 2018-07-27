@@ -32,13 +32,13 @@ const Section05__Container = styled.div`
     margin:0 auto;
     padding: 18% 0 10%;
     ${breakpoint('sm')`
-        padding: 60px 8%;
+        padding: 18% 8%;
     `}
     ${breakpoint('md')`
-        padding: 60px 10%;
+        padding: 18% 10%;
     `}
     ${breakpoint('lg')`
-        padding: 100px 10%;
+        padding: 80px 10%;
         height:768px;
         max-width: 1366px;
         display: flex;
