@@ -24,18 +24,22 @@
     "react-sanfona": "^1.2.2",
     "react-scripts": "1.1.4",
     "react-slick": "^0.23.1",
+    "redux": "^4.0.0",
     "styled-components": "^3.3.3",
     "styled-components-breakpoint": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && mv build server",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:3001",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "react-redux": "^5.0.7"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bluesophia/EasyFormsFrontEnd.git"
@@ -45,5 +49,5 @@
   "bugs": {
     "url": "https://github.com/bluesophia/EasyFormsFrontEnd/issues"
   },
-  "homepage": "http://easyforms.byethost8.com/"
+  "homepage": "https://easyforms.byethost31.com/"
 }

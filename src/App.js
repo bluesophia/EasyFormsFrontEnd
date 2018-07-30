@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faBars, 
@@ -45,15 +44,24 @@ library.add(
 )
 
 class App extends Component {  
+  constructor() {
+    super();
+    this.state = { message: '' };
+  }
+
+  componentDidMount() {
+    fetch('/api/message')
+      .then(response => response.json())
+      .then(json => this.setState({ message: json }));
+  }
+
   render(){
     return(
-      <Router>
       <div>
           <Header />
           <Routes />
           <Footer />
       </div>
-      </Router>
     )
   }
 }
