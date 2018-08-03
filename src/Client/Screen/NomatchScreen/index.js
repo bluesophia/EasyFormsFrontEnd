@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-const Nomatch = () => {
+const NomatchScreen = () => {
     if(<Route path='*' />){
         return(<Redirect push to="/"/>);
     } else {
@@ -9,4 +9,4 @@ const Nomatch = () => {
     }
 }
 
-export default Nomatch;
+export default NomatchScreen;

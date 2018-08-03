@@ -4,19 +4,12 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
-
+//link
 const index = require('./routes/index');
 const about = require('./routes/about');
-var whitelist = ['https://easyforms.byethost31.com/']
-var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
+const support = require('./routes/support');
+const blog = require('./routes/blog');
+const contact = require('./routes/contact');
 
 
 
@@ -26,7 +19,7 @@ var cors = require('express-cors');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -38,8 +31,12 @@ app.use('/', express.static('build'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+//link
 app.use('/api', index);
-app.use('/about', about)
+app.use('/about', about);
+app.use('/support', support);
+app.use('/blog', blog);
+app.use('/contact', contact);
 app.get('*', (req, res) => {
   res.sendFile('build/index.html', { root: global });
 });

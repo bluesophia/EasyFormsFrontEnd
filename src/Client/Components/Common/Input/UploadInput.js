@@ -1,28 +1,75 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import styled, { ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
+import ReactDropzone from 'react-dropzone'
+import FileScreen from '../../../Screen/FileScreen'
 
 export default class UploadInput extends Component {
-  state = {
+  // onDrop = (files) => {
+  //   //POST to a test endpoint for demo purposes
+  //   const req = req.post(component={FileScreen});
+
+  //   files.forEach(file => {
+  //     req.attach(file.name, file);
+  //   });
+
+  //   req.end();
+  // }
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      files: [],
+    };
   }
+
+  onPreviewDrop = (files) => {
+    this.setState({
+      files: this.state.files.concat(files),
+     });
+  }
+
 
   handleUpdateValue = (value) => {
     this.setState({ value: value });
   }
-
   render() {
     return (
       <ThemeProvider theme={Themes}>
       <Container>
-      <Label>Upload a screenshot</Label><br />
+      <div className="app">
+        <ReactDropzone
+          style={DropzoneStyle}
+          accept="image/*"
+          onDrop={this.onPreviewDrop}
+        >
+        <Label>Upload a screenshot</Label><br /><br />
+          Drop an image, or Click here!
+        </ReactDropzone>
+        <br /><br />
+        {this.state.files.length > 0 &&
+          <Fragment>
+            <h3>Previews</h3>
+            {this.state.files.map((file) => (
+              <img
+                alt="Preview"
+                key={file.preview}
+                src={file.preview}
+                style={previewStyle}
+              />
+            ))}
+          </Fragment>
+        }
+      </div>
+      {/* <Label>Upload a screenshot</Label><br />
         <Input
           name="pic"
           label="Upload a screenshot"
           accept="image/*"
           onChange={this.handleUpdateValue}
           multiple
-        />
+        /> */}
       </Container>
       </ThemeProvider>
     )
@@ -39,12 +86,26 @@ const Label = styled.label`
   color: ${Themes.colors.blueLight};
   `;
 
+  const previewStyle = {
+    display: 'inline',
+    width: 100,
+    height: 100,
+  };
+  const Previews = styled.p`
+  font-size: ${Themes.fontsize.p2}
+  font-weight: ${Themes.fontWeight.bold}
+  color: ${Themes.colors.blueLight}
+  `
+  const DropzoneStyle = {
+    width: '500px',
+    height: '30px',
+  }
 const Input = styled.input.attrs({
-  type: 'file',
+  // type: 'file',
 })`
   box-sizing:border-box;
   width:100%;
-  background: none;
+  background: black;
   border-radius: 5px;
   border: 1px solid ${Themes.colors.formGrey};
   color: ${Themes.colors.formGrey};
