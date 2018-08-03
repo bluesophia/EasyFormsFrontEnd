@@ -13,6 +13,7 @@ import ContactUsScreen from './Client/Screen/ContactUsScreen';
 // when the pathname is exactly the string "/"
 
 const Routes = () => (
+
   <main>
     <Switch>
       <Route exact path='/' component={HomeScreen}/>
@@ -20,8 +21,10 @@ const Routes = () => (
       <Route path='/support' component={SupportScreen}/>
       <Route path='/blog' component={BlogScreen}/>
       <Route path='/contact' component={ContactUsScreen}/>
+      <Route component={HomeScreen}/>
     </Switch>
   </main>
+
 )
 
 export default Routes;
