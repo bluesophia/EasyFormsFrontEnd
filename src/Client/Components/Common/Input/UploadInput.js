@@ -3,19 +3,8 @@ import styled, { ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
 import ReactDropzone from 'react-dropzone'
-import FileScreen from '../../../Screen/FileScreen'
 
 export default class UploadInput extends Component {
-  // onDrop = (files) => {
-  //   //POST to a test endpoint for demo purposes
-  //   const req = req.post(component={FileScreen});
-
-  //   files.forEach(file => {
-  //     req.attach(file.name, file);
-  //   });
-
-  //   req.end();
-  // }
   constructor(props) {
     super(props);
 
@@ -30,46 +19,38 @@ export default class UploadInput extends Component {
      });
   }
 
-
   handleUpdateValue = (value) => {
     this.setState({ value: value });
   }
+
   render() {
     return (
       <ThemeProvider theme={Themes}>
       <Container>
-      <div className="app">
-        <ReactDropzone
-          style={DropzoneStyle}
-          accept="image/*"
-          onDrop={this.onPreviewDrop}
-        >
-        <Label>Upload a screenshot</Label><br /><br />
-          Drop an image, or Click here!
-        </ReactDropzone>
-        <br /><br />
-        {this.state.files.length > 0 &&
-          <Fragment>
-            <h3>Previews</h3>
-            {this.state.files.map((file) => (
-              <img
-                alt="Preview"
-                key={file.preview}
-                src={file.preview}
-                style={previewStyle}
-              />
-            ))}
-          </Fragment>
-        }
-      </div>
-      {/* <Label>Upload a screenshot</Label><br />
-        <Input
-          name="pic"
-          label="Upload a screenshot"
-          accept="image/*"
-          onChange={this.handleUpdateValue}
-          multiple
-        /> */}
+        <div className="app">
+          <ReactDropzone
+            style={DropzoneStyle}
+            accept="image/*"
+            onDrop={this.onPreviewDrop}
+          >
+            <Label>Upload a screenshot</Label><br />
+              <p>Drop an image, or Click here!</p>
+          </ReactDropzone>
+          <br /><br />
+            {this.state.files.length > 0 &&
+              <Fragment>
+                <h3>Previews</h3>
+                {this.state.files.map((file) => (
+                  <img
+                    alt="Preview"
+                    key={file.preview}
+                    src={file.preview}
+                    style={previewStyle}
+                  />
+                ))}
+              </Fragment>
+            }
+        </div>
       </Container>
       </ThemeProvider>
     )
@@ -100,7 +81,7 @@ const Label = styled.label`
     width: '500px',
     height: '30px',
   }
-const Input = styled.input.attrs({
+/*const Input = styled.input.attrs({
   // type: 'file',
 })`
   box-sizing:border-box;
@@ -115,7 +96,7 @@ const Input = styled.input.attrs({
   &:focus {
     outline: none;
   }
-  /*
+
   ${breakpoint('xs')`
     width:87vw;
     height:20px;
@@ -136,5 +117,5 @@ const Input = styled.input.attrs({
     width:42vw;
     height:30px;
   `}
-  */
-`
+ 
+`*/
