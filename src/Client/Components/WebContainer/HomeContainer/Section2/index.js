@@ -3,21 +3,18 @@ import styled, { injectGlobal, css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../../Assets/Styles/Themes';
 import HeaderLine from '../../../Common/HeaderLine';
-import Title from '../../../Common/Title/Title';
+import BigTitle from '../../../Common/Title/BigTitle';
 
 /** Images **/
 import HomeSection02BgMd from '../../../../../Assets/Images/HomeSection02BgMd.png';
-import WhyUs01 from '../../../../../Assets/Images/whyus_1.jpg';
-import WhyUs02 from '../../../../../Assets/Images/whyus_2.jpg';
-import WhyUs03 from '../../../../../Assets/Images/whyus_3.jpg';
+import WhyUs01 from '../../../../../Assets/Images/whyicon01.png';
+import WhyUs02 from '../../../../../Assets/Images/whyicon02.png';
+import WhyUs03 from '../../../../../Assets/Images/whyicon03.png';
 import { _breakpoint } from 'styled-components-breakpoint/dist/cjs/core';
 
-const Text = css`
-    font-size:${Themes.fontsize.p3};
-    color:${Themes.colors.black};
-    text-align:center;
-    line-height:20px;
-`
+/** Components **/
+import Text from '../../../Common/Text';
+
 const Shadow = css`
     box-shadow : 0 0 8px rgba(50, 50, 93, 0.23);
 `
@@ -28,7 +25,6 @@ class Section2 extends Component{
             <Container>
                 <Section02__TitleDiv>
                     <Section02__Title>Why Easyforms?</Section02__Title>
-                    <HeaderLine />
                 </Section02__TitleDiv>
                 <Section02__Contents>
                     <Section02__ContentDiv>
@@ -71,18 +67,19 @@ const Section02 = styled.div`
 `
 const Container = styled.div`
     margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     ${breakpoint('lg')`
         max-width: 1366px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     `}
 `
 const Section02__TitleDiv = styled.div`
-        
+        margin:0 auto;
 `
-const Section02__Title = styled.p`
-    ${Title};
+const Section02__Title = styled.div`
+    ${BigTitle};
+    color:${Themes.colors.blue};
 `
 
 const Section02__Contents = styled.div`
@@ -95,6 +92,9 @@ const Section02__Contents = styled.div`
 const Section02__ContentDiv = styled.div`
     margin:60px auto 0 auto;
     width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     ${breakpoint('lg')`
     width:300px;
     margin:60px auto 0 auto;
@@ -102,8 +102,6 @@ const Section02__ContentDiv = styled.div`
 
 `
 const Section02__Image = styled.img`
-    width:100%;
-    ${Shadow};
 `
 const Section02__Subtitle = styled.p`
     margin-top:20px;
@@ -122,6 +120,11 @@ const Section02__Subtitle = styled.p`
 const Section02__Text = styled.div`
     margin-top:9px;
     ${Text};
+    color:${Themes.colors.grey};
+    text-align:center;
+        ${breakpoint('md')`
+            text-align:left;
+        `}
 `
 
 export default Section2;

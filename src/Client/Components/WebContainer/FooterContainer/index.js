@@ -70,7 +70,7 @@ class FooterContainer extends Component {
   `;
   
   const Sns = styled.a`
-    color: ${Themes.colors.lightGrey};
+    color:white;
     font-size: 1em;
     padding: 0 1em;
       ${breakpoint('md')`
@@ -83,7 +83,7 @@ class FooterContainer extends Component {
 
 const Footer = styled.div`
   font-family: Lato;
-  background-color:${Themes.colors.blue};
+  background: linear-gradient(#2C71A1, #1D4B93, #18225A);
   padding: 0 10%;
   line-height:1.5em;
 `;
@@ -169,7 +169,7 @@ display: block;
 const FooterText = styled.span`
   font-size: 1em;
   display:block;
-  color: ${Themes.colors.lightGrey};
+  color: ${Themes.colors.veryLightGrey};
   font-weight: ${Themes.fontWeight.light};
 `;
 
@@ -178,7 +178,7 @@ padding-top: 1.25em;
 `;
 
 const StyledLink = styled(Link)`
-  color: ${Themes.colors.lightGrey};
+  color: ${Themes.colors.veryLightGrey};
   font-size: 1em;
   display:block;
   text-decoration: none;
@@ -188,21 +188,22 @@ const StyledLink = styled(Link)`
 //footer bottom css
 
 const FooterBottom = styled.div`
-display: flex;
-flex-direction: column;
-padding-bottom: 2.5em;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2.5em;
 
-${breakpoint('md')`
-flex-direction: row;
-justify-content: space-between;
-`};
+  ${breakpoint('md')`
+  flex-direction: row;
+  justify-content: space-between;
+  `};
 `;
 
 const FooterBottomText = styled.span`
 font-size: ${Themes.fontsize.p4};
+font-weight:${Themes.fontWeight.light};
 text-align: center;
 padding: 0.25em 0;
-color: ${Themes.colors.lightGrey};
+color: ${Themes.colors.veryLightGrey};
 `;
 
 export default FooterContainer;

@@ -11,13 +11,13 @@ import Section06BgLg from '../../../../../Assets/Images/easyform-functions_web.p
 class Section6 extends Component{
     render(){
         return(
-                <Section06>
-                    <Section06__TitleDiv>
-                        <Section06__Title>Easyforms Function</Section06__Title>
-                        <HeaderLine />
-                    </Section06__TitleDiv>
-                    <Section06__Image />
-                </Section06>
+            <Section06>
+                {/* <Section06__TitleDiv>
+                    <Section06__Title>Easyforms Function</Section06__Title>
+                    <HeaderLine />
+                </Section06__TitleDiv> */}
+                <Section06__Image src={Section06BgSm} />
+            </Section06>
         )
     }
 }
@@ -25,16 +25,17 @@ class Section6 extends Component{
 /**** Section 06 ****/
 
 const Section06 = styled.div`
-    padding: 0 8%;
-    background: url('${Section06BgSm}') no-repeat center;
-    height:983px;
-    ${breakpoint('lg')`
-     background: url('${Section06BgLg}') no-repeat;
-     background-position: center bottom;
-     background-size:contain;
-     padding:0;
-     height:768px;
-    `}
+    // padding: 0 8%;
+    // background: url('${Section06BgSm}') no-repeat center;
+    // height:983px;
+    // ${breakpoint('lg')`
+    //  background: url('${Section06BgLg}') no-repeat;
+    //  background-position: center bottom;
+    //  background-size:contain;
+    //  padding:0;
+    //  height:768px;
+    // `}
+    height:auto;
 `
 const Section06__TitleDiv = styled.div`
     ${breakpoint('lg')`
@@ -52,7 +53,7 @@ const Section06__Title = styled.div`
         margin-top:80px;
     `}
 `
-const Section06__Image = styled.div`
-
+const Section06__Image = styled.img`
+    
 `
 export default Section6;

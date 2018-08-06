@@ -3,11 +3,11 @@ import styled, { css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../../Assets/Styles/Themes';
 import HeaderLine from '../../../Common/HeaderLine';
-import Title from '../../../Common/Title/Title';
+import BigTitle from '../../../Common/Title/Title';
 
-import Section07Icon01 from '../../../../../Assets/Images/in-the-office.png';
-import Section07Icon02 from '../../../../../Assets/Images/on-the-go.png';
-import Section07Icon03 from '../../../../../Assets/Images/for-management.png';
+import Section07Icon01 from '../../../../../Assets/Images/in-the-office.svg';
+import Section07Icon02 from '../../../../../Assets/Images/on-the-go.svg';
+import Section07Icon03 from '../../../../../Assets/Images/for-management.svg';
 
 const LightGreyBg = css`
   background-color:rgba(238,238,238,0.6);
@@ -17,8 +17,8 @@ class Section7 extends Component{
         return(
             <Section07>
                 <div>
-                <Section07__Title>We work in<br/> all business environments</Section07__Title>
-                <HeaderLine />
+                <Section07__Title>We work in all business environments</Section07__Title>
+                {/* <HeaderLine /> */}
                 <Section07__Text>EasyForms can offer solutions to a wide range of businesses and industries.</Section07__Text>
                 </div>
                 <Section07__Contents>
@@ -54,12 +54,9 @@ const Section07 = styled.div`
             align-items:center;
             flex-direction:column;
     `} 
-        ${breakpoint('xl')`
-   //     height:80vh;
-        `}  
 `
 const Section07__Title = styled.p`
-    ${Title};
+    ${BigTitle};
 `
 const Section07__Text = styled.div`  
     display:none;
@@ -87,15 +84,15 @@ const Section07__ContentDiv = styled.div`
     `} 
 `
 const Section07__Icon = styled.img`
-    width:110px;
+    width:100%;
     height:auto;
     display:block;
     margin:0 auto;
 `
 const Section07__SubTitle = styled.p`
-    ${Title};
+    ${BigTitle};
     font-size:${Themes.fontsize.h3}; 
-    font-weight:${Themes.fontsize.bold};
+    font-weight:${Themes.fontsize.black};
     letter-spacing:normal;
     margin-top:15px;
 `

@@ -9,18 +9,15 @@ import { Link } from 'react-router-dom';
 /** Images **/
 import HomeSection01BgSm from '../../../../../Assets/Images/HomeSection01BgSm.png';
 import HomeSection01BgMd from '../../../../../Assets/Images/HomeSection01BgMd.png';
-import mainImage from '../../../../../Assets/Images/mainImage.png';
-import FacebookIcon from '../../../../../Assets/Images/facebook.png';
-import TwitterIcon from '../../../../../Assets/Images/twitter.png';
-import LinkedinIcon from '../../../../../Assets/Images/linkedin.png';
+import mainImage from '../../../../../Assets/Images/mainImage.svg';
 
-/** components */
-import Title from '../../../Common/Title/BigTitle';
+/** components **/
+import Title from '../../../Common/Title/Title';
+import BigTitle from '../../../Common/Title/BigTitle';
 
 class Section1 extends Component{
     render(){
         return(
-            
                <Section01>
                     <Container>
                         <Section01__Image><MainImage src={mainImage}/></Section01__Image>
@@ -37,23 +34,19 @@ class Section1 extends Component{
                             </ButtonDiv>
                         </Section01__TitleDiv>
                     </Container>
-                </Section01> 
-           
+                </Section01>         
         )
     }
 }
 /**** Section 01 ****/
 
 const Section01 = styled.div`
-    padding:18% 8%;
+    margin:0;
     background: url('${HomeSection01BgSm}');
     background-position:center top;
     background-repeat:no-repeat;
     background-size:100% 100%;
     ${breakpoint('md')`
-    padding: 100px 8%;
-    `}
-    ${breakpoint('lg')`
         background: url('${HomeSection01BgMd}');
         background-position:center top;
         background-repeat:no-repeat;
@@ -61,33 +54,43 @@ const Section01 = styled.div`
     `}
 `
 const Container = styled.div`
+    padding:18% 5%;
     display:flex;
     flex-direction:column;
     align-items:center;
-    margin:0 auto;
-    ${breakpoint('lg')`
-        max-width: 1366px;
-        justify-content:space-between;
-        flex-direction:row;
-    `}
+        ${breakpoint('md')`
+            padding: 80px 8%;
+            justify-content:space-between;
+            flex-direction:row;
+            align-items:flex-start;
+        `}
+        ${breakpoint('lg')`
+            max-width: 1366px;
+            margin:0 auto;
+            padding: 80px 8% 0 8%;
+        `}
 `
 const Section01__Image = styled.div`
-    margin:0 auto;
-        ${breakpoint('lg')`
+    width:100%;
+        ${breakpoint('md')`
             margin-left:0;
             width:90%;
         `}
 `
 const MainImage = styled.img`
-    width:100%;
+    width:inherit;
     height:auto;
 `
 const Section01__TitleDiv = styled.div`
-    ${breakpoint('lg')`
-        margin-left:4em;
+    display:flex;
+    justify-content:space-between;
+    flex-direction:column;
+    align-items:center;
+    ${breakpoint('md')`
         width:85%;
     `}
-    ${breakpoint('xl')`
+    ${breakpoint('lg')`
+        margin-left:2em;
         display:flex;
         justify-content:space-between;
         flex-direction:column;
@@ -95,49 +98,46 @@ const Section01__TitleDiv = styled.div`
     `}
 `;
 const StyledTitle = styled.div`
-        ${Title};
+        ${BigTitle};
+        color:white;
         margin: 1em 0;
         text-align:center;
-        ${breakpoint('lg')`
+        ${breakpoint('md')`
             text-align:left;
             margin:0;
+        `}
+        ${breakpoint('lg')`
+            margin: 0 25% 0 0;
         `}
     `
 const Section01__Text = styled.div`
     display:none;
-        ${breakpoint('lg')`
+    font-weight:${Themes.fontWeight.light};
+    color:${Themes.colors.veryLightGrey};
+    text-align:left;
+    margin-top:20px;
+    margin-bottom:20px;
+    line-height:26px;
+    font-size:${Themes.fontsize.p1};
+        ${breakpoint('md')`
             display:block;
-            color:#E2E2E2;
-            font-size:${Themes.fontsize.p2};
-            line-height:28px;
-            text-align:right;
-            margin-top:20px;
-            margin-bottom:20px;
-            font-weight:300;
+        `}
+        ${breakpoint('lg')`
+           margin: 20px 15% 20px 0;
         `}
 `
 const ButtonDiv = styled.div`
-        width:100%;
-        margin:0 auto;
-            ${breakpoint('lg')`
-                width:80%;
-                margin-right:0;
-            `}
+    ${breakpoint('md')`
+        margin-left:-20px;
+    `}
+    ${breakpoint('lg')`
+        width:80%;
+        margin-left:0;
+    `}
 `
 const ButtonLink = styled(Link)`
         cursor:'pointer';
 `
-// const buttonDiv = {
-//     width:'100%',
-//     marginTop:0,
-//     marginBottom:0,
-//     marginRight:'auto',
-//     marginLeft:'auto'
-// }
-
-// const buttonLink = {
-//     cursor:'pointer'
-// }
 
 const SubTitle = styled.p`
         font-size:${Themes.fontsize.h3};
@@ -149,34 +149,5 @@ const SubTitle = styled.p`
             text-align:right;
         `}
     `
-
-const SnsIcons = styled.div`
-    display:flex;
-    justify-content: center;
-        ${breakpoint('lg')`
-        margin-right:0;
-        text-align:right;
-        justify-content: flex-end;
-    `}
-`
-const SnsLink = styled.a`
-`
-const Facebook = styled.div`
-    background-image:url(${FacebookIcon});
-    width:58px;
-    height:58px;
-    margin-right:15px;
-`
-const Twitter = styled.div`
-    background-image:url(${TwitterIcon});  
-    width:58px;
-    height:58px;  
-    margin-right:15px; 
-`
-const Linkedin = styled.div`
-    background-image:url(${LinkedinIcon});   
-    width:58px;
-    height:58px;   
-`
 
 export default Section1;

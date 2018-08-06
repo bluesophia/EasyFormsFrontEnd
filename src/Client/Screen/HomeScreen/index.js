@@ -3,11 +3,14 @@ import styled, { injectGlobal, css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Themes from '../../../Assets/Styles/Themes';
-import HeaderLine from '../../Components/Common/HeaderLine';
+// import HeaderLine from '../../Components/Common/HeaderLine';
 import Title from '../../Components/Common/Title/Title';
+
 
 /** Images **/
 import CustomerStoriesBg from '../../../Assets/Images/customer-stories.jpg';
+import HomeSection01BgSm from '../../../Assets/Images/HomeSection01BgSm.svg';
+
 
 /** Logos **/
 import Logo01 from '../../../Assets/Images/auckland.gif';
@@ -49,15 +52,9 @@ class HomeScreen extends Component{
                         <Section01 />
                         <Section02 />
                     </Section0102>
+                    <Section05 />
+                    <Section06 />
                     <Section0304>
-                        <Section03>
-                            <Section03__Div>
-                                <Section03__Title>
-                                    Customer Stories
-                                </Section03__Title>
-                                <StyledCarousel />
-                            </Section03__Div>
-                        </Section03>
                         <Section04>
                             <Section04__TitleDiv>
                                 <Section04__Title>
@@ -76,9 +73,18 @@ class HomeScreen extends Component{
                                     </Section04__Logos>
                                 </Section04__LogosDiv>
                         </Section04>
+                        <Section03>
+                            <Section03__Div>
+                                <Section03__Title>
+                                    Customer Stories
+                                </Section03__Title>
+                                <StyledCarousel />
+                            </Section03__Div>
+                        </Section03>
+
                     </Section0304>
-                    <Section05 />
-                    <Section06 />
+                    
+
                     <Section07 />
                 </div>
            </ThemeProvider>
@@ -86,8 +92,9 @@ class HomeScreen extends Component{
     }
 }
 const Section0102 = styled.div`
-        background-color:#E2E2E2;
+    background-color:${Themes.colors.veryLightGrey};
 `
+
 const Section0304 = styled.div`
     ${breakpoint('md')`
         display:flex;
@@ -103,7 +110,7 @@ const Section03 = styled.div`
         rgba(8,39,90,0.75), rgba(8,39,90,0.75)
     ),
     url(${CustomerStoriesBg});
-    background-size:cover;
+    background-size:100% cover;
     background-repeat:no-repeat;
     background-position:center top;
     padding-bottom:40px;

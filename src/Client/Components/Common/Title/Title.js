@@ -3,17 +3,12 @@ import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
 
 const Title = css`
-    color:${Themes.colors.blue};
-    font-size:${Themes.fontsize.h3};
-    font-weight:${Themes.fontWeight.black};
     text-align:center;
-    line-height:30px;
-    text-transform:uppercase;
-    letter-spacing:5px;
-    padding: 0;
-    ${breakpoint('md')`
     font-size:${Themes.fontsize.h3};
-    padding: 0;
-`}
+    font-weight:${Themes.fontWeight.bold};
+    color:${Themes.colors.blue};
+        ${breakpoint('md')`
+        font-size:${Themes.fontsize.h2};
+        `}
 `
 export default Title;

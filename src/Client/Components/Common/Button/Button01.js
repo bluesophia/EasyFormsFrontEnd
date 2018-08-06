@@ -22,18 +22,20 @@ Button01.propTypes = {
   };
 const ButtonStyle = styled.button`
     background:linear-gradient(${Themes.colors.yellow},${Themes.colors.orange});
-    width:auto; 
+    width:100%; 
     height:auto;
     color:white;
-    font-size:1em;
+    font-size:18px;
     border:0;
+    margin:0 auto;
     border-radius:50px;
-    padding:15px 30px;
+    padding:11px 22px;
     letter-spacing:1px;
     outline: none;
-    ${breakpoint('md')`
-    font-size:20px;
-    `}
+        ${breakpoint('md')`
+            font-size:20px;
+            padding:12px 35px; 
+        `}
 `
 const Text = styled.p`
     margin:0;

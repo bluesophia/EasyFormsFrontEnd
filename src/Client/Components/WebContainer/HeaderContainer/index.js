@@ -72,6 +72,55 @@ class HeaderContainer extends Component {
 	}
 }
 
+const Nav = styled.div`
+	height:auto;
+	background-color:#26316F;
+	overflow: hidden;
+	padding: 1.25em 10% 0.625em;
+	a {
+		color: #FFF;
+	};
+	a:visited {
+		color: #FFF;
+	}
+		${breakpoint('md')`
+			padding: 3.25em 10% 0.625em;
+		`}
+	`
+const Container = styled.div`
+	margin:0 auto;
+	display:flex;
+	justify-content:space-between;
+	${breakpoint('md')`	
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+		flex-direction:row;
+	`}
+    ${breakpoint('lg')`
+		max-width: 1366px;
+    `}
+`
+const NavNarrow = styled.div`
+		display: block;
+		width:100%;
+		@media (min-width: 768px) {
+  		display: none;
+		}
+`;
+
+ const NavWide = styled.div`
+	display: none;
+		@media (min-width: 768px) {
+			display: flex;
+			justify-content:flex-end;
+		}
+ `;
+
+const WideDiv = styled.div`
+display:flex;
+align-items: flex-end;
+`;
 const Box = styled.div`
     display: flex;
 	justify-content:center;
@@ -115,76 +164,6 @@ const LogoImg = styled.img`
 const LinkedLogo = styled(Link)`
 	height:32px;
 `
-// const LinkedLogo = styled(Link)`
-// //	height:32px;
-// 	width:120px;
-// 	height:auto;
-// 	cursor:'pointer';
-// 	background-image:url(${Logo});
-// 	background-size:100% auto;
-// 	background-repeat:no-repeat;
-// 	${breakpoint('lg')`
-// 		width:160px;
-// 	`}
-// `
-
-const Nav = styled.div`
-overflow: hidden;
-	background-image:url('${Bg}');
-	background-size:100% 100%;
-	overflow: hidden;
-//	display:flex;
-//	justify-content:space-between;
-	padding: 1.25em 10% 0.625em;
-	a {
-		color: #FFF;
-	};
-	a:visited {
-		color: #FFF;
-	}
-		${breakpoint('md')`
-			padding: 3.25em 10% 0.625em;
-			// display:flex;
-			// justify-content:space-between;
-			// align-items:center;
-			// flex-direction:row;
-		`}
-	`
-const Container = styled.div`
-	margin:0 auto;
-	display:flex;
-	justify-content:space-between;
-	${breakpoint('md')`	
-		display:flex;
-		justify-content:space-between;
-		align-items:center;
-		flex-direction:row;
-	`}
-    ${breakpoint('lg')`
-		max-width: 1366px;
-    `}
-`
-const NavNarrow = styled.div`
-		display: block;
-		width:100%;
-		@media (min-width: 768px) {
-  		display: none;
-		}
-`;
-
- const NavWide = styled.div`
-	display: none;
-		@media (min-width: 768px) {
-			display: flex;
-			justify-content:flex-end;
-		}
- `;
-
-const WideDiv = styled.div`
-display:flex;
-align-items: flex-end;
-`;
-
 const icon = {
 	float:'right',
 	clear: 'right',
@@ -199,7 +178,7 @@ color: ${Themes.colors.lightGrey};
 font-size: 1em;
 padding: 1em;
 text-transform: uppercase;
-font-weight: ${Themes.fontWeight.regular};
+font-weight: ${Themes.fontWeight.light};
 cursor:'pointer';
 ${breakpoint('md')`
 padding: 1em 0.5em;
@@ -221,7 +200,7 @@ font-weight: ${Themes.fontWeight.regular};
 padding: 1em;
 display:block;
 text-align: center;
-text-transform: uppercase;
+// text-transform: uppercase;
 border-bottom: 0.1px solid ${Themes.colors.lightGrey};
 `;
 

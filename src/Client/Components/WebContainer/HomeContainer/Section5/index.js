@@ -3,13 +3,10 @@ import styled, { css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../../Assets/Styles/Themes';
 import HeaderLine from '../../../Common/HeaderLine';
+/** components **/
 import Title from '../../../Common/Title/Title';
 
 import FeaturesCarousel from '../../../Common/FeaturesCarousel';
-
-const LightGreyBg = css`
-  background-color:rgba(238,238,238,0.6);
-`
 
 class Section5 extends Component{
     render(){
@@ -17,7 +14,6 @@ class Section5 extends Component{
             <Section05>
                 <Section05__Container>
                     <Section05__Title>Easyforms Features</Section05__Title>
-                    <HeaderLine />
                     <FeaturesCarousel />
                 </Section05__Container>
             </Section05>
@@ -26,7 +22,6 @@ class Section5 extends Component{
 }
 
 const Section05 = styled.div`
-    ${LightGreyBg};
 `
 const Section05__Container = styled.div`
     margin:0 auto;
