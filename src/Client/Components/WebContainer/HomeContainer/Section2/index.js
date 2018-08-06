@@ -7,6 +7,7 @@ import BigTitle from '../../../Common/Title/BigTitle';
 
 /** Images **/
 import HomeSection02BgMd from '../../../../../Assets/Images/HomeSection02BgMd.png';
+import HomeSection02Image from '../../../../../Assets/Images/HomeSection02Image.png';
 import WhyUs01 from '../../../../../Assets/Images/whyicon01.png';
 import WhyUs02 from '../../../../../Assets/Images/whyicon02.png';
 import WhyUs03 from '../../../../../Assets/Images/whyicon03.png';
@@ -23,6 +24,7 @@ class Section2 extends Component{
         return(
             <Section02>
             <Container>
+                <Section02__LeftDiv>
                 <Section02__TitleDiv>
                     <Section02__Title>Why Easyforms?</Section02__Title>
                 </Section02__TitleDiv>
@@ -46,6 +48,10 @@ class Section2 extends Component{
                         <Section02__Text>Our solutions are easy-to-use and user friendly.</Section02__Text>
                     </Section02__ContentDiv>
                 </Section02__Contents>
+                </Section02__LeftDiv>
+                {/* <Section02__RightDiv>
+                    <Section02__RightDivImage src={HomeSection02Image} />
+                </Section02__RightDiv> */}
             </Container>
             </Section02>
         )
@@ -61,17 +67,28 @@ const Section02 = styled.div`
     `}
     ${breakpoint('lg')`
         padding: 150px 8%;
-        background:url(${HomeSection02BgMd}) no-repeat center bottom;
-        background-size:100% 80%;
+        background:url(${HomeSection02BgMd}) no-repeat right bottom;
+        background-size:100%;
     `}
 `
 const Container = styled.div`
     margin:0 auto;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
     ${breakpoint('lg')`
         max-width: 1366px;
+        display:flex;
+        justify-contents:space-between;
+        align-items:center;
+        flex-direction:row;
+
+        position:relative;
+    `}
+`
+const Section02__LeftDiv = styled.div`
+    ${breakpoint('lg')`
+        display:flex;
+        justify-contents:space-between;
+        align-items:center;
+        flex-direction:column;
     `}
 `
 const Section02__TitleDiv = styled.div`
@@ -84,9 +101,12 @@ const Section02__Title = styled.div`
 
 const Section02__Contents = styled.div`
     ${breakpoint('md')`
-        display:grid;
-        grid-template-columns:1fr 1fr 1fr;
-        grid-column-gap:10px;
+        // display:grid;
+        // grid-template-columns:1fr 1fr 1fr;
+        // grid-column-gap:10px;
+    `}
+    ${breakpoint('lg')`
+        // grid-template-rows:1fr 1fr 1fr;
     `}
 `
 const Section02__ContentDiv = styled.div`
@@ -98,6 +118,7 @@ const Section02__ContentDiv = styled.div`
     ${breakpoint('lg')`
     width:300px;
     margin:60px auto 0 auto;
+    align-items:flex-start;
 `}
 
 `
@@ -126,5 +147,16 @@ const Section02__Text = styled.div`
             text-align:left;
         `}
 `
+const Section02__RightDiv = styled.div`
+    display:none;
+    ${breakpoint('lg')`
+        display:block;
+        postion:absolute;
+        right:0;
+        bottom:0;
+    `}
+`
+const Section02__RightDivImage = styled.img`
 
+`
 export default Section2;
