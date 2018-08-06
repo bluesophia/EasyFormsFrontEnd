@@ -26,6 +26,30 @@ export default class BlogToggleSec2 extends Component {
         block5: expand
       });
     }
+
+    componentDidMount() {
+      let self= this;
+      var data = {
+        id: this.state.id,
+        question: this.state.question,
+        description: this.state.description,
+        categoryId: this.state.categoryId
+      }
+    
+
+  //   fetch('/api/blog', {
+  //     method:'GET'
+  //   }).then(function(response){
+  //     if(response.status >= 400){
+  //       throw new Error("Bad response from server");
+  //     }
+  //     return response.json()
+  //   }).then(function(data){
+  //     self.setState({blogQuestions: data});
+  //   }).catch(err => {
+
+  //   })
+   }
     
     render() {
       const contentList02 = () => {

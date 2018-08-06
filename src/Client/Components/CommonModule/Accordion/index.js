@@ -21,12 +21,12 @@ class Accordion extends Component {
         <ThemeProvider theme={Themes}>
             <Container>
                 <QuestionDiv02 >
-                <dt className={expand ? 'title is-expanded' : 'question'} onClick={onClick}>
+                <dt className={expand ? 'question is-expanded' : 'question'} onClick={onClick}>
                     {question}
                 </dt>   
                 <img className={expand ? 'arrowImg after' : 'arrowImg'} src={require('../../../../Assets/Images/arrow.png')} onClick={onClick}/>
                 </QuestionDiv02>
-                <dd className={expand ? 'content is-expanded' : 'content'} onClick={onClick}>
+                <dd className={expand ? 'description is-expanded' : 'content'} onClick={onClick}>
                     <p>{description}</p>
                 </dd>    
             </Container>  
