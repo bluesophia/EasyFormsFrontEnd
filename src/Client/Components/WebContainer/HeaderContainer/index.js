@@ -5,12 +5,13 @@ import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
 import { Link } from 'react-router-dom';
 import Logo from '../../../../Assets/Images/logo.png';
+import Bg from '../../../../Assets/Images/header.png';
 
 class HeaderContainer extends Component {
 	render(){
 		return (
 			<ThemeProvider theme={Themes}>
-				<Nav>
+				<Nav id="navbar">
 				<Container>
 				<LinkedLogo to='/'><LogoImg src={Logo}/></LinkedLogo>
 				<NavWide>
@@ -128,8 +129,9 @@ const LinkedLogo = styled(Link)`
 // `
 
 const Nav = styled.div`
-//	z-index:1;
-	background-color: ${Themes.colors.blue};
+overflow: hidden;
+	background-image:url('${Bg}');
+	background-size:100% 100%;
 	overflow: hidden;
 //	display:flex;
 //	justify-content:space-between;

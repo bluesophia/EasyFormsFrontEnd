@@ -21,13 +21,13 @@ const Themes = {
         yellowToOrange:'linear-gradient(#ffa91f,#f77b39)'
     },
     fontsize: {
-        h1: "40px",
-        h2: "25px",
-        h3: "20px",
-        p1: "20px",
-        p2: "18px",
-        p3: "16px",
-        p4: "11px"
+        h1: "38px",
+        h2: "30px",
+        h3: "25px",
+        h4: "20px",
+        p1: "18px",
+        p2: "16px",
+        p3: "14px"
     },
     fontWeight: {
         light:"300",

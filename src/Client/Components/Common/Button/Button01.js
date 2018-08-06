@@ -22,16 +22,13 @@ Button01.propTypes = {
   };
 const ButtonStyle = styled.button`
     background:linear-gradient(${Themes.colors.yellow},${Themes.colors.orange});
-    width:100%;
+    width:auto; 
     height:auto;
-    color:${Themes.colors.blue};
+    color:white;
     font-size:1em;
-    font-weight:${Themes.fontWeight.black};
     border:0;
-    border-radius:10px;
-    text-transform:uppercase;
-    padding-top:15px;
-    padding-bottom:15px;
+    border-radius:50px;
+    padding:15px 30px;
     letter-spacing:1px;
     outline: none;
     ${breakpoint('md')`
@@ -41,7 +38,6 @@ const ButtonStyle = styled.button`
 const Text = styled.p`
     margin:0;
     padding:0;
-    text-shadow:0 0 8px rgba(255, 255, 255, 0.5);
 `
 
 export default Button01;

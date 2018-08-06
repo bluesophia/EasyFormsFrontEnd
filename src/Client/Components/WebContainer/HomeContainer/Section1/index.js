@@ -9,10 +9,13 @@ import { Link } from 'react-router-dom';
 /** Images **/
 import HomeSection01BgSm from '../../../../../Assets/Images/HomeSection01BgSm.png';
 import HomeSection01BgMd from '../../../../../Assets/Images/HomeSection01BgMd.png';
-import ClusterImg from '../../../../../Assets/Images/cluster.png';
+import mainImage from '../../../../../Assets/Images/mainImage.png';
 import FacebookIcon from '../../../../../Assets/Images/facebook.png';
 import TwitterIcon from '../../../../../Assets/Images/twitter.png';
 import LinkedinIcon from '../../../../../Assets/Images/linkedin.png';
+
+/** components */
+import Title from '../../../Common/Title/BigTitle';
 
 class Section1 extends Component{
     render(){
@@ -20,9 +23,9 @@ class Section1 extends Component{
             
                <Section01>
                     <Container>
-                        <Section01__Image><Cluster src={ClusterImg}/></Section01__Image>
+                        <Section01__Image><MainImage src={mainImage}/></Section01__Image>
                         <Section01__TitleDiv>
-                            <BigTitle>Job Management and WorkFlow Processes Made Easy</BigTitle>
+                            <StyledTitle>Job Management and WorkFlow Processes Made Easy</StyledTitle>
                             <Section01__Text>We are a cloud-based solution offering end-to-end job 
                                 and workflow management software industry standard 
                                 health and safety management and much more.
@@ -60,6 +63,7 @@ const Section01 = styled.div`
 const Container = styled.div`
     display:flex;
     flex-direction:column;
+    align-items:center;
     margin:0 auto;
     ${breakpoint('lg')`
         max-width: 1366px;
@@ -74,7 +78,7 @@ const Section01__Image = styled.div`
             width:90%;
         `}
 `
-const Cluster = styled.img`
+const MainImage = styled.img`
     width:100%;
     height:auto;
 `
@@ -90,16 +94,12 @@ const Section01__TitleDiv = styled.div`
         height:250px;
     `}
 `;
-const BigTitle = styled.div`
-        font-size: 28px;
+const StyledTitle = styled.div`
+        ${Title};
         margin: 1em 0;
-        color:${Themes.colors.white};
         text-align:center;
-        ${breakpoint('md')`
-            font-size:35px;
-        `}
         ${breakpoint('lg')`
-            text-align:right;
+            text-align:left;
             margin:0;
         `}
     `
@@ -109,10 +109,10 @@ const Section01__Text = styled.div`
             display:block;
             color:#E2E2E2;
             font-size:${Themes.fontsize.p2};
-            line-height:25px;
+            line-height:28px;
             text-align:right;
-            margin-top:15px;
-            margin-bottom:15px;
+            margin-top:20px;
+            margin-bottom:20px;
             font-weight:300;
         `}
 `
