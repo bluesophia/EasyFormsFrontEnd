@@ -5,16 +5,13 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
-    "express": "^4.15.3",
-    "morgan": "^1.8.2",
     "debug": "~2.6.3",
-    "jade": "^1.11.0"
+    "express": "^4.15.3",
+    "jade": "^1.11.0",
+    "morgan": "^1.8.2",
+    "mysql": "^2.16.0"
   },
   "scripts": {
     "start": "./server.js"
-  },
-  "devDependencies": {
-    "express-cors": "0.0.3",
-    "react-express-middleware": "^4.0.0-5"
   }
 }

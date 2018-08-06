@@ -3,43 +3,45 @@ const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-
-//link
-const index = require('./routes/index');
-const about = require('./routes/about');
-const support = require('./routes/support');
-const blog = require('./routes/blog');
-const contact = require('./routes/contact');
-
-
+var mysql = require('mysql');
 
 const app = express();
 
-var cors = require('express-cors');
-
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(cors());
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'build')));
-app.use('/', express.static('build'));
+// app.use(express.static(path.join(__dirname, 'build')));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-//link
-app.use('/api', index);
-app.use('/about', about);
-app.use('/support', support);
-app.use('/blog', blog);
-app.use('/contact', contact);
+
+//Database connection
+app.use(function(req, res, next){
+	res.locals.connection = mysql.createConnection({
+		host     : 'localhost',
+		user     : 'root',
+		password : '',
+		database : 'easyforms'
+	});
+	res.locals.connection.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+  });
+});
+
+
+
+//api연결
+app.use("/api", require("./routes/api"));
 app.get('*', (req, res) => {
   res.sendFile('build/index.html', { root: global });
 });
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

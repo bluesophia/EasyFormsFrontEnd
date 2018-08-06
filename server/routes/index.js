@@ -1,19 +1,17 @@
-var express = require('express');
-var router = express.Router();
-// const reactExpressMiddleware = require('react-express-middleware')
-// const ReactComponent = require('./component.jsx')
+// var express =require('express');
+// const router = express.Router();
+// // const auth = require("../auth");
+// var mysql =require("mysql");
 
-router.get('/message', function(req, res, next) {
-  res.json('Welcome To React');
-});
+// // app.use("/auth", auth);
 
-// router.all('/about', function(req, res, next) {
-//   res.sendFile('build/index.html', { root: global });
+// router.get('/about', function(req, res, next) {
+// 	res.locals.connection.query('SELECT * from about', function (error, results, fields) {
+// 		if (error) throw error;
+// 		console.log("sophia");
+// 		res.send(JSON.stringify(results));
+// 	});
 // });
 
 
-router.get('*', (req, res) => {
-  res.sendFile('build/index.html', { root: global });
-});
-
-module.exports = router;
+// module.exports = router;

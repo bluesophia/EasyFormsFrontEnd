@@ -5,7 +5,7 @@ import AboutUsScreen from './Client/Screen/AboutUsScreen';
 import SupportScreen from './Client/Screen/SupportScreen';
 import BlogScreen from './Client/Screen/BlogScreen';
 import ContactUsScreen from './Client/Screen/ContactUsScreen';
-
+import LoginScreen from './Client/Screen/LoginScreen';
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
 // and /schedule routes will match any pathname that starts
@@ -21,6 +21,7 @@ const Routes = () => (
       <Route path='/support' component={SupportScreen}/>
       <Route path='/blog' component={BlogScreen}/>
       <Route path='/contact' component={ContactUsScreen}/>
+      <Route path='/login' component={LoginScreen}/>
       <Route component={HomeScreen}/>
     </Switch>
   </main>

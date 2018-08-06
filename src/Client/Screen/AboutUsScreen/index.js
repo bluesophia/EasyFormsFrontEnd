@@ -22,13 +22,45 @@ const BlueBg = css`
   background:linear-gradient(${Themes.colors.blue},${Themes.colors.blueLight});
 `
 class AboutUsScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      about: [] 
+    };
+  }
+
+  componentDidMount() {
+    let self = this;
+      var data = {
+        id: this.state.id,
+        title: this.state.title,   
+    }
+
+
+    fetch('/about', {
+        method: 'GET'
+    }).then(function(response) {
+        if (response.status >= 400) {
+            throw new Error("Bad response from server");
+        }
+        return response.json();
+    }).then(function(data) {
+        self.setState({about: data});
+    }).catch(err => {
+    console.log('caught it!',err);
+    })
+  }
+
+  
   render(){
+    const {title, description, key} = this.props;
     return(
       <ThemeProvider theme={Themes}>   
       <div>
           <Section01>
               <Section01__TitleDiv>
-                  <Section01__Title>Global clients around Us</Section01__Title>
+              {/* <h1>{this.props.title}</h1> */}
+                  <Section01__Title>{this.props.title}</Section01__Title>
                   <HeaderLine />
                   <Section01__Text>Over 4 years, EasyForms has acquired clients across the globe, in New Zealand, Australia, the Pacific Islands, Canada, The United Kingdom, Ireland and Korea. </Section01__Text>
               </Section01__TitleDiv>

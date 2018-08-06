@@ -20,6 +20,7 @@ class HeaderContainer extends Component {
 						<StyledLink to='/support'>Support</StyledLink>
 						<StyledLink to='/blog'>Blog</StyledLink>
 						<StyledLink to='/contact'>Contact Us</StyledLink>
+						<StyledLink to='/login'>Log In</StyledLink>
 						<Box>
                            <Sns href="https://www.facebook.com/EasyFormsNZ/?ref=aymt_homepage_panel">
                                <FontAwesomeIcon icon={['fab', 'facebook-f']} />
