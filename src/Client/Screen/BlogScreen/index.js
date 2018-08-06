@@ -12,8 +12,18 @@ class BlogScreen extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      blog: [] 
+      blogCategory: [] 
     };
+  }
+  _renderContents = () => {
+    const Contents = this.state.blogCategory.map((blogCategory, index) => {
+      if(index === 0){
+        return <Section1 title={blogCategory.title}/>
+      } else if(index === 1) {
+        return <Section2 title={blogCategory.title}/>
+      }
+      })
+    return Contents;
   }
 
   componentDidMount() {
@@ -23,8 +33,7 @@ class BlogScreen extends Component {
         title: this.state.title,   
     }
 
-
-    fetch('/blog', {
+    fetch('/api/blog', {
         method: 'GET'
     }).then(function(response) {
         if (response.status >= 400) {
@@ -32,22 +41,32 @@ class BlogScreen extends Component {
         }
         return response.json();
     }).then(function(data) {
-        self.setState({blog: data});
+        self.setState({blogCategory: data});
     }).catch(err => {
     console.log('caught it!',err);
     })
   }
   render(){
+    const { data } = this.state;
     return(
         <ThemeProvider theme={Themes}>
         <Container>
+         {this.state.blogCategory ? this._renderContents(): 'Loading'}
+        </Container>
+      </ThemeProvider>
+    )
+  }
+}
 
-          {/* Section1 */}
-          <Section>
+class Section1 extends Component{
+  render(){
+    const { title } = this.props;
+      return(
+        <Section>
             <Section__Header01>
               {/* Title */}
               <Section__TitleDiv>
-                <Section__Title>Is Timesheet Theft Giving You a Constant Headache?</Section__Title>
+                <Section__Title>{this.props.title}</Section__Title>
                 <HeaderLine />
               </Section__TitleDiv>
             </Section__Header01>
@@ -57,14 +76,20 @@ class BlogScreen extends Component {
               <Section__Contents>
                 <BlogToggleSec1 /> 
               </Section__Contents>
-          </Section>
+        </Section>
+        )
+  }
+}
 
-          {/* Section2 */}
-          <Section>
+class Section2 extends Component {
+  render(){
+    const { title } = this.props;
+    return(
+      <Section>
             <Section__Header02>
               {/* Title */}
               <Section__TitleDiv>
-                <Section__Title>Are Mountains of Paperwork Dragging Your Business Down?</Section__Title>
+                <Section__Title>{this.props.title}</Section__Title>
                 <HeaderLine />
               </Section__TitleDiv>
             </Section__Header02>
@@ -75,8 +100,6 @@ class BlogScreen extends Component {
                 <BlogToggleSec2 /> 
               </Section__Contents>
           </Section>
-        </Container>
-      </ThemeProvider>
     )
   }
 }

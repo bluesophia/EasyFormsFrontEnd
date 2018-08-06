@@ -16,18 +16,18 @@ const QuestionStyle = css`
 
 class Accordion extends Component {
     render() {
-      const { title, content, expand, onClick } = this.props;
+      const { title, content, expand, onClick, question, description } = this.props;
       return (
         <ThemeProvider theme={Themes}>
             <Container>
                 <QuestionDiv02 >
-                <dt className={expand ? 'title is-expanded' : 'title'} onClick={onClick}>
-                    {title}
+                <dt className={expand ? 'title is-expanded' : 'question'} onClick={onClick}>
+                    {question}
                 </dt>   
                 <img className={expand ? 'arrowImg after' : 'arrowImg'} src={require('../../../../Assets/Images/arrow.png')} onClick={onClick}/>
                 </QuestionDiv02>
                 <dd className={expand ? 'content is-expanded' : 'content'} onClick={onClick}>
-                    <p>{content}</p>
+                    <p>{description}</p>
                 </dd>    
             </Container>  
         </ThemeProvider>

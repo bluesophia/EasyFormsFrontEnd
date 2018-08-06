@@ -35,7 +35,7 @@ app.use(function(req, res, next){
 
 
 //api연결
-app.use("/api", require("./routes/index"));
+app.use("/api", require("./routes/api"));
 app.get('*', (req, res) => {
   res.sendFile('build/index.html', { root: global });
 });
