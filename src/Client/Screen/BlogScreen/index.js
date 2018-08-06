@@ -9,6 +9,34 @@ import SectionBg02 from '../../../Assets/Images/blog_2.jpg';
 import { BlogToggleSec1, BlogToggleSec2 } from '../../Components/WebContainer/BlogToggleContainer';
 
 class BlogScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      blog: [] 
+    };
+  }
+
+  componentDidMount() {
+    let self = this;
+      var data = {
+        id: this.state.id,
+        title: this.state.title,   
+    }
+
+
+    fetch('/blog', {
+        method: 'GET'
+    }).then(function(response) {
+        if (response.status >= 400) {
+            throw new Error("Bad response from server");
+        }
+        return response.json();
+    }).then(function(data) {
+        self.setState({blog: data});
+    }).catch(err => {
+    console.log('caught it!',err);
+    })
+  }
   render(){
     return(
         <ThemeProvider theme={Themes}>

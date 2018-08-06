@@ -28,16 +28,27 @@ class AboutUsScreen extends Component {
       about: [] 
     };
   }
-
+  _renderContents = () => {
+    const Contents = this.state.about.map((about, index) => {
+      if(index === 0) {
+        return <Section1 title={about.title} description={about.description}/>
+      } else if(index === 1) {
+        return <Section2 title={about.title} description={about.description}/>
+      } else if(index ===2){
+      return <Section3 title={about.title} description={about.description}/>
+      }
+    });
+    return Contents;
+  }
   componentDidMount() {
     let self = this;
       var data = {
         id: this.state.id,
         title: this.state.title,   
+        description: this.state.description
     }
-
-
-    fetch('/about', {
+    
+    fetch('/api/about', {
         method: 'GET'
     }).then(function(response) {
         if (response.status >= 400) {
@@ -49,85 +60,66 @@ class AboutUsScreen extends Component {
     }).catch(err => {
     console.log('caught it!',err);
     })
-  }
 
-  
+  } 
   render(){
-    const {title, description, key} = this.props;
+    const { about } = this.state;
     return(
-      <ThemeProvider theme={Themes}>   
       <div>
-          <Section01>
+      {this.state.about ? this._renderContents():'Loading'}
+      </div>
+    )
+  }
+}
+
+class Section1 extends Component{
+  render(){
+    const {title, description, index} = this.props;
+      return(
+        <ThemeProvider theme={Themes}>  
+        <Section01>
               <Section01__TitleDiv>
-              {/* <h1>{this.props.title}</h1> */}
                   <Section01__Title>{this.props.title}</Section01__Title>
                   <HeaderLine />
-                  <Section01__Text>Over 4 years, EasyForms has acquired clients across the globe, in New Zealand, Australia, the Pacific Islands, Canada, The United Kingdom, Ireland and Korea. </Section01__Text>
+                  <Section01__Text>{this.props.description}</Section01__Text>
               </Section01__TitleDiv>
-          </Section01>
-          <Section02>
-              <Section__Container>
-                  <Section__Title>About Us</Section__Title>
-                  <HeaderLine />
-                  <Section__Text>EasyForms is a 100% Kiwi owned and 
-                  operated company which grew from one 
-                  man’s passion for innovation and 
-                  technology. Keith Archer wanted to create 
-                  a company that would make a real 
-                  difference to customers and their 
-                  businesses. Not just one that said the right 
-                  things, but that actually delivered.<br /><br />
-                  In true Kiwi style, over a beer and brain 
-                  storming session with a friend, Keith 
-                  penned a business plan on the back of a 
-                  beer coaster with a core purpose of 
-                  reducing stacks of paperwork in the 
-                  business environment. At the time, an 
-                  electrician was tending to some electrical 
-                  repairs in Keith’s home and overheard this 
-                  discussion and piped up, that removing the 
-                  stacks of paperwork involved in code of 
-                  compliance forms would be a game-
-                  changer. With that, Keith set out to 
-                  establish EasyForms in March, 2013 from 
-                  his home. Dave Rouse was brought on as 
-                  Quality Assurance Director and business 
-                  partner in July 2015 to drive strategy. The 
-                  company has a marketing and sales team, 
-                  an international division of 4, 7 directors 
-                  and a total of 20 staff in our Auckland 
-                  offices.<br /><br />
+        </Section01>  
+        </ThemeProvider>     
+        )
+  }
+}
 
-                  Over 4 years, EasyForms has acquired 
-                  clients across the globe, in New Zealand, 
-                  Australia, the Pacific Islands, Canada, The 
-                  United Kingdom, Ireland and Korea. The 
-                  company started out automating paper 
-                  forms into app-based solutions and has 
-                  now evolved to provide a complete solution 
-                  for workflow management and develops 
-                  bespoke web portal and app-based 
-                  solutions.</Section__Text>
+class Section2 extends Component{
+  render(){
+    const {title, description, index} = this.props;
+      return(
+         <ThemeProvider theme={Themes}>  
+           <Section02>
+              <Section__Container>
+              
+                  <Section__Title>{this.props.title}</Section__Title>
+                  <HeaderLine />
+                  <Section__Text>{this.props.description}</Section__Text>
               </Section__Container>
           </Section02>
-          <Section03>
+            </ThemeProvider>    
+        )
+  }
+}
+class Section3 extends Component{
+  render(){
+    const {title, description, index} = this.props;
+      return(
+         <ThemeProvider theme={Themes}> 
+           <Section03>
               <Section__Container>
-                  <Section__Title>Our Vision</Section__Title>
+                  <Section__Title>{this.props.title}</Section__Title>
                   <HeaderLine />
-                  <Section__Text>To provide you with better control and 
-                  increased transparency of your business, 
-                  while streamlining your workflow and job 
-                  management processes. This increases 
-                  productivity, reduces operational costs and 
-                  ultimately saves you time so you can focus 
-                  on the things you need to, while giving you 
-                  the ability to mobilise your business 
-                  effortlessly.</Section__Text>
+                  <Section__Text>{this.props.description}</Section__Text>
               </Section__Container>
           </Section03>
-      </div>
-    </ThemeProvider>
-    )
+         </ThemeProvider>  
+        )
   }
 }
 

@@ -32,6 +32,7 @@ const BlueBg = css`
   background:linear-gradient(${Themes.colors.blue},${Themes.colors.blueLight});
 `
 class ContactUsScreen extends Component {
+
   render(){
     return(
       <ThemeProvider theme={Themes}>

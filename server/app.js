@@ -28,16 +28,14 @@ app.use(function(req, res, next){
 		password : '',
 		database : 'easyforms'
 	});
-	res.locals.connection.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-  });
+	res.locals.connection.connect();
+	next();
 });
 
 
 
 //api연결
-app.use("/api", require("./routes/api"));
+app.use("/api", require("./routes/index"));
 app.get('*', (req, res) => {
   res.sendFile('build/index.html', { root: global });
 });

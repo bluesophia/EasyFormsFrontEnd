@@ -5,12 +5,16 @@ var mysql =require("mysql");
 
 // app.use("/auth", auth);
 
-router.get('/', function(req, res, next) {
-	res.locals.connection.query('SELECT * from about', function (error, results, fields) {
-		if (error) throw error;
-		console.log("sophia");
-		res.send(JSON.stringify(results));
-	});
+router.get('/about', function(req, res, next) {
+	const customers = [
+		{id: 1, firstname: 'Sohee', lastname: 'Im'},
+		{id: 2, firstname: 'So', lastname: 'Im'}
+	]
+	res.json(customers);
+	// res.locals.connection.query('SELECT * from about', function (error, results, fields) {
+	// 	if (error) throw error;
+	// 	res.send(JSON.stringify(results));
+	// });
 });
 
 

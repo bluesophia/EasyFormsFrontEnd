@@ -32,6 +32,35 @@ const BlueBg = css`
 `
 
 class SupportScreen extends Component{
+  constructor(props) {
+    super(props);
+    this.state = { 
+      support: [] 
+    };
+  }
+
+  componentDidMount() {
+    let self = this;
+      var data = {
+        id: this.state.id,
+        title: this.state.title,   
+    }
+
+
+    fetch('/support', {
+        method: 'GET'
+    }).then(function(response) {
+        if (response.status >= 400) {
+            throw new Error("Bad response from server");
+        }
+        return response.json();
+    }).then(function(data) {
+        self.setState({support: data});
+    }).catch(err => {
+    console.log('caught it!',err);
+    })
+  }
+
   render(){
     return(
 <ThemeProvider theme={Themes}>
