@@ -25,16 +25,16 @@ const ButtonStyle = styled.button`
     width:100%; 
     height:auto;
     color:white;
-    font-size:18px;
+    font-size:20px;
     border:0;
     margin:0 auto;
     border-radius:50px;
     padding:11px 22px;
     letter-spacing:1px;
     outline: none;
-        ${breakpoint('md')`
+        ${breakpoint('lg')`
             font-size:20px;
-            padding:12px 35px; 
+            // padding:12px 35px; 
         `}
 `
 const Text = styled.p`

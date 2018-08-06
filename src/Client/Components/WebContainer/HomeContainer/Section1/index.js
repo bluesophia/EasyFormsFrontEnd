@@ -59,7 +59,7 @@ const Container = styled.div`
     flex-direction:column;
     align-items:center;
         ${breakpoint('md')`
-            padding: 80px 8%;
+            padding: 70px 8%;
             justify-content:space-between;
             flex-direction:row;
             align-items:flex-start;
@@ -67,7 +67,7 @@ const Container = styled.div`
         ${breakpoint('lg')`
             max-width: 1366px;
             margin:0 auto;
-            padding: 80px 8% 0 8%;
+            padding: 70px 8% 30px 8%;
         `}
 `
 const Section01__Image = styled.div`
@@ -88,12 +88,10 @@ const Section01__TitleDiv = styled.div`
     align-items:center;
     ${breakpoint('md')`
         width:85%;
+        align-items:flex-start;
     `}
     ${breakpoint('lg')`
         margin-left:2em;
-        display:flex;
-        justify-content:space-between;
-        flex-direction:column;
         height:250px;
     `}
 `;
@@ -127,12 +125,13 @@ const Section01__Text = styled.div`
         `}
 `
 const ButtonDiv = styled.div`
+    width:100%;
     ${breakpoint('md')`
-        margin-left:-20px;
+        margin-left:-5px;
     `}
     ${breakpoint('lg')`
-        width:80%;
-        margin-left:0;
+        width:70%;
+        // margin-left:0;
     `}
 `
 const ButtonLink = styled(Link)`
