@@ -19,4 +19,4 @@ SignupScreen.propTypes = {
     userSignupRequest: PropTypes.func.isRequired
 }
 
-export default connect(null, {userSignupRequest})(SignupScreen);
+export default connect((state) => { return{} }, {userSignupRequest})(SignupScreen);

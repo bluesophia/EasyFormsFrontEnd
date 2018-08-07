@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import classnames from 'classnames';
+import styled, { css, ThemeProvider } from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import Themes from '../../../../Assets/Styles/Themes';
 
 class SignupForm extends Component {
     constructor(props) {
@@ -9,7 +13,9 @@ class SignupForm extends Component {
             username: '',
             email: '',
             password: '',
-            passwordConfirmation:''
+            passwordConfirmation:'',
+            errors: {},
+            isLoading: false
         }
         this._onChange = this._onChange.bind(this);
         this._onSubmit = this._onSubmit.bind(this);
@@ -18,15 +24,24 @@ class SignupForm extends Component {
         this.setState({ [e.target.name] : e.target.value});
     }
     _onSubmit(e){
+        this.setState({ errors: {}, isLoading:true });
         e.preventDefault();
-        this.props.userSignupRequest(this.state);
+        this.props.userSignupRequest(this.state)
+        .then(
+            //이벤트핸들러
+            () => {},
+            ({ data }) => this.setState({ errors: data, isLoading:false })
+
+        )
         // axios.post('/api/users', {user: this.state});
     }
-    render() {
+    render() { 
+        const { errors } = this.state;
         return(
+            <ThemeProvider theme={Themes}>  
             <form onSubmit={this._onSubmit}>
                 <h1>Sign up</h1>
-                <div className="form-group">
+                <div className={classnames("form-group", {'has-error': errors.username })}>
                     <label>Username</label>
                     <input 
                         value={this.state.username}
@@ -35,6 +50,7 @@ class SignupForm extends Component {
                         className="form-control"
                         onChange={this._onChange}
                     />
+                    {errors.username && <SpanStyle>{errors.username}</SpanStyle>}
                 </div>
                 <div className="form-group">
                     <label>Email</label>
@@ -45,6 +61,7 @@ class SignupForm extends Component {
                         className="form-control"
                         onChange={this._onChange}
                     />
+                    {errors.email && <SpanStyle>{errors.email}</SpanStyle>}
                 </div>
                 <div className="form-group">
                     <label>Password</label>
@@ -55,6 +72,7 @@ class SignupForm extends Component {
                         className="form-control"
                         onChange={this._onChange}
                     />
+                    {errors.password && <SpanStyle>{errors.password}</SpanStyle>}
                 </div>
                 <div className="form-group">
                     <label>password Confirmation</label>
@@ -65,11 +83,13 @@ class SignupForm extends Component {
                         className="form-control"
                         onChange={this._onChange}
                     />
+                    {errors.passwordConfirmation && <SpanStyle>{errors.passwordConfirmation}</SpanStyle>}
                 </div>
                 <div>
-                <button>Submit</button>
+                <button disabled={this.state.isLoading}>Submit</button>
                 </div>
-            </form>    
+            </form> 
+            </ThemeProvider>   
         )
     }
 }
@@ -77,5 +97,10 @@ class SignupForm extends Component {
 // SignupForm.propTypes = {
 //     userSignupRequest: PropTypes.func.isRequired
 // }
+
+
+const SpanStyle = styled.span`
+  color: red;
+`
 
 export default SignupForm;

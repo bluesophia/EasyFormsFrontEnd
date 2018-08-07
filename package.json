@@ -14,6 +14,8 @@
     "@material-ui/icons": "^1.1.0",
     "antd": "^3.7.3",
     "antd-init": "^2.0.6",
+    "axios": "^0.12.0",
+    "classnames": "^2.2.6",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
@@ -42,7 +44,6 @@
   "proxy": "http://localhost:3001",
   "main": "index.js",
   "devDependencies": {
-    "axios": "^0.18.0",
     "react-redux": "^5.0.7"
   },
   "repository": {
