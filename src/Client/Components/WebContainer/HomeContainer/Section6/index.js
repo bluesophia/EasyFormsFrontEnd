@@ -16,7 +16,7 @@ class Section6 extends Component{
                     <Section06__Title>Easyforms Function</Section06__Title>
                     <HeaderLine />
                 </Section06__TitleDiv> */}
-                <Section06__Image src={Section06BgSm} />
+                {/* <Section06__Image src={Section06BgSm} /> */}
             </Section06>
         )
     }
@@ -25,17 +25,15 @@ class Section6 extends Component{
 /**** Section 06 ****/
 
 const Section06 = styled.div`
-    // padding: 0 8%;
-    // background: url('${Section06BgSm}') no-repeat center;
-    // height:983px;
-    // ${breakpoint('lg')`
-    //  background: url('${Section06BgLg}') no-repeat;
-    //  background-position: center bottom;
-    //  background-size:contain;
-    //  padding:0;
-    //  height:768px;
-    // `}
-    height:auto;
+    background: url('${Section06BgSm}') no-repeat center bottom;
+    background-size:auto 100%;
+    min-height:1226px;
+    ${breakpoint('md')`
+     background: url('${Section06BgLg}') no-repeat;
+     background-position: center bottom;
+     background-size:cover;
+     min-height:910px;
+    `}
 `
 const Section06__TitleDiv = styled.div`
     ${breakpoint('lg')`

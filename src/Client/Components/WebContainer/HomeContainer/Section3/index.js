@@ -8,22 +8,22 @@ import Title from '../../../Common/Title/Title';
 
 import FeaturesCarousel from '../../../Common/FeaturesCarousel';
 
-class Section5 extends Component{
+class Section3 extends Component{
     render(){
         return(
-            <Section05>
-                <Section05__Container>
-                    <Section05__Title>Easyforms Features</Section05__Title>
+            <Section03>
+                <Section03__Container>
+                    <Section03__Title>Easyforms Features</Section03__Title>
                     <FeaturesCarousel />
-                </Section05__Container>
-            </Section05>
+                </Section03__Container>
+            </Section03>
         )
     }
 }
 
-const Section05 = styled.div`
+const Section03 = styled.div`
 `
-const Section05__Container = styled.div`
+const Section03__Container = styled.div`
     margin:0 auto;
     padding: 18% 0 10%;
     ${breakpoint('sm')`
@@ -41,9 +41,10 @@ const Section05__Container = styled.div`
         justify-content: center;
     `}
 `
-const Section05__Title = styled.div`
+const Section03__Title = styled.div`
     ${Title};
     padding:0 8%;
+    margin-bottom:60px;
 `
 
-export default Section5;
+export default Section3;

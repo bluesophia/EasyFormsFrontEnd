@@ -4,8 +4,9 @@
  *********************************************/
 const Themes = {
     colors: {
-        blue:'#08275a',
+        blue:'#18225A',
         blueLight:'#1d4b93',
+        green:'#3384A8',
         yellow:'#ffa91f',
         orange:'#f77b39',
         black:'#333333',
@@ -14,11 +15,6 @@ const Themes = {
         formGrey: '#8D8D8D',
         veryLightGrey: '#F8F8F8',
         white: '#fff'
-    },
-    background:{
-        blueToBlueLight:'linear-gradient(#08275a,#1d4b93)',
-        blueLightToBlue:'linear-gradient(#1d4b93,#08275a)',
-        yellowToOrange:'linear-gradient(#ffa91f,#f77b39)'
     },
     fontsize: {
         h1: "38px",

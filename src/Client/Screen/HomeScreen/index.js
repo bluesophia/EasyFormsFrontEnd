@@ -24,7 +24,7 @@ import Logo07 from '../../../Assets/Images/asb.gif';
 import CardCarousel from '../../Components/Common/CardCarousel';
 import Section01 from '../../Components/WebContainer/HomeContainer/Section1';
 import Section02 from '../../Components/WebContainer/HomeContainer/Section2';
-import Section05 from '../../Components/WebContainer/HomeContainer/Section5';
+import Section03 from '../../Components/WebContainer/HomeContainer/Section3';
 import Section06 from '../../Components/WebContainer/HomeContainer/Section6';
 import Section07 from '../../Components/WebContainer/HomeContainer/Section7';
 
@@ -52,7 +52,7 @@ class HomeScreen extends Component{
                         <Section01 />
                         <Section02 />
                     </Section0102>
-                    <Section05 />
+                    <Section03 />
                     <Section06 />
                     <Section0304>
                         <Section04>
@@ -73,14 +73,14 @@ class HomeScreen extends Component{
                                     </Section04__Logos>
                                 </Section04__LogosDiv>
                         </Section04>
-                        <Section03>
-                            <Section03__Div>
-                                <Section03__Title>
+                        <Section05>
+                            <Section05__Div>
+                                <Section05__Title>
                                     Customer Stories
-                                </Section03__Title>
+                                </Section05__Title>
                                 <StyledCarousel />
-                            </Section03__Div>
-                        </Section03>
+                            </Section05__Div>
+                        </Section05>
 
                     </Section0304>
                     
@@ -103,7 +103,7 @@ const Section0304 = styled.div`
     ${breakpoint('lg')`
     `}
     `
-const Section03 = styled.div`
+const Section05 = styled.div`
     min-width: 0px;
     background: 
     linear-gradient(
@@ -118,14 +118,14 @@ const Section03 = styled.div`
             width:50%;
         `}
 `
-const Section03__Div = styled.div`
+const Section05__Div = styled.div`
     margin:0 auto;
     max-width:600px;
     ${breakpoint('xl')`
         margin-right:50px;
     `}    
 `
-const Section03__Title = styled.div`
+const Section05__Title = styled.div`
     ${Title};
     color:white;
     padding:60px 37px;

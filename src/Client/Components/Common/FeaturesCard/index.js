@@ -22,10 +22,10 @@ const Shadow = css`
 `
 const Section05__Card = styled.div`
     width:264px;
-    height:410px;
+    height:400px;
     margin:20px auto;
     background-color:white;
-    padding: 40px 15px;
+    padding: 40px 15px 30px 15px;
     box-sizing: border-box;
     ${Shadow};
 `
@@ -33,7 +33,7 @@ const Section05__CardCircle = styled.div`
     width:87px;
     height:87px;
     border-radius:50%;
-    background:linear-gradient(${Themes.colors.blueLight},${Themes.colors.blue});
+    background:linear-gradient(${Themes.colors.green},${Themes.colors.blueLight});
     margin:auto; 
     display:flex;
     justify-content:center;
@@ -44,7 +44,7 @@ const Section05__CardTitle = styled.p`
     font-size:${Themes.fontsize.p1};
     font-weight:${Themes.fontWeight.black};
     text-align:center;
-    margin:20px 0 20px 0;
+    margin:20px 0 10px 0;
     line-height:23px;
     padding:0;
 `
