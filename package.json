@@ -29,6 +29,7 @@
     "react-slick": "^0.23.1",
     "react-validation": "^3.0.7",
     "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "styled-components": "^3.3.3",
     "styled-components-breakpoint": "^2.1.0"
   },
@@ -41,6 +42,7 @@
   "proxy": "http://localhost:3001",
   "main": "index.js",
   "devDependencies": {
+    "axios": "^0.18.0",
     "react-redux": "^5.0.7"
   },
   "repository": {

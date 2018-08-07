@@ -18,24 +18,24 @@ export default class BlogToggleSec1 extends Component {
     }
     _renderContents = () => {
       const Contents = this.state.blogQuestions.map((blogQuestions, id, index) => {
-        if(id === 0) {
+        if(id === 1) {
+          return <Accordion question={blogQuestions.question} description={blogQuestions.description} onClick={this.toggle(index + 1)} 
+              expand={this.state[`block${index+1}`]} />
+      
+        } else if(id === 2) {
+          return <Accordion question={blogQuestions.question} description={blogQuestions.description} onClick={this.toggle(index + 1)} 
+              expand={this.state[`block${index+1}`]} />
+        
+        } else if(id === 3) {
+          return <Accordion question={blogQuestions.question} description={blogQuestions.description} onClick={this.toggle(index + 1)} 
+              expand={this.state[`block${index+1}`]} />
+        } else if(id === 4) {
+          return <Accordion question={blogQuestions.question} description={blogQuestions.description} onClick={this.toggle(index + 1)} 
+              expand={this.state[`block${index+1}`]} />
+        } else if(id === 5) {
           return <Accordion question={blogQuestions.question} description={blogQuestions.description} onClick={this.toggle(index + 1)} 
               expand={this.state[`block${index+1}`]} />
         }
-        // } else if(id === 1) {
-        //   return <Accordion question={blogQuestions.question} description={blogQuestions.description} onClick={this.toggle(index + 1)} 
-        //       expand={this.state[`block${index+1}`]} />
-        // }
-        // } else if(id === 2) {
-        //   return <Accordion question={blogQuestions.question} description={blogQuestions.description} onClick={this.toggle(index + 1)} 
-        //       expand={this.state[`block${index+1}`]} />
-        // } else if(id === 3) {
-        //   return <Accordion question={blogQuestions.question} description={blogQuestions.description} onClick={this.toggle(index + 1)} 
-        //       expand={this.state[`block${index+1}`]} />
-        // } else if(id === 4) {
-        //   return <Accordion question={blogQuestions.question} description={blogQuestions.description} onClick={this.toggle(index + 1)} 
-        //       expand={this.state[`block${index+1}`]} />
-        // }
       });
       return Contents;
     }
@@ -84,15 +84,17 @@ export default class BlogToggleSec1 extends Component {
       <div className="container">
         <dl className="accordion">
           {
-            this.state.blogQuestions ? this._renderContents():'Loading'
-            // blogQuestions.map((blogQuestions, index) => (
-            //   <Accordion 
-            //     question={blogQuestions.question} 
-            //     description={blogQuestions.description} 
-            //     onClick={this.toggle(index + 1)} 
-            //     expand={this.state[`block${index+1}`]} 
-            //   />
-            // ))
+            // this.state.blogQuestions ? this._renderContents():'Loading'
+            blogQuestions.map((blogQuestions, index, question, description, categoryId, key) => (
+
+              <Accordion 
+                key={blogQuestions.id}
+                question={blogQuestions.question} 
+                description={blogQuestions.description} 
+                onClick={this.toggle(index + 1)} 
+                expand={this.state[`block${index+1}`]} 
+              />
+            ))
           } 
         </dl> 
       </div>
