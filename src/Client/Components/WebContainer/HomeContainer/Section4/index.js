@@ -5,37 +5,37 @@ import Themes from '../../../../../Assets/Styles/Themes';
 import HeaderLine from '../../../Common/HeaderLine';
 import Title from '../../../Common/Title/Title';
 
-import Section06BgSm from '../../../../../Assets/Images/easyform-functions_mobile.png';
-import Section06BgLg from '../../../../../Assets/Images/easyform-functions_web.png';
+import Section04BgSm from '../../../../../Assets/Images/easyform-functions_mobile.png';
+import Section04BgLg from '../../../../../Assets/Images/easyform-functions_web.png';
 
-class Section6 extends Component{
+class Section4 extends Component{
     render(){
         return(
-            <Section06>
-                {/* <Section06__TitleDiv>
-                    <Section06__Title>Easyforms Function</Section06__Title>
+            <Section04>
+                {/* <Section04__TitleDiv>
+                    <Section04__Title>Easyforms Function</Section04__Title>
                     <HeaderLine />
-                </Section06__TitleDiv> */}
-                {/* <Section06__Image src={Section06BgSm} /> */}
-            </Section06>
+                </Section04__TitleDiv> */}
+                {/* <Section04__Image src={Section04BgSm} /> */}
+            </Section04>
         )
     }
 }
 
-/**** Section 06 ****/
+/**** Section 04 ****/
 
-const Section06 = styled.div`
-    background: url('${Section06BgSm}') no-repeat center bottom;
+const Section04 = styled.div`
+    background: url('${Section04BgSm}') no-repeat center bottom;
     background-size:auto 100%;
     min-height:1226px;
     ${breakpoint('md')`
-     background: url('${Section06BgLg}') no-repeat;
+     background: url('${Section04BgLg}') no-repeat;
      background-position: center bottom;
      background-size:cover;
      min-height:910px;
     `}
 `
-const Section06__TitleDiv = styled.div`
+const Section04__TitleDiv = styled.div`
     ${breakpoint('lg')`
         height:30%;
         display:flex;
@@ -44,14 +44,14 @@ const Section06__TitleDiv = styled.div`
         justify-content:flex-end;
     `}
 `
-const Section06__Title = styled.div`
+const Section04__Title = styled.div`
    ${Title};
    margin-top:18%;
     ${breakpoint('lg')`
         margin-top:80px;
     `}
 `
-const Section06__Image = styled.img`
+const Section04__Image = styled.img`
     
 `
-export default Section6;
+export default Section4;
