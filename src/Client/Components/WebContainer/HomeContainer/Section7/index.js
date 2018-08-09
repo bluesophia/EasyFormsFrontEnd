@@ -3,7 +3,9 @@ import styled, { css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../../Assets/Styles/Themes';
 import HeaderLine from '../../../Common/HeaderLine';
-import BigTitle from '../../../Common/Title/Title';
+import BigTitle from '../../../Common/Title/BigTitle';
+import Title from '../../../Common/Title/Title';
+
 
 import Section07Icon01 from '../../../../../Assets/Images/in-the-office.svg';
 import Section07Icon02 from '../../../../../Assets/Images/on-the-go.svg';
@@ -46,13 +48,16 @@ const Section07 = styled.div`
     padding: 18% 8%; 
     box-sizing: border-box;
     ${LightGreyBg};
+        ${breakpoint('md')`
+            padding: 18% 15%; 
+        `}
         ${breakpoint('lg')`
-           padding: 80px 20%; 
-           height:768px;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            flex-direction:column;
+           padding: 10% 20% 10% 20%; 
+            // display:flex;
+            // justify-content:center;
+            // align-items:center;
+            // flex-direction:column;
+
     `} 
 `
 const Section07__Title = styled.p`
@@ -74,27 +79,32 @@ const Section07__Contents = styled.div`
         justify-content:space-around;
         align-item:center;
         margin-top:40px;
-        max-width:700px;
+        max-width:900px;
         `} 
 `
 const Section07__ContentDiv = styled.div`
     margin:50px auto 0 auto;
-    ${breakpoint('md')`
-      width:220px;
-    `} 
+    display:flex;
+    flex-direction:column;
 `
 const Section07__Icon = styled.img`
-    width:100%;
-    height:auto;
-    display:block;
+    height:200px;
+    width:auto;
     margin:0 auto;
+    ${breakpoint('md')`
+        height:180px;
+        width:auto;
+    `}
 `
 const Section07__SubTitle = styled.p`
-    ${BigTitle};
+    ${Title};
     font-size:${Themes.fontsize.h3}; 
     font-weight:${Themes.fontsize.black};
     letter-spacing:normal;
     margin-top:15px;
+    margin-bottom:0;
+    ${breakpoint('md')`
+        font-size:${Themes.fontsize.h3};
+    `}
 `
-
 export default Section7;

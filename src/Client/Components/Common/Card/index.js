@@ -21,29 +21,26 @@ class Card extends Component {
             };
 
 const CardContainer = styled.div`
-    min-width: 0px;
     box-sizing:border-box;
     box-shadow : 0 0 15px rgba(0, 0, 0, 0.6);
     background-color: white;
     width:100%;
     height:440px;
-    padding:8%;
+    padding:35px 20px;
     text-align:center;
     display:flex;
     align-items:center;
     flex-direction:column;
-    justify-content:center;
     margin:0 auto 10px auto;  
     ${breakpoint('sm')`
         width:300px;
         height:440px;
     `}     
-    ${breakpoint('md')`
-        margin:0 auto 0 auto;       
-    `}
+    // ${breakpoint('md')`
+    //     margin:0 auto;      
+    // `}
     ${breakpoint('lg')`
-        width:400px;
-        height:460px;  
+        margin:0 10px;
     `}
 `
 const CardLogo = styled.img`
@@ -72,7 +69,6 @@ const CardText = styled.div`
     font-weight:${Themes.fontWeight.light};
     font-size:12px; 
     line-height:18px;
-    // padding-bottom:8%;
     ${breakpoint('sm')`
       font-size:${Themes.fontsize.p3}; 
     `}

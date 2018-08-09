@@ -8,15 +8,14 @@ import Title from '../../Components/Common/Title/Title';
 
 
 /** Images **/
-import CustomerStoriesBg from '../../../Assets/Images/customer-stories.png';
 import HomeSection01BgSm from '../../../Assets/Images/HomeSection01BgSm.svg';
 
-import CardCarousel from '../../Components/Common/CardCarousel';
 import Section01 from '../../Components/WebContainer/HomeContainer/Section1';
 import Section02 from '../../Components/WebContainer/HomeContainer/Section2';
 import Section03 from '../../Components/WebContainer/HomeContainer/Section3';
 import Section04 from '../../Components/WebContainer/HomeContainer/Section4';
 import Section05 from '../../Components/WebContainer/HomeContainer/Section5';
+import Section06 from '../../Components/WebContainer/HomeContainer/Section6';
 import Section07 from '../../Components/WebContainer/HomeContainer/Section7';
 
 injectGlobal`
@@ -46,14 +45,7 @@ class HomeScreen extends Component{
                     <Section03 />
                     <Section04 />
                     <Section05 />
-                        <Section06>
-                            <Section06__Div>
-                                <Section06__Title>
-                                    Customer Stories
-                                </Section06__Title>
-                                <StyledCarousel />
-                            </Section06__Div>
-                        </Section06>
+                    <Section06 />
                     <Section07 />
                 </div>
            </ThemeProvider>
@@ -63,36 +55,4 @@ class HomeScreen extends Component{
 const Section0102 = styled.div`
     background-color:${Themes.colors.veryLightGrey};
 `
-
-const Section06 = styled.div`
-    min-width: 0px;
-    background:
-    // linear-gradient(${Themes.colors.green},${Themes.colors.blueLight}) 
-    url(${CustomerStoriesBg});
-    background-size:100% cover;
-    background-repeat:no-repeat;
-    background-position:center top;
-    padding-bottom:40px;
-`
-const Section06__Div = styled.div`
-    margin:0 auto;
-    max-width:600px;
-    ${breakpoint('xl')`
-        margin-right:50px;
-    `}    
-`
-const Section06__Title = styled.div`
-    ${Title};
-    color:white;
-    padding:60px 37px;
-        ${breakpoint('md')`
-        padding-top:80px;
-        padding-bottom:80px;
-        margin:0 auto;
-        `}
-`
-const StyledCarousel = styled(CardCarousel)`
-   min-width: 0px;
-`
-
 export default HomeScreen;

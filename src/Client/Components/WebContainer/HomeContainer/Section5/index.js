@@ -47,7 +47,7 @@ class Section5 extends Component{
 const Section05 = styled.div`
     padding:18% 8%;
     ${breakpoint('md')`
-        padding:18%;
+        padding:18% 18% 10% 18%;
     `}
     ${breakpoint('lg')`
        max-width:1366px;
