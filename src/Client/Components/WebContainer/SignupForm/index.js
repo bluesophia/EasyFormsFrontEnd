@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import styled, { css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
+import validateInput from '../../../../shared/validations/signup'
 
 class SignupForm extends Component {
     constructor(props) {
@@ -23,16 +24,29 @@ class SignupForm extends Component {
     _onChange(e){
         this.setState({ [e.target.name] : e.target.value});
     }
-    _onSubmit(e){
-        this.setState({ errors: {}, isLoading:true });
-        e.preventDefault();
-        this.props.userSignupRequest(this.state)
-        .then(
-            //이벤트핸들러
-            () => {},
-            ({ data }) => this.setState({ errors: data, isLoading:false })
 
-        )
+    isValid() {
+      const { errors, isValid }  = validateInput(this.state);
+ 
+            if(!isValid) {
+                this.setState({ errors });
+            }
+            return isValid;
+            }
+            
+    _onSubmit(e){
+        e.preventDefault();
+
+        if(this.isValid()){
+            this.setState({ errors: {}, isLoading:true });
+            this.props.userSignupRequest(this.state)
+            .then(
+                //이벤트핸들러
+                () => {},
+                ({ data }) => this.setState({ errors: data, isLoading:false })
+            )
+        }
+        
         // axios.post('/api/users', {user: this.state});
     }
     render() { 
