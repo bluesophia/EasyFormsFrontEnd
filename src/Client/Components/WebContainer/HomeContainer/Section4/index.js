@@ -36,15 +36,17 @@ const Section04 = styled.div`
     background-size:100% 100%;
     height:1100px;
     position:relative;
-    ${breakpoint('md')`
-     height:720px;
+    margin-bottom:150px;
+        ${breakpoint('md')`
+        height:720px;
+        margin-bottom:120px;
+        `}
+        ${breakpoint('lg')`
+        background: url('${Section04BgLg}') no-repeat;
+        background-position: center bottom;
+        background-size:auto 100%;
+        height:768px;
     `}
-    ${breakpoint('lg')`
-    background: url('${Section04BgLg}') no-repeat;
-    background-position: center bottom;
-    background-size:auto 100%;
-    height:768px;
-   `}
 `
 const Section04__TitleDiv = styled.div`
     ${breakpoint('lg')`

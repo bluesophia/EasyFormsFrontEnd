@@ -50,6 +50,7 @@ const Section05 = styled.div`
         padding:18% 18% 10% 18%;
     `}
     ${breakpoint('lg')`
+       padding:10% 18%; 
        max-width:1366px;
     `}
 `
