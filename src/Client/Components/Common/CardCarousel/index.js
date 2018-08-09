@@ -79,21 +79,24 @@ render () {
         breakpoint: 1200,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          dots:true              
         }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          dots:true              
         }
       },
       {
         breakpoint: 375,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          dots:true    
         }
       }
     ]

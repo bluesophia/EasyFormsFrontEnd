@@ -36,7 +36,12 @@ const Section06 = styled.div`
     background-size:cover;
     background-repeat:no-repeat;
     background-position:center top;
+    padding-top:18%;
     padding-bottom:40px;
+    ${breakpoint('md')`
+        padding-top:10%;
+        padding-bottom:8%;
+    `}
 `
 const Section06__Div = styled.div`
     margin:0 auto;
@@ -45,10 +50,8 @@ const Section06__Div = styled.div`
 const Section06__Title = styled.div`
     ${Title};
     color:white;
-    padding:60px 37px;
+    padding-bottom:60px;
         ${breakpoint('md')`
-        padding-top:80px;
-        padding-bottom:80px;
         margin:0 auto;
         `}
 `
@@ -56,6 +59,9 @@ const StyledCarousel = styled(CardCarousel)`
     margin:0 auto;
 `
 const CarouselDiv = styled.div`
-margin:0 auto;
+    margin:0 auto;
+    ${breakpoint('lg')`
+        width:1000px;
+    `}
 `
 export default Section6;

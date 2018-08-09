@@ -22,10 +22,10 @@ class Card extends Component {
 
 const CardContainer = styled.div`
     box-sizing:border-box;
-    box-shadow : 0 0 15px rgba(0, 0, 0, 0.6);
+    box-shadow : 0 0 15px rgba(0, 0, 0, 0.2);
     background-color: white;
     width:100%;
-    height:440px;
+    height:430px;
     padding:35px 20px;
     text-align:center;
     display:flex;
@@ -34,13 +34,9 @@ const CardContainer = styled.div`
     margin:0 auto 10px auto;  
     ${breakpoint('sm')`
         width:300px;
-        height:440px;
-    `}     
-    // ${breakpoint('md')`
-    //     margin:0 auto;      
-    // `}
+    `}    
     ${breakpoint('lg')`
-        margin:0 10px;
+        margin:0 auto;
     `}
 `
 const CardLogo = styled.img`
@@ -49,13 +45,13 @@ const CardLogo = styled.img`
         padding:0;
 `
 const CardName = styled.p`
-    font-size:${Themes.fontsize.h3};
+    font-size:${Themes.fontsize.h4};
     font-weight:${Themes.fontWeight.black};
     color:${Themes.colors.blue};
     padding:20px 0 0 0;
 `
 const CardCompanyName = styled.p`
-    font-size:${Themes.fontsize.p3};
+    font-size:${Themes.fontsize.p2};
     color:${Themes.colors.grey};
     line-height:20px;
     margin:6px 0 0 0;
@@ -67,7 +63,7 @@ const CardQuatation = styled.img`
 const CardText = styled.div`
     color:${Themes.colors.grey};  
     font-weight:${Themes.fontWeight.light};
-    font-size:12px; 
+    font-size:${Themes.fontsize.p4};
     line-height:18px;
     ${breakpoint('sm')`
       font-size:${Themes.fontsize.p3}; 

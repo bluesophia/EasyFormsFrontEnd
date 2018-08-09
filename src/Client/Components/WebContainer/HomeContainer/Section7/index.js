@@ -6,7 +6,8 @@ import HeaderLine from '../../../Common/HeaderLine';
 import BigTitle from '../../../Common/Title/BigTitle';
 import Title from '../../../Common/Title/Title';
 
-
+/** Images **/
+import Section07Bg from '../../../../../Assets/Images/HomeSection07Bg.png';
 import Section07Icon01 from '../../../../../Assets/Images/in-the-office.svg';
 import Section07Icon02 from '../../../../../Assets/Images/on-the-go.svg';
 import Section07Icon03 from '../../../../../Assets/Images/for-management.svg';
@@ -50,6 +51,8 @@ const Section07 = styled.div`
     ${LightGreyBg};
         ${breakpoint('md')`
             padding: 18% 15%; 
+            background:url('${Section07Bg}') no-repeat bottom
+            background-size:100% 50%;
         `}
         ${breakpoint('lg')`
            padding: 10% 20% 10% 20%; 
