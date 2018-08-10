@@ -11,14 +11,44 @@ import CardCarousel from '../../../Common/CardCarousel';
 import CustomerStoriesBg from '../../../../../Assets/Images/customer-stories.png';
 
 class Section6 extends Component{
+    constructor(props){
+        super(props);
+        this.state={ 
+            home:[]
+        };
+    }
+
+    componentDidMount(){
+        let self=this;
+        var data = {
+            id: this.state.id,
+            title: this.state.title
+        }
+        fetch('/api/', {
+            method: 'GET'
+        }).then(function(response) {
+            if (response.status >= 400) {
+                throw new Error("Bad response from server");
+            }
+            return response.json();
+        }).then(function(data) {
+            self.setState({home: data});
+        }).catch(err => {
+        console.log('caught it!',err);
+        })
+    }
     render(){
         return(
             <ThemeProvider theme={Themes}>
                 <Section06>
                     <Section06__Div>
-                        <Section06__Title>
-                            Customer Stories
-                        </Section06__Title>
+                        {this.state.home.map((home, index) => {
+                        if(index === 7){
+                        return (
+                            <Section06__Title>{home.title}</Section06__Title>
+                        )}
+                        return null
+                        })}
                         <CarouselDiv>
                             <StyledCarousel />
                         </CarouselDiv>

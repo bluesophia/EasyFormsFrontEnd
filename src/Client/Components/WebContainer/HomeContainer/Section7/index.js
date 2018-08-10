@@ -16,13 +16,52 @@ const LightGreyBg = css`
   background-color:rgba(238,238,238,0.6);
 `
 class Section7 extends Component{
+    constructor(props){
+        super(props);
+        this.state={ 
+            home:[]
+        };
+    }
+
+    componentDidMount(){
+        let self=this;
+        var data = {
+            id: this.state.id,
+            title: this.state.title,
+            descriptionlg: this.state.descriptionlg
+        }
+
+        fetch('/api/', {
+            method: 'GET'
+        }).then(function(response) {
+            if (response.status >= 400) {
+                throw new Error("Bad response from server");
+            }
+            return response.json();
+        }).then(function(data) {
+            self.setState({home: data});
+        }).catch(err => {
+        console.log('caught it!',err);
+        })
+    }
     render(){
         return(
             <Section07>
                 <div>
-                <Section07__Title>We work in all business environments</Section07__Title>
+                {this.state.home.map((home, index) => {
+                    if(index === 8){
+                    return (
+                        <Section07__Title>{home.title}</Section07__Title>
+                    )}
+                    })}
+                {this.state.home.map((home, index) => {
+                    if(index === 8){
+                    return (
+                        <Section07__Text>{home.descriptionlg}</Section07__Text>
+                    )}
+                    })}    
+                
                 {/* <HeaderLine /> */}
-                <Section07__Text>EasyForms can offer solutions to a wide range of businesses and industries.</Section07__Text>
                 </div>
                 <Section07__Contents>
                     <Section07__ContentDiv>

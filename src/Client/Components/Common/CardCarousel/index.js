@@ -63,6 +63,35 @@ const ArrowStyle = styled.img`
 `
 
 class CardCarousel extends Component {
+  constructor(props){
+    super(props);
+    this.state={ 
+        stories:[] 
+    };
+}
+
+componentDidMount(){
+    let self=this;
+    var data = {
+        id: this.state.id,
+        name: this.state.name,
+        descriptionlg: this.state.descriptionlg,
+        descriptionsm: this.state.descriptionsm
+    }
+
+    fetch('/api/stories', {
+        method: 'GET'
+    }).then(function(response) {
+        if (response.status >= 400) {
+            throw new Error("Bad response from server");
+        }
+        return response.json();
+    }).then(function(data) {
+        self.setState({stories: data});
+    }).catch(err => {
+    console.log('caught it!',err);
+    })
+  }
 render () {
   var settings = {
     infinite: true,
@@ -103,23 +132,16 @@ render () {
   };
       return (
         <Slider {...settings}>
-            <Card 
-            logo = {Logo01}
-            name = "Daniel Hadfield"
-            companyName = "Licensing & Compliance Division, Auckland Council"
-            text = "EasyForms have been a key factor in helping us to become a smarter, more mobile workforce and have worked alongside us to help move from a manual, paper based process, to an intelligent digital process."
-            />
-            <Card 
-            logo = {Logo02}
-            name = "Mark Chapman"
-            companyName = "General Manager, Passrite"
-            text = "EasyForms spent time with us understanding our structure and requirements and then delivered a great solution which cut our admin time and simplified the process for our assessors. This also improved our service to our customers."
-            />
-            <Card 
-            logo = {Logo03}
-            companyName = "Service Operations, Toyota"
-            text = "EasyForms took the design of our survey/audit and built this into a user friendly interface. The other solutions that were investigated before using EasyForms often missed core functionality and were not flexible enough in the reporting space.  Many other systems provided some core functionality, but not the bespoke report outputs that we required.  This was the key difference between EasyForms and the rest."
-            />
+        {this.state.stories.map((stories, name, descriptionlg, descriptionsm) => {
+                    return (
+                        <Card 
+                        logo={Logo01}
+                        name={stories.name}
+                        companyName={stories.descriptionlg}
+                        text={stories.descriptionsm}
+                        />
+                    )
+                    })}
         </Slider>
       );
     }

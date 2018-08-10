@@ -13,11 +13,46 @@ import Section04ImageMd from '../../../../../Assets/Images/easyform-functions_ta
 import Section04ImageLg from '../../../../../Assets/Images/easyform-functions_webImage.png';
 
 class Section4 extends Component{
+    //constructor
+  constructor(props) {
+    super(props);
+    this.state = {
+        home: []
+    };
+  }
+
+  componentDidMount() {
+      let self = this;
+        var data = {
+          id: this.state.id,
+          title: this.state.title
+      }
+
+  //data fetch
+  fetch('/api/', {
+      method: 'GET'
+  }).then(function(response) {
+      if (response.status >= 400) {
+          throw new Error("Bad response from server");
+      }
+      return response.json();
+  }).then(function(data) {
+      self.setState({home: data});
+  }).catch(err => {
+  console.log('caught it!',err);
+  })
+  }
     render(){
         return(
             <Section04>
                 <Section04__TitleDiv>
-                    <Section04__Title>Easyforms Function</Section04__Title>
+                {this.state.home.map((home, index) => {
+                    if(index === 5){
+                    return (
+                        <Section04__Title>{home.title}</Section04__Title>
+                    )}
+                    return null
+                    })}
                 </Section04__TitleDiv>
                 <Section04__ImageDiv>
                     <Section04__ImageSm src={Section04ImageSm} />

@@ -16,15 +16,68 @@ import Logo06 from '../../../../../Assets/Images/uoa.gif';
 import Logo07 from '../../../../../Assets/Images/asb.gif';
 
 class Section5 extends Component{
-    render(){
+    constructor(props){
+        super(props);
+        this.state={ 
+            clients:[] ,
+            home:[]
+        };
+    }
+
+    componentDidMount(){
+        let self=this;
+        var data = {
+            id: this.state.id,
+            img: this.state.img
+        }
+
+        fetch('/api/clients', {
+            method: 'GET'
+        }).then(function(response) {
+            if (response.status >= 400) {
+                throw new Error("Bad response from server");
+            }
+            return response.json();
+        }).then(function(data) {
+            self.setState({features: data});
+        }).catch(err => {
+        console.log('caught it!',err);
+        })
+
+        fetch('/api/', {
+            method: 'GET'
+        }).then(function(response) {
+            if (response.status >= 400) {
+                throw new Error("Bad response from server");
+            }
+            return response.json();
+        }).then(function(data) {
+            self.setState({home: data});
+        }).catch(err => {
+        console.log('caught it!',err);
+        })
+    }
+render(){
         return(
             <ThemeProvider theme={Themes}>
                 <Section05>
-                    <Section05__Title>
+                    {this.state.home.map((home, index) => {
+                    if(index === 6){
+                    return (
+                        <Section05__Title>{home.title}</Section05__Title>
+                    )}
+                    return null
+                    })}
+                    {/* <Section05__Title>
                         Here Are Just a Few of the Clients <br />We Work With
-                    </Section05__Title>
+                    </Section05__Title> */}
                     <Section05__Logos>
                         <Section05__LogosDiv01>
+                            {/* {this.state.clients.map((clients, id, img) => {
+                                return(
+                                    <Section05__Logo src={clients.img}/>
+                                )
+                            })} */}
                             <Section05__Logo src={Logo01}/>
                             <Section05__Logo src={Logo07}/>
                             <Section05__Logo src={Logo02}/>
