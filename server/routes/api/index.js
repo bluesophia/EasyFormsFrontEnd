@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-// const home = require("../home");
+const home = require("../home");
 const about = require("../about");
 const blog = require("../blog");
 // const support = require("../support");
@@ -8,7 +8,7 @@ const blog = require("../blog");
 // const login = require("../login");
 // const users = require("../users");
 
-// router.use("/", home);
+router.use("/", home);
 router.use("/about", about);
 router.use("/blog", blog);
 // router.use("/support", support);

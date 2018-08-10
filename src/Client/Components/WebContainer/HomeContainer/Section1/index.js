@@ -14,19 +14,62 @@ import mainImage from '../../../../../Assets/Images/mainImage.svg';
 /** components **/
 import Title from '../../../Common/Title/Title';
 import BigTitle from '../../../Common/Title/BigTitle';
+import { isRegExp } from 'util';
 
 class Section1 extends Component{
+    //constructor
+    constructor(props) {
+        super(props);
+        this.state = {
+            home: []
+        };
+    }
+
+    componentDidMount() {
+        let self = this;
+          var data = {
+            id: this.state.id,
+            title: this.state.title,   
+            descriptionlg: this.state.descriptionlg,
+            descriptionmid: this.state.descriptionmd,
+            descriptionsm: this.state.descriptionsm
+        }
+
+    //data fetch
+    fetch('/api/', {
+        method: 'GET'
+    }).then(function(response) {
+        if (response.status >= 400) {
+            throw new Error("Bad response from server");
+        }
+        return response.json();
+    }).then(function(data) {
+        self.setState({home: data});
+    }).catch(err => {
+    console.log('caught it!',err);
+    })
+    }
     render(){
+        const { home } = this.state;
         return(
                <Section01>
                     <Container>
                         <Section01__Image><MainImage src={mainImage}/></Section01__Image>
                         <Section01__TitleDiv>
-                            <StyledTitle>Job Management and WorkFlow Processes Made Easy</StyledTitle>
-                            <Section01__Text>We are a cloud-based solution offering end-to-end job 
-                                and workflow management software industry standard 
-                                health and safety management and much more.
-                            </Section01__Text>
+                            {this.state.home.map((home, index) => {
+                                if(index === 0){
+                                return (
+                                    <StyledTitle>{home.title}</StyledTitle>
+                                )}
+                                return null
+                            })}
+                            {this.state.home.map((home, index) => {
+                                if(index === 0){
+                                return (
+                                    <Section01__Text id={1}>{home.descriptionlg}</Section01__Text>
+                                )}
+                                return null
+                            })}
                             <ButtonDiv>
                                 <ButtonLink to='/contact'>
                                     <Button01 value={'Contact our Software Experts'}/>
