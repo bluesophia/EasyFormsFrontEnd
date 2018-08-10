@@ -78,7 +78,7 @@ const Label = styled.label`
   color: ${Themes.colors.blueLight}
   `
   const DropzoneStyle = {
-    width: '500px',
+    // width: '500px',
     height: '30px',
   }
 /*const Input = styled.input.attrs({

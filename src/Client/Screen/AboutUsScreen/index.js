@@ -87,9 +87,7 @@ class AboutUsScreen extends Component {
     )
   }
 }
-// const Section0102 = styled.div`
-//     background-color:${Themes.colors.veryLightGrey};
-// `
+
 const Section01 = styled.div`
   margin:0;
   background: url('${HomeSection01BgSm}');
