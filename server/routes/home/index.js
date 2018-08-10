@@ -7,7 +7,6 @@ router.get("/", controller.home);
 router.get("/features", controller.features);
 router.get("/clients", controller.clients);
 router.get("/stories", controller.stories);
-router.get("/support", controller.support);
 
 module.exports = router;
 

@@ -1,20 +1,3 @@
-// /* GET Home page. */
-// router.get('/', function(req, res, next) {
-//     res.locals.connection.query('SELECT * FROM home', function (error, results, fields) {
-//       if(error) throw error;
-// 	  res.send(JSON.stringify(results));
-//     });
-//   });
-// //features
-// router.get('/features', function(req, res, next) {
-//   res.locals.connection.query('SELECT * FROM features', function (error, results, fields) {
-//     if(error) throw error;
-//   res.send(JSON.stringify(results));
-//   });
-// });
-
-// module.exports = router;
-
 var mysql =require("mysql");
 //main
 exports.home = (req, res) => {
@@ -47,10 +30,3 @@ exports.stories = (req, res) => {
         res.send(JSON.stringify(results));
         })
     };
-//support
-exports.support = (req, res) => {
-    res.locals.connection.query('SELECT * FROM support', function (error, results, fields) {
-        if(error) throw error;
-        res.send(JSON.stringify(results));
-        })
-    };    

@@ -1,13 +1,10 @@
 var express = require('express');
 var router = express.Router();
+const controller = require("./blog.controller");
 
 
-/* GET blog page. */
-router.get('/', function(req, res, next) {
-    res.locals.connection.query('SELECT * FROM blogCategory UNION SELECT * FROM blogQuestions', function (error, results, fields) {
-      if(error) throw error;
-      res.send(JSON.stringify(results));
-    });
-  });
-  
+router.get("/", controller.blog);
+
 module.exports = router;
+
+

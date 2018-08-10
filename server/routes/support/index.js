@@ -1,13 +1,11 @@
-var express =require('express');
-const router = express.Router();
-var mysql =require("mysql");
+var express = require('express');
+var router = express.Router();
+const controller = require("./support.controller");
 
-router.get('/', function(req, res, next) {
-	res.locals.connection.query('SELECT * from support', function (error, results, fields) {
-		if (error) throw error;
-		res.send(JSON.stringify(results));
-	});
-});
 
+router.get("/", controller.support);
+// router.post("/", controller.supportform);
 
 module.exports = router;
+
+
