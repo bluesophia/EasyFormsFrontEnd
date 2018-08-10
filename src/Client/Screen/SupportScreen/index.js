@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import styled, { css, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
-
 import Themes from '../../../Assets/Styles/Themes';
-import HeaderLine from '../../Components/Common/HeaderLine';
+
+/** components **/
 import Text from '../../Components/Common/Text';
 import BigTitle from '../../Components/Common/Title/BigTitle.js';
-import Section01Bg from '../../../Assets/Images/support.jpg';
+
+/** Images **/
+import HomeSection01BgSm from '../../../Assets/Images/HomeSection01BgSm.png';
+import Section01Bg from '../../../Assets/Images/SupportSection01Bg.png';
+import Image from '../../../Assets/Images/SupportSection01Image.png';
 
 import { UploadInput,
           CompanyNameInput,
@@ -34,141 +38,164 @@ const BlueBg = css`
 class SupportScreen extends Component{
   render(){
     return(
-<ThemeProvider theme={Themes}>
-    <div>
-      <Container>
-        <TopBgImg src={Section01Bg}/>
-        <Header> 
-          <TitleDiv>
-            <TitleDiv__Title>Submit a support ticket</TitleDiv__Title>
-            <TitleDiv__Line><HeaderLine /></TitleDiv__Line>
-            <TitleDiv__Text>Please complete the form below which will direct your request to the appropriate member of the team. 
-              This ensures greater efficiency around response times and also ensures processes are followed.
-              <br /><br />
-              We aim to respond to support requests within 24 hours on regular business days, however, 
-              depending on the scale of your request this could take slightly longer.</TitleDiv__Text>
-          </TitleDiv>
-        </Header>
-          <FormDiv>
-            <Form>
-              <InputDiv>
-                <InputDiv__Left>
-                  <CompanyNameInput />
-                  <FullNameInput />
-                  <EmailInput />
-                </InputDiv__Left>
-                <InputDiv__Right>
-                    <MessageInput />
-                  <UploadInput />
-                </InputDiv__Right>
-              </InputDiv>
-              <ButtonDiv>
-                <Button01 value="Tell us about Issue"/>
-              </ButtonDiv>      
-            </Form>
-          </FormDiv>
-      </Container>
-    </div>
-  </ThemeProvider>
-    )
-  }
-}
-
-const Container = styled.div`
-  background-color:#eee;
-`
-const Header = styled.div`
-  padding:60px 8% 40px 8%;
-  display:flex;
-  align-items:center;
-  flex-direction:column;
-  background-image:url(${Section01Bg});
-  background-size:cover;
+        <ThemeProvider theme={Themes}>
+          <Support>
+              <Container>
+                  <TitleDiv>
+                    <TitleDiv__Title>Submit a support ticket</TitleDiv__Title>
+                    <TitleDiv__Text>Please complete the form below which will direct your request to the appropriate member of the team. 
+                      This ensures greater efficiency around response times and also ensures processes are followed.
+                      <br /><br />
+                      We aim to respond to support requests within 24 hours on regular business days, however, 
+                      depending on the scale of your request this could take slightly longer.</TitleDiv__Text>
+                  </TitleDiv>
+                  <ImageDiv>
+                    <TopBgImg src={Image}/>
+                  </ImageDiv>
+                  <FormDiv>
+                    <Form>
+                      <InputDiv>
+                        <InputDiv__Left>
+                          <CompanyNameInput />
+                          <FullNameInput />
+                          <EmailInput />
+                        </InputDiv__Left>
+                        <InputDiv__Right>
+                            <MessageInput />
+                          <UploadInput />
+                        </InputDiv__Right>
+                      </InputDiv>
+                      <ButtonDiv>
+                        <Button01 value="Tell us about Issue"/>
+                      </ButtonDiv>      
+                    </Form>
+                  </FormDiv>
+              </Container>
+            </Support>
+          </ThemeProvider>
+          )
+        }
+      }
+const Support = styled.div`
+    margin:0;
+    background: url('${HomeSection01BgSm}');
+    background-position:center top;
+    background-repeat:no-repeat;
+    background-size: 100% auto;
+    background-color:${Themes.colors.veryLightGrey};
+    padding:18% 8%;
+    ${breakpoint('md')`
+      background: url('${Section01Bg}');
+      background-position:left top;
+      background-repeat:no-repeat;
+      background-size:100% 32%; 
+      background-color:${Themes.colors.veryLightGrey}; 
+      padding:5% 10% 8% 10%;  
+    `}
     ${breakpoint('lg')`
-    background:none;
+    background-size:100% 50%;   
+    `}  
+`
+const Container = styled.div`
+    ${breakpoint('md')`
+      max-width:1366px;
+      display:grid;
+      grid-template-columns:40% 60%;
+      margin:0 auto;
+    `}
+`
+const ImageDiv = styled.div`
+  margin-bottom:40px;
+    ${breakpoint('md')`
+    padding:0 20% 0 0;
+    order:1;
     display:flex;
-    // justify-content:space-between;
-    // flex-direction:row;
-    // align-items:flex-end;
-    padding:110px 10% 70px 10%;
+    flex-direction:column;
+    align-items:flex-start; 
+    justify-content:center;
+    `}
+    ${breakpoint('lg')`
+    grid-row: 1 / 3;
+    justify-content:flex-start; 
     `}
 `
 const TopBgImg = styled.img`
-  display:none;
-    ${breakpoint('lg')`
-      display:block;
-      width:100vw;
-      height:auto;
-      position:absolute;
-      top:120;
-  //    z-index:-1;
-    `}
+  height:auto;
+  width:100%;
+    ${breakpoint('md')`
+    margin:0 auto;
+    text-align:center;
+  `}
 `
 const TitleDiv = styled.div`
-  ${breakpoint('lg')`
+  ${breakpoint('md')`
+    order:2;  
     display:flex;
     flex-direction:column;
-    align-items:center;
-    max-width:1366px;
+    align-items:flex-start;   
+  `}
+  ${breakpoint('lg')`
     margin:0 auto;
-    z-index:1;    
   `}
 `
 const TitleDiv__Title = styled.div`
   ${BigTitle};
+  color:white;
+  margin-bottom:40px;
   ${breakpoint('md')`
-    ${BigTitle};
-    font-size:35px;
+    text-align:left;
+    margin:0px 20px 20px 0px; 
   `}
-`
-const TitleDiv__Line = styled.div`
+  ${breakpoint('lg')`
+  padding:0 3%;
+`}
 `
 const TitleDiv__Text = styled.div`
   display:none;
-  ${breakpoint('lg')`
+  ${breakpoint('md')`
     display:block;
     color:white;
-    font-size:${Themes.fontsize.p2};
-    line-height:25px;
+    font-size:${Themes.fontsize.p3};
+    line-height:18px;
     font-weight:${Themes.fontWeight.light};
-    width:80%;
-    text-align:center;
+    text-align:left;
+  `}
+  ${breakpoint('lg')`
+    font-size:${Themes.fontsize.p2} !important;
+    line-height:25px;  
+    padding:0 3%;
   `}
 `
 const FormDiv = styled.div` 
-  display:flex;
-  flex-direction:column;
-    ${breakpoint('lg')`
-     flex-direction:column-reverse;
-      margin:0 auto;
-      max-width:1366px;
-      z-index:1;
-  `}
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    margin:0 -5%;
+    ${breakpoint('md')`
+    order:3;  
+    grid-column:1/3;
+    margin:0;
+    `}
+      ${breakpoint('lg')`
+        grid-column:unset;
+    `}
 `
 const Form = styled.div`
   height:auto;
   background-color:white;
-  box-shadow:0 0 20px rgba(0,0,0,0.2);
-  padding:60px 8%;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
+  padding:50px 8% 30px 8%;
+  border-radius:25px;
     ${breakpoint('lg')`
-      margin:0 20% 200px 20%;
-      z-index:1;
+    margin-top:30px;
   `}
 `
 const InputDiv = styled.div`
   margin-bottom:50px;
   display:flex;
   flex-direction:column;
-  ${breakpoint('lg')`
-    // display:grid;
-    // grid-template-columns:1fr 1fr;
-    // grid-column-gap:4em;
-    // margin-bottom:50px;
-  `}
 `
 const InputDiv__Left = styled.div`
-//   display:flex;
-//   flex-direction:column;
    ${breakpoint('lg')`
         margin-bottom:50px;
  `}
