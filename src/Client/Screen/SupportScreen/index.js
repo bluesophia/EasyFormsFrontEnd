@@ -36,18 +36,56 @@ const BlueBg = css`
 `
 
 class SupportScreen extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      support: []
+    };
+  }
+  componentDidMount(){
+   let self = this;
+   var data = {
+     id: this.state.id,
+     title: this.state.title,
+     descriptionfirst: this.state.descriptionfirst,
+     descriptionsecond: this.state.descriptionsecond
+   } 
+   fetch('/api/support', {
+     method:'GET'
+   }).then(function(response) {
+     if(response.status>=400) {
+       throw new Error("Bad response from server");
+     }
+     return response.json();
+   }).then(function(data) {
+     self.setState({support:data});
+   }).catch(err => {
+     console.log('caught it!', err);
+   })
+
+  }
   render(){
     return(
         <ThemeProvider theme={Themes}>
           <Support>
               <Container>
                   <TitleDiv>
-                    <TitleDiv__Title>Submit a support ticket</TitleDiv__Title>
-                    <TitleDiv__Text>Please complete the form below which will direct your request to the appropriate member of the team. 
-                      This ensures greater efficiency around response times and also ensures processes are followed.
-                      <br /><br />
-                      We aim to respond to support requests within 24 hours on regular business days, however, 
-                      depending on the scale of your request this could take slightly longer.</TitleDiv__Text>
+                    {this.state.support.map((support, index) => {
+                      return(
+                      <TitleDiv__Title>{support.title}</TitleDiv__Title>
+                      )
+                    })}
+                    {this.state.support.map((support, index) => {
+                      return(
+                      <TitleDiv__Text>{support.descriptionfirst}</TitleDiv__Text>
+                      )
+                    })}
+                    <br />
+                    {this.state.support.map((support, index) => {
+                      return(
+                      <TitleDiv__Text>{support.descriptionsecond}</TitleDiv__Text>
+                      )
+                    })}
                   </TitleDiv>
                   <ImageDiv>
                     <TopBgImg src={Image}/>
