@@ -32,7 +32,36 @@ const BlueBg = css`
   background:linear-gradient(${Themes.colors.blue},${Themes.colors.blueLight});
 `
 class ContactUsScreen extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      contact:[]
+    }
+  }
+
+  componentDidMount(){
+    let self = this;
+    var data = {
+      id: this.state.id,
+      title: this.state.title,
+      descriptionfirst: this.state.descriptionfirst,
+      phone: this.state.phone
+    }
+    fetch('/api/contact', {
+      method:'GET',
+    }).then(function(response) {
+        if(response >= 400) {
+          throw new Error("Bad response from server")
+        }
+        return response.json();
+      }).then(function(data) {
+      self.setState({contact:data});
+    }).catch(err => {
+      console.log('caught it!', err);
+    })
+  }
   render(){
+    const { contact } = this.state; 
     return(
       <ThemeProvider theme={Themes}>
       <div>
@@ -40,15 +69,25 @@ class ContactUsScreen extends Component {
           <TopBgImg src={TopBg}/>
           <Header>
             <TitleDiv>
-              <TitleDiv__Title>Get In Touch</TitleDiv__Title>
-              <TitleDiv__Line><HeaderLine /></TitleDiv__Line>
-              <TitleDiv__Text>Get in touch with us today to find out how we can help your business
-                work smarter and more efficiently.</TitleDiv__Text>
+              {this.state.contact.map((contact, index) => {
+                return(
+                  <TitleDiv__Title>{contact.title}</TitleDiv__Title>
+                )
+              })}
+              {this.state.contact.map((contact, index) => {
+                return(
+                  <TitleDiv__Text>{contact.descriptionfirst}</TitleDiv__Text>
+                )
+              })}
             </TitleDiv>
             <CallUsDiv>
               <Icon src={CallUsIcon} />
               <CallUs>Call Us</CallUs>
-              <PhoneNo>0800-3279-36767</PhoneNo>
+              {this.state.contact.map((contact, index) => {
+                return(
+                  <PhoneNo>{contact.phone}</PhoneNo>
+                )
+              })}
             </CallUsDiv> 
           </Header>
           

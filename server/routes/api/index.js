@@ -5,7 +5,7 @@ const about = require("../about");
 const blog = require("../blog");
 const blogcontents = require("../blogcontents");
 const support = require("../support");
-// const contact = require("../contact");
+const contact = require("../contact");
 // const login = require("../login");
 // const users = require("../users");
 
@@ -14,7 +14,7 @@ router.use("/about", about);
 router.use("/blog", blog);
 router.use("/blogcontents", blogcontents);
 router.use("/support", support);
-// router.use("/contact", contact);
+router.use("/contact", contact);
 // router.use("/login", login);
 // router.use("/users", users);
 
