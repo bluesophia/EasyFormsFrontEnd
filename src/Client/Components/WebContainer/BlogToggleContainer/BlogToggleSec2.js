@@ -151,5 +151,6 @@ export default class BlogToggleSec2 extends Component {
   }
 
   const style = {
+    marginTop:0,
     marginBottom:4
   }

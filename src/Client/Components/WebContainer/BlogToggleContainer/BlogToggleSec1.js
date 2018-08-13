@@ -67,7 +67,7 @@ export default class BlogToggleSec1 extends Component {
         with the snowball effect on other staff members time. This is just one example of many."  
       }, 
       { id:2,
-        title: 'Timesheet Theft Is Not Always Deliberat',
+        title: 'Timesheet Theft Is Not Always Deliberate',
         content: "You have picked your staff carefully and would like to think you can trust them. Absolutely! Although,\
         there may not be a dishonest intention, things like human error when it comes to filling out timesheets,\
          or lost pieces of paper scribbled with hours, or merely forgetting total hours spent on a job, or on \
@@ -114,5 +114,6 @@ const contentListStyle = {
 }
 
 const style = {
+  marginTop:0,
   marginBottom:4
 }
