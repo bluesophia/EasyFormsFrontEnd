@@ -27,20 +27,19 @@ const ButtonStyle = styled.button`
     color:${Themes.colors.orange};
     font-size:1em;
     font-weight:${Themes.fontWeight.bold};
-    border-radius:10px;
-    text-transform:uppercase;
+    border-radius:50px;
     padding-top:15px;
     padding-bottom:15px;
     letter-spacing:1px;
     outline: none;
-    ${breakpoint('md')`
     font-size:20px;
+    ${breakpoint('md')`
     `}
 `
 const Text = styled.p`
     margin:0;
     padding:0;
-    text-shadow:0 0 8px rgba(50, 50, 93, 0.23);
+    // text-shadow:0 0 8px rgba(50, 50, 93, 0.23);
 `
 
 export default Button02;
