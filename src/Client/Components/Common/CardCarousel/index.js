@@ -74,6 +74,7 @@ componentDidMount(){
     let self=this;
     var data = {
         id: this.state.id,
+        logo: this.state.logo,
         name: this.state.name,
         descriptionlg: this.state.descriptionlg,
         descriptionsm: this.state.descriptionsm
@@ -132,10 +133,10 @@ render () {
   };
       return (
         <Slider {...settings}>
-        {this.state.stories.map((stories, name, descriptionlg, descriptionsm) => {
+        {this.state.stories.map((stories, name, descriptionlg, descriptionsm, logo) => {
                     return (
                         <Card 
-                        logo={Logo01}
+                        logo={stories.logo}
                         name={stories.name}
                         companyName={stories.descriptionlg}
                         text={stories.descriptionsm}

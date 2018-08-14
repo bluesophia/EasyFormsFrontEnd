@@ -6,6 +6,7 @@ const blog = require("../blog");
 const blogcontents = require("../blogcontents");
 const support = require("../support");
 const contact = require("../contact");
+const uploads = require("../uploads");
 // const login = require("../login");
 // const users = require("../users");
 
@@ -15,6 +16,7 @@ router.use("/blog", blog);
 router.use("/blogcontents", blogcontents);
 router.use("/support", support);
 router.use("/contact", contact);
+router.use("uploads", uploads);
 // router.use("/login", login);
 // router.use("/users", users);
 

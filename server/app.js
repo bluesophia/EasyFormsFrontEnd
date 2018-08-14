@@ -26,7 +26,7 @@ app.use(function(req, res, next){
 		host     : 'localhost',
 		user     : 'root',
 		password : '',
-		database : 'easyforms'
+		database : 'easyForms'
 	});
 	res.locals.connection.connect();
 	next();

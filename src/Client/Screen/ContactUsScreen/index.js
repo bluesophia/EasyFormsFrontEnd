@@ -74,6 +74,7 @@ class ContactUsScreen extends Component {
                   <TitleDiv__Title>{contact.title}</TitleDiv__Title>
                 )
               })}
+              <TitleDiv__Line><HeaderLine /></TitleDiv__Line>
               {this.state.contact.map((contact, index) => {
                 return(
                   <TitleDiv__Text>{contact.descriptionfirst}</TitleDiv__Text>
