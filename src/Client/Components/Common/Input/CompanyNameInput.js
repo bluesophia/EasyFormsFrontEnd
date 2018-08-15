@@ -53,8 +53,8 @@ const Label = styled.label`
   `;
 
 const P = styled.p`
-  font-size: ${Themes.fontsize.p4}
-  font-weight: ${Themes.fontWeight.light}
+  font-size: ${Themes.fontsize.p4};
+  font-weight: ${Themes.fontWeight.light};
   color: ${Themes.colors.LightGrey};
   margin: 0;
   margin-left: 10px;
