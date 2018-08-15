@@ -4,14 +4,17 @@ import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
 
 export default class EmailInput extends Component {
-  state = {
-    value: 'EasyForms@gmail.com',
+  constructor(props){
+    super(props);
+    this.state = {value: ''};
+
+    this._handleChange = this._handleChange.bind(this);
   }
 
-  handleUpdateValue = (value) => {
-    this.setState({ value: value });
+  _handleChange(event) {
+    this.setState({value: event.target.value});
   }
-
+  
   render() {
     // const { value } = this.state;
     return (
@@ -21,10 +24,10 @@ export default class EmailInput extends Component {
       <Label>Your Contact Email</Label><P>Required</P><br />
       </Label_Div> 
         <Input
-          // value={value}
+          value={this.state.value}
           name="email"
           label="Email"
-          onChange={this.handleUpdateValue}
+          onChange={this._handleChange}
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
           required
         />
