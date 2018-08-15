@@ -6,6 +6,7 @@ import Themes from '../../../../Assets/Styles/Themes';
 import { Link } from 'react-router-dom';
 import Logo from '../../../../Assets/Images/logo.png';
 import Bg from '../../../../Assets/Images/header.png';
+import loginIcon from '../../../../Assets/Images/login.png';
 
 class HeaderContainer extends Component {
 	render(){
@@ -32,6 +33,12 @@ class HeaderContainer extends Component {
                                <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
                            </Sns>
                        </Box>
+					   <StyledLink onClick={this.burgerToggle} to='/'>
+						   <Login>
+						   		<LoginIcon src={loginIcon} /> 
+							</Login>
+							Login
+						</StyledLink>
 					</WideDiv>
 				</NavWide>
 				<NavNarrow>
@@ -53,6 +60,12 @@ class HeaderContainer extends Component {
                                <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
                            </Sns>
                        </Box>
+					   <NarrowStyledLink onClick={this.burgerToggle} to='/'>
+						   <Login>
+						   		<LoginIcon src={loginIcon} /> 
+							</Login>
+							Login
+						</NarrowStyledLink>
 					</NarrowLinks>
 				</NavNarrow>
 				</Container>
@@ -124,35 +137,52 @@ align-items: flex-end;
 const Box = styled.div`
     display: flex;
 	justify-content:center;
-
+	border-bottom: 0.1px solid ${Themes.colors.veryLightGrey};
 	${breakpoint('md')`
 	align-items: flex-end;
 	padding:0;
+	border-bottom: 0;
 		`}
 		${breakpoint('lg')`
 		align-items: flex-end;
 		padding: 1em 0 1em 1em;
 	`}
-`;
-
+`
 const Sns = styled.a`
 	color: ${Themes.colors.white};
 	font-size: 1em;
 	padding: 1em;
 	${breakpoint('md')`
 		padding: 1em 0.5em;
-		&:last-child {
-			padding: 1em 0 1em 0.5em;
-		}
+		// &:last-child {
+		// 	padding: 1em 0 1em 0.5em;
+		// }
 		`}
 	${breakpoint('lg')`
 	padding: 0 1em;
-	&:last-child {
-		padding: 1em 0 0 1em;
-	  }
+	// &:last-child {
+	// 	padding: 1em 0 0 1em;
+	//   }
 	`}
 `
-
+const Login = styled.a`
+	color: ${Themes.colors.white};
+	padding: 0 0.5em 0 0;
+	${breakpoint('md')`
+			padding: 0 0.2em 0 0;
+		`}
+	${breakpoint('lg')`
+		padding: 1em 0.5em 0 1em;
+	`}
+`
+const LoginIcon = styled.img`
+	width:21px;
+	height:21px;
+	vertical-align:middle;
+	${breakpoint('md')`
+		vertical-align:sub;
+	`}	
+`
 const LogoImg = styled.img`
 	width:120px;
 	float:left;
@@ -177,13 +207,14 @@ text-decoration: none;
 color: ${Themes.colors.lightGrey};
 font-size: 1em;
 padding: 1em;
-text-transform: uppercase;
 font-weight: ${Themes.fontWeight.light};
 cursor:'pointer';
-${breakpoint('md')`
-padding: 1em 0.5em;
+	${breakpoint('md')`
+		padding: 1em 0.5em;
+		&:last-child {
+			padding: 1em 0.5em 0.9em 0.5em;
+			}
 	`}
-}
 `;
 
 const NarrowLinks = styled.div`
@@ -200,8 +231,10 @@ font-weight: ${Themes.fontWeight.regular};
 padding: 1em;
 display:block;
 text-align: center;
-// text-transform: uppercase;
-border-bottom: 0.1px solid ${Themes.colors.lightGrey};
+border-bottom: 0.1px solid ${Themes.colors.verylightGrey};
+	&:last-child {
+	border-bottom: 0px;
+		}
 `;
 
   export default HeaderContainer;
