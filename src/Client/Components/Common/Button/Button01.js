@@ -9,7 +9,7 @@ class Button01 extends Component {
     render(){
         return (
             <ThemeProvider theme={Themes}>
-                    <ButtonStyle>
+                    <ButtonStyle type="submit">
                         <Text>{this.props.value}</Text>
                     </ButtonStyle>
             </ThemeProvider>

@@ -12,10 +12,75 @@ import { UploadInput,
 import Button01 from '../../../Components/Common/Button/Button01';
 
 class SupportFormContainer extends Component {
+  constructor(props){
+    super(props);
+    // this.state = {value: ''};
+    this.state = {
+      CompanyName: "",
+      FullName:"",
+      Email: "",
+      Message: ""
+    }
+
+    this._handleSubmit = this._handleSubmit.bind(this);
+  }
+
+  _handleSubmit(event) {
+    alert('submitted' + this.state.value);
+    event.preventDefault();
+    var data = {
+      CompanyName: this.state.CompanyName,
+      FullName:this.state.FullName,
+      Email: this.state.Email,
+      Message: this.state.Message
+  }
+  console.log(data)
+  fetch("/api/support", {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+  }).then(function(response) {
+      if (response.status >= 400) {
+        throw new Error("Bad response from server");
+      }
+      return response.json();
+  }).then(function(data) {
+      console.log(data)    
+      if(data == "success"){
+         this.setState({msg: "Thanks for registering"});  
+      }
+  }).catch(function(err) {
+      console.log(err)
+  });
+    // var data = {
+    //   "CompanyName": this.state.valvue,
+    //   "FullName":this.state.value,
+    //   "Email": this.state.value,
+    //   "Message": this.state.value
+    // }
+    // fetch('/api/support', {
+    //   method:'POST',
+    //   headers: {'Content-Type':'application/json'},
+    //   body: Json.stringfy(data)
+    //   )}.then(function(response){
+    //     if(response.status>=400) {
+    //       throw new Error("Bad response from server")
+    //     }
+    //     return response.json();
+    //   }).then(function(data) {
+    //     console.log(data)    
+    //     if(data == "success"){
+    //        this.setState({msg: "Thanks for registering"});  
+    //     }
+    // }).catch(function(err) {
+    //     console.log(err)
+    // });
+  }
+
     render(){
         return(
             <FormDiv>
-                    <Form>
+                    <Form onSubmit={this._handleSubmit} method="POST">
                       <InputDiv>
                         <InputDiv__Left>
                           <CompanyNameInput />
@@ -50,7 +115,7 @@ const FormDiv = styled.div`
         grid-column:unset;
     `}
 `
-const Form = styled.div`
+const Form = styled.form`
   height:auto;
   background-color:white;
   box-shadow:0 0 10px rgba(0,0,0,0.2);

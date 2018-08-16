@@ -4,12 +4,15 @@ import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
 
 export default class MessageInput extends Component {
-  state = {
-    value: {},
+  constructor(props){
+    super(props);
+    this.state = {value: ''};
+
+    this._handleChange = this._handleChange.bind(this);
   }
 
-  handleUpdateValue = (value) => {
-    this.setState({ value: value });
+  _handleChange(event) {
+    this.setState({value: event.target.value});  
   }
 
   render() {
@@ -21,10 +24,10 @@ export default class MessageInput extends Component {
           <Label>Let us know how we can help</Label><P>Required</P><br />
           </Label_Div>
             <Input
-              // value={value}
-              name="text"
+              value={this.state.value}
+              name="Message"
               label="label"
-              onChange={this.handleUpdateValue}
+              onChange={this._handleChange}
               style={{height:this.props.height}}
             />
         </Container>

@@ -4,16 +4,19 @@ import breakpoint from 'styled-components-breakpoint';
 import Themes from '../../../../Assets/Styles/Themes';
 
 export default class CompanyNameInput extends Component {
-  state = {
-    value: {},
+  constructor(props){
+    super(props);
+    this.state = {value: ''};
+
+    this._handleChange = this._handleChange.bind(this);
   }
 
-  handleUpdateValue = (value) => {
-    this.setState({ value: value });
+  _handleChange(event) {
+    this.setState({value: event.target.value});  
   }
 
   render() {
-    // const { value } = this.state;
+    
     return (
       <ThemeProvider theme={Themes}>
       <Container>
@@ -21,10 +24,10 @@ export default class CompanyNameInput extends Component {
       <Label>Your Company Name</Label><P>Required</P><br />
       </Label_Div> 
         <Input
-          // value={value}
-          name="input-text"
+          value={this.state.value}
+          name="CompanyName"
           label="Company Name"
-          onChange={this.handleUpdateValue}
+          onChange={this._handleChange}
         />
       </Container>
       </ThemeProvider>
