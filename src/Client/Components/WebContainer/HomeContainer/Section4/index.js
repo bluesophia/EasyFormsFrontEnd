@@ -44,8 +44,7 @@ const Section04 = styled.div`
         ${breakpoint('lg')`
         background: url('${Section04BgLg}') no-repeat;
         background-position: center bottom;
-        background-size:auto 100%;
-        height:768px;
+        background-size:100% 100%;
     `}
 `
 const Section04__TitleDiv = styled.div`

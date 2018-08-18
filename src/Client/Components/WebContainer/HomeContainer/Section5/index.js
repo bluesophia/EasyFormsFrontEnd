@@ -52,6 +52,7 @@ const Section05 = styled.div`
     ${breakpoint('lg')`
        padding:10% 18%; 
        max-width:1366px;
+       margin:0 auto;
     `}
 `
 const Section05__Title = styled.div` 

@@ -29,6 +29,7 @@ class AboutUsScreen extends Component {
               </Section01__Container>
             </Section01>
             <Section02>
+              <Container>
                     <Section__Title>About Us</Section__Title>
                     <Section__Text>EasyForms is a 100% Kiwi owned and 
                     operated company which grew from one 
@@ -69,8 +70,10 @@ class AboutUsScreen extends Component {
                     for workflow management and develops 
                     bespoke web portal and app-based 
                     solutions.</Section__Text>
+                </Container>
             </Section02>
             <Section03>
+              <Container>
                   <Section__Title>Our Vision</Section__Title>
                   <Section__Text>To provide you with better control and 
                   increased transparency of your business, 
@@ -81,6 +84,7 @@ class AboutUsScreen extends Component {
                   on the things you need to, while giving you 
                   the ability to mobilise your business 
                   effortlessly.</Section__Text>
+              </Container>
             </Section03>
       </div>
     </ThemeProvider>
@@ -175,22 +179,18 @@ const Section01__Text = styled.div`
     `}
 `
 const Section02 = styled.div`
-  padding:70px 8%;
-  ${breakpoint('lg')`
-    padding:70px 15%;
-    display:grid;
-    grid-template-columns:25% 75%;
-    max-width: 1366px;
-  `}
 `
 const Section03 = styled.div`
-  padding:70px 8%;
   background-color:${Themes.colors.veryLightGrey};
+`
+const Container = styled.div`
+  max-width:1366px;
+  margin:0 auto;
+  padding:70px 8%;
   ${breakpoint('lg')`
     padding:70px 15%;
     display:grid;
     grid-template-columns:25% 75%;
-    max-width: 1366px;
   `}
 `
 const Section__Title = styled.div`

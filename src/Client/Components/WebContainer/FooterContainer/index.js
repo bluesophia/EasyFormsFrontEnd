@@ -33,7 +33,7 @@ class FooterContainer extends Component {
                     <FooterText>0800 EASY FORMS</FooterText>
                     <FooterText>0800 3279 36767</FooterText>
                     <FooterText>office@easyforms.co.nz</FooterText>
-                    <FooterTextAddress>4a Te Kea Place, <br />Rosedale, Auckland</FooterTextAddress>
+                    <FooterTextAddress>8c vega place, <br />Rosedale, Auckland 0632</FooterTextAddress>
                 </FooterRightContainer>
               </FooterBox1>
                 
@@ -83,7 +83,7 @@ class FooterContainer extends Component {
 
 const Footer = styled.div`
   font-family: Lato;
-  background: linear-gradient(#2C71A1, #1D4B93, #18225A);
+  background: linear-gradient(#3D88AA, #2C5BA3, #26316F);
   padding: 0 10%;
   line-height:1.5em;
 `;
