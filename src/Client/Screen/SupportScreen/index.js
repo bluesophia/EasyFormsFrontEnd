@@ -18,6 +18,7 @@ import { UploadInput,
           MessageInput,
           FullNameInput }from '../../Components/Common/Input';
 import Button01 from '../../Components/Common/Button/Button01';
+import SupportFormContainer from '../../Components/WebContainer/SupportFormContainer'
 
 const Title = css`
     color:${Themes.colors.blue};
@@ -37,50 +38,65 @@ const BlueBg = css`
 
 class SupportScreen extends Component{
   constructor(props){
-    super(props);
-    this.state = {value: ''};
-
-    this._handleSubmit = this._handleSubmit.bind(this);
+    super(props)
+    this.state = {
+      support: []
+    };
   }
+  // handleCreate = (data) => {
+  //   console.log(data);
+  // }
+  
+  componentDidMount(){
+   let self = this;
+   var data = {
+     id: this.state.id,
+     title: this.state.title,
+     descriptionfirst: this.state.descriptionfirst,
+     descriptionsecond: this.state.descriptionsecond
+   } 
+   fetch('/api/support', {
+     method:'GET'
+   }).then(function(response) {
+     if(response.status>=400) {
+       throw new Error("Bad response from server");
+     }
+     return response.json();
+   }).then(function(data) {
+     self.setState({support:data});
+   }).catch(err => {
+     console.log('caught it!', err);
+   })
 
-  _handleSubmit(event) {
-    alert('submitted' + this.state.value);
-    event.preventDefault();
   }
   render(){
+    const { support } = this.state;
     return(
         <ThemeProvider theme={Themes}>
           <Support>
               <Container>
                   <TitleDiv>
-                    <TitleDiv__Title>Submit a support ticket</TitleDiv__Title>
-                    <TitleDiv__Text>Please complete the form below which will direct your request to the appropriate member of the team. 
-                      This ensures greater efficiency around response times and also ensures processes are followed.
-                      <br /><br />
-                      We aim to respond to support requests within 24 hours on regular business days, however, 
-                      depending on the scale of your request this could take slightly longer.</TitleDiv__Text>
+                    {this.state.support.map((support, index) => {
+                      return(
+                      <TitleDiv__Title>{support.title}</TitleDiv__Title>
+                      )
+                    })}
+                    {this.state.support.map((support, index) => {
+                      return(
+                      <TitleDiv__Text>{support.descriptionfirst}</TitleDiv__Text>
+                      )
+                    })}
+                    <br />
+                    {this.state.support.map((support, index) => {
+                      return(
+                      <TitleDiv__Text>{support.descriptionsecond}</TitleDiv__Text>
+                      )
+                    })}
                   </TitleDiv>
                   <ImageDiv>
                     <TopBgImg src={Image}/>
                   </ImageDiv>
-                  <FormDiv>
-                    <Form onSubmit={this._handleSubmit}>
-                      <InputDiv>
-                        <InputDiv__Left>
-                          <CompanyNameInput />
-                          <FullNameInput />
-                          <EmailInput />
-                        </InputDiv__Left>
-                        <InputDiv__Right>
-                            <MessageInput />
-                          <UploadInput />
-                        </InputDiv__Right>
-                      </InputDiv>
-                      <ButtonDiv>
-                        <Button01 value="Tell us about Issue"/>
-                      </ButtonDiv>      
-                    </Form>
-                  </FormDiv>
+                  <SupportFormContainer/>
               </Container>
             </Support>
           </ThemeProvider>
@@ -177,56 +193,56 @@ const TitleDiv__Text = styled.div`
     padding:0 3%;
   `}
 `
-const FormDiv = styled.div` 
-    box-sizing:border-box;
-    display:flex;
-    flex-direction:column;
-    margin:0 -5%;
-    ${breakpoint('md')`
-    order:3;  
-    grid-column:1/3;
-    margin:0;
-    `}
-      ${breakpoint('lg')`
-        grid-column:unset;
-    `}
-`
-const Form = styled.div`
-  height:auto;
-  background-color:white;
-  box-shadow:0 0 10px rgba(0,0,0,0.2);
-  padding:50px 8% 30px 8%;
-  border-radius:25px;
-    ${breakpoint('lg')`
-    margin-top:30px;
-  `}
-`
-const InputDiv = styled.div`
-  margin-bottom:50px;
-  display:flex;
-  flex-direction:column;
-`
-const InputDiv__Left = styled.div`
-   ${breakpoint('lg')`
-        margin-bottom:50px;
- `}
-`
-const InputDiv__Right = styled.div``
+// const FormDiv = styled.div` 
+//     box-sizing:border-box;
+//     display:flex;
+//     flex-direction:column;
+//     margin:0 -5%;
+//     ${breakpoint('md')`
+//     order:3;  
+//     grid-column:1/3;
+//     margin:0;
+//     `}
+//       ${breakpoint('lg')`
+//         grid-column:unset;
+//     `}
+// `
+// const Form = styled.div`
+//   height:auto;
+//   background-color:white;
+//   box-shadow:0 0 10px rgba(0,0,0,0.2);
+//   padding:50px 8% 30px 8%;
+//   border-radius:25px;
+//     ${breakpoint('lg')`
+//     margin-top:30px;
+//   `}
+// `
+// const InputDiv = styled.div`
+//   margin-bottom:50px;
+//   display:flex;
+//   flex-direction:column;
+// `
+// const InputDiv__Left = styled.div`
+//    ${breakpoint('lg')`
+//         margin-bottom:50px;
+//  `}
+// `
+// const InputDiv__Right = styled.div``
 
-const ButtonDiv = styled.div`
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  ${breakpoint('lg')`
-    width:60%;  
-    margin:0 auto;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-  `}
-`
-const Form__Text = styled.div`
-  margin:25px auto 10px auto;
-  color:${Themes.colors.blueLight};
-  font-size:${Themes.fontsize.p2};
-  font-weight:${Themes.fontWeight.black};
-`
+// const ButtonDiv = styled.div`
+//   display:flex;
+//   flex-direction:column;
+//   align-items:center;
+//   ${breakpoint('lg')`
+//     width:60%;  
+//     margin:0 auto;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+//   `}
+// `
+// const Form__Text = styled.div`
+//   margin:25px auto 10px auto;
+//   color:${Themes.colors.blueLight};
+//   font-size:${Themes.fontsize.p2};
+//   font-weight:${Themes.fontWeight.black};
+// `
 
 export default SupportScreen;
