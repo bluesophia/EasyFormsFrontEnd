@@ -69,7 +69,7 @@ const Input = styled.input.attrs({
   width:100%;
   height:30px;
   background: none;
-  border-radius: 5px;  
+  border-radius: 0; 
   border: 0px;
   border-bottom: 1px solid ${Themes.colors.formGrey};
   color: ${Themes.colors.formGrey};

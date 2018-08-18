@@ -56,11 +56,6 @@ const Section07 = styled.div`
         `}
         ${breakpoint('lg')`
            padding: 10% 20% 10% 20%; 
-            // display:flex;
-            // justify-content:center;
-            // align-items:center;
-            // flex-direction:column;
-
     `} 
 `
 const Section07__Title = styled.p`
@@ -91,12 +86,13 @@ const Section07__ContentDiv = styled.div`
     flex-direction:column;
 `
 const Section07__Icon = styled.img`
-    height:200px;
+    height:180px;
     width:auto;
     margin:0 auto;
     ${breakpoint('md')`
         height:180px;
         width:auto;
+        margin:0 20px;
     `}
 `
 const Section07__SubTitle = styled.p`

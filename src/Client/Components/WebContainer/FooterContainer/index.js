@@ -144,7 +144,7 @@ text-align:left;
 const FooterTitle = styled.span`
 font-size: 1em;
 text-align:center;
-margin: 2.75em 0 1.5em;
+margin: 2.75em 0 1em;
 color: ${Themes.colors.white};
 
 ${breakpoint('md')`
