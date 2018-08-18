@@ -69,6 +69,7 @@ const Input = styled.input.attrs({
   width:100%;
   height:30px;
   background: none;
+  border-radius: 5px;  
   border: 0px;
   border-bottom: 1px solid ${Themes.colors.formGrey};
   color: ${Themes.colors.formGrey};
@@ -78,26 +79,4 @@ const Input = styled.input.attrs({
   &:focus {
     outline: none;
   }
-  /*
-  ${breakpoint('xs')`
-    width:87vw;
-    height:20px;
-  `}
-  ${breakpoint('sm')`
-    width:87vw;
-    height:20px;
-  `}
-  ${breakpoint('md')`
-  width:59vw;
-  height:25px;
-  `}
-  ${breakpoint('lg')`
-  width:25vw;
-  height:30px;
-  `}
-  ${breakpoint('xl')`
-  width:25vw;
-  height:30px;
-  `}
-  */
 `

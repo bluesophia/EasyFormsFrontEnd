@@ -56,9 +56,9 @@ const Label = styled.label`
   `;
 
 const P = styled.p`
-  font-size: ${Themes.fontsize.p4};
+  font-size: ${Themes.fontsize.p3};
   font-weight: ${Themes.fontWeight.light};
-  color: ${Themes.colors.LightGrey};
+  color: ${Themes.colors.grey};
   margin: 0;
   margin-left: 10px;
   padding:0;
@@ -71,35 +71,13 @@ const Input = styled.input.attrs({
   width:100%;
   height:30px;
   background: none;
-  border: 0px;
+  border-radius:0px;
+  border:0;
   border-bottom: 1px solid ${Themes.colors.formGrey};
   color: ${Themes.colors.formGrey};
-  //padding: ${props => props.padding}
   padding-left:0.5em;
   margin-top: 10px;
   &:focus {
     outline: none;
   }
-  /*
-  ${breakpoint('xs')`
-    width:87vw;
-    height:20px;
-  `}
-  ${breakpoint('sm')`
-    width:87vw;
-    height:20px;
-  `}
-  ${breakpoint('md')`
-  width:59vw;
-  height:25px;
-  `}
-  ${breakpoint('lg')`
-  width:25vw;
-  height:30px;
-  `}
-  ${breakpoint('xl')`
-  width:25vw;
-  height:30px;
-  `}
-  */
 `

@@ -53,9 +53,9 @@ const Label = styled.label`
   color: ${Themes.colors.blueLight};
   `
 const P = styled.p`
-  font-size: ${Themes.fontsize.p4}
-  font-weight: ${Themes.fontWeight.light}
-  color: ${Themes.colors.LightGrey};
+  font-size: ${Themes.fontsize.p3};
+  font-weight: ${Themes.fontWeight.light};
+  color: ${Themes.colors.grey};
   margin: 0;
   margin-left: 10px;
   padding:0;
@@ -76,26 +76,4 @@ const Input = styled.textarea.attrs({
   &:focus {
     outline: none;
   }
-  /*
-  ${breakpoint('xs')`
-    width:87vw;
-    height:50vw;
-  `}
-  ${breakpoint('sm')`
-    width:87vw;
-    height:50vw;
-  `}
-  ${breakpoint('md')`
-    width:59vw;
-    height:25vw;
-  `}
-  ${breakpoint('lg')`
-    width:50vw;
-    height:10vw;
-  `}
-  ${breakpoint('xl')`
-    width:42vw;
-    height:15wv;
-  `}
-  */
 `
