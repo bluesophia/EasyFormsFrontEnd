@@ -18,49 +18,51 @@ class SupportFormContainer extends Component {
         Message:""
       }
       
-      _handleSubmit = (e) => {
-        // 페이지 리로딩 방지
-        e.preventDefault();
-        // 상태값을 onCreate 를 통하여 부모에게 전달
-        // this.props.onCreate(this.state);
-        // 상태 초기화
-        this.setState({
-            CompanyName: '',
-            Fullname: "",
-            Email:"",
-            Message:""
-        })
+    _handleSubmit = (e) => {
+    // 페이지 리로딩 방지
+    e.preventDefault();
+    // 상태값을 onCreate 를 통하여 부모에게 전달
+    // this.props.onCreate(this.state);
+    // 상태 초기화
+    this.setState({
+        CompanyName: '',
+        Fullname: "",
+        Email:"",
+        Message:""
+    })
     
     var data = {
       CompanyName: this.state.CompanyName,
       FullName:this.state.FullName,
       Email: this.state.Email,
       Message: this.state.Message
-  }
-  console.log(data)
-  fetch("/api/supportform", {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data)
-  }).then(function(response) {
-      if (response.status >= 400) {
-        throw new Error("Bad response from server");
-      }
-      return response.json();
-  }).then(function(data) {
-      console.log(data)    
-      if(data == "success"){
-         this.setState({msg: "Thanks for registering"});  
-      }
-  }).catch(function(err) {
-      console.log(err)
-  });
-      }
+        }
+    console.log(data)
+    fetch("/api/supportform", {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    }).then(function(response) {
+        if (response.status >= 400) {
+            throw new Error("Bad response from server");
+        }
+        return response.json();
+    }).then(function(data) {
+        console.log(data)    
+        if(data == "success"){
+            this.setState({msg: "Thanks for registering"});  
+        }
+    }).catch(function(err) {
+        console.log(err)
+    });
+}
+
       _handleChange = (e) => {
         this.setState({
           [e.target.name]: e.target.value
         });
       }
+      
 
 //     event.preventDefault();
 //     var data = {
