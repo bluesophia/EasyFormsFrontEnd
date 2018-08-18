@@ -33,7 +33,7 @@ class HeaderContainer extends Component {
                                <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
                            </Sns>
                        </Box>
-					   <StyledLink onClick={this.burgerToggle} to='/'>
+					   <StyledLink onClick={this.burgerToggle} to='/login'>
 						   <Login>
 						   		<LoginIcon src={loginIcon} /> 
 							</Login>
@@ -60,7 +60,7 @@ class HeaderContainer extends Component {
                                <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
                            </Sns>
                        </Box>
-					   <NarrowStyledLink onClick={this.burgerToggle} to='/'>
+					   <NarrowStyledLink onClick={this.burgerToggle} to='/login'>
 						   <Login>
 						   		<LoginIcon src={loginIcon} /> 
 							</Login>
