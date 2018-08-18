@@ -36,6 +36,17 @@ const BlueBg = css`
 `
 
 class SupportScreen extends Component{
+  constructor(props){
+    super(props);
+    this.state = {value: ''};
+
+    this._handleSubmit = this._handleSubmit.bind(this);
+  }
+
+  _handleSubmit(event) {
+    alert('submitted' + this.state.value);
+    event.preventDefault();
+  }
   render(){
     return(
         <ThemeProvider theme={Themes}>
@@ -53,7 +64,7 @@ class SupportScreen extends Component{
                     <TopBgImg src={Image}/>
                   </ImageDiv>
                   <FormDiv>
-                    <Form>
+                    <Form onSubmit={this._handleSubmit}>
                       <InputDiv>
                         <InputDiv__Left>
                           <CompanyNameInput />
