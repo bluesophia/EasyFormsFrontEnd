@@ -25,7 +25,6 @@ class Section2 extends Component{
             <Section02>
                 <Container>
                     <Section02__LeftDiv>
-                        {/* <Section02__LeftDivContainer> */}
                         <Section02__TitleDiv>
                             <Section02__Title>Why Easyforms?</Section02__Title>
                         </Section02__TitleDiv>
@@ -48,18 +47,16 @@ class Section2 extends Component{
                                 </div>
                             </Section02__ContentDiv>
                             <Section02__ContentDiv>
-                                <Section02__Image src={WhyUs03} />
+                                <Section02__Image src={WhyUs03}/>
                                 <div>
                                 <Section02__Subtitle>User friendly designs</Section02__Subtitle>
                                 <Section02__Text>Our solutions are easy-to-use and user friendly.</Section02__Text>
                                 </div>
                             </Section02__ContentDiv>
                         </Section02__Contents>
-                        {/* </Section02__LeftDivContainer> */}
                     </Section02__LeftDiv>
                 </Container>
                 <Section02__RightDiv>
-                    {/* <Section02__RightDivImage src={HomeSection02Image} /> */}
                 </Section02__RightDiv>
             </Section02>
         )
@@ -87,27 +84,17 @@ const Container = styled.div`
     margin:0 auto;
     ${breakpoint('lg')`
         margin:auto 0 auto auto;
-        // max-width:683px;
-        // display:flex;
-        // justify-contents:space-between;
-        // flex-direction:row;
     `}
 `
 const Section02__LeftDiv = styled.div`
     ${breakpoint('lg')`
-        // max-width: 623px;
         margin-right:0;
-        // display:flex;
-        // justify-contents:space-between;
-        // align-items:center;
-        // flex-direction:column;
     `}
     ${breakpoint('xl')`
         width:683px;
     `}
 `
 const Section02__LeftDivContainer = styled.div`
-
 `
 const Section02__TitleDiv = styled.div`
     margin:0 auto;
@@ -123,16 +110,7 @@ const Section02__Title = styled.div`
         text-align:left;
     `}
 `
-
 const Section02__Contents = styled.div`
-    ${breakpoint('md')`
-        // display:grid;
-        // grid-template-columns:1fr 1fr 1fr;
-        // grid-column-gap:10px;
-    `}
-    ${breakpoint('lg')`
-        // grid-template-rows:1fr 1fr 1fr;
-    `}
 `
 const Section02__ContentDiv = styled.div`
     margin:60px auto 0 auto;
@@ -141,17 +119,13 @@ const Section02__ContentDiv = styled.div`
     flex-direction:column;
     align-items:center;
         ${breakpoint('lg')`
-        // margin:60px auto 0 auto;
         flex-direction:row;
         align-items:flex-start;
-`}
-
+        `}
 `
 const Section02__Image = styled.img`
-    ${breakpoint('lg')`
-        width:60px;
-        heigh:auto;
-    `}
+    width:60px;
+    height:auto;
 `
 const Section02__Subtitle = styled.p`
     margin-top:20px;
@@ -164,7 +138,7 @@ const Section02__Subtitle = styled.p`
     ${breakpoint('lg')`
       margin: 0 0 0 35px;   
       line-height:30px;
-      text-align:left;    
+      text-align:left; 
     `}
 `
 const Section02__Text = styled.div`
@@ -186,14 +160,5 @@ const Section02__RightDiv = styled.div`
         display:block;
         background:url(${HomeSection02Image}) no-repeat left bottom;
     `}
-`
-const Section02__RightDivImage = styled.img`
-    // display:none;
-    // ${breakpoint('lg')`
-    //     display:block;
-    //     postion:absolute;
-    //     left:0;
-    //     bottom:0;
-    // `}
 `
 export default Section2;

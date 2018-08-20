@@ -28,7 +28,7 @@ class LoginScreen extends Component {
                                 <PasswordInput label="Password"/>
                             </InputDiv>
                             <ButtonDiv>
-                                <Button01 value="Sign In"/>
+                                <Button01 value="Sign In" />
                             </ButtonDiv>  
                             <Form__Text>Not Registered? 
                                 <Form__TextBold to="/register"> Create an account</Form__TextBold>

@@ -7,6 +7,7 @@ import BlogScreen from './Client/Screen/BlogScreen';
 import ContactUsScreen from './Client/Screen/ContactUsScreen';
 import LoginScreen from './Client/Screen/LoginScreen';
 import RegisterScreen from './Client/Screen/RegisterScreen';
+import TermsScreen from './Client/Screen/TermsScreen';
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -25,6 +26,7 @@ const Routes = () => (
       <Route path='/contact' component={ContactUsScreen}/>
       <Route path='/login' component={LoginScreen}/>
       <Route path='/register' component={RegisterScreen}/>
+      <Route path='/terms' component={TermsScreen}/>
       <Route component={HomeScreen}/>
     </Switch>
   </main>

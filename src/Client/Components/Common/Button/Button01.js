@@ -34,7 +34,6 @@ const ButtonStyle = styled.button`
     outline: none;
         ${breakpoint('lg')`
             font-size:20px;
-            // padding:12px 35px; 
         `}
 `
 const Text = styled.p`
